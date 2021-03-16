@@ -4,7 +4,7 @@
   "description": "NOW ROOM's components",
   "main": "src/entry.ts",
   "repository": "ssh://git@github.com/living-tech/nowroom_components.git",
-  "author": "NOW ROOM",
+  "author": "NOW ROOM <system@nowroom.jp>",
   "scripts": {
     "commit": "npx git-cz",
     "tsc": "tsc --noEmit",
