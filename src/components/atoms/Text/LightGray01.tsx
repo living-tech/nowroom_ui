@@ -1,0 +1,11 @@
+import { FC } from "react";
+
+import { Presenter, Props } from "./Presenter";
+
+export const TextLightGray01: FC<Props> = ({ children, color = "lightGray01", ...props }) => {
+  return (
+    <Presenter color={color} {...props}>
+      {children}
+    </Presenter>
+  );
+};
