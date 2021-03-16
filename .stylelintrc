@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order",
+    "stylelint-config-css-modules",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["mixin", "include", "extends", "tailwind", "for"]
+      }
+    ],
+    "indentation": 2,
+    "max-line-length": 80,
+    "declaration-colon-newline-after": null,
+    "string-no-newline": null
+  }
+}
