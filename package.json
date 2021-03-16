@@ -1,5 +1,5 @@
 {
-  "name": "nowroom_components",
+  "name": "nowroom-components",
   "version": "1.0.0",
   "description": "NOW ROOM's components",
   "main": "src/entry.ts",
