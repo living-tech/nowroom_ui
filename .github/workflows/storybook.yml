@@ -3,13 +3,11 @@ name: Build and Deploy to GCS Staging
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   PROJECT_ID: ${{ secrets.GCS_PROJECT }}
   GCS_BUCKET: ${{ secrets.GCS_BUCKET }}
-  NEXT_PUBLIC_GOOGLE_MAP_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAP_API_KEY }}
-  NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY }}
 
 jobs:
   setup-build-deploy:
