@@ -44,6 +44,11 @@ import { iPhoneMockWidth } from "nowroom-components";
 $ yarn new:fc
 ```
 
+### storybook立ち上げ
+```bash
+$ yarn storybook
+```
+
 ### build
 ```bash
 $ yarn build
