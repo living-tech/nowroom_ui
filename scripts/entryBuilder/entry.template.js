@@ -3,4 +3,4 @@
  */
 
 <% _.each(components, (component) => { %>
-export * from "./components/<%= component.typeName %>/<%= component.dirName %>/<%= component.fileName %>";<% }) %>
+export * from "./<%= component.typeName %>/<%= component.dirName %>/<%= component.fileName %>";<% }) %>

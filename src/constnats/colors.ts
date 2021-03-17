@@ -17,18 +17,29 @@ export const gray500 = "#918EA3";
 export const gray600 = "#807D94";
 export const gray700 = "#656376";
 
+export const green500 = "#4AD7AD";
+
 export const pink500 = "#E86A81";
 export const pink600 = "#C9425A";
 export const pink700 = "#A9233B";
 
 export const purple100 = "#F6F5FE";
 export const purple200 = "#DEDBFD";
+export const purple400 = "#9992F1";
 export const purple500 = "#746AE8";
 export const purple600 = "#554ADC";
 export const purple700 = "#3529CB";
 
+export const red100 = "#FFE8EB";
+export const red200 = "#FDBBC4";
+export const red300 = "#FB91A0";
+export const red400 = "#F86579";
 export const red500 = "#F54159";
 
+export const yellow100 = "#FFF8EB";
+export const yellow200 = "#FFEFD0";
+export const yellow300 = "#FFE4AF";
+export const yellow400 = "#FFD584";
 export const yellow500 = "#EEBC5A";
 export const yellow600 = "#D49E35";
 export const yellow700 = "#AC7A19";

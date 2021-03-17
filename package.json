@@ -2,10 +2,22 @@
   "name": "nowroom-components",
   "version": "1.0.0",
   "description": "NOW ROOM's components",
-  "main": "src/entry.ts",
+  "private": true,
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
   "repository": "ssh://git@github.com/living-tech/nowroom_components.git",
   "author": "NOW ROOM <system@nowroom.jp>",
   "scripts": {
+    "clean": "rm -rf ./lib",
+    "prebuild": "yarn clean",
+    "build": "ts-node ./scripts/entryBuilder && tsc --build \"./tsconfig.json\"",
+    "copy-files": "copyfiles -u 1 \"src/**/*.css\" \"src/**/*.svg\" \"src/**/*.json\" lib/",
+    "postbuild": "yarn run copy-files",
     "commit": "npx git-cz",
     "tsc": "tsc --noEmit",
     "lint": "eslint './src/**/*.{ts,tsx}'",
@@ -63,6 +75,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-inline-react-svg": "^1.1.2",
     "consola": "^2.15.3",
+    "copyfiles": "^2.4.1",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -73,6 +86,7 @@
     "eslint-plugin-sort-destructure-keys": "^1.3.5",
     "eslint-plugin-sort-keys-fix": "^1.1.1",
     "eslint-plugin-typescript-sort-keys": "^1.5.0",
+    "fork-ts-checker-webpack-plugin": "^6.1.1",
     "graphql-codegen-typescript-mock-data": "^1.3.4",
     "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
@@ -80,6 +94,7 @@
     "prettier": "^2.2.1",
     "prettier-plugin-tailwind-css": "^1.4.0",
     "prettier-stylelint-formatter": "^0.5.1-beta.2",
+    "rimraf": "^3.0.2",
     "sass-loader": "^10.1.0",
     "stylelint": "^13.9.0",
     "stylelint-config-css-modules": "^2.2.0",
