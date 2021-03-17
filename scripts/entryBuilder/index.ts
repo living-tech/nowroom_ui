@@ -17,7 +17,7 @@ const createIndex = (components: ComponentMetaDatum) => {
   const indexJsData = compiled({
     components,
   });
-  const wrapperPathname = path.join(SRC_ROOT, "entry.ts");
+  const wrapperPathname = path.join(SRC_ROOT, "/components/index.ts");
   writeFile(wrapperPathname, indexJsData);
   consola.success("Created:", wrapperPathname.replace(ROOT, ""));
 };

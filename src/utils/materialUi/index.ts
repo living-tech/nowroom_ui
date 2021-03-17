@@ -1,6 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 
-import { purple500 } from "../../constnats/colors";
+import { purple500 } from "../../constnats";
 
 export const materialUiTheme = createMuiTheme({
   palette: {

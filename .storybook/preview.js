@@ -1,10 +1,10 @@
 import "react-datepicker/dist/react-datepicker.css";
 // import "../src/components/atoms/InputDatePicker/InputDatePicker.css";
-import "../src/styles/Globals.css";
+import "../src/styles/globals.css";
 
 import * as React from "react";
 import { addDecorator } from "@storybook/react";
-import { materialUiTheme } from "../src/libs/materialUi"
+import { materialUiTheme } from "../src/utils/materialUi"
 import { ThemeProvider } from "@material-ui/core/styles";
 
 const withProvider = (storyFn) => {
