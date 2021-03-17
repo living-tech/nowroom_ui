@@ -1,0 +1,1 @@
+{"version":3,"file":"Presenter.d.ts","sourceRoot":"","sources":["../../../../src/components/molecules/Modal/Presenter.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,EAAE,EAAoC,MAAM,OAAO,CAAC;AAS7D,oBAAY,KAAK,GAAG;IAClB,SAAS,EAAE,OAAO,CAAC;IACnB,QAAQ,CAAC,EAAE,MAAM,CAAC;IAClB,cAAc,CAAC,EAAE,MAAM,IAAI,CAAC;CAC7B,CAAC;AAEF,eAAO,MAAM,SAAS,EAAE,EAAE,CAAC,KAAK,CAwF/B,CAAC"}

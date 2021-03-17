@@ -27,7 +27,7 @@ const isComponentsDir = (pathname: string) => {
 };
 
 const isExportComponentsDir = (pathname: string) => {
-  const extensionRegExp = /.tsx|.ts/g;
+  const extensionRegExp = /\.tsx?$/g;
   if (!extensionRegExp.test(pathname)) {
     return false;
   }
@@ -48,7 +48,7 @@ const buildComponentMetaDatum = (componentDir: string): ComponentMetaDatum => {
   componentsDir.forEach((componentDir) => {
     const componentsPath = getFilePathNames(componentDir);
     componentsPath.filter(isExportComponentsDir).forEach((componentPath) => {
-      console.log("componentPath", componentPath);
+      // console.log("componentPath", componentPath);
       const names = componentPath.split("/");
       const fileName = names[names.length - 1].replace(/\.[^/.]+$/, "");
       const dirName = names[names.length - 2];

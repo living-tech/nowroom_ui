@@ -1,0 +1,1 @@
+{"version":3,"file":"Presenter.d.ts","sourceRoot":"","sources":["../../../../src/components/atoms/TableTbodyTd/Presenter.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,EAAE,EAAE,MAAM,OAAO,CAAC;AAE1C,oBAAY,KAAK,GAAG;IAClB,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,kBAAkB,CAAC,EAAE,OAAO,CAAC;IAC7B,KAAK,CAAC,EAAE,aAAa,CAAC;CACvB,CAAC;AAEF,eAAO,MAAM,SAAS,EAAE,EAAE,CAAC,KAAK,CAW/B,CAAC"}

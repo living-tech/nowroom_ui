@@ -1,4 +1,4 @@
-const { tailwindCssConfig } = require("./src/utils/tailwindCss");
+const { tailwindCssConfig } = require("./lib/utils/tailwindCss");
 
 module.exports = {
   ...tailwindCssConfig,

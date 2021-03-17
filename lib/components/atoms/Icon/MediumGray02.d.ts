@@ -1,0 +1,4 @@
+import { FC } from "react";
+import { Props } from "./Presenter";
+export declare const IconMediumGray02: FC<Props>;
+//# sourceMappingURL=MediumGray02.d.ts.map
