@@ -25,7 +25,7 @@
     "lint:css": "prettier-stylelint-formatter 'src/**/*.{css,scss}'",
     "lint:css:fix": "prettier-stylelint-formatter --quiet --write 'src/**/*.{css,scss}'",
     "storybook": "NODE_ENV=storybook start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook -o dist/storybook",
+    "build-storybook": "build-storybook -o dist/storybook/components",
     "new:fc": "hygen new fc && yarn lint:fix"
   },
   "dependencies": {
