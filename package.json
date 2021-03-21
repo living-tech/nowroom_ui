@@ -110,12 +110,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && yarn build && git add -A"
     }
   },
   "lint-staged": {
     "./src/*.{ts,tsx}": [
-      "yarn lint:fix"
+      "yarn lint:fix",
+      "yarn tsc"
     ],
     "./src/*.{css,scss}": "yarn lint:css:fix"
   }

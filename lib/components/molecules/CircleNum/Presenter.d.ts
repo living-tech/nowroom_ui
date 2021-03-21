@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 export declare type Props = {
     active: boolean;
     activeColor?: "purple" | "red";
@@ -6,5 +6,5 @@ export declare type Props = {
     num: number;
     style?: CSSProperties;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

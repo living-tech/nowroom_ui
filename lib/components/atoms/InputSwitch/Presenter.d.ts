@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, FC } from "react";
+import { ChangeEvent, CSSProperties, VFC } from "react";
 import { Color, Size, Weight } from "../Text/Presenter";
 export declare type Props = {
     checked?: boolean;
@@ -14,5 +14,5 @@ export declare type Props = {
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     style?: CSSProperties;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

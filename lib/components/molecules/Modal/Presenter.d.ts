@@ -1,8 +1,9 @@
-import { FC } from "react";
+import { ReactNode, VFC } from "react";
 export declare type Props = {
+    children: ReactNode;
     isVisible: boolean;
     maxWidth?: number;
     onRequestClose?: () => void;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

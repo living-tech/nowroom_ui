@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { TextWhite } from "../../atoms/Text/White";
 
@@ -10,7 +10,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ active, activeColor = "purple", className, num, style }) => {
+export const Presenter: VFC<Props> = ({ active, activeColor = "purple", className, num, style }) => {
   let colorClass = "bg-gray-300";
   if (active) {
     colorClass = `bg-${activeColor}`;

@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 
 import { Text } from "../../atoms/Text/Default";
 import { Color as TextColor } from "../../atoms/Text/Presenter";
@@ -16,13 +16,14 @@ export type Color =
   | "blackOpacity";
 
 export type Props = {
+  children: ReactNode;
   className?: string;
   color?: Color;
   size?: "md" | "sm";
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ children, className, color = "purple", size = "md" }) => {
+export const Presenter: VFC<Props> = ({ children, className, color = "purple", size = "md" }) => {
   const baseClass = "inline-flex items-center border rounded";
 
   let sizeClass = "";

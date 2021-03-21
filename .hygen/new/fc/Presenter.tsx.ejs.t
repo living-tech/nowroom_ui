@@ -1,7 +1,7 @@
 ---
 to: "<%= abs_path %>/<%= category === `atoms` || category === `molecules` ? `Presenter.tsx` : `index.tsx` %>"
 ---
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 <% if (have_style) { -%>
 import styles from "./<%= component_name %>.module.scss";
@@ -12,7 +12,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const <%= category === `atoms` || category === `molecules` ? `Presenter` : component_name %>: FC<Props> = ({ className, style }) => {
+export const <%= category === `atoms` || category === `molecules` ? `Presenter` : component_name %>: VFC<Props> = ({ className, style }) => {
 <% if (have_style) { -%>
   return <div className={`${styles.container} ${className}`} style={style}></div>;
 <% } else { -%>

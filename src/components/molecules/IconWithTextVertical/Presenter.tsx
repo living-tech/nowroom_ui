@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { Icon } from "../../atoms/Icon/Default";
 import { Color, IconName } from "../../atoms/Icon/Presenter";
@@ -12,7 +12,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ className, color, iconName, label, style }) => {
+export const Presenter: VFC<Props> = ({ className, color, iconName, label, style }) => {
   return (
     <div className={`inline-flex flex-col items-center justify-center ${className}`} style={style}>
       <Icon color={color} name={iconName} size={"lg"} />

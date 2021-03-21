@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { black, white } from "../../../constnats/colors";
 
@@ -8,7 +8,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ className, height = 76, style }) => {
+export const Presenter: VFC<Props> = ({ className, height = 76, style }) => {
   const width = (height / 92) * 70;
 
   return (

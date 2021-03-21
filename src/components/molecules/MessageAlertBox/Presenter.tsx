@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { Icon } from "../../atoms/Icon/Default";
 import { Color as IconColor, IconName, Size as IconSize } from "../../atoms/Icon/Presenter";
@@ -18,7 +18,7 @@ export type Props = {
   type?: "success" | "information" | "warning" | "danger";
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   block = true,
   className,
   description,

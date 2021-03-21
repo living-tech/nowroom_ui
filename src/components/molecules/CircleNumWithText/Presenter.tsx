@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { Text } from "../../atoms/Text/Default";
 import { CircleNum } from "../CircleNum/Default";
@@ -19,7 +19,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ active, className, id, item, onClick, onMouseEnter, onMouseLeave, style }) => {
+export const Presenter: VFC<Props> = ({ active, className, id, item, onClick, onMouseEnter, onMouseLeave, style }) => {
   let colorClass = "text-gray-500";
   if (active) {
     colorClass = "text-purple";

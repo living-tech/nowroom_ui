@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 export type Props = {
   alt?: string | null;
@@ -8,7 +8,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ alt, className, size = "md", src, style, ...props }) => {
+export const Presenter: VFC<Props> = ({ alt, className, size = "md", src, style, ...props }) => {
   let px;
   switch (size) {
     case "md":

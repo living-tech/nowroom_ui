@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState, VFC } from "react";
 import { useTranslation } from "react-i18next";
 import { CSSTransition } from "react-transition-group";
 
@@ -8,12 +8,13 @@ import { LabelTextWhite } from "../LabelText/White";
 import styles from "./Modal.module.scss";
 
 export type Props = {
+  children: ReactNode;
   isVisible: boolean;
   maxWidth?: number;
   onRequestClose?: () => void;
 };
 
-export const Presenter: FC<Props> = ({ children, isVisible, maxWidth = 400, onRequestClose, ...props }) => {
+export const Presenter: VFC<Props> = ({ children, isVisible, maxWidth = 400, onRequestClose, ...props }) => {
   const { t } = useTranslation();
 
   const [visible, setVisible] = useState<boolean>(false);

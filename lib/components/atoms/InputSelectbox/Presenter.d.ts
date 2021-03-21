@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, FC } from "react";
+import { ChangeEvent, CSSProperties, VFC } from "react";
 export declare type Item = {
     label: string;
     value: string | number;
@@ -18,5 +18,5 @@ export declare type Props = {
     size?: "sm" | "md";
     style?: CSSProperties;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

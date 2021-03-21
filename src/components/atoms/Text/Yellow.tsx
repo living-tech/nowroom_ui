@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 
-export const TextYellow: FC<Props> = ({ children, color = "yellow", ...props }) => {
+export const TextYellow: VFC<Props> = ({ children, color = "yellow", ...props }) => {
   return (
     <Presenter color={color} {...props}>
       {children}

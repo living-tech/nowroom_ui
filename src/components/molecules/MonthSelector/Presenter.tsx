@@ -1,5 +1,5 @@
 import dayjs, { Dayjs } from "dayjs";
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { TextBlack } from "../../atoms/Text/Black";
 import { IconButton } from "../IconButton/Default";
@@ -13,7 +13,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   activeIndicatesPeriod,
   className,
   currentDate,

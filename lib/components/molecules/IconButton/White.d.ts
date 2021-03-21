@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { VFC } from "react";
 import { Props } from "./Presenter";
-export declare const IconButtonWhite: FC<Props>;
+export declare const IconButtonWhite: VFC<Props>;
 //# sourceMappingURL=White.d.ts.map

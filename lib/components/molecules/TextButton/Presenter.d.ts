@@ -1,8 +1,9 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 import { IconName } from "../../atoms/Icon/Presenter";
 import { Size } from "../../atoms/Text/Presenter";
 export declare type Props = {
     block?: boolean;
+    children: ReactNode;
     className?: string;
     color?: "purple" | "white" | "black" | "mediumGray02" | "lightGray01" | "lightGray02";
     disabled?: boolean;
@@ -14,5 +15,5 @@ export declare type Props = {
     style?: CSSProperties;
     type?: "button" | "submit";
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

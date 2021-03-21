@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { VFC } from "react";
 import { Props } from "./Presenter";
-export declare const InputSelectChips: FC<Props>;
+export declare const InputSelectChips: VFC<Props>;
 //# sourceMappingURL=Default.d.ts.map

@@ -3,7 +3,7 @@ import getMonth from "date-fns/getMonth";
 import getYear from "date-fns/getYear";
 import ja from "date-fns/locale/ja";
 import dayjs, { Dayjs } from "dayjs";
-import { CSSProperties, FC, useState } from "react";
+import { CSSProperties, useState, VFC } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import { useTranslation } from "react-i18next";
 import { CSSTransition } from "react-transition-group";
@@ -34,7 +34,7 @@ export type Props = {
   weight?: Weight;
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   any,
   className,
   error,

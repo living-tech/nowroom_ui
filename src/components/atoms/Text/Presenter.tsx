@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 
 export type Weight = "normal" | "bold";
 export type Color =
@@ -45,8 +45,8 @@ export type Tag =
   | "u";
 
 export type Props = {
+  children: ReactNode;
   className?: string;
-
   color?: Color;
   size?: Size;
   style?: CSSProperties;
@@ -54,7 +54,7 @@ export type Props = {
   weight?: Weight;
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   children,
   className,
   color,

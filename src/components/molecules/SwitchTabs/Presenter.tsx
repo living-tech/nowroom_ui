@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
 
 import { Text } from "../../atoms/Text/Default";
 import { Color, Size } from "../../atoms/Text/Presenter";
@@ -22,7 +22,7 @@ export type Props = {
   tabsId?: string;
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   activeValue,
   className,
   items,

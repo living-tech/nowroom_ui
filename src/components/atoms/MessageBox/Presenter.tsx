@@ -1,17 +1,18 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 
 export type Color = "purple" | "red" | "yellow";
 export type Size = "md" | "sm";
 
 export type Props = {
   border?: boolean;
+  children: ReactNode;
   className?: string;
   color?: Color;
   size?: Size;
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ border = true, children, className, color = "purple", size = "md", style }) => {
+export const Presenter: VFC<Props> = ({ border = true, children, className, color = "purple", size = "md", style }) => {
   const baseClass = "rounded-md";
 
   let sizeClass = "";

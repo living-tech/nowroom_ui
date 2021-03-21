@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState, VFC } from "react";
 
 import { IconButton } from "../IconButton/Default";
 import { Color as IconButtonColor } from "../IconButton/Presenter";
@@ -19,7 +19,7 @@ export type Props = {
   type?: Type;
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   className,
   description,
   isVisible,

@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, FC } from "react";
+import { ChangeEvent, CSSProperties, VFC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { TextMediumGray02 } from "../Text/MediumGray02";
@@ -22,7 +22,7 @@ export type Props = {
   weight?: Weight;
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   any,
   className,
   createRef,

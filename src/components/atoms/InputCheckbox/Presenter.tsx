@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, FC } from "react";
+import { ChangeEvent, CSSProperties, VFC } from "react";
 
 export type Item = {
   label: string;
@@ -15,7 +15,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ checked, className, createRef, item, name, onChange, style, ...props }) => {
+export const Presenter: VFC<Props> = ({ checked, className, createRef, item, name, onChange, style, ...props }) => {
   return (
     <label className={`inline-flex items-center space-x-3 cursor-pointer ${className}`} style={style} {...props}>
       <input

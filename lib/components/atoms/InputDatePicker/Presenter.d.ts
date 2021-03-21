@@ -1,5 +1,5 @@
 import { Dayjs } from "dayjs";
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 import { Size } from "../InputText/Presenter";
 import { Weight } from "../Text/Presenter";
 export declare type Props = {
@@ -16,5 +16,5 @@ export declare type Props = {
     value?: Dayjs;
     weight?: Weight;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

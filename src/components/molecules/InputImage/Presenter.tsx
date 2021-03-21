@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, DragEvent, FC, useRef, useState } from "react";
+import { ChangeEvent, CSSProperties, DragEvent, useRef, useState, VFC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { IconMediumGray02 } from "../../atoms/Icon/MediumGray02";
@@ -21,7 +21,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   any,
   className,
   id,

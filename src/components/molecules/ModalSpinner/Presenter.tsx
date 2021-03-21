@@ -1,6 +1,6 @@
 import { Backdrop } from "@material-ui/core";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { SpinnerWhite } from "../../atoms/Spinner/White";
 import { TextWhite } from "../../atoms/Text/White";
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export const Presenter: FC<Props> = ({ className, isVisible, style, title }) => {
+export const Presenter: VFC<Props> = ({ className, isVisible, style, title }) => {
   const classes = useStyles();
 
   return (

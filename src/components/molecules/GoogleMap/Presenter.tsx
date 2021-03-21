@@ -1,5 +1,5 @@
 import GoogleMapReact, { MapOptions, Maps } from "google-map-react";
-import { CSSProperties, FC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 
 import { MapPin } from "../../atoms/MapPin/Default";
 
@@ -12,9 +12,13 @@ export type Props = {
   style?: CSSProperties;
 };
 
-const AnyReactComponent: FC<{ lat: number; lng: number }> = ({ children }) => <div>{children}</div>;
+const AnyReactComponent: VFC<{
+  children: ReactNode;
+  lat: number;
+  lng: number;
+}> = ({ children }) => <div>{children}</div>;
 
-export const Presenter: FC<Props> = ({ apiKey, className, height = 400, latitude, longitude, style }) => {
+export const Presenter: VFC<Props> = ({ apiKey, className, height = 400, latitude, longitude, style }) => {
   const createMapOptions = (maps: Maps): MapOptions => {
     return {
       fullscreenControl: false,
