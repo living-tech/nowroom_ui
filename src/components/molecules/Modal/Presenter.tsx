@@ -2,6 +2,7 @@ import { ReactNode, useCallback, useEffect, useState, VFC } from "react";
 import { useTranslation } from "react-i18next";
 import { CSSTransition } from "react-transition-group";
 
+import { SpinnerPurple as Spinner } from "../../atoms/Spinner/Purple";
 import { TextWhite } from "../../atoms/Text/White";
 import { IconButtonWhite } from "../IconButton/White";
 import { LabelTextWhite } from "../LabelText/White";
@@ -10,11 +11,12 @@ import styles from "./Modal.module.scss";
 export type Props = {
   children: ReactNode;
   isVisible: boolean;
+  loading?: boolean;
   maxWidth?: number;
   onRequestClose?: () => void;
 };
 
-export const Presenter: VFC<Props> = ({ children, isVisible, maxWidth = 400, onRequestClose, ...props }) => {
+export const Presenter: VFC<Props> = ({ children, isVisible, loading, maxWidth = 400, onRequestClose, ...props }) => {
   const { t } = useTranslation();
 
   const [visible, setVisible] = useState<boolean>(false);
@@ -88,7 +90,14 @@ export const Presenter: VFC<Props> = ({ children, isVisible, maxWidth = 400, onR
           className={`fixed top-1/2 left-1/2 z-20 w-full p-8 bg-white rounded-lg cursor-auto shadow-xl`}
           style={{ maxWidth }}
         >
-          <div>{children}</div>
+          {loading ? (
+            <span className="top-1/2 absolute flex transform -translate-y-1/2">
+              <Spinner />
+            </span>
+          ) : (
+            <div>{children}</div>
+          )}
+
           <IconButtonWhite
             className="-right-5 -top-5 absolute"
             iconName={"FiX"}

@@ -2,6 +2,7 @@ import { ReactNode, VFC } from "react";
 export declare type Props = {
     children: ReactNode;
     isVisible: boolean;
+    loading?: boolean;
     maxWidth?: number;
     onRequestClose?: () => void;
 };
