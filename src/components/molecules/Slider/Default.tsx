@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 
-export const Slider: FC<Props> = (props) => {
+export const Slider: VFC<Props> = (props) => {
   return <Presenter {...props} />;
 };

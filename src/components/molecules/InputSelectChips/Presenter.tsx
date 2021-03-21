@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useState } from "react";
+import { CSSProperties, useState, VFC } from "react";
 
 import { Chip } from "../../atoms/Chip/Default";
 import { IconMediumGray01 } from "../../atoms/Icon/MediumGray01";
@@ -22,7 +22,7 @@ export type Props = {
   value?: Array<Item>;
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   className,
   items,
   label,

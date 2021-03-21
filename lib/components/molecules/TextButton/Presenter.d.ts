@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 import { IconName } from "../../atoms/Icon/Presenter";
 import { Size } from "../../atoms/Text/Presenter";
 export declare type Props = {
@@ -14,5 +14,5 @@ export declare type Props = {
     style?: CSSProperties;
     type?: "button" | "submit";
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

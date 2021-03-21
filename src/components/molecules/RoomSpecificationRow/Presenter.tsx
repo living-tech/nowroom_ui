@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { TextBlack } from "../../atoms/Text/Black";
 
@@ -9,7 +9,7 @@ export type Props = {
   title: string;
 };
 
-export const Presenter: FC<Props> = ({ className, content, style, title }) => {
+export const Presenter: VFC<Props> = ({ className, content, style, title }) => {
   return (
     <div className={`flex items-center justify-between px-2 ${className}`} style={style}>
       <div className="py-1">

@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { Text } from "../Text/Default";
 import styles from "./Chip.module.scss";
@@ -16,7 +16,7 @@ export type Props = {
   type: "selected" | "unselected";
 };
 
-export const Presenter: FC<Props> = ({ className, item, onClick, style, type = "selected", ...props }) => {
+export const Presenter: VFC<Props> = ({ className, item, onClick, style, type = "selected", ...props }) => {
   const containerBaseClass =
     "transition-all ease-out duration-200 items-start inline-flex items-center justify-center py-1 pl-3 pr-1 font-medium border rounded-full cursor-pointer";
 

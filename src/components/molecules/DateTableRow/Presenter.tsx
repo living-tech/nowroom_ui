@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { TextDarkGray01 } from "../../atoms/Text/DarkGray01";
 
@@ -11,7 +11,7 @@ export type Props = {
   title: string;
 };
 
-export const Presenter: FC<Props> = ({ className, content, justify = "left", leftWidth = 64, style, title }) => {
+export const Presenter: VFC<Props> = ({ className, content, justify = "left", leftWidth = 64, style, title }) => {
   let containerClass = "";
   switch (justify) {
     case "left":

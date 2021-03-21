@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 
-export const CircleNumWithText: FC<Props> = (props) => {
+export const CircleNumWithText: VFC<Props> = (props) => {
   return <Presenter {...props} />;
 };

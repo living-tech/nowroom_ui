@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 export type ActiveIndicatesPeriod = "day" | "month";
 
@@ -10,7 +10,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ activeIndicatesPeriod, className, disabled, onClick, style }) => {
+export const Presenter: VFC<Props> = ({ activeIndicatesPeriod, className, disabled, onClick, style }) => {
   const baseClass = "transition-colors duration-200 ease-out hover:bg-purple-100 cursor-pointer";
 
   let backgroundColorClass = "bg-white";

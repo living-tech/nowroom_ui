@@ -1,12 +1,13 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 
 export type Props = {
+  children: ReactNode;
   className?: string;
   isShowBorderBottom?: boolean;
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ children, className, isShowBorderBottom = true, style }) => {
+export const Presenter: VFC<Props> = ({ children, className, isShowBorderBottom = true, style }) => {
   let borderClass = "";
   if (isShowBorderBottom) {
     borderClass = "border-b";

@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, FC } from "react";
+import { ChangeEvent, CSSProperties, VFC } from "react";
 
 import { Text } from "../Text/Default";
 import { Color, Size, Weight } from "../Text/Presenter";
@@ -18,7 +18,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   checked,
   className,
   createRef,

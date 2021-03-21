@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 import {
   FiActivity,
   FiAirplay,
@@ -652,7 +652,7 @@ const currentTypes: { [key in IconName | string]: "stroke" | "fill" | "both" } =
   Woman: "stroke",
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   className: propsClassName,
   color,
   currentType,

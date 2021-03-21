@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 export declare type Props = {
     apiKey: string;
     className?: string;
@@ -7,5 +7,5 @@ export declare type Props = {
     longitude: number;
     style?: CSSProperties;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

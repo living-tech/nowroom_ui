@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 
-export const TableTheadTh: FC<Props> = (props) => {
+export const TableTheadTh: VFC<Props> = (props) => {
   return <Presenter {...props} />;
 };

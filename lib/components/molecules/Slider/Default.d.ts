@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { VFC } from "react";
 import { Props } from "./Presenter";
-export declare const Slider: FC<Props>;
+export declare const Slider: VFC<Props>;
 //# sourceMappingURL=Default.d.ts.map

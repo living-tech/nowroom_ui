@@ -1,11 +1,7 @@
-import { FC } from "react";
+import { VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 
-export const IconButtonRedOutline: FC<Props> = ({ children, color = "red", visualType = "outline", ...props }) => {
-  return (
-    <Presenter color={color} visualType={visualType} {...props}>
-      {children}
-    </Presenter>
-  );
+export const IconButtonRedOutline: VFC<Props> = ({ color = "red", visualType = "outline", ...props }) => {
+  return <Presenter color={color} visualType={visualType} {...props} />;
 };

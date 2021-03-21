@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { Icon } from "../../atoms/Icon/Default";
 import { Color as IconColor, IconName, Size } from "../../atoms/Icon/Presenter";
@@ -20,7 +20,7 @@ export type Props = {
   visualType?: "fill" | "outline";
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   border = true,
   className,
   color = "transparent",

@@ -1,5 +1,5 @@
 import { Dayjs } from "dayjs";
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 export declare type Props = {
     activeIndicatesPeriod: "day" | "month";
     className?: string;
@@ -8,5 +8,5 @@ export declare type Props = {
     onPrevClick: () => void;
     style?: CSSProperties;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

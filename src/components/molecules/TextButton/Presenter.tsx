@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 
 import { Icon } from "../../atoms/Icon/Default";
 import { IconName } from "../../atoms/Icon/Presenter";
@@ -7,6 +7,7 @@ import { Size } from "../../atoms/Text/Presenter";
 
 export type Props = {
   block?: boolean;
+  children: ReactNode;
   className?: string;
   color?: "purple" | "white" | "black" | "mediumGray02" | "lightGray01" | "lightGray02";
   disabled?: boolean;
@@ -19,7 +20,7 @@ export type Props = {
   type?: "button" | "submit";
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   block = false,
   children,
   className,

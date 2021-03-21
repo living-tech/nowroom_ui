@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 
-export const IconBlack: FC<Props> = ({ color = "black", ...props }) => {
+export const IconBlack: VFC<Props> = ({ color = "black", ...props }) => {
   return <Presenter color={color} {...props} />;
 };

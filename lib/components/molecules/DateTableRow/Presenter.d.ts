@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 export declare type Props = {
     className?: string;
     content: () => JSX.Element;
@@ -7,5 +7,5 @@ export declare type Props = {
     style?: CSSProperties;
     title: string;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

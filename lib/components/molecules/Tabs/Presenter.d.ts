@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 export declare type Item = {
     label: string;
     renderPanel: () => JSX.Element;
@@ -8,5 +8,5 @@ export declare type Props = {
     items: Array<Item>;
     style?: CSSProperties;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 
-export const InputRadio: FC<Props> = (props) => {
+export const InputRadio: VFC<Props> = (props) => {
   return <Presenter {...props} />;
 };

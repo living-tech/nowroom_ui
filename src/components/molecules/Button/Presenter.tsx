@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 
 import { Icon } from "../../atoms/Icon/Default";
 import { IconName, Size } from "../../atoms/Icon/Presenter";
@@ -6,6 +6,7 @@ import { Spinner } from "../../atoms/Spinner/Default";
 
 export type Props = {
   block?: boolean;
+  children: ReactNode;
   className?: string;
   color?: "purple" | "white" | "mediumGray02";
   disabled?: boolean;
@@ -21,7 +22,7 @@ export type Props = {
   visualType?: "fill" | "outline";
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   block = false,
   children,
   className,

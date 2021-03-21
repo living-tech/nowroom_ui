@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, DragEvent, FC } from "react";
+import { ChangeEvent, CSSProperties, DragEvent, VFC } from "react";
 export declare type Props = {
     any?: boolean;
     className?: string;
@@ -12,5 +12,5 @@ export declare type Props = {
     onImageDeleteClick?: (imageUrl: string, index: number) => void;
     style?: CSSProperties;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

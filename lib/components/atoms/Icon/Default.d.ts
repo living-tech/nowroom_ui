@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { VFC } from "react";
 import { Props } from "./Presenter";
-export declare const Icon: FC<Props>;
+export declare const Icon: VFC<Props>;
 //# sourceMappingURL=Default.d.ts.map

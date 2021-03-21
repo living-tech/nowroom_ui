@@ -1,4 +1,4 @@
-import { CSSProperties, FC, useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
 import Measure from "react-measure";
 
 import { smoothScroll } from "../../../utils";
@@ -15,7 +15,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ className, items, style }) => {
+export const Presenter: VFC<Props> = ({ className, items, style }) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [containerWidth, setContainerWidth] = useState<number>(0);

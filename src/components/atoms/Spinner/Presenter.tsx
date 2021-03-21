@@ -1,5 +1,5 @@
 import { CircularProgress } from "@material-ui/core";
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { purple500, white } from "../../../constnats/colors";
 
@@ -11,7 +11,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ className, color, duration = 500, size = 32, style }) => {
+export const Presenter: VFC<Props> = ({ className, color, duration = 500, size = 32, style }) => {
   let rgbColor;
   switch (color) {
     case "white":

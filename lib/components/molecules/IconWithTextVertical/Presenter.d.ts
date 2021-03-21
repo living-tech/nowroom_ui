@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 import { Color, IconName } from "../../atoms/Icon/Presenter";
 export declare type Props = {
     className?: string;
@@ -7,5 +7,5 @@ export declare type Props = {
     label: string;
     style?: CSSProperties;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

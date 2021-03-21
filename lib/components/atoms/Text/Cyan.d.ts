@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { VFC } from "react";
 import { Props } from "./Presenter";
-export declare const TextCyan: FC<Props>;
+export declare const TextCyan: VFC<Props>;
 //# sourceMappingURL=Cyan.d.ts.map

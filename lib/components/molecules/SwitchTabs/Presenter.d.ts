@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 import { Color, Size } from "../../atoms/Text/Presenter";
 export declare type Item = {
     label: string;
@@ -16,5 +16,5 @@ export declare type Props = {
     style?: CSSProperties;
     tabsId?: string;
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

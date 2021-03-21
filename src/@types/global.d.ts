@@ -10,7 +10,7 @@ declare module "*.scss";
 
 declare module "*.svg" {
   import React = require("react");
-  const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
+  const ReactComponent: React.VFC<React.SVGProps<SVGSVGElement>>;
   const src: typeof ReactComponent;
   export default src;
 }

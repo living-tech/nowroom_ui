@@ -1,15 +1,16 @@
 import dayjs from "dayjs";
-import { CSSProperties, FC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 
-import { iPhoneMockHeight, iPhoneMockWidth } from "../../../constnats/layouts";
+import { iPhoneMockHeight, iPhoneMockWidth } from "../../../constnats";
 import { TextBlack } from "../../atoms/Text/Black";
 
 export type Props = {
+  children: ReactNode;
   className?: string;
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ children, className, style }) => {
+export const Presenter: VFC<Props> = ({ children, className, style }) => {
   return (
     <div
       className={`flex flex-col rounded-4xl relative overflow-x-hidden border-4 border-black ${className}`}

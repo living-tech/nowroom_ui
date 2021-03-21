@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 
 export type Props = {
   className?: string;
@@ -6,7 +6,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ className, progress, style }) => {
+export const Presenter: VFC<Props> = ({ className, progress, style }) => {
   return (
     <div className={`w-full relative h-1 bg-gray-200 ${className}`} style={style}>
       <div

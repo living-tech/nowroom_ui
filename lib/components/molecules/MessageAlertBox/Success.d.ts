@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { VFC } from "react";
 import { Props } from "./Presenter";
-export declare const MessageAlertBoxSuccess: FC<Props>;
+export declare const MessageAlertBoxSuccess: VFC<Props>;
 //# sourceMappingURL=Success.d.ts.map

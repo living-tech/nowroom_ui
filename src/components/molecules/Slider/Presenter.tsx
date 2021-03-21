@@ -1,7 +1,7 @@
 import Carousel, { CarouselSlideRenderControlProps } from "nuka-carousel";
-import { CSSProperties, FC, useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
 
-import { carouselPaginationWidth } from "../../../constnats/layouts";
+import { carouselPaginationWidth } from "../../../constnats";
 import { LabelTextBlackOpacity } from "../LabelText/BlackOpacity";
 
 export type Item = {
@@ -16,7 +16,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({ autoplay, className, items, style }) => {
+export const Presenter: VFC<Props> = ({ autoplay, className, items, style }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const [width, setWidth] = useState<number | undefined>();

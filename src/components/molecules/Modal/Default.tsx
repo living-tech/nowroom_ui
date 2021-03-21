@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 
-export const Modal: FC<Props> = (props) => {
+export const Modal: VFC<Props> = (props) => {
   return <Presenter {...props} />;
 };

@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 
-export const Chip: FC<Props> = (props) => {
+export const Chip: VFC<Props> = (props) => {
   return <Presenter {...props} />;
 };

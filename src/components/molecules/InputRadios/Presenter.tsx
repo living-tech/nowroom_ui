@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, FC } from "react";
+import { ChangeEvent, CSSProperties, VFC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { InputRadio } from "../../atoms/InputRadio/Default";
@@ -18,7 +18,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: FC<Props> = ({
+export const Presenter: VFC<Props> = ({
   any,
   className,
   columns = 2,

@@ -1,4 +1,4 @@
-import { CSSProperties, FC } from "react";
+import { CSSProperties, VFC } from "react";
 import { Color as IconColor, IconName } from "../../atoms/Icon/Presenter";
 export declare type Color = "purple" | "yellow" | "red" | "white" | "transparent";
 export declare type Props = {
@@ -15,5 +15,5 @@ export declare type Props = {
     style?: CSSProperties;
     visualType?: "fill" | "outline";
 };
-export declare const Presenter: FC<Props>;
+export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map
