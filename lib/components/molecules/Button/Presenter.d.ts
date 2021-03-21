@@ -1,7 +1,8 @@
-import { CSSProperties, VFC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 import { IconName } from "../../atoms/Icon/Presenter";
 export declare type Props = {
     block?: boolean;
+    children: ReactNode;
     className?: string;
     color?: "purple" | "white" | "mediumGray02";
     disabled?: boolean;

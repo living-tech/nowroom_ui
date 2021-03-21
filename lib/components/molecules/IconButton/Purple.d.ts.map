@@ -1,1 +1,1 @@
-{"version":3,"file":"Purple.d.ts","sourceRoot":"","sources":["../../../../src/components/molecules/IconButton/Purple.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,EAAE,EAAE,MAAM,OAAO,CAAC;AAE3B,OAAO,EAAa,KAAK,EAAE,MAAM,aAAa,CAAC;AAE/C,eAAO,MAAM,gBAAgB,EAAE,EAAE,CAAC,KAAK,CAMtC,CAAC"}
+{"version":3,"file":"Purple.d.ts","sourceRoot":"","sources":["../../../../src/components/molecules/IconButton/Purple.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,GAAG,EAAE,MAAM,OAAO,CAAC;AAE5B,OAAO,EAAa,KAAK,EAAE,MAAM,aAAa,CAAC;AAE/C,eAAO,MAAM,gBAAgB,EAAE,GAAG,CAAC,KAAK,CAEvC,CAAC"}

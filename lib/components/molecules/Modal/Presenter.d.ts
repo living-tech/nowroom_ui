@@ -1,5 +1,6 @@
-import { VFC } from "react";
+import { ReactNode, VFC } from "react";
 export declare type Props = {
+    children: ReactNode;
     isVisible: boolean;
     maxWidth?: number;
     onRequestClose?: () => void;

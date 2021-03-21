@@ -1,5 +1,6 @@
-import { CSSProperties, VFC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 export declare type Props = {
+    children: ReactNode;
     className?: string;
     style?: CSSProperties;
 };
