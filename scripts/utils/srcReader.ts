@@ -3,6 +3,7 @@ import { getDirPathNames, getFilePathNames } from "./file";
 export type ComponentMetaData = {
   dirName: string;
   fileName?: string;
+  importName: string;
   indexPathname: string;
   srcPathname: string;
   typeName?: string;
@@ -32,7 +33,7 @@ const isExportComponentsDir = (pathname: string) => {
     return false;
   }
 
-  const ignoreFileNameRegExp = /.stories.tsx|Presenter.tsx/g;
+  const ignoreFileNameRegExp = /.stories.tsx/g;
   if (ignoreFileNameRegExp.test(pathname)) {
     return false;
   }
@@ -48,14 +49,15 @@ const buildComponentMetaDatum = (componentDir: string): ComponentMetaDatum => {
   componentsDir.forEach((componentDir) => {
     const componentsPath = getFilePathNames(componentDir);
     componentsPath.filter(isExportComponentsDir).forEach((componentPath) => {
-      // console.log("componentPath", componentPath);
       const names = componentPath.split("/");
       const fileName = names[names.length - 1].replace(/\.[^/.]+$/, "");
       const dirName = names[names.length - 2];
       const typeName = names[names.length - 3];
+      const importName = fileName === "Presenter" ? `{ Props as ${dirName}Props }` : "*";
       datum.push({
         dirName,
         fileName,
+        importName,
         indexPathname: componentPath,
         srcPathname: componentPath,
         typeName,
