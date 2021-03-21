@@ -13,6 +13,7 @@ export declare type Props = {
     label?: string;
     name?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+    onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
     placeholder?: string;
     renderDescription?: () => JSX.Element;
     size?: Size;
