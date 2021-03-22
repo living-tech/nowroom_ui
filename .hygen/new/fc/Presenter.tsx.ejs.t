@@ -4,7 +4,7 @@ to: "<%= abs_path %>/<%= category === `atoms` || category === `molecules` ? `Pre
 import { CSSProperties, VFC } from "react";
 
 <% if (have_style) { -%>
-import styles from "./<%= component_name %>.module.css";
+import styles from "./<%= component_name %>.module.scss";
 <% } -%>
 
 export type Props = {

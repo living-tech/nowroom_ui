@@ -15,7 +15,7 @@ import { TextDarkGray02 } from "../Text/DarkGray02";
 import { TextMediumGray02 } from "../Text/MediumGray02";
 import { Weight } from "../Text/Presenter";
 import { TextRed } from "../Text/Red";
-import styles from "./InputDatePicker.module.css";
+import styles from "./InputDatePicker.module.scss";
 
 registerLocale("ja", ja);
 

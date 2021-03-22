@@ -6,7 +6,7 @@ import { SpinnerPurple as Spinner } from "../../atoms/Spinner/Purple";
 import { TextWhite } from "../../atoms/Text/White";
 import { IconButtonWhite } from "../IconButton/White";
 import { LabelTextWhite } from "../LabelText/White";
-import styles from "./Modal.module.css";
+import styles from "./Modal.module.scss";
 
 export type Props = {
   children: ReactNode;

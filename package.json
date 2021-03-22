@@ -15,9 +15,8 @@
   "scripts": {
     "clean": "rm -rf ./lib",
     "prebuild": "yarn clean",
-    "build": "yarn build:css && ts-node ./scripts/entryBuilder && tsc --build \"./tsconfig.json\"",
-    "build:css": "sass --load-path=src/ src/",
-    "copy-files": "copyfiles -u 1 \"src/**/*.css\" \"src/**/*.svg\" \"src/**/*.json\" lib/",
+    "build": "ts-node ./scripts/entryBuilder && tsc --build \"./tsconfig.json\"",
+    "copy-files": "copyfiles -u 1 \"src/**/*.css\" \"src/**/*.scss\" \"src/**/*.svg\" \"src/**/*.json\" lib/",
     "postbuild": "yarn run copy-files",
     "commit": "npx git-cz",
     "tsc": "tsc --noEmit",
