@@ -1,7 +1,7 @@
 import { CSSProperties, VFC } from "react";
 
 import { Text } from "../Text/Default";
-import styles from "./Chip.module.scss";
+import styles from "./Chip.module.css";
 
 export type Item = {
   label: string;

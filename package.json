@@ -15,8 +15,9 @@
   "scripts": {
     "clean": "rm -rf ./lib",
     "prebuild": "yarn clean",
-    "build": "ts-node ./scripts/entryBuilder && tsc --build \"./tsconfig.json\"",
-    "copy-files": "copyfiles -u 1 \"src/**/*.css\" \"src/**/*.scss\" \"src/**/*.svg\" \"src/**/*.json\" lib/",
+    "build": "yarn build:css && ts-node ./scripts/entryBuilder && tsc --build \"./tsconfig.json\"",
+    "build:css": "sass --load-path=src/ src/",
+    "copy-files": "copyfiles -u 1 \"src/**/*.css\" \"src/**/*.svg\" \"src/**/*.json\" lib/",
     "postbuild": "yarn run copy-files",
     "commit": "npx git-cz",
     "tsc": "tsc --noEmit",
@@ -54,7 +55,7 @@
     "react-transition-group": "^4.4.1",
     "react-virtualized": "^9.22.3",
     "react-youtube": "^7.13.1",
-    "sass": "^1.32.0",
+    "sass": "^1.32.8",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "uuid": "^8.3.2"
