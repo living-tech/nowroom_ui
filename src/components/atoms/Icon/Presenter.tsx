@@ -288,10 +288,14 @@ import {
   FiZoomOut,
 } from "react-icons/fi";
 
+import AddBuilding from "./svg/add-building.svg";
+import AddRoom from "./svg/add-room.svg";
 import AirCon from "./svg/aircon.svg";
+import AppListing from "./svg/app-listing.svg";
 import AutoLock from "./svg/auto-lock.svg";
 import Bath from "./svg/bath.svg";
 import Bed from "./svg/bed.svg";
+import Building from "./svg/building.svg";
 import Desk from "./svg/desk.svg";
 import Dryer from "./svg/dryer.svg";
 import Guitar from "./svg/guiter.svg";
@@ -299,6 +303,8 @@ import Microwave from "./svg/microwave.svg";
 import NoSmoking from "./svg/no-smoking.svg";
 import Pet from "./svg/pet.svg";
 import Refrigerator from "./svg/refrigerator.svg";
+import Room from "./svg/room.svg";
+import StockSettings from "./svg/stock-settings.svg";
 import WashMachine from "./svg/wash-machine.svg";
 import Wifi from "./svg/wifi.svg";
 import Woman from "./svg/woman.svg";
@@ -320,7 +326,13 @@ export type NowRoomIconName =
   | "Refrigerator"
   | "WashMachine"
   | "Wifi"
-  | "Woman";
+  | "Woman"
+  | "AddBuilding"
+  | "AddRoom"
+  | "AppListing"
+  | "Building"
+  | "Room"
+  | "StockSettings";
 
 export type FiIconName =
   | "FiActivity"
@@ -636,10 +648,14 @@ export type Props = {
 };
 
 const currentTypes: { [key in IconName | string]: "stroke" | "fill" | "both" } = {
+  AddBuilding: "stroke",
+  AddRoom: "stroke",
   AirCon: "stroke",
+  AppListing: "stroke",
   AutoLock: "stroke",
   Bath: "stroke",
   Bed: "stroke",
+  Building: "stroke",
   Desk: "stroke",
   Dryer: "stroke",
   Guitar: "stroke",
@@ -647,6 +663,8 @@ const currentTypes: { [key in IconName | string]: "stroke" | "fill" | "both" } =
   NoSmoking: "stroke",
   Pet: "stroke",
   Refrigerator: "stroke",
+  Room: "stroke",
+  StockSettings: "stroke",
   WashMachine: "stroke",
   Wifi: "fill",
   Woman: "stroke",
@@ -865,6 +883,66 @@ export const Presenter: VFC<Props> = ({
     case "Woman":
       return (
         <Woman
+          className={className}
+          height={sizePx}
+          style={{ strokeWidth: 2, ...props.style }}
+          width={sizePx}
+          {...props}
+        />
+      );
+    case "AddBuilding":
+      return (
+        <AddBuilding
+          className={className}
+          height={sizePx}
+          style={{ strokeWidth: 2, ...props.style }}
+          width={sizePx}
+          {...props}
+        />
+      );
+    case "AddRoom":
+      return (
+        <AddRoom
+          className={className}
+          height={sizePx}
+          style={{ strokeWidth: 2, ...props.style }}
+          width={sizePx}
+          {...props}
+        />
+      );
+    case "AppListing":
+      return (
+        <AppListing
+          className={className}
+          height={sizePx}
+          style={{ strokeWidth: 2, ...props.style }}
+          width={sizePx}
+          {...props}
+        />
+      );
+    case "Building":
+      return (
+        <Building
+          className={className}
+          height={sizePx}
+          style={{ strokeWidth: 2, ...props.style }}
+          width={sizePx}
+          {...props}
+        />
+      );
+    case "Room":
+      return (
+        <Room
+          className={className}
+          height={sizePx}
+          style={{ strokeWidth: 2, ...props.style }}
+          width={sizePx}
+          {...props}
+        />
+      );
+    case "StockSettings":
+      return (
+        <StockSettings
           className={className}
           height={sizePx}
           style={{ strokeWidth: 2, ...props.style }}
