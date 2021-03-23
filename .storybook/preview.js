@@ -1,4 +1,3 @@
-import "react-datepicker/dist/react-datepicker.css";
 import "../src/styles/globals.css";
 
 import "../src/i18n";
