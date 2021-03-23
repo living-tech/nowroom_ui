@@ -22,14 +22,14 @@ export const Presenter: VFC<Props> = ({ children, className, style }) => {
       }}
     >
       <span
-        className="left-1/2 rounded-b-xl absolute top-0 inline-block transform -translate-x-1/2 bg-black"
+        className="absolute top-0 inline-block bg-black left-1/2 rounded-b-xl transform -translate-x-1/2"
         style={{
           height: 20,
           width: 180,
         }}
       />
       <span
-        className="left-1/2 rounded-xl absolute inline-block transform -translate-x-1/2 bg-gray-700"
+        className="absolute inline-block bg-gray-700 left-1/2 rounded-xl transform -translate-x-1/2"
         style={{
           height: 4,
           top: 8,

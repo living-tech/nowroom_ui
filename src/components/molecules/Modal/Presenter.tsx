@@ -58,7 +58,7 @@ export const Presenter: VFC<Props> = ({ children, isVisible, loading, maxWidth =
         timeout={400}
       >
         <div
-          className="bg-overlay fixed top-0 left-0 z-10 w-full h-full p-4 cursor-pointer"
+          className="fixed top-0 left-0 z-10 w-full h-full p-4 cursor-pointer bg-overlay"
           onClick={() => {
             setVisible(false);
             onRequestClose && onRequestClose();
@@ -91,7 +91,7 @@ export const Presenter: VFC<Props> = ({ children, isVisible, loading, maxWidth =
           style={{ maxWidth }}
         >
           {loading ? (
-            <span className="top-1/2 absolute flex transform -translate-y-1/2">
+            <span className="absolute flex top-1/2 transform -translate-y-1/2">
               <Spinner />
             </span>
           ) : (
@@ -99,7 +99,7 @@ export const Presenter: VFC<Props> = ({ children, isVisible, loading, maxWidth =
           )}
 
           <IconButtonWhite
-            className="-right-5 -top-5 absolute"
+            className="absolute -right-5 -top-5"
             iconName={"FiX"}
             onClick={() => {
               setVisible(false);

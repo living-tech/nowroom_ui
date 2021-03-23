@@ -23,7 +23,7 @@ export const Presenter = forwardRef<HTMLLIElement, Props>(
     return (
       <li
         ref={ref}
-        className="hover:bg-purple-100 relative inline-block w-full pt-4 pb-3.5 pl-2 pr-2 text-center list-none transition duration-200 ease-out border-b border-gray-200 cursor-pointer"
+        className="relative inline-block w-full pt-4 pl-2 pr-2 text-center list-none border-b border-gray-200 cursor-pointer hover:bg-purple-100 pb-3.5 transition duration-200 ease-out"
         id={id}
         onClick={() => onClick && onClick(index)}
         onMouseEnter={() => onTabMouseEnter(index)}

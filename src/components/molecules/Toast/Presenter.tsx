@@ -83,7 +83,7 @@ export const Presenter: VFC<Props> = ({
     >
       <MessageAlertBox shadow block={false} description={description} size={size} title={title} type={type} />
       <IconButton
-        className="-right-3 -top-3 absolute"
+        className="absolute -right-3 -top-3"
         color={iconButtonColor}
         iconName={"FiX"}
         onClick={() => {

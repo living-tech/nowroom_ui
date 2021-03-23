@@ -29,7 +29,7 @@ export const Presenter = forwardRef<HTMLLIElement, Props>(
     return (
       <li
         ref={ref}
-        className="hover:text-purple relative inline-block text-center list-none transition duration-200 ease-out cursor-pointer"
+        className="relative inline-block text-center list-none cursor-pointer hover:text-purple transition duration-200 ease-out"
         id={id}
         onMouseEnter={() => onLinkMouseEnter && onLinkMouseEnter(item.href)}
         onMouseLeave={onLinkMouseLeave}

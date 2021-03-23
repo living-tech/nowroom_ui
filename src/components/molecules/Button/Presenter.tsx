@@ -177,7 +177,7 @@ export const Presenter: VFC<Props> = ({
         )}
       </span>
       {loading && (
-        <span className="top-1/2 absolute flex transform -translate-y-1/2">
+        <span className="absolute flex top-1/2 transform -translate-y-1/2">
           <Spinner size={loadingSize} />
         </span>
       )}

@@ -29,12 +29,12 @@ export const Presenter: VFC<Props> = ({ checked, className, createRef, item, nam
         value={item.value}
       />
       <label
-        className="flex items-center w-full p-4 transition duration-200 ease-out border border-gray-300 rounded cursor-pointer"
+        className="flex items-center w-full p-4 border border-gray-300 rounded cursor-pointer transition duration-200 ease-out"
         htmlFor={`${name}-${item.value}`}
       >
         <div className="flex w-full">
-          <span className="circle border-grey checked:border-blue-500 inline-block w-5 h-5 transition duration-200 ease-out border rounded-full" />
-          <p className="text flex-grow ml-2 text-sm font-bold text-center text-gray-600 transition duration-200 ease-out">
+          <span className="inline-block w-5 h-5 border rounded-full circle border-grey checked:border-blue-500 transition duration-200 ease-out" />
+          <p className="flex-grow ml-2 text-sm font-bold text-center text-gray-600 text transition duration-200 ease-out">
             {item.label}
           </p>
         </div>

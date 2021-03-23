@@ -10,7 +10,7 @@ export const Presenter: VFC<Props> = ({ className, progress, style }) => {
   return (
     <div className={`w-full relative h-1 bg-gray-200 ${className}`} style={style}>
       <div
-        className="bg-purple absolute top-0 left-0 h-1 transition-all duration-500 ease-linear rounded-r"
+        className="absolute top-0 left-0 h-1 rounded-r bg-purple transition-all duration-500 ease-linear"
         style={{
           width: `${progress}%`,
         }}

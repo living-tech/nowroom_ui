@@ -47,13 +47,13 @@ export const Presenter: VFC<Props> = ({
           {label}
         </Text>
       )}
-      <div className="w-7 relative inline-block align-middle transition duration-200 ease-out select-none">
+      <div className="relative inline-block align-middle select-none w-7 transition duration-200 ease-out">
         <label className="flex items-center block h-6 overflow-hidden cursor-pointer" htmlFor={id}>
           <span className="block w-full h-2 bg-purple-200 rounded-full" />
           <input
             ref={createRef}
             checked={checked}
-            className="top-2/4 -translate-y-2/4 checked:right-0 right-3 checked:bg-purple radio-button:bg-purple-200 absolute block w-4 h-4 transition-all duration-200 ease-out transform bg-white rounded-full outline-none appearance-none cursor-pointer"
+            className="absolute block w-4 h-4 bg-white rounded-full outline-none appearance-none cursor-pointer top-2/4 -translate-y-2/4 checked:right-0 right-3 checked:bg-purple radio-button:bg-purple-200 transition-all duration-200 ease-out transform"
             id={id}
             name={name}
             onChange={onChange}

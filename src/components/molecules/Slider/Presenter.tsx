@@ -33,13 +33,13 @@ export const Presenter: VFC<Props> = ({ autoplay, className, items, style }) => 
   const renderBottomCenterControls = ({ currentSlide, slideCount }: CarouselSlideRenderControlProps) => {
     return (
       <div
-        className="bg-black-opacity relative inline-flex h-1 mb-1 rounded"
+        className="relative inline-flex h-1 mb-1 rounded bg-black-opacity"
         style={{
           width: carouselPaginationWidth,
         }}
       >
         <div
-          className="absolute top-0 h-1 transition-all duration-200 ease-out bg-purple-200 rounded-full"
+          className="absolute top-0 h-1 bg-purple-200 rounded-full transition-all duration-200 ease-out"
           style={{
             left: (carouselPaginationWidth / slideCount) * currentSlide,
             width: carouselPaginationWidth / slideCount,

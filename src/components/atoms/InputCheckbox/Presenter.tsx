@@ -21,7 +21,7 @@ export const Presenter: VFC<Props> = ({ checked, className, createRef, item, nam
       <input
         ref={createRef}
         checked={checked}
-        className="form-tick bg-check checked:bg-purple checked:border-transparent focus:outline-none w-5 h-5 transition duration-200 ease-out bg-white border-2 border-gray-700 rounded-md appearance-none"
+        className="w-5 h-5 bg-white border-2 border-gray-700 appearance-none form-tick bg-check checked:bg-purple checked:border-transparent focus:outline-none transition duration-200 ease-out rounded-md"
         name={name}
         onChange={onChange}
         style={{

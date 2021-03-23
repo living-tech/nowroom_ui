@@ -74,7 +74,7 @@ export const Presenter: VFC<Props> = ({
           {label}
         </Text>
       )}
-      <div ref={containerRef} className="relative inline-flex space-x-1 bg-gray-100 rounded-full">
+      <div ref={containerRef} className="relative inline-flex bg-gray-100 rounded-full space-x-1">
         {items.map((item, index) => (
           <div
             key={item.value}
@@ -93,7 +93,7 @@ export const Presenter: VFC<Props> = ({
         ))}
         {activeBackgroundStyle && (
           <span
-            className="bg-purple absolute top-0 transition-all duration-200 ease-out rounded-full"
+            className="absolute top-0 rounded-full bg-purple transition-all duration-200 ease-out"
             style={{
               boxShadow: "0px 2px 4px rgba(116, 106, 232, 0.16)",
               height: activeBackgroundStyle.height,

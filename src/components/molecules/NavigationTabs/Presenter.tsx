@@ -64,7 +64,7 @@ export const Presenter = forwardRef<HTMLElement, Props>(({ className, items, sty
       </ul>
       {borderStyle && (
         <span
-          className="bg-purple absolute bottom-0 transition-all duration-500 ease-out"
+          className="absolute bottom-0 bg-purple transition-all duration-500 ease-out"
           style={{
             height: 2,
             left: borderStyle.left,

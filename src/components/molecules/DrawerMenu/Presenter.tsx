@@ -26,7 +26,7 @@ export const Presenter = forwardRef<HTMLDivElement, Props>(({ className, items, 
       {items.map((item) => (
         <div
           key={item.value}
-          className="hover:bg-purple-100 last:border-transparent inline-block px-5 py-3 transition-colors duration-200 ease-out border-gray-100 rounded-t cursor-pointer"
+          className="inline-block px-5 py-3 border-gray-100 rounded-t cursor-pointer hover:bg-purple-100 last:border-transparent transition-colors duration-200 ease-out"
           onClick={() => onClick && onClick(item)}
         >
           <Text color={item.color || "black"} size={"xs"} tag={"span"}>

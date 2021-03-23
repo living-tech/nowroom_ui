@@ -90,7 +90,7 @@ export const Presenter: VFC<Props> = ({ className, items, style }) => {
         </Measure>
         {borderStyle && (
           <span
-            className="bg-purple absolute bottom-0 transition-all duration-500 ease-out pointer-events-none"
+            className="absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out"
             style={{
               height: 2,
               left: borderStyle.left,
@@ -99,7 +99,7 @@ export const Presenter: VFC<Props> = ({ className, items, style }) => {
           />
         )}
       </div>
-      <div ref={panelRef} className="whitespace-nowrap w-full overflow-x-hidden">
+      <div ref={panelRef} className="w-full overflow-x-hidden whitespace-nowrap">
         {items.map((item, index) => (
           <div key={index} className="inline-block w-full align-top">
             {item.renderPanel()}
