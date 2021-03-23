@@ -7,6 +7,7 @@ export declare type Props = {
     autocomplete?: "on" | "off" | "current-password" | "new-password";
     className?: string;
     createRef?: (input: HTMLInputElement) => void;
+    defaultValue?: string;
     error?: string;
     iconName?: IconName;
     id?: string;

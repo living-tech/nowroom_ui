@@ -14,6 +14,7 @@ export type Props = {
   autocomplete?: "on" | "off" | "current-password" | "new-password";
   className?: string;
   createRef?: (input: HTMLInputElement) => void;
+  defaultValue?: string;
   error?: string;
   iconName?: IconName;
   id?: string;
@@ -37,6 +38,7 @@ export const Presenter: VFC<Props> = ({
   autocomplete,
   className,
   createRef,
+  defaultValue,
   error,
   iconName,
   id,
@@ -177,6 +179,7 @@ export const Presenter: VFC<Props> = ({
           ref={createRef}
           autoComplete={autocomplete}
           className={`${inputBaseClass} ${inputClass}`}
+          defaultValue={defaultValue}
           id={id}
           name={name}
           onChange={onChange}

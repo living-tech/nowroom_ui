@@ -4,6 +4,7 @@ export declare type Props = {
     any?: boolean;
     className?: string;
     createRef?: (input: HTMLTextAreaElement) => void;
+    defaultValue?: string;
     error?: string;
     id?: string;
     label?: string;
