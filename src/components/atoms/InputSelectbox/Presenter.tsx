@@ -79,14 +79,13 @@ export const Presenter: VFC<Props> = ({
         <select
           ref={createRef}
           className={`w-full block border font-bold border-gray-200 bg-gray-100 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${sizeClass} ${widthClass}`}
-          defaultValue={defaultValue}
           id={id}
           name={name}
           onChange={onChange}
         >
           {!disabledPlaceholder && <option value="">{placeholder || t("選択してください")}</option>}
           {items.map((item) => (
-            <option key={`selectbox-${item.value}`} value={item.value}>
+            <option key={`selectbox-${item.value}`} selected={defaultValue === item.value} value={item.value}>
               {item.label}
             </option>
           ))}
