@@ -288,26 +288,26 @@ import {
   FiZoomOut,
 } from "react-icons/fi";
 
-import AddBuilding from "./svg/add-building.svg";
-import AddRoom from "./svg/add-room.svg";
-import AirCon from "./svg/aircon.svg";
-import AppListing from "./svg/app-listing.svg";
-import AutoLock from "./svg/auto-lock.svg";
-import Bath from "./svg/bath.svg";
-import Bed from "./svg/bed.svg";
-import Building from "./svg/building.svg";
-import Desk from "./svg/desk.svg";
-import Dryer from "./svg/dryer.svg";
-import Guitar from "./svg/guiter.svg";
-import Microwave from "./svg/microwave.svg";
-import NoSmoking from "./svg/no-smoking.svg";
-import Pet from "./svg/pet.svg";
-import Refrigerator from "./svg/refrigerator.svg";
-import Room from "./svg/room.svg";
-import StockSettings from "./svg/stock-settings.svg";
-import WashMachine from "./svg/wash-machine.svg";
-import Wifi from "./svg/wifi.svg";
-import Woman from "./svg/woman.svg";
+import { AddBuilding } from "./svg/AddBuilding";
+import { AddRoom } from "./svg/AddRoom";
+import { AirCon } from "./svg/AirCon";
+import { AppListing } from "./svg/AppListing";
+import { AutoLock } from "./svg/AutoLock";
+import { Bath } from "./svg/Bath";
+import { Bed } from "./svg/Bed";
+import { Building } from "./svg/Building";
+import { Desk } from "./svg/Desk";
+import { Dryer } from "./svg/Dryer";
+import { Guitar } from "./svg/Guitar";
+import { Microwave } from "./svg/Microwave";
+import { NoSmoking } from "./svg/NoSmoking";
+import { Pet } from "./svg/Pet";
+import { Refrigerator } from "./svg/Refrigerator";
+import { Room } from "./svg/Room";
+import { StockSettings } from "./svg/StockSettings";
+import { WashMachine } from "./svg/WashMachine";
+import { Wifi } from "./svg/Wifi";
+import { Woman } from "./svg/Woman";
 
 // https://react-icons.github.io/react-icons/
 
@@ -647,6 +647,12 @@ export type Props = {
   style?: CSSProperties;
 };
 
+export type SvgProps = {
+  className?: string;
+  size: number;
+  style?: CSSProperties;
+};
+
 const currentTypes: { [key in IconName | string]: "stroke" | "fill" | "both" } = {
   AddBuilding: "stroke",
   AddRoom: "stroke",
@@ -759,196 +765,46 @@ export const Presenter: VFC<Props> = ({
 
   switch (name) {
     case "AirCon":
-      return (
-        <AirCon
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <AirCon className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "AutoLock":
-      return (
-        <AutoLock
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <AutoLock className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Bath":
-      return (
-        <Bath
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Bath className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Bed":
-      return (
-        <Bed
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Bed className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Desk":
-      return (
-        <Desk
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Desk className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Dryer":
-      return (
-        <Dryer
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Dryer className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Guitar":
-      return (
-        <Guitar
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Guitar className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Microwave":
-      return (
-        <Microwave
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Microwave className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "NoSmoking":
-      return <NoSmoking className={className} height={sizePx} width={sizePx} {...props} />;
+      return <NoSmoking className={className} size={sizePx} style={{ strokeWidth: 1, ...props.style }} {...props} />;
     case "Pet":
-      return (
-        <Pet
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Pet className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Refrigerator":
-      return (
-        <Refrigerator
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Refrigerator className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "WashMachine":
-      return (
-        <WashMachine
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <WashMachine className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Wifi":
-      return (
-        <Wifi
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Wifi className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Woman":
-      return (
-        <Woman
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Woman className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "AddBuilding":
-      return (
-        <AddBuilding
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <AddBuilding className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "AddRoom":
-      return (
-        <AddRoom
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <AddRoom className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "AppListing":
-      return (
-        <AppListing
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <AppListing className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Building":
-      return (
-        <Building
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Building className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Room":
-      return (
-        <Room
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
-      );
+      return <Room className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "StockSettings":
       return (
-        <StockSettings
-          className={className}
-          height={sizePx}
-          style={{ strokeWidth: 2, ...props.style }}
-          width={sizePx}
-          {...props}
-        />
+        <StockSettings className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />
       );
 
     case "FiActivity":

@@ -13,17 +13,21 @@ export type ComponentMetaDatum = Array<ComponentMetaData>;
 
 const isComponentsDir = (pathname: string) => {
   const tailDir = pathname.split("/").pop();
+
   if (!tailDir) {
     return true;
   }
+
   if (tailDir === "src") {
     // src dir
     return false;
   }
+
   if (["atoms", "molecules", "organisms"].includes(tailDir)) {
     // Atomic Design types dir
     return false;
   }
+
   return true;
 };
 
@@ -35,6 +39,11 @@ const isExportComponentsDir = (pathname: string) => {
 
   const ignoreFileNameRegExp = /.stories.tsx/g;
   if (ignoreFileNameRegExp.test(pathname)) {
+    return false;
+  }
+
+  const ignoreSvgIconRegExp = /Icon\/svg/g;
+  if (ignoreSvgIconRegExp.test(pathname)) {
     return false;
   }
 

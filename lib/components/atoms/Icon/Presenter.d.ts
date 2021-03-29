@@ -12,5 +12,10 @@ export declare type Props = {
     size?: Size;
     style?: CSSProperties;
 };
+export declare type SvgProps = {
+    className?: string;
+    size: number;
+    style?: CSSProperties;
+};
 export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map
