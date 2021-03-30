@@ -4,6 +4,7 @@ import { Weight } from "../Text/Presenter";
 export declare type Size = "xs" | "sm" | "md";
 export declare type Props = {
     any?: boolean;
+    anyLabel?: string;
     autocomplete?: "on" | "off" | "current-password" | "new-password";
     className?: string;
     createRef?: (input: HTMLInputElement) => void;

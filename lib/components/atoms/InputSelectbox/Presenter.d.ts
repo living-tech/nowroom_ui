@@ -5,6 +5,7 @@ export declare type Item = {
 };
 export declare type Props = {
     any?: boolean;
+    anyLabel?: string;
     block?: boolean;
     className?: string;
     createRef?: (input: HTMLSelectElement) => void;

@@ -2,6 +2,7 @@ import { ChangeEvent, CSSProperties, VFC } from "react";
 import { Item } from "../../atoms/InputRadio/Presenter";
 export declare type Props = {
     any?: boolean;
+    anyLabel?: string;
     className?: string;
     columns?: number;
     createRef?: (input: HTMLInputElement) => void;

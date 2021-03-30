@@ -1,5 +1,4 @@
 import { ChangeEvent, CSSProperties, DragEvent, useRef, useState, VFC } from "react";
-import { useTranslation } from "react-i18next";
 
 import { IconMediumGray02 } from "../../atoms/Icon/MediumGray02";
 import { TextMediumGray02 } from "../../atoms/Text/MediumGray02";
@@ -9,7 +8,11 @@ import { IconButtonWhite } from "../IconButton/White";
 
 export type Props = {
   any?: boolean;
+  anyLabel?: string;
   className?: string;
+  dragAndDropLabel?: string;
+  fileSelectLabel?: string;
+  gallerySelectLabel?: string;
   id?: string;
   imageUrls?: Array<string>;
   label?: string;
@@ -23,7 +26,11 @@ export type Props = {
 
 export const Presenter: VFC<Props> = ({
   any,
+  anyLabel = "任意",
   className,
+  dragAndDropLabel = "ドラッグ＆ドロップまたはファイル選択",
+  fileSelectLabel = "ファイル選択",
+  gallerySelectLabel = "ギャラリーから選択",
   id,
   imageUrls,
   label,
@@ -35,8 +42,6 @@ export const Presenter: VFC<Props> = ({
   style,
   ...props
 }) => {
-  const { t } = useTranslation();
-
   const inputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState<boolean>(false);
 
@@ -73,7 +78,7 @@ export const Presenter: VFC<Props> = ({
           {label}
           {any && (
             <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">
-              {t("任意")}
+              {anyLabel}
             </TextMediumGray02>
           )}
         </label>
@@ -117,19 +122,19 @@ export const Presenter: VFC<Props> = ({
           <div className={"flex justify-center items-center"}>
             <IconMediumGray02 name={"FiImage"} />
             <TextMediumGray02 className={"ml-3"} size={"sm"} weight={"bold"}>
-              {t("ドラッグ＆ドロップまたはファイル選択")}
+              {dragAndDropLabel}
             </TextMediumGray02>
           </div>
 
           <div className="flex justify-center mt-4 space-x-3">
             {onGalleryClick && (
               <ButtonWhite onClick={onGalleryClick} size={"sm"}>
-                {t("ギャラリーから選択")}
+                {gallerySelectLabel}
               </ButtonWhite>
             )}
             <ButtonPurple padding={false} size={"sm"}>
               <label className={"py-2.5 px-8 cursor-pointer"} htmlFor={id}>
-                {t("ファイル選択")}
+                {fileSelectLabel}
                 <input
                   ref={inputRef}
                   accept="image/*"

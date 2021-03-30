@@ -1,5 +1,4 @@
 import { ReactNode, useCallback, useEffect, useState, VFC } from "react";
-import { useTranslation } from "react-i18next";
 import { CSSTransition } from "react-transition-group";
 
 import { SpinnerPurple as Spinner } from "../../atoms/Spinner/Purple";
@@ -10,15 +9,22 @@ import styles from "./Modal.module.scss";
 
 export type Props = {
   children: ReactNode;
+  escLabel?: string;
   isVisible: boolean;
   loading?: boolean;
   maxWidth?: number;
   onRequestClose?: () => void;
 };
 
-export const Presenter: VFC<Props> = ({ children, isVisible, loading, maxWidth = 400, onRequestClose, ...props }) => {
-  const { t } = useTranslation();
-
+export const Presenter: VFC<Props> = ({
+  children,
+  escLabel = "を押して閉じる",
+  isVisible,
+  loading,
+  maxWidth = 400,
+  onRequestClose,
+  ...props
+}) => {
   const [visible, setVisible] = useState<boolean>(false);
 
   useEffect(() => {
@@ -68,7 +74,7 @@ export const Presenter: VFC<Props> = ({ children, isVisible, loading, maxWidth =
           <div className="flex items-center">
             <LabelTextWhite>ESC</LabelTextWhite>
             <TextWhite className="ml-1" size={"sm"} weight={"bold"}>
-              {t("を押して閉じる")}
+              {escLabel}
             </TextWhite>
           </div>
         </div>

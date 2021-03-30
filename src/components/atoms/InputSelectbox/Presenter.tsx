@@ -1,5 +1,4 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
-import { useTranslation } from "react-i18next";
 
 import { IconPurple } from "../Icon/Purple";
 import { TextMediumGray02 } from "../Text/MediumGray02";
@@ -11,6 +10,7 @@ export type Item = {
 
 export type Props = {
   any?: boolean;
+  anyLabel?: string;
   block?: boolean;
   className?: string;
   createRef?: (input: HTMLSelectElement) => void;
@@ -27,6 +27,7 @@ export type Props = {
 
 export const Presenter: VFC<Props> = ({
   any,
+  anyLabel = "任意",
   block,
   className,
   createRef,
@@ -36,13 +37,11 @@ export const Presenter: VFC<Props> = ({
   label,
   name,
   onChange,
-  placeholder,
+  placeholder = "選択してください",
   size = "md",
   style,
   ...props
 }) => {
-  const { t } = useTranslation();
-
   let widthClass = "";
   if (block) {
     widthClass = "w-full";
@@ -68,7 +67,7 @@ export const Presenter: VFC<Props> = ({
           {label}
           {any && (
             <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">
-              {t("任意")}
+              {anyLabel}
             </TextMediumGray02>
           )}
         </label>
@@ -81,7 +80,7 @@ export const Presenter: VFC<Props> = ({
           name={name}
           onChange={onChange}
         >
-          {!disabledPlaceholder && <option value="">{placeholder || t("選択してください")}</option>}
+          {!disabledPlaceholder && <option value="">{placeholder}</option>}
           {items.map((item) => (
             <option key={`selectbox-${item.value}`} value={item.value}>
               {item.label}

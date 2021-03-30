@@ -1,5 +1,4 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
-import { useTranslation } from "react-i18next";
 
 import { InputCheckbox } from "../../atoms/InputCheckbox/Default";
 import { Item } from "../../atoms/InputCheckbox/Presenter";
@@ -7,6 +6,7 @@ import { TextMediumGray02 } from "../../atoms/Text/MediumGray02";
 
 export type Props = {
   any?: boolean;
+  anyLabel?: string;
   className?: string;
   columns?: number;
   createRef?: (input: HTMLInputElement) => void;
@@ -20,6 +20,7 @@ export type Props = {
 
 export const Presenter: VFC<Props> = ({
   any,
+  anyLabel = "任意",
   className,
   columns = 2,
   createRef,
@@ -31,8 +32,6 @@ export const Presenter: VFC<Props> = ({
   style,
   ...props
 }) => {
-  const { t } = useTranslation();
-
   return (
     <div className={`${className}`} id={id} style={style} {...props}>
       {label && (
@@ -40,7 +39,7 @@ export const Presenter: VFC<Props> = ({
           {label}
           {any && (
             <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">
-              {t("任意")}
+              {anyLabel}
             </TextMediumGray02>
           )}
         </label>

@@ -1,6 +1,7 @@
 import { ReactNode, VFC } from "react";
 export declare type Props = {
     children: ReactNode;
+    escLabel?: string;
     isVisible: boolean;
     loading?: boolean;
     maxWidth?: number;

@@ -1,5 +1,4 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
-import { useTranslation } from "react-i18next";
 
 import { TextMediumGray02 } from "../Text/MediumGray02";
 import { Weight } from "../Text/Presenter";
@@ -7,6 +6,7 @@ import { TextRed } from "../Text/Red";
 
 export type Props = {
   any?: boolean;
+  anyLabel?: string;
   className?: string;
   createRef?: (input: HTMLTextAreaElement) => void;
   defaultValue?: string;
@@ -25,6 +25,7 @@ export type Props = {
 
 export const Presenter: VFC<Props> = ({
   any,
+  anyLabel = "任意",
   className,
   createRef,
   defaultValue,
@@ -41,8 +42,6 @@ export const Presenter: VFC<Props> = ({
   weight = "bold",
   ...props
 }) => {
-  const { t } = useTranslation();
-
   const inputBaseClass = "bg-gray-100 border block w-full rounded-md p-4";
 
   let inputClass = "";
@@ -75,7 +74,7 @@ export const Presenter: VFC<Props> = ({
           {label}
           {any && (
             <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">
-              {t("任意")}
+              {anyLabel}
             </TextMediumGray02>
           )}
         </label>

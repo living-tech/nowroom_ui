@@ -38,7 +38,6 @@
     "framer-motion": "^3.3.0-beta.22",
     "google-map-react": "^2.1.9",
     "gsap": "^3.6.0",
-    "i18next": "^19.9.2",
     "next": "^10.0.9",
     "now-enum-parser": "https://github.com/living-tech/now_enum_parser.git",
     "nuka-carousel": "^4.7.5",
@@ -47,7 +46,6 @@
     "react-autosize-textarea": "^7.1.0",
     "react-datepicker": "^3.4.1",
     "react-dom": "17.0.1",
-    "react-i18next": "^11.8.10",
     "react-icons": "^4.1.0",
     "react-measure": "^2.5.2",
     "react-scroll-horizontal": "^1.6.6",
@@ -96,6 +94,7 @@
     "stylelint-config-recess-order": "^2.3.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.18.0",
+    "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   },
   "husky": {

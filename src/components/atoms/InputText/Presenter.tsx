@@ -1,5 +1,4 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
-import { useTranslation } from "react-i18next";
 
 import { Icon } from "../Icon/Default";
 import { IconName } from "../Icon/Presenter";
@@ -11,6 +10,7 @@ export type Size = "xs" | "sm" | "md";
 
 export type Props = {
   any?: boolean;
+  anyLabel?: string;
   autocomplete?: "on" | "off" | "current-password" | "new-password";
   className?: string;
   createRef?: (input: HTMLInputElement) => void;
@@ -35,6 +35,7 @@ export type Props = {
 
 export const Presenter: VFC<Props> = ({
   any,
+  anyLabel = "任意",
   autocomplete,
   className,
   createRef,
@@ -57,8 +58,6 @@ export const Presenter: VFC<Props> = ({
   weight = "bold",
   ...props
 }) => {
-  const { t } = useTranslation();
-
   const inputBaseClass = "bg-gray-100 border block w-full rounded-md";
 
   let inputClass = "";
@@ -156,7 +155,7 @@ export const Presenter: VFC<Props> = ({
           {label}
           {any && (
             <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">
-              {t("任意")}
+              {anyLabel}
             </TextMediumGray02>
           )}
         </label>

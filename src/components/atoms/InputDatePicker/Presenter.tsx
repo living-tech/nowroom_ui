@@ -5,7 +5,6 @@ import ja from "date-fns/locale/ja";
 import dayjs, { Dayjs } from "dayjs";
 import { CSSProperties, useState, VFC } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
-import { useTranslation } from "react-i18next";
 import { CSSTransition } from "react-transition-group";
 
 import { IconButtonTransparent } from "../../molecules/IconButton/Transparent";
@@ -21,10 +20,12 @@ registerLocale("ja", ja);
 
 export type Props = {
   any?: boolean;
+  anyLabel?: string;
   className?: string;
   error?: string;
   id?: string;
   label?: string;
+  monthLabel?: string;
   name?: string;
   onChange?: (date: Dayjs) => void;
   placeholder?: string;
@@ -32,14 +33,17 @@ export type Props = {
   style?: CSSProperties;
   value?: Dayjs;
   weight?: Weight;
+  yearLabel?: string;
 };
 
 export const Presenter: VFC<Props> = ({
   any,
+  anyLabel = "任意",
   className,
   error,
   id,
   label,
+  monthLabel = "月",
   name,
   onChange,
   placeholder,
@@ -47,9 +51,8 @@ export const Presenter: VFC<Props> = ({
   style,
   value,
   weight = "bold",
+  yearLabel = "年",
 }) => {
-  const { t } = useTranslation();
-
   const inputBaseClass = "inline-block bg-gray-100 border w-full rounded-md cursor-pointer";
 
   let inputClass = "";
@@ -99,7 +102,7 @@ export const Presenter: VFC<Props> = ({
             {label}
             {any && (
               <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">
-                {t("任意")}
+                {anyLabel}
               </TextMediumGray02>
             )}
           </label>
@@ -166,9 +169,9 @@ export const Presenter: VFC<Props> = ({
                     />
                     <TextDarkGray02 className="leading-none" weight={"bold"}>
                       {getYear(date)}
-                      {t("年")}
+                      {yearLabel}
                       {getMonth(date) + 1}
-                      {t("月")}
+                      {monthLabel}
                     </TextDarkGray02>
                     <IconButtonTransparent
                       radius

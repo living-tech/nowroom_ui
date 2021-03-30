@@ -2,6 +2,7 @@ import { ChangeEvent, CSSProperties, VFC } from "react";
 import { Weight } from "../Text/Presenter";
 export declare type Props = {
     any?: boolean;
+    anyLabel?: string;
     className?: string;
     createRef?: (input: HTMLTextAreaElement) => void;
     defaultValue?: string;

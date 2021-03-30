@@ -1,7 +1,11 @@
 import { ChangeEvent, CSSProperties, DragEvent, VFC } from "react";
 export declare type Props = {
     any?: boolean;
+    anyLabel?: string;
     className?: string;
+    dragAndDropLabel?: string;
+    fileSelectLabel?: string;
+    gallerySelectLabel?: string;
     id?: string;
     imageUrls?: Array<string>;
     label?: string;
