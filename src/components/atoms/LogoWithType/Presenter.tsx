@@ -2,12 +2,12 @@ import { CSSProperties, VFC } from "react";
 
 export type Props = {
   className?: string;
-  color: "white" | "black";
+  color?: "white" | "black";
   size?: number;
   style?: CSSProperties;
 };
 
-export const Presenter: VFC<Props> = ({ className, color, size = 24, style }) => {
+export const Presenter: VFC<Props> = ({ className, color = "black", size = 24, style }) => {
   let fillClass;
   switch (color) {
     case "white":
