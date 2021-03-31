@@ -1,7 +1,5 @@
 import "../src/styles/globals.css";
 
-import "../src/i18n";
-
 import * as React from "react";
 import { addDecorator } from "@storybook/react";
 import { RouterContext } from  'next/dist/next-server/lib/router-context';

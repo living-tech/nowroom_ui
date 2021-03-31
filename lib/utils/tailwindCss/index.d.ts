@@ -90,10 +90,13 @@ export declare const tailwindCssConfig: {
             };
         };
         fill: (theme: any) => {
+            black: any;
             current: string;
             purple: any;
+            white: any;
         };
         stroke: (theme: any) => {
+            black: any;
             current: string;
             purple: any;
             white: any;

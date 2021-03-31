@@ -140,10 +140,13 @@ export const tailwindCssConfig = {
       },
     },
     fill: (theme) => ({
+      black: theme("colors.black"),
       current: "currentColor",
       purple: theme("colors.purple"),
+      white: theme("colors.white"),
     }),
     stroke: (theme) => ({
+      black: theme("colors.black"),
       current: "currentColor",
       purple: theme("colors.purple"),
       white: theme("colors.white"),
