@@ -5,6 +5,8 @@ import { IconName, Size as IconSize } from "../../atoms/Icon/Presenter";
 import { Spinner } from "../../atoms/Spinner/Default";
 import { Size } from "../../atoms/Text/Presenter";
 
+export type Weight = "normal" | "bold";
+
 export type Props = {
   block?: boolean;
   children: ReactNode;
@@ -21,6 +23,7 @@ export type Props = {
   tag?: "button" | "a";
   target?: "_blank";
   type?: "button" | "submit";
+  weight?: Weight;
 };
 
 export const Presenter: VFC<Props> = ({
@@ -38,10 +41,11 @@ export const Presenter: VFC<Props> = ({
   tag = "button",
   target,
   type = "button",
+  weight = "bold",
   ...props
 }) => {
   const baseClass =
-    "relative cursor-pointer font-bold focus:outline-none transition duration-200 ease-out inline-flex disabled:cursor-not-allowed disabled:text-gray-500 disabled:hover:text-gray-500 justify-center items-center";
+    "relative cursor-pointer focus:outline-none transition duration-200 ease-out inline-flex disabled:cursor-not-allowed disabled:text-gray-500 disabled:hover:text-gray-500 justify-center items-center";
 
   let textSizeClass;
   let iconSize: IconSize;
@@ -82,6 +86,11 @@ export const Presenter: VFC<Props> = ({
       iconSize = "md";
       loadingSizeClass = 26;
       break;
+  }
+
+  let weightClass = "";
+  if (weight === "bold") {
+    weightClass = "font-bold";
   }
 
   let loadingTextClass = "";
@@ -142,7 +151,7 @@ export const Presenter: VFC<Props> = ({
   if (tag === "a") {
     return (
       <a
-        className={`${baseClass} ${textSizeClass} ${textColorClass} ${blockClass} ${className}`}
+        className={`${baseClass} ${textSizeClass} ${textColorClass} ${weightClass} ${blockClass} ${className}`}
         href={href}
         style={style}
         target={target}
@@ -154,7 +163,7 @@ export const Presenter: VFC<Props> = ({
   } else {
     return (
       <button
-        className={`${baseClass} ${textSizeClass} ${textColorClass} ${blockClass} ${className}`}
+        className={`${baseClass} ${textSizeClass} ${textColorClass} ${weightClass} ${blockClass} ${className}`}
         disabled={disabled || loading}
         style={style}
         type={type}
