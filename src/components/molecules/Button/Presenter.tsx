@@ -10,6 +10,7 @@ export type Props = {
   className?: string;
   color?: "purple" | "white" | "mediumGray02";
   disabled?: boolean;
+  href?: string;
   iconName?: IconName;
   iconPosition?: "left" | "right";
   loading?: boolean;
@@ -18,6 +19,8 @@ export type Props = {
   shadow?: boolean;
   size?: "sm" | "md" | "lg" | "xl";
   style?: CSSProperties;
+  tag?: "button" | "a";
+  target?: "_blank";
   type?: "button" | "submit";
   visualType?: "fill" | "outline";
 };
@@ -28,19 +31,23 @@ export const Presenter: VFC<Props> = ({
   className,
   color = "purple",
   disabled,
+  href,
   iconName,
   iconPosition = "left",
   loading,
+  onClick,
   padding = true,
   shadow = true,
   size = "md",
   style,
+  tag = "button",
+  target,
   type = "button",
   visualType = "fill",
   ...props
 }) => {
   const baseClass =
-    "relative rounded font-bold focus:outline-none transition duration-200 ease-out inline-flex disabled:cursor-not-allowed justify-center items-center";
+    "relative cursor-pointer rounded font-bold focus:outline-none transition duration-200 ease-out inline-flex disabled:cursor-not-allowed justify-center items-center";
 
   let sizeClass = "";
   let iconSize: Size;
@@ -155,14 +162,8 @@ export const Presenter: VFC<Props> = ({
     shadowClass = "shadow";
   }
 
-  return (
-    <button
-      className={`${baseClass} ${sizeClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
-      disabled={disabled || loading}
-      style={style}
-      type={type}
-      {...props}
-    >
+  const Inner = () => (
+    <>
       <span className={`flex items-center ${loadingTextClass}`}>
         {iconName && iconPosition === "left" && (
           <span className={"mr-2"}>
@@ -181,6 +182,33 @@ export const Presenter: VFC<Props> = ({
           <Spinner size={loadingSize} />
         </span>
       )}
-    </button>
+    </>
   );
+
+  if (tag === "a") {
+    return (
+      <a
+        className={`${baseClass} ${sizeClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
+        href={href}
+        style={style}
+        target={target}
+        {...props}
+      >
+        <Inner />
+      </a>
+    );
+  } else {
+    return (
+      <button
+        className={`${baseClass} ${sizeClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
+        disabled={disabled || loading}
+        onClick={onClick}
+        style={style}
+        type={type}
+        {...props}
+      >
+        <Inner />
+      </button>
+    );
+  }
 };

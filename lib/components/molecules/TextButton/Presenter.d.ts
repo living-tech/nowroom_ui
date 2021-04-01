@@ -7,12 +7,15 @@ export declare type Props = {
     className?: string;
     color?: "purple" | "white" | "black" | "mediumGray02" | "lightGray01" | "lightGray02";
     disabled?: boolean;
+    href?: string;
     iconName?: IconName;
     iconPosition?: "left" | "right";
     loading?: boolean;
     onClick?: () => void;
     size?: Size;
     style?: CSSProperties;
+    tag?: "button" | "a";
+    target?: "_blank";
     type?: "button" | "submit";
 };
 export declare const Presenter: VFC<Props>;

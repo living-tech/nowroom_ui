@@ -1,7 +1,7 @@
 import { CSSProperties, ReactNode, VFC } from "react";
 
 import { Icon } from "../../atoms/Icon/Default";
-import { IconName } from "../../atoms/Icon/Presenter";
+import { IconName, Size as IconSize } from "../../atoms/Icon/Presenter";
 import { Spinner } from "../../atoms/Spinner/Default";
 import { Size } from "../../atoms/Text/Presenter";
 
@@ -11,34 +11,40 @@ export type Props = {
   className?: string;
   color?: "purple" | "white" | "black" | "mediumGray02" | "lightGray01" | "lightGray02";
   disabled?: boolean;
+  href?: string;
   iconName?: IconName;
   iconPosition?: "left" | "right";
   loading?: boolean;
   onClick?: () => void;
   size?: Size;
   style?: CSSProperties;
+  tag?: "button" | "a";
+  target?: "_blank";
   type?: "button" | "submit";
 };
 
 export const Presenter: VFC<Props> = ({
   block = false,
   children,
-  className,
+  className = "",
   color = "purple",
   disabled,
+  href,
   iconName,
   iconPosition = "left",
   loading,
   size = "md",
   style,
+  tag = "button",
+  target,
   type = "button",
   ...props
 }) => {
   const baseClass =
-    "relative font-bold focus:outline-none transition duration-200 ease-out inline-flex disabled:cursor-not-allowed disabled:text-gray-500 disabled:hover:text-gray-500 justify-center items-center";
+    "relative cursor-pointer font-bold focus:outline-none transition duration-200 ease-out inline-flex disabled:cursor-not-allowed disabled:text-gray-500 disabled:hover:text-gray-500 justify-center items-center";
 
   let textSizeClass;
-  let iconSize: Size;
+  let iconSize: IconSize;
   let loadingSizeClass;
   switch (size) {
     case "xxs":
@@ -110,14 +116,8 @@ export const Presenter: VFC<Props> = ({
     blockClass = "w-full";
   }
 
-  return (
-    <button
-      className={`${baseClass} ${textSizeClass} ${textColorClass} ${blockClass} ${className}`}
-      disabled={disabled || loading}
-      style={style}
-      type={type}
-      {...props}
-    >
+  const Inner = () => (
+    <>
       <span className={`flex items-center ${loadingTextClass}`}>
         {iconName && iconPosition === "left" && (
           <span className={"mr-2"}>
@@ -136,6 +136,32 @@ export const Presenter: VFC<Props> = ({
           <Spinner size={loadingSizeClass} />
         </span>
       )}
-    </button>
+    </>
   );
+
+  if (tag === "a") {
+    return (
+      <a
+        className={`${baseClass} ${textSizeClass} ${textColorClass} ${blockClass} ${className}`}
+        href={href}
+        style={style}
+        target={target}
+        {...props}
+      >
+        <Inner />
+      </a>
+    );
+  } else {
+    return (
+      <button
+        className={`${baseClass} ${textSizeClass} ${textColorClass} ${blockClass} ${className}`}
+        disabled={disabled || loading}
+        style={style}
+        type={type}
+        {...props}
+      >
+        <Inner />
+      </button>
+    );
+  }
 };

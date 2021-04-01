@@ -6,6 +6,7 @@ export declare type Props = {
     className?: string;
     color?: "purple" | "white" | "mediumGray02";
     disabled?: boolean;
+    href?: string;
     iconName?: IconName;
     iconPosition?: "left" | "right";
     loading?: boolean;
@@ -14,6 +15,8 @@ export declare type Props = {
     shadow?: boolean;
     size?: "sm" | "md" | "lg" | "xl";
     style?: CSSProperties;
+    tag?: "button" | "a";
+    target?: "_blank";
     type?: "button" | "submit";
     visualType?: "fill" | "outline";
 };
