@@ -8,6 +8,8 @@ export type Item = {
   value: string | number;
 };
 
+export type Size = "xs" | "sm" | "md";
+
 export type Props = {
   any?: boolean;
   anyLabel?: string;
@@ -21,7 +23,7 @@ export type Props = {
   name?: string;
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
   placeholder?: string;
-  size?: "sm" | "md";
+  size?: Size;
   style?: CSSProperties;
 };
 
@@ -57,6 +59,10 @@ export const Presenter: VFC<Props> = ({
     case "sm":
       sizeClass = "p-3 pr-10 text-sm";
       iconPositionClass = "right-3";
+      break;
+    case "xs":
+      sizeClass = "p-2 pr-7 text-xs";
+      iconPositionClass = "right-2";
       break;
   }
 

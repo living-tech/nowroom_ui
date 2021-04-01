@@ -3,6 +3,7 @@ export declare type Item = {
     label: string;
     value: string | number;
 };
+export declare type Size = "xs" | "sm" | "md";
 export declare type Props = {
     any?: boolean;
     anyLabel?: string;
@@ -16,7 +17,7 @@ export declare type Props = {
     name?: string;
     onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
     placeholder?: string;
-    size?: "sm" | "md";
+    size?: Size;
     style?: CSSProperties;
 };
 export declare const Presenter: VFC<Props>;
