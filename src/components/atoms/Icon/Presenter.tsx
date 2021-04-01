@@ -1,4 +1,5 @@
 import { CSSProperties, VFC } from "react";
+import { BiYen } from "react-icons/bi";
 import {
   FiActivity,
   FiAirplay,
@@ -335,6 +336,7 @@ export type NowRoomIconName =
   | "StockSettings";
 
 export type FiIconName =
+  | "BiYen"
   | "FiActivity"
   | "FiAirplay"
   | "FiAlertCircle"
@@ -807,6 +809,8 @@ export const Presenter: VFC<Props> = ({
         <StockSettings className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />
       );
 
+    case "BiYen":
+      return <BiYen className={className} size={sizePx} {...props} />;
     case "FiActivity":
       return <FiActivity className={className} size={sizePx} {...props} />;
     case "FiAirplay":
