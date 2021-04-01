@@ -10,6 +10,7 @@ export type Props = {
   className?: string;
   color?: Color;
   disabled?: boolean;
+  href?: string;
   iconColor?: IconColor;
   iconName: IconName;
   onClick?: () => void;
@@ -17,6 +18,8 @@ export type Props = {
   shadow?: boolean;
   size?: "sm" | "md" | "lg";
   style?: CSSProperties;
+  tag?: "button" | "a";
+  target?: "_blank";
   visualType?: "fill" | "outline";
 };
 
@@ -25,12 +28,15 @@ export const Presenter: VFC<Props> = ({
   className,
   color = "transparent",
   disabled,
+  href,
   iconColor,
   iconName,
   radius = false,
   shadow = true,
   size = "md",
   style,
+  tag = "button",
+  target,
   visualType = "fill",
   ...props
 }) => {
@@ -192,15 +198,31 @@ export const Presenter: VFC<Props> = ({
     shadowClass = "shadow";
   }
 
-  return (
-    <button
-      className={`${baseClass} ${sizeClass} ${borderRadiusClass} ${borderColorClass} ${backgroundColorClass} ${iconColorClass} ${shadowClass} ${className}`}
-      disabled={disabled}
-      style={style}
-      type="button"
-      {...props}
-    >
-      <Icon color={iconColor} name={iconName} size={iconSize} />
-    </button>
-  );
+  const Inner = () => <Icon color={iconColor} name={iconName} size={iconSize} />;
+
+  if (tag === "a") {
+    return (
+      <a
+        className={`${baseClass} ${sizeClass} ${borderRadiusClass} ${borderColorClass} ${backgroundColorClass} ${iconColorClass} ${shadowClass} ${className}`}
+        href={href}
+        style={style}
+        target={target}
+        {...props}
+      >
+        <Inner />
+      </a>
+    );
+  } else {
+    return (
+      <button
+        className={`${baseClass} ${sizeClass} ${borderRadiusClass} ${borderColorClass} ${backgroundColorClass} ${iconColorClass} ${shadowClass} ${className}`}
+        disabled={disabled}
+        style={style}
+        type="button"
+        {...props}
+      >
+        <Inner />
+      </button>
+    );
+  }
 };

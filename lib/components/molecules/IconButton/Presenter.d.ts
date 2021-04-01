@@ -6,6 +6,7 @@ export declare type Props = {
     className?: string;
     color?: Color;
     disabled?: boolean;
+    href?: string;
     iconColor?: IconColor;
     iconName: IconName;
     onClick?: () => void;
@@ -13,6 +14,8 @@ export declare type Props = {
     shadow?: boolean;
     size?: "sm" | "md" | "lg";
     style?: CSSProperties;
+    tag?: "button" | "a";
+    target?: "_blank";
     visualType?: "fill" | "outline";
 };
 export declare const Presenter: VFC<Props>;
