@@ -10,6 +10,7 @@ export declare type Props = {
     block?: boolean;
     className?: string;
     createRef?: (input: HTMLSelectElement) => void;
+    defaultValue?: string | number | ReadonlyArray<string>;
     disabledPlaceholder?: boolean;
     id?: string;
     items: Array<Item>;
