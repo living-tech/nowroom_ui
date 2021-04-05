@@ -1,20 +1,40 @@
 import { CSSProperties, forwardRef } from "react";
 
 import { Text } from "../Text/Default";
+import { Size as TextSize } from "../Text/Presenter";
+
+export type Size = TextSize;
 
 export type Props = {
   active?: boolean;
+  className?: string;
   id?: string;
   index: number;
   label: string;
   onClick?: (index: number) => void;
   onTabMouseEnter: (index: number) => void;
   onTabMouseLeave: () => void;
+  size?: Size;
   style?: CSSProperties;
 };
 
 export const Presenter = forwardRef<HTMLLIElement, Props>(
-  ({ active, id, index, label, onClick, onTabMouseEnter, onTabMouseLeave, style, ...props }, ref) => {
+  (
+    {
+      active,
+      className = "",
+      id,
+      index,
+      label,
+      onClick,
+      onTabMouseEnter,
+      onTabMouseLeave,
+      size = "xs",
+      style,
+      ...props
+    },
+    ref
+  ) => {
     let textColorClass = "";
     if (active) {
       textColorClass = "text-purple";
@@ -23,7 +43,7 @@ export const Presenter = forwardRef<HTMLLIElement, Props>(
     return (
       <li
         ref={ref}
-        className="relative inline-block w-full pt-4 pl-2 pr-2 text-center list-none border-b border-gray-200 cursor-pointer hover:bg-purple-100 pb-3.5 transition duration-200 ease-out"
+        className={`relative inline-block w-full pt-4 pl-2 pr-2 text-center list-none border-b border-gray-200 cursor-pointer hover:bg-purple-100 pb-3.5 transition duration-200 ease-out ${className}`}
         id={id}
         onClick={() => onClick && onClick(index)}
         onMouseEnter={() => onTabMouseEnter(index)}
@@ -31,7 +51,7 @@ export const Presenter = forwardRef<HTMLLIElement, Props>(
         style={style}
         {...props}
       >
-        <Text className={`transition duration-200 ease-out ${textColorClass}`} size={"xs"} weight={"bold"}>
+        <Text className={`transition duration-200 ease-out ${textColorClass}`} size={size} weight={"bold"}>
           {label}
         </Text>
       </li>

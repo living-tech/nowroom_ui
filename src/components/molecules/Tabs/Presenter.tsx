@@ -1,8 +1,10 @@
+import gsap, { Expo } from "gsap";
+import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
 import Measure from "react-measure";
 
-import { smoothScroll } from "../../../utils";
 import { Tab } from "../../atoms/Tab/Default";
+import { Size } from "../../atoms/Tab/Presenter";
 
 export type Item = {
   label: string;
@@ -12,10 +14,28 @@ export type Item = {
 export type Props = {
   className?: string;
   items: Array<Item>;
+  panelsContainerClassName?: string;
+  panelsContainerStyle?: CSSProperties;
   style?: CSSProperties;
+  tabContainerClassName?: string;
+  tabContainerStyle?: CSSProperties;
+  tabSize: Size;
+  tabsContainerClassName?: string;
+  tabsContainerStyle?: CSSProperties;
 };
 
-export const Presenter: VFC<Props> = ({ className, items, style }) => {
+export const Presenter: VFC<Props> = ({
+  className = "",
+  items,
+  panelsContainerClassName = "",
+  panelsContainerStyle,
+  style,
+  tabContainerClassName = "",
+  tabContainerStyle,
+  tabSize,
+  tabsContainerClassName = "",
+  tabsContainerStyle,
+}) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [containerWidth, setContainerWidth] = useState<number>(0);
@@ -29,6 +49,21 @@ export const Presenter: VFC<Props> = ({ className, items, style }) => {
   const onTabMouseLeave = () => {
     setHoverTab(null);
   };
+
+  const onTabClick = (index: number) => {
+    setActiveIndex(index);
+    if (panelRef?.current) {
+      gsap.to(panelRef.current, {
+        duration: 0.2,
+        ease: Expo.easeOut,
+        scrollTo: { x: containerWidth * index },
+      });
+    }
+  };
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollToPlugin);
+  }, []);
 
   useEffect(() => {
     let targetIndex;
@@ -55,51 +90,51 @@ export const Presenter: VFC<Props> = ({ className, items, style }) => {
     });
   }, [hoverTab, activeIndex]);
 
-  const onTabClick = (index: number) => {
-    setActiveIndex(index);
-    if (panelRef?.current) {
-      smoothScroll(200, panelRef.current, containerWidth * index, "scrollLeft");
-    }
-  };
-
   return (
     <div className={className} style={style}>
-      <div className="relative">
-        <Measure
-          bounds
-          onResize={(contentRect) => {
-            setContainerWidth(contentRect.bounds?.width || 0);
-          }}
-        >
-          {({ measureRef }) => (
-            <ul ref={measureRef} className="flex" id="tabs">
+      <Measure
+        bounds
+        onResize={(contentRect) => {
+          setContainerWidth(contentRect.bounds?.width || 0);
+        }}
+      >
+        {({ measureRef }) => (
+          <div ref={measureRef} className="relative">
+            <ul className={`flex ${tabsContainerClassName}`} id="tabs" style={tabsContainerStyle}>
               {items.map((item, index) => (
                 <Tab
                   key={index}
                   active={activeIndex === index}
+                  className={tabContainerClassName}
                   id={`tab-${index}`}
                   index={index}
                   label={item.label}
                   onClick={onTabClick}
                   onTabMouseEnter={onTabMouseEnter}
                   onTabMouseLeave={onTabMouseLeave}
+                  size={tabSize}
+                  style={tabContainerStyle}
                 />
               ))}
             </ul>
-          )}
-        </Measure>
-        {borderStyle && (
-          <span
-            className="absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out"
-            style={{
-              height: 2,
-              left: borderStyle.left,
-              width: borderStyle.width,
-            }}
-          />
+            {borderStyle && (
+              <span
+                className="absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out"
+                style={{
+                  height: 2,
+                  left: borderStyle.left,
+                  width: borderStyle.width,
+                }}
+              />
+            )}
+          </div>
         )}
-      </div>
-      <div ref={panelRef} className="w-full overflow-x-hidden whitespace-nowrap">
+      </Measure>
+      <div
+        ref={panelRef}
+        className={`w-full overflow-x-hidden whitespace-nowrap ${panelsContainerClassName}`}
+        style={panelsContainerStyle}
+      >
         {items.map((item, index) => (
           <div key={index} className="inline-block w-full align-top">
             {item.renderPanel()}
