@@ -2,6 +2,7 @@ import gsap, { Expo } from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
 import Measure from "react-measure";
+import { v4 as uuidv4 } from "uuid";
 
 import { Tab } from "../../atoms/Tab/Default";
 import { Size } from "../../atoms/Tab/Presenter";
@@ -13,6 +14,7 @@ export type Item = {
 
 export type Props = {
   className?: string;
+  id?: string;
   items: Array<Item>;
   panelsContainerClassName?: string;
   panelsContainerStyle?: CSSProperties;
@@ -26,7 +28,10 @@ export type Props = {
   tabsWidth?: "full" | "auto";
 };
 
+const uuid = uuidv4();
+
 export const Presenter: VFC<Props> = ({
+  id = uuid,
   className = "",
   items,
   panelsContainerClassName = "",
@@ -87,8 +92,8 @@ export const Presenter: VFC<Props> = ({
       targetIndex = items.findIndex((_item, index) => index === activeIndex);
     }
 
-    const containerElement = document.getElementById("tabs");
-    const targetElement = document.getElementById(`tab-${targetIndex}`);
+    const containerElement = document.getElementById(id);
+    const targetElement = document.getElementById(`${id}-tab-${targetIndex}`);
 
     if (!containerElement || !targetElement) {
       setBorderStyle(null);
@@ -114,13 +119,13 @@ export const Presenter: VFC<Props> = ({
       >
         {({ measureRef }) => (
           <div ref={measureRef} className="relative">
-            <ul className={`${tabDisplayClass} ${tabsContainerClassName}`} id="tabs" style={tabsContainerStyle}>
+            <ul className={`${tabDisplayClass} ${tabsContainerClassName}`} id={id} style={tabsContainerStyle}>
               {items.map((item, index) => (
                 <Tab
                   key={index}
                   active={activeIndex === index}
                   className={tabContainerClassName}
-                  id={`tab-${index}`}
+                  id={`${id}-tab-${index}`}
                   index={index}
                   label={item.label}
                   onClick={onTabClick}
