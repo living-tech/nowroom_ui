@@ -12,7 +12,7 @@ export declare type Props = {
     style?: CSSProperties;
     tabContainerClassName?: string;
     tabContainerStyle?: CSSProperties;
-    tabSize: Size;
+    tabSize?: Size;
     tabsContainerClassName?: string;
     tabsContainerStyle?: CSSProperties;
 };
