@@ -93,7 +93,7 @@ export const Presenter: VFC<Props> = ({
     }
 
     const containerElement = document.getElementById(id);
-    const targetElement = document.getElementById(`${id}-tab-${targetIndex}`);
+    const targetElement = document.getElementById(`${id}-${targetIndex}`);
 
     if (!containerElement || !targetElement) {
       setBorderStyle(null);
@@ -125,7 +125,7 @@ export const Presenter: VFC<Props> = ({
                   key={index}
                   active={activeIndex === index}
                   className={tabContainerClassName}
-                  id={`${id}-tab-${index}`}
+                  id={`${id}-${index}`}
                   index={index}
                   label={item.label}
                   onClick={onTabClick}
