@@ -97,7 +97,7 @@ export const Presenter: VFC<Props> = ({
       <div className={`relative block ${widthClass}`}>
         <select
           ref={createRef}
-          className={`w-full block border font-bold border-gray-200 bg-gray-100 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${colorClass} ${sizeClass} ${widthClass}`}
+          className={`w-full cursor-pointer block border font-bold border-gray-200 bg-gray-100 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${colorClass} ${sizeClass} ${widthClass}`}
           defaultValue={defaultValue}
           id={id}
           name={name}
