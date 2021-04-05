@@ -15,6 +15,8 @@ export declare type Props = {
     tabSize?: Size;
     tabsContainerClassName?: string;
     tabsContainerStyle?: CSSProperties;
+    tabsUnderLine?: boolean;
+    tabsWidth?: "full" | "auto";
 };
 export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

@@ -1,6 +1,5 @@
 import { CSSProperties } from "react";
-import { Size as TextSize } from "../Text/Presenter";
-export declare type Size = TextSize;
+export declare type Size = "md" | "lg";
 export declare type Props = {
     active?: boolean;
     className?: string;
@@ -12,6 +11,7 @@ export declare type Props = {
     onTabMouseLeave: () => void;
     size?: Size;
     style?: CSSProperties;
+    tabUnderLine?: boolean;
 };
 export declare const Presenter: import("react").ForwardRefExoticComponent<Props & import("react").RefAttributes<HTMLLIElement>>;
 //# sourceMappingURL=Presenter.d.ts.map

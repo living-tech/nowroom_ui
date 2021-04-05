@@ -22,6 +22,8 @@ export type Props = {
   tabSize?: Size;
   tabsContainerClassName?: string;
   tabsContainerStyle?: CSSProperties;
+  tabsUnderLine?: boolean;
+  tabsWidth?: "full" | "auto";
 };
 
 export const Presenter: VFC<Props> = ({
@@ -35,12 +37,24 @@ export const Presenter: VFC<Props> = ({
   tabSize,
   tabsContainerClassName = "",
   tabsContainerStyle,
+  tabsUnderLine = true,
+  tabsWidth = "full",
 }) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [containerWidth, setContainerWidth] = useState<number>(0);
   const [borderStyle, setBorderStyle] = useState<{ left: number; width: number } | null>(null);
   const [hoverTab, setHoverTab] = useState<number | null>(null);
+
+  let tabDisplayClass = "";
+  switch (tabsWidth) {
+    case "full":
+      tabDisplayClass = "flex";
+      break;
+    case "auto":
+      tabDisplayClass = "inline-flex";
+      break;
+  }
 
   const onTabMouseEnter = (index: number) => {
     setHoverTab(index);
@@ -100,7 +114,7 @@ export const Presenter: VFC<Props> = ({
       >
         {({ measureRef }) => (
           <div ref={measureRef} className="relative">
-            <ul className={`flex ${tabsContainerClassName}`} id="tabs" style={tabsContainerStyle}>
+            <ul className={`${tabDisplayClass} ${tabsContainerClassName}`} id="tabs" style={tabsContainerStyle}>
               {items.map((item, index) => (
                 <Tab
                   key={index}
@@ -114,6 +128,7 @@ export const Presenter: VFC<Props> = ({
                   onTabMouseLeave={onTabMouseLeave}
                   size={tabSize}
                   style={tabContainerStyle}
+                  tabUnderLine={tabsUnderLine}
                 />
               ))}
             </ul>
