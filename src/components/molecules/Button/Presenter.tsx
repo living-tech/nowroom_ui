@@ -28,7 +28,7 @@ export type Props = {
 export const Presenter: VFC<Props> = ({
   block = false,
   children,
-  className,
+  className = "",
   color = "purple",
   disabled,
   href,
@@ -159,7 +159,7 @@ export const Presenter: VFC<Props> = ({
 
   let shadowClass = "";
   if (shadow) {
-    shadowClass = "shadow";
+    shadowClass = "shadow-xs";
   }
 
   const Inner = () => (
