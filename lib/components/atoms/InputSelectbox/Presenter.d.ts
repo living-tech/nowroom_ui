@@ -10,7 +10,7 @@ export declare type Props = {
     block?: boolean;
     className?: string;
     createRef?: (input: HTMLSelectElement) => void;
-    defaultValue?: string | number | ReadonlyArray<string>;
+    defaultValue?: string | number;
     disabledPlaceholder?: boolean;
     id?: string;
     items: Array<Item>;
@@ -20,6 +20,7 @@ export declare type Props = {
     placeholder?: string;
     size?: Size;
     style?: CSSProperties;
+    value?: string | number;
 };
 export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

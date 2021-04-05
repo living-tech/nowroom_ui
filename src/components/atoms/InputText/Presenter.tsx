@@ -58,7 +58,7 @@ export const Presenter: VFC<Props> = ({
   weight = "bold",
   ...props
 }) => {
-  const inputBaseClass = "bg-gray-100 border block w-full rounded-md";
+  const inputBaseClass = "bg-gray-100 border block w-full rounded-md placeholder-gray-400";
 
   let inputClass = "";
 

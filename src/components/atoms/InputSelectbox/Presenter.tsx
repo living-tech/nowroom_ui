@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, VFC } from "react";
+import { ChangeEvent, CSSProperties, useState, VFC } from "react";
 
 import { IconPurple } from "../Icon/Purple";
 import { TextMediumGray02 } from "../Text/MediumGray02";
@@ -16,7 +16,7 @@ export type Props = {
   block?: boolean;
   className?: string;
   createRef?: (input: HTMLSelectElement) => void;
-  defaultValue?: string | number | ReadonlyArray<string>;
+  defaultValue?: string | number;
   disabledPlaceholder?: boolean;
   id?: string;
   items: Array<Item>;
@@ -26,6 +26,7 @@ export type Props = {
   placeholder?: string;
   size?: Size;
   style?: CSSProperties;
+  value?: string | number;
 };
 
 export const Presenter: VFC<Props> = ({
@@ -44,8 +45,11 @@ export const Presenter: VFC<Props> = ({
   placeholder = "選択してください",
   size = "md",
   style,
+  value,
   ...props
 }) => {
+  const [selectedValue, setSelectedValue] = useState<string | number>(value ?? defaultValue ?? "");
+
   let widthClass = "";
   if (block) {
     widthClass = "w-full";
@@ -68,6 +72,16 @@ export const Presenter: VFC<Props> = ({
       break;
   }
 
+  let colorClass = "";
+  if (!selectedValue) {
+    colorClass = "text-gray-400";
+  }
+
+  const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    onChange && onChange(event);
+    setSelectedValue(event.target.value);
+  };
+
   return (
     <div className={className} style={style} {...props}>
       {label && (
@@ -83,11 +97,12 @@ export const Presenter: VFC<Props> = ({
       <div className={`relative block ${widthClass}`}>
         <select
           ref={createRef}
-          className={`w-full block border font-bold border-gray-200 bg-gray-100 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${sizeClass} ${widthClass}`}
+          className={`w-full block border font-bold border-gray-200 bg-gray-100 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${colorClass} ${sizeClass} ${widthClass}`}
           defaultValue={defaultValue}
           id={id}
           name={name}
-          onChange={onChange}
+          onChange={handleChange}
+          value={value}
         >
           {!disabledPlaceholder && <option value="">{placeholder}</option>}
           {items.map((item) => (
