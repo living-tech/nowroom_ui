@@ -4,7 +4,7 @@ export declare type Props = {
     children: ReactNode;
     className?: string;
     color?: Color;
-    size?: "md" | "sm";
+    size?: "md" | "sm" | "xs";
     style?: CSSProperties;
 };
 export declare const Presenter: VFC<Props>;
