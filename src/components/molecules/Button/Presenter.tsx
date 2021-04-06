@@ -52,24 +52,29 @@ export const Presenter: VFC<Props> = ({
   let sizeClass = "";
   let iconSize: Size;
   let loadingSize;
+  let paddingTop: number;
   switch (size) {
     case "sm":
-      sizeClass = padding ? "py-2 px-6 text-sm" : "text-sm";
+      sizeClass = padding ? "pb-2 px-6 text-sm" : "text-sm";
+      paddingTop = 9;
       iconSize = "sm";
       loadingSize = 18;
       break;
     case "md":
-      sizeClass = padding ? "py-2.5 px-6 text-sm" : "text-sm";
+      sizeClass = padding ? "pb-2.5 px-6 text-sm" : "text-sm";
+      paddingTop = 11;
       iconSize = "sm";
       loadingSize = 20;
       break;
     case "lg":
-      sizeClass = padding ? "py-3 px-8 text-base" : "text-base";
+      sizeClass = padding ? "pb-3 px-8 text-base" : "text-base";
+      paddingTop = 13;
       iconSize = "sm";
       loadingSize = 24;
       break;
     case "xl":
-      sizeClass = padding ? "pt-4 px-10 text-base" : "text-base";
+      sizeClass = padding ? "pb-4 px-10 text-base" : "text-base";
+      paddingTop = 17;
       iconSize = "md";
       loadingSize = 24;
       break;
@@ -190,7 +195,7 @@ export const Presenter: VFC<Props> = ({
       <a
         className={`${baseClass} ${sizeClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
         href={href}
-        style={style}
+        style={{ paddingTop, ...style }}
         target={target}
         {...props}
       >
@@ -203,7 +208,7 @@ export const Presenter: VFC<Props> = ({
         className={`${baseClass} ${sizeClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
         disabled={disabled || loading}
         onClick={onClick}
-        style={style}
+        style={{ paddingTop, ...style }}
         type={type}
         {...props}
       >
