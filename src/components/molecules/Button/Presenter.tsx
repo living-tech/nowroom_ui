@@ -166,13 +166,13 @@ export const Presenter: VFC<Props> = ({
     <>
       <span className={`flex items-center ${loadingTextClass}`}>
         {iconName && iconPosition === "left" && (
-          <span className={"mr-2"}>
+          <span className={"mr-2 relative"} style={{ top: 1 }}>
             <Icon name={iconName} size={iconSize} />
           </span>
         )}
         {children}
         {iconName && iconPosition === "right" && (
-          <span className={"ml-2"}>
+          <span className={"ml-2 relative"} style={{ top: 1 }}>
             <Icon name={iconName} size={iconSize} />
           </span>
         )}
