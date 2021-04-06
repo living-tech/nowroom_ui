@@ -23,7 +23,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: VFC<Props> = ({ children, className, color = "purple", size = "md" }) => {
+export const Presenter: VFC<Props> = ({ children, className, color = "purple", size = "md", style }) => {
   const baseClass = "inline-flex items-center border rounded";
 
   let sizeClass = "";
@@ -93,12 +93,7 @@ export const Presenter: VFC<Props> = ({ children, className, color = "purple", s
   }
 
   return (
-    <div
-      className={`${baseClass} ${sizeClass} ${backgroundColorClass} ${borderColorClass} ${className}`}
-      style={{
-        paddingTop: 5,
-      }}
-    >
+    <div className={`${baseClass} ${sizeClass} ${backgroundColorClass} ${borderColorClass} ${className}`} style={style}>
       <Text className="leading-none" color={textColor} size={size === "md" ? "xs" : "xxs"} tag="span" weight={"bold"}>
         {children}
       </Text>
