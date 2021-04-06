@@ -1,4 +1,4 @@
-import { ReactNode, useCallback, useEffect, useState, VFC } from "react";
+import { ReactNode, useCallback, useEffect, useRef, useState, VFC } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import { SpinnerPurple as Spinner } from "../../atoms/Spinner/Purple";
@@ -14,6 +14,7 @@ export type Props = {
   loading?: boolean;
   maxWidth?: number;
   onRequestClose?: () => void;
+  renderFixedBottom?: () => JSX.Element;
 };
 
 export const Presenter: VFC<Props> = ({
@@ -23,9 +24,13 @@ export const Presenter: VFC<Props> = ({
   loading,
   maxWidth = 400,
   onRequestClose,
+  renderFixedBottom,
   ...props
 }) => {
   const [visible, setVisible] = useState<boolean>(false);
+  const [fixedBottomHeight, setFixedBottomHeight] = useState<number>(0);
+
+  const fixedBottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setVisible(isVisible);
@@ -37,6 +42,10 @@ export const Presenter: VFC<Props> = ({
     } else {
       window.removeEventListener("keydown", handleKeydown);
     }
+    if (!fixedBottomRef?.current) {
+      return;
+    }
+    setFixedBottomHeight(fixedBottomRef.current.clientHeight);
   }, [visible]);
 
   const handleKeydown = useCallback((event: KeyboardEvent) => {
@@ -92,27 +101,36 @@ export const Presenter: VFC<Props> = ({
         in={visible}
         timeout={{ enter: 400, exit: 400 }}
       >
-        <div
-          className={`fixed top-1/2 left-1/2 z-20 w-full p-8 bg-white rounded-lg cursor-auto shadow-xl`}
-          style={{ maxWidth }}
-        >
-          {loading ? (
-            <span className="absolute flex top-1/2 transform -translate-y-1/2">
-              <Spinner />
-            </span>
-          ) : (
-            <div>{children}</div>
-          )}
-
-          <IconButtonWhite
-            className="absolute -right-5 -top-5"
-            iconName={"FiX"}
-            onClick={() => {
-              setVisible(false);
-              onRequestClose && onRequestClose();
-            }}
-            radius={true}
-          />
+        <div className="fixed z-20 w-full top-1/2 left-1/2" style={{ maxHeight: "calc(100vh - 128px)", maxWidth }}>
+          <div
+            className={`p-8 bg-white rounded-lg cursor-auto shadow-xl overflow-y-auto`}
+            style={{ maxHeight: "calc(100vh - 128px)", maxWidth, paddingBottom: fixedBottomHeight + 32 }}
+          >
+            {loading ? (
+              <span className="absolute flex top-1/2 transform -translate-y-1/2">
+                <Spinner />
+              </span>
+            ) : (
+              <div>{children}</div>
+            )}
+            {renderFixedBottom && (
+              <div
+                ref={fixedBottomRef}
+                className="absolute bottom-0 left-0 w-full px-8 py-4 bg-gray-100 border-t border-gray-200 rounded-b-lg"
+              >
+                {renderFixedBottom()}
+              </div>
+            )}
+            <IconButtonWhite
+              className="absolute -right-5 -top-5"
+              iconName={"FiX"}
+              onClick={() => {
+                setVisible(false);
+                onRequestClose && onRequestClose();
+              }}
+              radius={true}
+            />
+          </div>
         </div>
       </CSSTransition>
     </>
