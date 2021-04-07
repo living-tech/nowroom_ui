@@ -4,6 +4,7 @@ import { IconPurple } from "../Icon/Purple";
 import { TextMediumGray02 } from "../Text/MediumGray02";
 
 export type Item = {
+  key?: string | number;
   label: string;
   value: string | number;
 };
@@ -106,7 +107,7 @@ export const Presenter: VFC<Props> = ({
         >
           {!disabledPlaceholder && <option value="">{placeholder}</option>}
           {items.map((item) => (
-            <option key={`selectbox-${item.value}`} value={item.value}>
+            <option key={`selectbox-${item.key ?? item.value}`} value={item.value}>
               {item.label}
             </option>
           ))}

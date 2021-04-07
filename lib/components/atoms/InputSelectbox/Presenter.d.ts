@@ -1,5 +1,6 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
 export declare type Item = {
+    key?: string | number;
     label: string;
     value: string | number;
 };
