@@ -73,7 +73,7 @@ export const Presenter: VFC<Props> = ({
         timeout={400}
       >
         <div
-          className="fixed top-0 left-0 z-10 w-full h-full p-4 cursor-pointer bg-overlay"
+          className="fixed top-0 left-0 z-40 w-full h-full p-4 cursor-pointer bg-overlay"
           onClick={() => {
             setVisible(false);
             onRequestClose && onRequestClose();
@@ -101,7 +101,7 @@ export const Presenter: VFC<Props> = ({
         in={visible}
         timeout={{ enter: 400, exit: 400 }}
       >
-        <div className="fixed z-20 w-full top-1/2 left-1/2" style={{ maxHeight: "calc(100vh - 128px)", maxWidth }}>
+        <div className="fixed z-50 w-full top-1/2 left-1/2" style={{ maxHeight: "calc(100vh - 128px)", maxWidth }}>
           <div
             className={`p-8 bg-white rounded-lg cursor-auto shadow-xl overflow-y-auto`}
             style={{ maxHeight: "calc(100vh - 128px)", maxWidth, paddingBottom: fixedBottomHeight + 32 }}
