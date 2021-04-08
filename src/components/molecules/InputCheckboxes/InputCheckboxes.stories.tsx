@@ -27,6 +27,6 @@ Default.args = {
   label: "ラベル",
   name: "name",
   onChange: (event: ChangeEvent<HTMLInputElement>) => {
-    console.log(event);
+    console.log(event.target.value);
   },
 };

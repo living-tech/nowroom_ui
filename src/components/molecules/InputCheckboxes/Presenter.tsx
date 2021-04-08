@@ -10,12 +10,14 @@ export type Props = {
   className?: string;
   columns?: number;
   createRef?: (input: HTMLInputElement) => void;
+  defaultValue?: Array<string>;
   id?: string;
   items: Array<Item>;
   label?: string;
   name?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   style?: CSSProperties;
+  value?: Array<string>;
 };
 
 export const Presenter: VFC<Props> = ({
@@ -30,6 +32,7 @@ export const Presenter: VFC<Props> = ({
   name,
   onChange,
   style,
+  value,
   ...props
 }) => {
   return (
@@ -48,6 +51,7 @@ export const Presenter: VFC<Props> = ({
         {items.map((item) => (
           <InputCheckbox
             key={`checkbox-${item.value}`}
+            checked={value?.includes(item.value)}
             createRef={createRef}
             item={item}
             name={name}
