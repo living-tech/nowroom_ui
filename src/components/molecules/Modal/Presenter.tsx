@@ -8,8 +8,11 @@ import { IconButtonWhite } from "../IconButton/White";
 import { LabelTextWhite } from "../LabelText/White";
 import styles from "./Modal.module.scss";
 
+export type CloseButtonPosition = "top" | "bottom";
+
 export type Props = {
   children: ReactNode;
+  closeButtonPosition?: CloseButtonPosition;
   escLabel?: string;
   isVisible: boolean;
   loading?: boolean;
@@ -20,6 +23,7 @@ export type Props = {
 
 export const Presenter: VFC<Props> = ({
   children,
+  closeButtonPosition = "top",
   escLabel = "を押して閉じる",
   isVisible,
   loading,
@@ -121,7 +125,7 @@ export const Presenter: VFC<Props> = ({
             style={{
               maxHeight: isMobile ? undefined : "calc(100vh - 128px)",
               maxWidth,
-              paddingBottom: fixedBottomHeight + (isMobile ? 16 : 32),
+              paddingBottom: fixedBottomHeight + (isMobile ? 16 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),
             }}
           >
             {loading ? (
@@ -140,7 +144,7 @@ export const Presenter: VFC<Props> = ({
               </div>
             )}
             <IconButtonWhite
-              className="absolute top-4 right-4 md:-right-5 md:-top-5"
+              className="absolute right-4 md:-right-5 md:-top-5"
               iconName={"FiX"}
               onClick={() => {
                 setVisible(false);
@@ -148,6 +152,14 @@ export const Presenter: VFC<Props> = ({
               }}
               radius={true}
               shadow={false}
+              style={
+                isMobile
+                  ? {
+                      bottom: closeButtonPosition === "bottom" ? fixedBottomHeight + 16 : undefined,
+                      top: closeButtonPosition === "top" ? 16 : undefined,
+                    }
+                  : undefined
+              }
             />
           </div>
         </div>
