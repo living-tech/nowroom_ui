@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
 
-import { Text } from "../../../../lib";
+import { Text } from "../../atoms/Text/Default";
 import { ButtonPurple } from "../Button/Purple";
 import { Presenter, Props } from "./Presenter";
 
