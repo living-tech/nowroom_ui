@@ -85,6 +85,9 @@ export declare const tailwindCssConfig: {
             maxWidth: {
                 inner: number;
             };
+            screens: {
+                xl: number;
+            };
             width: {
                 inner: number;
             };
