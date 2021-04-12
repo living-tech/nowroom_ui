@@ -2,10 +2,6 @@ export declare const tailwindCssConfig: {
     darkMode: boolean;
     plugins: any[];
     purge: string[];
-    screens: {
-        desktop: string;
-        tablet: string;
-    };
     theme: {
         extend: {
             borderRadius: {
