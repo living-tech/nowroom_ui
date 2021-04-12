@@ -7,11 +7,13 @@ import { Size } from "../../atoms/Text/Presenter";
 
 export type Weight = "normal" | "bold";
 
+export type Color = "purple" | "white" | "black" | "mediumGray02" | "lightGray01" | "lightGray02";
+
 export type Props = {
   block?: boolean;
   children: ReactNode;
   className?: string;
-  color?: "purple" | "white" | "black" | "mediumGray02" | "lightGray01" | "lightGray02";
+  color?: Color;
   disabled?: boolean;
   href?: string;
   iconName?: IconName;
