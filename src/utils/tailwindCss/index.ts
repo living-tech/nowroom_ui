@@ -52,6 +52,10 @@ export const tailwindCssConfig = {
   darkMode: false,
   plugins: [checkedLabelPlugin],
   purge: ["./src/pages/**/*.tsx", "./src/components/**/*.tsx"],
+  screens: {
+    desktop: "1024px",
+    tablet: "640px",
+  },
   theme: {
     extend: {
       borderRadius: {

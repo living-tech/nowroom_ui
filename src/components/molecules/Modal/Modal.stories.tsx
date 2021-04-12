@@ -89,5 +89,10 @@ const Template: Story<Props> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   isVisible: false,
+};
+
+export const withFixedBottom = Template.bind({});
+withFixedBottom.args = {
+  isVisible: false,
   renderFixedBottom: () => <ButtonPurple>ボタン</ButtonPurple>,
 };

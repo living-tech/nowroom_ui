@@ -38,7 +38,7 @@ export const Presenter: VFC<Props> = ({
   return (
     <div className={`${className}`} id={id} style={style} {...props}>
       {label && (
-        <label className="block mb-3 text-sm font-bold text-gray-700">
+        <label className=" block mb-3 text-sm font-bold text-gray-700">
           {label}
           {any && (
             <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">

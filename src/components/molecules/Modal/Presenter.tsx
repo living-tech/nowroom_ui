@@ -1,7 +1,7 @@
 import { ReactNode, useCallback, useEffect, useRef, useState, VFC } from "react";
 import { CSSTransition } from "react-transition-group";
 
-import { backfaceFixed } from "../../../utils";
+import { backfaceFixed, useBreakPoints } from "../../../utils";
 import { SpinnerPurple as Spinner } from "../../atoms/Spinner/Purple";
 import { TextWhite } from "../../atoms/Text/White";
 import { IconButtonWhite } from "../IconButton/White";
@@ -28,6 +28,8 @@ export const Presenter: VFC<Props> = ({
   renderFixedBottom,
   ...props
 }) => {
+  const { isDesktop, isMobile } = useBreakPoints();
+
   const [visible, setVisible] = useState<boolean>(false);
   const [fixedBottomHeight, setFixedBottomHeight] = useState<number>(0);
 
@@ -52,6 +54,10 @@ export const Presenter: VFC<Props> = ({
   }, [visible]);
 
   const handleKeydown = useCallback((event: KeyboardEvent) => {
+    if (!isDesktop) {
+      return true;
+    }
+
     if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
       event.preventDefault();
       setVisible(false);
@@ -64,33 +70,35 @@ export const Presenter: VFC<Props> = ({
 
   return (
     <>
-      <CSSTransition
-        unmountOnExit
-        classNames={{
-          enter: styles.ModalEnter,
-          enterActive: styles.ModalEnterActive,
-          exit: styles.ModalExit,
-          exitActive: styles.ModalExitActive,
-        }}
-        in={visible}
-        timeout={400}
-      >
-        <div
-          className="fixed top-0 left-0 z-40 w-full h-full p-4 cursor-pointer bg-overlay"
-          onClick={() => {
-            setVisible(false);
-            onRequestClose && onRequestClose();
+      {!isMobile && (
+        <CSSTransition
+          unmountOnExit
+          classNames={{
+            enter: styles.ModalEnter,
+            enterActive: styles.ModalEnterActive,
+            exit: styles.ModalExit,
+            exitActive: styles.ModalExitActive,
           }}
-          {...props}
+          in={visible}
+          timeout={400}
         >
-          <div className="flex items-center">
-            <LabelTextWhite>ESC</LabelTextWhite>
-            <TextWhite className="ml-1" size={"sm"} weight={"bold"}>
-              {escLabel}
-            </TextWhite>
+          <div
+            className="fixed top-0 left-0 z-40 w-full h-full p-4 cursor-pointer bg-overlay"
+            onClick={() => {
+              setVisible(false);
+              onRequestClose && onRequestClose();
+            }}
+            {...props}
+          >
+            <div className="flex items-center">
+              <LabelTextWhite>ESC</LabelTextWhite>
+              <TextWhite className="ml-1" size={"sm"} weight={"bold"}>
+                {escLabel}
+              </TextWhite>
+            </div>
           </div>
-        </div>
-      </CSSTransition>
+        </CSSTransition>
+      )}
       <CSSTransition
         unmountOnExit
         classNames={{
@@ -104,10 +112,17 @@ export const Presenter: VFC<Props> = ({
         in={visible}
         timeout={{ enter: 400, exit: 400 }}
       >
-        <div className="fixed z-50 w-full top-1/2 left-1/2" style={{ maxHeight: "calc(100vh - 128px)", maxWidth }}>
+        <div
+          className="fixed z-50 w-full h-full top-1/2 left-1/2 md:h-auto"
+          style={{ maxHeight: isMobile ? undefined : "calc(100vh - 128px)", maxWidth }}
+        >
           <div
-            className={`p-8 bg-white rounded-lg cursor-auto shadow-xl overflow-y-auto`}
-            style={{ maxHeight: "calc(100vh - 128px)", maxWidth, paddingBottom: fixedBottomHeight + 32 }}
+            className={`p-4 md:p-8 bg-white md:rounded-lg h-full md:h-auto cursor-auto shadow-xl overflow-y-auto`}
+            style={{
+              maxHeight: isMobile ? undefined : "calc(100vh - 128px)",
+              maxWidth,
+              paddingBottom: fixedBottomHeight + (isMobile ? 16 : 32),
+            }}
           >
             {loading ? (
               <span className="absolute flex top-1/2 transform -translate-y-1/2">
@@ -119,19 +134,20 @@ export const Presenter: VFC<Props> = ({
             {renderFixedBottom && (
               <div
                 ref={fixedBottomRef}
-                className="absolute bottom-0 left-0 w-full px-8 py-4 bg-gray-100 border-t border-gray-200 rounded-b-lg"
+                className="absolute bottom-0 left-0 w-full px-4 py-3 bg-gray-100 border-t border-gray-200 md:px-8 md:py-4 md:rounded-b-lg"
               >
                 {renderFixedBottom()}
               </div>
             )}
             <IconButtonWhite
-              className="absolute -right-5 -top-5"
+              className="absolute top-4 right-4 md:-right-5 md:-top-5"
               iconName={"FiX"}
               onClick={() => {
                 setVisible(false);
                 onRequestClose && onRequestClose();
               }}
               radius={true}
+              shadow={false}
             />
           </div>
         </div>
