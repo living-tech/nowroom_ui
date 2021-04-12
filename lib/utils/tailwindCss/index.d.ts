@@ -86,7 +86,7 @@ export declare const tailwindCssConfig: {
                 inner: number;
             };
             screens: {
-                xl: number;
+                xl: string;
             };
             width: {
                 inner: number;

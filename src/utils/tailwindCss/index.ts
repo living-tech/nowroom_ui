@@ -136,7 +136,7 @@ export const tailwindCssConfig = {
         inner: innerWidth,
       },
       screens: {
-        xl: innerWidth,
+        xl: `${innerWidth}px`,
       },
       width: {
         inner: innerWidth,
