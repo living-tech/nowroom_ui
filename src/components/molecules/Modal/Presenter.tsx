@@ -121,7 +121,7 @@ export const Presenter: VFC<Props> = ({
           style={{ maxHeight: isMobile ? undefined : "calc(100vh - 128px)", maxWidth }}
         >
           <div
-            className={`p-4 md:p-8 bg-white md:rounded-lg h-full md:h-auto cursor-auto shadow-xl overflow-y-auto`}
+            className={`py-6 md:py-8 px-4 md:px-8 bg-white md:rounded-lg h-full md:h-auto cursor-auto shadow-xl overflow-y-auto`}
             style={{
               maxHeight: isMobile ? undefined : "calc(100vh - 128px)",
               maxWidth,
