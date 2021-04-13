@@ -121,11 +121,11 @@ export const Presenter: VFC<Props> = ({
           style={{ maxHeight: isMobile ? undefined : "calc(100vh - 128px)", maxWidth }}
         >
           <div
-            className={`py-6 md:py-8 px-4 md:px-8 bg-white md:rounded-lg h-full md:h-auto cursor-auto shadow-xl overflow-y-auto`}
+            className={`py-10 md:py-8 px-4 md:px-8 bg-white md:rounded-lg h-full md:h-auto cursor-auto shadow-xl overflow-y-auto`}
             style={{
               maxHeight: isMobile ? undefined : "calc(100vh - 128px)",
               maxWidth,
-              paddingBottom: fixedBottomHeight + (isMobile ? 16 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),
+              paddingBottom: fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),
             }}
           >
             {loading ? (

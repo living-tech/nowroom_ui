@@ -3,8 +3,13 @@ import "../src/styles/globals.css";
 import * as React from "react";
 import { addDecorator } from "@storybook/react";
 import { RouterContext } from  'next/dist/next-server/lib/router-context';
-import { materialUiTheme } from "../src"
+import { customViewports, materialUiTheme } from "../src"
 import { ThemeProvider } from "@material-ui/core/styles";
+
+export const parameters = {
+  actions: { argTypesRegex: "^on[A-Z].*" },
+  viewport: { viewports: customViewports, defaultViewport: 'iphoneX' },
+};
 
 const withProvider = (storyFn) => {
   return (
@@ -21,7 +26,3 @@ const withProvider = (storyFn) => {
 }
 
 addDecorator(withProvider);
-
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-};
