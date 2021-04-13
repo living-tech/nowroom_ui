@@ -16,6 +16,7 @@ export declare type Props = {
     tabSize?: Size;
     tabsContainerClassName?: string;
     tabsContainerStyle?: CSSProperties;
+    tabsPosition?: "left" | "center";
     tabsUnderLine?: boolean;
     tabsWidth?: "full" | "auto";
 };

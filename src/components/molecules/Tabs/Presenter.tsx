@@ -24,6 +24,7 @@ export type Props = {
   tabSize?: Size;
   tabsContainerClassName?: string;
   tabsContainerStyle?: CSSProperties;
+  tabsPosition?: "left" | "center";
   tabsUnderLine?: boolean;
   tabsWidth?: "full" | "auto";
 };
@@ -39,6 +40,7 @@ export const Presenter: VFC<Props> = ({
   style,
   tabContainerClassName = "",
   tabContainerStyle,
+  tabsPosition = "left",
   tabSize,
   tabsContainerClassName = "",
   tabsContainerStyle,
@@ -58,6 +60,15 @@ export const Presenter: VFC<Props> = ({
       break;
     case "auto":
       tabDisplayClass = "inline-flex";
+      break;
+  }
+
+  let tabsPositionClass = "";
+  switch (tabsPosition) {
+    case "center":
+      tabsPositionClass = "flex justify-center";
+      break;
+    case "left":
       break;
   }
 
@@ -118,7 +129,7 @@ export const Presenter: VFC<Props> = ({
         }}
       >
         {({ measureRef }) => (
-          <div ref={measureRef} className="relative">
+          <div ref={measureRef} className={`relative ${tabsPositionClass}`}>
             <ul className={`${tabDisplayClass} ${tabsContainerClassName}`} id={id} style={tabsContainerStyle}>
               {items.map((item, index) => (
                 <Tab
