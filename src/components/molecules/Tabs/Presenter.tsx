@@ -41,7 +41,7 @@ export const Presenter: VFC<Props> = ({
   tabContainerClassName = "",
   tabContainerStyle,
   tabsPosition = "left",
-  tabSize,
+  tabSize = "md",
   tabsContainerClassName = "",
   tabsContainerStyle,
   tabsUnderLine = true,
@@ -130,34 +130,36 @@ export const Presenter: VFC<Props> = ({
       >
         {({ measureRef }) => (
           <div ref={measureRef} className={`relative ${tabsPositionClass}`}>
-            <ul className={`${tabDisplayClass} ${tabsContainerClassName}`} id={id} style={tabsContainerStyle}>
-              {items.map((item, index) => (
-                <Tab
-                  key={index}
-                  active={activeIndex === index}
-                  className={tabContainerClassName}
-                  id={`${id}-${index}`}
-                  index={index}
-                  label={item.label}
-                  onClick={onTabClick}
-                  onTabMouseEnter={onTabMouseEnter}
-                  onTabMouseLeave={onTabMouseLeave}
-                  size={tabSize}
-                  style={tabContainerStyle}
-                  tabUnderLine={tabsUnderLine}
+            <div className="relative">
+              <ul className={`${tabDisplayClass} ${tabsContainerClassName}`} id={id} style={tabsContainerStyle}>
+                {items.map((item, index) => (
+                  <Tab
+                    key={index}
+                    active={activeIndex === index}
+                    className={tabContainerClassName}
+                    id={`${id}-${index}`}
+                    index={index}
+                    label={item.label}
+                    onClick={onTabClick}
+                    onTabMouseEnter={onTabMouseEnter}
+                    onTabMouseLeave={onTabMouseLeave}
+                    size={tabSize}
+                    style={tabContainerStyle}
+                    tabUnderLine={tabsUnderLine}
+                  />
+                ))}
+              </ul>
+              {borderStyle && (
+                <span
+                  className="absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out"
+                  style={{
+                    height: 2,
+                    left: borderStyle.left,
+                    width: borderStyle.width,
+                  }}
                 />
-              ))}
-            </ul>
-            {borderStyle && (
-              <span
-                className="absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out"
-                style={{
-                  height: 2,
-                  left: borderStyle.left,
-                  width: borderStyle.width,
-                }}
-              />
-            )}
+              )}
+            </div>
           </div>
         )}
       </Measure>
