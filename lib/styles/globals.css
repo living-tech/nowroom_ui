@@ -46,6 +46,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+input,
+textarea {
+  -webkit-appearance: none;
+}
+
 input[type="radio"] + label span.circle {
   transition: background 0.2s, transform 0.2s;
 }
