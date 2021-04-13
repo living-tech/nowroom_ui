@@ -130,25 +130,23 @@ export const Presenter: VFC<Props> = ({
       >
         {({ measureRef }) => (
           <div ref={measureRef} className={`relative ${tabsPositionClass}`}>
-            <div className="relative">
-              <ul className={`${tabDisplayClass} ${tabsContainerClassName}`} id={id} style={tabsContainerStyle}>
-                {items.map((item, index) => (
-                  <Tab
-                    key={index}
-                    active={activeIndex === index}
-                    className={tabContainerClassName}
-                    id={`${id}-${index}`}
-                    index={index}
-                    label={item.label}
-                    onClick={onTabClick}
-                    onTabMouseEnter={onTabMouseEnter}
-                    onTabMouseLeave={onTabMouseLeave}
-                    size={tabSize}
-                    style={tabContainerStyle}
-                    tabUnderLine={tabsUnderLine}
-                  />
-                ))}
-              </ul>
+            <ul className={`relative ${tabDisplayClass} ${tabsContainerClassName}`} id={id} style={tabsContainerStyle}>
+              {items.map((item, index) => (
+                <Tab
+                  key={index}
+                  active={activeIndex === index}
+                  className={tabContainerClassName}
+                  id={`${id}-${index}`}
+                  index={index}
+                  label={item.label}
+                  onClick={onTabClick}
+                  onTabMouseEnter={onTabMouseEnter}
+                  onTabMouseLeave={onTabMouseLeave}
+                  size={tabSize}
+                  style={tabContainerStyle}
+                  tabUnderLine={tabsUnderLine}
+                />
+              ))}
               {borderStyle && (
                 <span
                   className="absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out"
@@ -159,7 +157,7 @@ export const Presenter: VFC<Props> = ({
                   }}
                 />
               )}
-            </div>
+            </ul>
           </div>
         )}
       </Measure>
