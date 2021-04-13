@@ -107,7 +107,7 @@ export const Presenter: VFC<Props> = ({
       left: targetLeft - containerLeft,
       width: targetElement.clientWidth,
     });
-  }, [hoverTab, activeIndex]);
+  }, [hoverTab, activeIndex, tabSize]);
 
   return (
     <div className={className} style={style}>
