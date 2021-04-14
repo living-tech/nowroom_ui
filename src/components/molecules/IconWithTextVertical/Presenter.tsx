@@ -23,7 +23,7 @@ export const Presenter: VFC<Props> = ({ className, color, iconName, label, size 
         className="leading-none"
         color={color}
         size={size === "md" ? "xs" : "xxs"}
-        style={{ marginTop: size === "md" ? 8 : 4 }}
+        style={{ marginTop: size === "md" ? 8 : 6 }}
       >
         {label}
       </Text>
