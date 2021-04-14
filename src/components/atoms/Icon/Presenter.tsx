@@ -312,7 +312,7 @@ import { Woman } from "./svg/Woman";
 
 // https://react-icons.github.io/react-icons/
 
-export type Size = "xs" | "sm" | "md" | "lg" | "xl";
+export type Size = "xs" | "sm" | "md" | "lg" | "xl" | number;
 export type NowRoomIconName =
   | "AirCon"
   | "AutoLock"
@@ -761,6 +761,8 @@ export const Presenter: VFC<Props> = ({
     case "xl":
       sizePx = 40;
       break;
+    default:
+      sizePx = size;
   }
 
   const className = `${currentClass} ${colorClass} ${propsClassName}`;

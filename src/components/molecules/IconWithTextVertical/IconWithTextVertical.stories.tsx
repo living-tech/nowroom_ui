@@ -9,8 +9,15 @@ export default {
 
 const Template: Story<Props> = (args) => <Presenter {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Md = Template.bind({});
+Md.args = {
   iconName: "FiAperture",
   label: "ラベル",
+};
+
+export const Sm = Template.bind({});
+Sm.args = {
+  iconName: "FiMenu",
+  label: "ラベル",
+  size: "sm",
 };
