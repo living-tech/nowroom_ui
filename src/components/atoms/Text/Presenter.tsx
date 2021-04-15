@@ -48,6 +48,7 @@ export type Props = {
   children: ReactNode;
   className?: string;
   color?: Color;
+  itemProp?: string;
   size?: Size;
   style?: CSSProperties;
   tag?: Tag;
