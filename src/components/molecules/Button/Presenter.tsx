@@ -17,7 +17,7 @@ export type Props = {
   onClick?: () => void;
   padding?: boolean;
   shadow?: boolean;
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   style?: CSSProperties;
   tag?: "button" | "a";
   target?: "_blank";
@@ -52,28 +52,40 @@ export const Presenter: VFC<Props> = ({
   let sizeClass = "";
   let iconSize: Size;
   let loadingSize;
+  let spaceXSize;
   let paddingTop: number;
   switch (size) {
+    case "xs":
+      sizeClass = padding ? "pb-2 px-2 text-xs" : "text-xs";
+      spaceXSize = 1;
+      paddingTop = 7;
+      iconSize = 14;
+      loadingSize = 18;
+      break;
     case "sm":
       sizeClass = padding ? "pb-2 px-6 text-sm" : "text-sm";
+      spaceXSize = 2;
       paddingTop = 7;
       iconSize = "sm";
       loadingSize = 18;
       break;
     case "md":
       sizeClass = padding ? "pb-2.5 px-6 text-sm" : "text-sm";
+      spaceXSize = 2;
       paddingTop = 9;
       iconSize = "sm";
       loadingSize = 20;
       break;
     case "lg":
       sizeClass = padding ? "pb-3 px-8 text-base" : "text-base";
+      spaceXSize = 2;
       paddingTop = 11;
       iconSize = "sm";
       loadingSize = 24;
       break;
     case "xl":
       sizeClass = padding ? "pb-4 px-10 text-base" : "text-base";
+      spaceXSize = 2;
       paddingTop = 15;
       iconSize = "md";
       loadingSize = 24;
@@ -171,13 +183,13 @@ export const Presenter: VFC<Props> = ({
     <>
       <span className={`flex items-center ${loadingTextClass}`}>
         {iconName && iconPosition === "left" && (
-          <span className={"mr-2 relative"} style={{ top: 1 }}>
+          <span className={`relative mr-${spaceXSize}`} style={{ top: 1 }}>
             <Icon name={iconName} size={iconSize} />
           </span>
         )}
         {children}
         {iconName && iconPosition === "right" && (
-          <span className={"ml-2 relative"} style={{ top: 1 }}>
+          <span className={`relative ml-${spaceXSize}`} style={{ top: 1 }}>
             <Icon name={iconName} size={iconSize} />
           </span>
         )}

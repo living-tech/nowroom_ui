@@ -9,18 +9,25 @@ export default {
 
 const Template: Story<Props> = (args) => <Presenter {...args}>{"ラベル"}</Presenter>;
 
-export const Purple = Template.bind({});
-Purple.args = {
+export const PurpleMd = Template.bind({});
+PurpleMd.args = {
   color: "purple",
 };
 
-export const PurpleOutline = Template.bind({});
-PurpleOutline.args = {
+export const PurpleOutlineMd = Template.bind({});
+PurpleOutlineMd.args = {
   color: "purple",
   visualType: "outline",
 };
 
-export const White = Template.bind({});
-White.args = {
+export const WhiteMd = Template.bind({});
+WhiteMd.args = {
   color: "white",
+};
+
+export const PurpleXsWithIcon = Template.bind({});
+PurpleXsWithIcon.args = {
+  color: "purple",
+  iconName: "FiSearch",
+  size: "xs",
 };

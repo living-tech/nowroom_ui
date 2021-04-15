@@ -13,7 +13,7 @@ export declare type Props = {
     onClick?: () => void;
     padding?: boolean;
     shadow?: boolean;
-    size?: "sm" | "md" | "lg" | "xl";
+    size?: "xs" | "sm" | "md" | "lg" | "xl";
     style?: CSSProperties;
     tag?: "button" | "a";
     target?: "_blank";
