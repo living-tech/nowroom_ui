@@ -1,5 +1,6 @@
 import { CSSProperties, VFC } from "react";
 import { BiYen } from "react-icons/bi";
+import { FaLine } from "react-icons/fa";
 import {
   FiActivity,
   FiAirplay,
@@ -288,6 +289,7 @@ import {
   FiZoomIn,
   FiZoomOut,
 } from "react-icons/fi";
+import { IoLogoFacebook, IoLogoTwitter } from "react-icons/io";
 
 import { AddBuilding } from "./svg/AddBuilding";
 import { AddRoom } from "./svg/AddRoom";
@@ -622,7 +624,10 @@ export type FiIconName =
   | "FiZapOff"
   | "FiZap"
   | "FiZoomIn"
-  | "FiZoomOut";
+  | "FiZoomOut"
+  | "FaLine"
+  | "IoLogoFacebook"
+  | "IoLogoTwitter";
 
 export type IconName = NowRoomIconName | FiIconName;
 export type Color =
@@ -641,11 +646,12 @@ export type Color =
   | "yellow"
   | "facebook"
   | "twitter";
+export type CurrentType = "fill" | "stroke";
 
 export type Props = {
   className?: string;
   color?: Color;
-  currentType?: "fill" | "stroke";
+  currentType?: CurrentType;
   name: IconName;
   size?: Size;
   style?: CSSProperties;
@@ -1393,6 +1399,12 @@ export const Presenter: VFC<Props> = ({
       return <FiZoomIn className={className} size={sizePx} {...props} />;
     case "FiZoomOut":
       return <FiZoomOut className={className} size={sizePx} {...props} />;
+    case "FaLine":
+      return <FaLine className={className} size={sizePx} {...props} />;
+    case "IoLogoFacebook":
+      return <IoLogoFacebook className={className} size={sizePx} {...props} />;
+    case "IoLogoTwitter":
+      return <IoLogoTwitter className={className} size={sizePx} {...props} />;
 
     default:
       return <></>;

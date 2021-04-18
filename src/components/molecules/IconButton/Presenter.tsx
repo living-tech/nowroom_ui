@@ -1,7 +1,7 @@
 import { CSSProperties, VFC } from "react";
 
 import { Icon } from "../../atoms/Icon/Default";
-import { Color as IconColor, IconName, Size } from "../../atoms/Icon/Presenter";
+import { Color as IconColor, CurrentType, IconName, Size } from "../../atoms/Icon/Presenter";
 
 export type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter";
 
@@ -9,6 +9,7 @@ export type Props = {
   border?: boolean;
   className?: string;
   color?: Color;
+  currentType?: CurrentType;
   disabled?: boolean;
   href?: string;
   iconColor?: IconColor;
@@ -27,6 +28,7 @@ export const Presenter: VFC<Props> = ({
   border = true,
   className,
   color = "transparent",
+  currentType,
   disabled,
   href,
   iconColor,
@@ -80,10 +82,10 @@ export const Presenter: VFC<Props> = ({
             borderColorClass = "border border-red disabled:border-gray-500";
             break;
           case "facebook":
-            borderColorClass = "border border-facebook hover:border-gray-500";
+            borderColorClass = "border border-facebook disabled:border-gray-500";
             break;
           case "twitter":
-            borderColorClass = "border border-twitter hover:border-gray-500";
+            borderColorClass = "border border-twitter disabled:border-gray-500";
             break;
           case "white":
             borderColorClass = "border border-gray-200 hover:border-purple";
@@ -234,7 +236,7 @@ export const Presenter: VFC<Props> = ({
     shadowClass = "shadow";
   }
 
-  const Inner = () => <Icon color={iconColor} name={iconName} size={iconSize} />;
+  const Inner = () => <Icon color={iconColor} currentType={currentType} name={iconName} size={iconSize} />;
 
   if (tag === "a") {
     return (

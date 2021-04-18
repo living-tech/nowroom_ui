@@ -1,10 +1,11 @@
 import { CSSProperties, VFC } from "react";
-import { Color as IconColor, IconName } from "../../atoms/Icon/Presenter";
+import { Color as IconColor, CurrentType, IconName } from "../../atoms/Icon/Presenter";
 export declare type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter";
 export declare type Props = {
     border?: boolean;
     className?: string;
     color?: Color;
+    currentType?: CurrentType;
     disabled?: boolean;
     href?: string;
     iconColor?: IconColor;
