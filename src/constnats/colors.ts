@@ -46,3 +46,4 @@ export const yellow700 = "#AC7A19";
 
 export const twitterColor = "#279FF1";
 export const facebookColor = "#4263B1";
+export const lineColor = "#07b53b";

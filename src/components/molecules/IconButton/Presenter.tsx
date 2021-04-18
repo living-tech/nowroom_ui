@@ -3,7 +3,7 @@ import { CSSProperties, VFC } from "react";
 import { Icon } from "../../atoms/Icon/Default";
 import { Color as IconColor, CurrentType, IconName, Size } from "../../atoms/Icon/Presenter";
 
-export type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter";
+export type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter" | "line";
 
 export type Props = {
   border?: boolean;
@@ -87,6 +87,9 @@ export const Presenter: VFC<Props> = ({
           case "twitter":
             borderColorClass = "border border-twitter disabled:border-gray-500";
             break;
+          case "line":
+            borderColorClass = "border border-line disabled:border-gray-500";
+            break;
           case "white":
             borderColorClass = "border border-gray-200 hover:border-purple";
             break;
@@ -111,6 +114,9 @@ export const Presenter: VFC<Props> = ({
             break;
           case "twitter":
             borderColorClass = "border border-twitter disabled:border-gray-200";
+            break;
+          case "line":
+            borderColorClass = "border border-line disabled:border-gray-200";
             break;
           case "white":
             borderColorClass = "border border-gray-200 hover:border-purple";
@@ -142,6 +148,9 @@ export const Presenter: VFC<Props> = ({
         case "twitter":
           backgroundColorClass = "bg-twitter hover:bg-white disabled:bg-gray-500 disabled:hover:bg-gray-500";
           break;
+        case "line":
+          backgroundColorClass = "bg-line hover:bg-white disabled:bg-gray-500 disabled:hover:bg-gray-500";
+          break;
         case "white":
           backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
           break;
@@ -166,6 +175,9 @@ export const Presenter: VFC<Props> = ({
           break;
         case "twitter":
           backgroundColorClass = "bg-white hover:bg-twitter disabled:hover:bg-white";
+          break;
+        case "line":
+          backgroundColorClass = "bg-white hover:bg-line disabled:hover:bg-white";
           break;
         case "white":
           backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
@@ -196,6 +208,9 @@ export const Presenter: VFC<Props> = ({
         case "twitter":
           iconColorClass = "text-white hover:text-twitter disabled:text-white disabled:hover:text-white";
           break;
+        case "line":
+          iconColorClass = "text-white hover:text-line disabled:text-white disabled:hover:text-white";
+          break;
         case "white":
           iconColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";
           break;
@@ -220,6 +235,9 @@ export const Presenter: VFC<Props> = ({
           break;
         case "twitter":
           iconColorClass = "text-twitter hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
+          break;
+        case "line":
+          iconColorClass = "text-line hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
           break;
         case "white":
           iconColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";

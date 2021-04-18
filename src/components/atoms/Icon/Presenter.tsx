@@ -645,7 +645,8 @@ export type Color =
   | "cyan"
   | "yellow"
   | "facebook"
-  | "twitter";
+  | "twitter"
+  | "line";
 export type CurrentType = "fill" | "stroke";
 
 export type Props = {
@@ -753,6 +754,9 @@ export const Presenter: VFC<Props> = ({
       break;
     case "twitter":
       colorClass = "text-twitter";
+      break;
+    case "line":
+      colorClass = "text-line";
       break;
     default:
       colorClass = "text-current";

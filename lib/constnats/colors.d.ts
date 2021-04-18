@@ -37,4 +37,5 @@ export declare const yellow600 = "#D49E35";
 export declare const yellow700 = "#AC7A19";
 export declare const twitterColor = "#279FF1";
 export declare const facebookColor = "#4263B1";
+export declare const lineColor = "#07b53b";
 //# sourceMappingURL=colors.d.ts.map

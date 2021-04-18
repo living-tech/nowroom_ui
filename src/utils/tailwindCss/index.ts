@@ -18,6 +18,7 @@ import {
   gray700,
   green500,
   innerWidth,
+  lineColor,
   pink500,
   pink600,
   pink700,
@@ -96,6 +97,9 @@ export const tailwindCssConfig = {
         },
         green: {
           DEFAULT: green500,
+        },
+        line: {
+          DEFAULT: lineColor,
         },
         overlay: {
           DEFAULT: "rgba(41, 38, 61, 0.8)",

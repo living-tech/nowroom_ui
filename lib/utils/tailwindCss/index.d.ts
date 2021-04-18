@@ -45,6 +45,9 @@ export declare const tailwindCssConfig: {
                 green: {
                     DEFAULT: string;
                 };
+                line: {
+                    DEFAULT: string;
+                };
                 overlay: {
                     DEFAULT: string;
                 };

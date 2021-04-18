@@ -17,7 +17,8 @@ export type Color =
   | "yellow"
   | "red"
   | "twitter"
-  | "facebook";
+  | "facebook"
+  | "line";
 
 export type Size = "xxs" | "xs" | "sm" | "md" | "lg" | "xl" | "xxl";
 export type Tag =
@@ -153,6 +154,9 @@ export const Presenter: VFC<Props> = ({
       colorClass = "text-facebook";
       break;
     case "twitter":
+      colorClass = "text-twitter";
+      break;
+    case "line":
       colorClass = "text-twitter";
       break;
   }
