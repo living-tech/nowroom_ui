@@ -1,6 +1,6 @@
 import { CSSProperties, VFC } from "react";
 import { Color as IconColor, IconName } from "../../atoms/Icon/Presenter";
-export declare type Color = "purple" | "yellow" | "red" | "white" | "transparent";
+export declare type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter";
 export declare type Props = {
     border?: boolean;
     className?: string;

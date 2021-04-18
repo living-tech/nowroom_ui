@@ -30,6 +30,9 @@ export declare const tailwindCssConfig: {
                     700: string;
                     DEFAULT: string;
                 };
+                facebook: {
+                    DEFAULT: string;
+                };
                 gray: {
                     100: string;
                     200: string;
@@ -68,6 +71,9 @@ export declare const tailwindCssConfig: {
                     DEFAULT: string;
                 };
                 transparent: string;
+                twitter: {
+                    DEFAULT: string;
+                };
                 yellow: {
                     100: string;
                     200: string;

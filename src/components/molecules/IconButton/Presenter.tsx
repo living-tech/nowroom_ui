@@ -3,7 +3,7 @@ import { CSSProperties, VFC } from "react";
 import { Icon } from "../../atoms/Icon/Default";
 import { Color as IconColor, IconName, Size } from "../../atoms/Icon/Presenter";
 
-export type Color = "purple" | "yellow" | "red" | "white" | "transparent";
+export type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter";
 
 export type Props = {
   border?: boolean;
@@ -79,6 +79,12 @@ export const Presenter: VFC<Props> = ({
           case "red":
             borderColorClass = "border border-red disabled:border-gray-500";
             break;
+          case "facebook":
+            borderColorClass = "border border-facebook hover:border-gray-500";
+            break;
+          case "twitter":
+            borderColorClass = "border border-twitter hover:border-gray-500";
+            break;
           case "white":
             borderColorClass = "border border-gray-200 hover:border-purple";
             break;
@@ -97,6 +103,12 @@ export const Presenter: VFC<Props> = ({
             break;
           case "red":
             borderColorClass = "border border-red disabled:border-gray-200";
+            break;
+          case "facebook":
+            borderColorClass = "border border-facebook disabled:border-gray-200";
+            break;
+          case "twitter":
+            borderColorClass = "border border-twitter disabled:border-gray-200";
             break;
           case "white":
             borderColorClass = "border border-gray-200 hover:border-purple";
@@ -122,6 +134,12 @@ export const Presenter: VFC<Props> = ({
         case "red":
           backgroundColorClass = "bg-red hover:bg-white disabled:bg-gray-500 disabled:hover:bg-gray-500";
           break;
+        case "facebook":
+          backgroundColorClass = "bg-facebook hover:bg-white disabled:bg-gray-500 disabled:hover:bg-gray-500";
+          break;
+        case "twitter":
+          backgroundColorClass = "bg-twitter hover:bg-white disabled:bg-gray-500 disabled:hover:bg-gray-500";
+          break;
         case "white":
           backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
           break;
@@ -140,6 +158,12 @@ export const Presenter: VFC<Props> = ({
           break;
         case "red":
           backgroundColorClass = "bg-white hover:bg-red disabled:bg-white disabled:hover:bg-white";
+          break;
+        case "facebook":
+          backgroundColorClass = "bg-white hover:bg-facebook disabled:hover:bg-white";
+          break;
+        case "twitter":
+          backgroundColorClass = "bg-white hover:bg-twitter disabled:hover:bg-white";
           break;
         case "white":
           backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
@@ -164,6 +188,12 @@ export const Presenter: VFC<Props> = ({
         case "red":
           iconColorClass = "text-white hover:text-red disabled:text-white disabled:hover:text-white";
           break;
+        case "facebook":
+          iconColorClass = "text-white hover:text-facebook disabled:text-white disabled:hover:text-white";
+          break;
+        case "twitter":
+          iconColorClass = "text-white hover:text-twitter disabled:text-white disabled:hover:text-white";
+          break;
         case "white":
           iconColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";
           break;
@@ -182,6 +212,12 @@ export const Presenter: VFC<Props> = ({
           break;
         case "red":
           iconColorClass = "text-red hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
+          break;
+        case "facebook":
+          iconColorClass = "text-facebook hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
+          break;
+        case "twitter":
+          iconColorClass = "text-twitter hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
           break;
         case "white":
           iconColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";

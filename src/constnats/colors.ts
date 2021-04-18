@@ -43,3 +43,6 @@ export const yellow400 = "#FFD584";
 export const yellow500 = "#EEBC5A";
 export const yellow600 = "#D49E35";
 export const yellow700 = "#AC7A19";
+
+export const twitterColor = "#279FF1";
+export const facebookColor = "#4263B1";

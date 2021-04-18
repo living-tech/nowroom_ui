@@ -8,6 +8,7 @@ import {
   cyan500,
   cyan600,
   cyan700,
+  facebookColor,
   gray100,
   gray200,
   gray300,
@@ -31,6 +32,7 @@ import {
   red300,
   red400,
   red500,
+  twitterColor,
   yellow100,
   yellow200,
   yellow300,
@@ -80,6 +82,9 @@ export const tailwindCssConfig = {
           700: cyan700,
           DEFAULT: cyan500,
         },
+        facebook: {
+          DEFAULT: facebookColor,
+        },
         gray: {
           100: gray100,
           200: gray200,
@@ -118,6 +123,9 @@ export const tailwindCssConfig = {
           DEFAULT: red500,
         },
         transparent: "transparent",
+        twitter: {
+          DEFAULT: twitterColor,
+        },
         yellow: {
           100: yellow100,
           200: yellow200,

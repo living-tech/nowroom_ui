@@ -638,7 +638,9 @@ export type Color =
   | "pink"
   | "red"
   | "cyan"
-  | "yellow";
+  | "yellow"
+  | "facebook"
+  | "twitter";
 
 export type Props = {
   className?: string;
@@ -739,6 +741,12 @@ export const Presenter: VFC<Props> = ({
       break;
     case "red":
       colorClass = "text-red";
+      break;
+    case "facebook":
+      colorClass = "text-facebook";
+      break;
+    case "twitter":
+      colorClass = "text-twitter";
       break;
     default:
       colorClass = "text-current";
