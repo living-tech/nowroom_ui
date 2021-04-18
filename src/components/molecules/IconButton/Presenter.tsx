@@ -1,9 +1,10 @@
 import { CSSProperties, VFC } from "react";
 
 import { Icon } from "../../atoms/Icon/Default";
-import { Color as IconColor, CurrentType, IconName, Size } from "../../atoms/Icon/Presenter";
+import { Color as IconColor, CurrentType, IconName, Size as IconSize } from "../../atoms/Icon/Presenter";
 
 export type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter" | "line";
+export type Size = "sm" | "md" | "lg";
 
 export type Props = {
   border?: boolean;
@@ -17,7 +18,7 @@ export type Props = {
   onClick?: () => void;
   radius?: boolean;
   shadow?: boolean;
-  size?: "sm" | "md" | "lg";
+  size?: Size;
   style?: CSSProperties;
   tag?: "button" | "a";
   target?: "_blank";
@@ -46,7 +47,7 @@ export const Presenter: VFC<Props> = ({
     "rounded font-bold transition duration-200 ease-out inline-flex disabled:cursor-not-allowed justify-center items-center focus:outline-none";
 
   let sizeClass = "";
-  let iconSize: Size;
+  let iconSize: IconSize;
   switch (size) {
     case "sm":
       sizeClass = "p-1";
@@ -57,7 +58,7 @@ export const Presenter: VFC<Props> = ({
       iconSize = "md";
       break;
     case "lg":
-      sizeClass = "p-4";
+      sizeClass = "p-2";
       iconSize = "lg";
       break;
   }

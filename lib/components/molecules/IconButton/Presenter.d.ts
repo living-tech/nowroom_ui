@@ -1,6 +1,7 @@
 import { CSSProperties, VFC } from "react";
 import { Color as IconColor, CurrentType, IconName } from "../../atoms/Icon/Presenter";
 export declare type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter" | "line";
+export declare type Size = "sm" | "md" | "lg";
 export declare type Props = {
     border?: boolean;
     className?: string;
@@ -13,7 +14,7 @@ export declare type Props = {
     onClick?: () => void;
     radius?: boolean;
     shadow?: boolean;
-    size?: "sm" | "md" | "lg";
+    size?: Size;
     style?: CSSProperties;
     tag?: "button" | "a";
     target?: "_blank";
