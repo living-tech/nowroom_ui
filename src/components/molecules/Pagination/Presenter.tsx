@@ -30,7 +30,7 @@ export const Presenter: VFC<Props> = ({
       breakClassName={"break-me"}
       breakLabel={<Icon name={"FiMoreHorizontal"} size={20} />}
       containerClassName={`pagination ${className}`}
-      initialPage={initialPage}
+      initialPage={initialPage - 1}
       marginPagesDisplayed={isMobile ? 1 : 2}
       nextLabel={
         <span className={`flex items-center`}>
@@ -44,7 +44,7 @@ export const Presenter: VFC<Props> = ({
           </span>
         </span>
       }
-      onPageChange={({ selected }) => onPageChange && onPageChange(selected)}
+      onPageChange={({ selected }) => onPageChange && onPageChange(selected + 1)}
       pageCount={pageCount}
       pageRangeDisplayed={isMobile ? 1 : 2}
       previousLabel={
