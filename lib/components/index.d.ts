@@ -136,6 +136,8 @@ export * from "./molecules/MonthSelector/Default";
 export { Props as MonthSelectorProps } from "./molecules/MonthSelector/Presenter";
 export * from "./molecules/NavigationTabs/Default";
 export { Props as NavigationTabsProps } from "./molecules/NavigationTabs/Presenter";
+export * from "./molecules/Pagination/Default";
+export { Props as PaginationProps } from "./molecules/Pagination/Presenter";
 export * from "./molecules/RoomSpecificationRow/Default";
 export { Props as RoomSpecificationRowProps } from "./molecules/RoomSpecificationRow/Presenter";
 export * from "./molecules/Slider/Default";

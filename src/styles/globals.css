@@ -95,17 +95,17 @@ input[type="radio"] + label:hover span.circle {
 }
 
 input[type="radio"]:checked + label {
-  border-color: var(--purple);
+  border-color: var(--purple500);
 }
 
 input[type="radio"]:checked + label div span.circle {
-  background-color: var(--purple);
-  border-color: var(--purple);
+  background-color: var(--purple500);
+  border-color: var(--purple500);
   box-shadow: 0 0 0 2px white inset;
 }
 
 input[type="radio"]:checked + label div p.text {
-  color: var(--purple);
+  color: var(--purple500);
 }
 
 .slider-control-bottomcenter ul {
@@ -168,7 +168,7 @@ input[type="radio"]:checked + label div p.text {
 .react-datepicker__day--selected {
   font-size: 16px;
   color: var(--white);
-  background-color: var(--purple);
+  background-color: var(--purple500);
 }
 
 .react-datepicker__day--outside-month {
@@ -196,6 +196,60 @@ input[type="radio"]:checked + label div p.text {
 
 .react-datepicker__day--selected:hover {
   color: var(--white);
-  background-color: var(--purple);
+  background-color: var(--purple500);
   border-radius: 50%;
 }
+
+ul.pagination {
+  display: inline-flex;
+}
+
+ul.pagination li {
+  margin-left: 12px;
+}
+
+ul.pagination li:first-child {
+  margin-left: 0;
+}
+
+ul.pagination li a {
+  border-radius: 2px;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  color: var(--black);
+  position: relative;
+  min-width: 37px;
+  min-height: 37px;
+  padding: 7px 0.5rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  border: 1px solid var(--gray200);
+  background: var(--white);
+  box-shadow: 0 2px 4px rgba(30, 29, 37, 0.02);
+  outline: none;
+}
+
+ul.pagination li a:hover {
+  color: var(--purple500);
+  background: var(--purple100);
+}
+
+ul.pagination li.active a {
+  cursor: auto;
+  color: var(--white);
+  background: var(--purple500);
+  border: 1px solid var(--purple500);
+}
+
+ul.pagination li.disabled a {
+  cursor: not-allowed;
+  color: var(--gray500);
+  background: var(--gray200);
+  border: 1px solid var(--gray200);
+}
+
