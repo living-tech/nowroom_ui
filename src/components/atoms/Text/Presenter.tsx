@@ -45,12 +45,14 @@ export type Tag =
   | "span"
   | "sub"
   | "sup"
-  | "u";
+  | "u"
+  | "time";
 
 export type Props = {
   children: ReactNode;
   className?: string;
   color?: Color;
+  dateTime?: string;
   itemProp?: string;
   size?: Size;
   style?: CSSProperties;

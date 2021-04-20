@@ -58,3 +58,9 @@ export const Yellow = Template.bind({});
 Yellow.args = {
   color: "yellow",
 };
+
+export const timeTag = Template.bind({});
+Yellow.args = {
+  color: "black",
+  tag: "time",
+};
