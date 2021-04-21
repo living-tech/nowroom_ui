@@ -7,7 +7,16 @@ import { Size } from "../../atoms/Text/Presenter";
 
 export type Weight = "normal" | "bold";
 
-export type Color = "purple" | "white" | "black" | "mediumGray02" | "lightGray01" | "lightGray02";
+export type Color =
+  | "purple"
+  | "white"
+  | "black"
+  | "mediumGray02"
+  | "mediumGray01"
+  | "lightGray01"
+  | "lightGray02"
+  | "darkGray01"
+  | "darkGray02";
 
 export type Props = {
   block?: boolean;
@@ -111,14 +120,23 @@ export const Presenter: VFC<Props> = ({
     case "black":
       textColorClass = "text-black hover:text-purple";
       break;
+    case "darkGray02":
+      textColorClass = "text-gray-700 hover:text-purple";
+      break;
+    case "darkGray01":
+      textColorClass = "text-gray-600 hover:text-purple";
+      break;
     case "mediumGray02":
       textColorClass = "text-gray-500 hover:text-purple";
       break;
+    case "mediumGray01":
+      textColorClass = "text-gray-400 hover:text-purple";
+      break;
     case "lightGray02":
-      textColorClass = "text-gray-200 hover:text-purple";
+      textColorClass = "text-gray-300 hover:text-purple";
       break;
     case "lightGray01":
-      textColorClass = "text-gray-100 hover:text-purple";
+      textColorClass = "text-gray-200 hover:text-purple";
       break;
   }
 
