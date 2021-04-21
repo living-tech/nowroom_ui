@@ -6,6 +6,7 @@ export declare const blue700 = "#285EC7";
 export declare const cyan500 = "#6ACAE8";
 export declare const cyan600 = "#46B4D9";
 export declare const cyan700 = "#259BC2";
+export declare const gray50 = "#F9F9FB";
 export declare const gray100 = "#F6F6F9";
 export declare const gray200 = "#E7E6EF";
 export declare const gray300 = "#D8D6E2";

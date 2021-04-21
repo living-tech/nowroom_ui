@@ -9,6 +9,7 @@ export const cyan500 = "#6ACAE8";
 export const cyan600 = "#46B4D9";
 export const cyan700 = "#259BC2";
 
+export const gray50 = "#F9F9FB";
 export const gray100 = "#F6F6F9";
 export const gray200 = "#E7E6EF";
 export const gray300 = "#D8D6E2";
