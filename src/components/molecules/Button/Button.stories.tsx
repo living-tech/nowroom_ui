@@ -20,6 +20,15 @@ PurpleOutlineMd.args = {
   visualType: "outline",
 };
 
+export const PurpleOutlineMdBorderNone = Template.bind({});
+PurpleOutlineMd.args = {
+  border: false,
+  color: "purple",
+  radius: false,
+  shadow: false,
+  visualType: "outline",
+};
+
 export const WhiteMd = Template.bind({});
 WhiteMd.args = {
   color: "white",

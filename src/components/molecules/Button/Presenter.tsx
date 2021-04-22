@@ -6,6 +6,7 @@ import { Spinner } from "../../atoms/Spinner/Default";
 
 export type Props = {
   block?: boolean;
+  border?: boolean;
   children: ReactNode;
   className?: string;
   color?: "purple" | "white" | "mediumGray02";
@@ -16,6 +17,7 @@ export type Props = {
   loading?: boolean;
   onClick?: () => void;
   padding?: boolean;
+  radius?: boolean;
   shadow?: boolean;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   style?: CSSProperties;
@@ -27,6 +29,7 @@ export type Props = {
 
 export const Presenter: VFC<Props> = ({
   block = false,
+  border = true,
   children,
   className = "",
   color = "purple",
@@ -37,6 +40,7 @@ export const Presenter: VFC<Props> = ({
   loading,
   onClick,
   padding = true,
+  radius = true,
   shadow = true,
   size = "md",
   style,
@@ -47,7 +51,7 @@ export const Presenter: VFC<Props> = ({
   ...props
 }) => {
   const baseClass =
-    "relative cursor-pointer rounded font-bold focus:outline-none transition duration-200 ease-out inline-flex disabled:cursor-not-allowed justify-center items-center";
+    "relative cursor-pointer font-bold focus:outline-none transition duration-200 ease-out inline-flex disabled:cursor-not-allowed justify-center items-center";
 
   let sizeClass = "";
   let iconSize: Size;
@@ -91,25 +95,34 @@ export const Presenter: VFC<Props> = ({
     loadingTextClass = "opacity-0";
   }
 
+  let roundedClass = "";
+  if (radius) {
+    roundedClass = "rounded";
+  }
+
   let borderColorClass = "";
   switch (visualType) {
     case "fill":
       switch (color) {
         case "purple":
-          borderColorClass = "border border-purple disabled:border-gray-500";
+          borderColorClass = border
+            ? "border border-purple disabled:border-gray-500"
+            : "border border-transparent disabled:border-transparent";
           break;
         case "white":
-          borderColorClass = "border border-gray-200";
+          borderColorClass = border ? "border border-gray-200" : "border border-transparent";
           break;
       }
       break;
     case "outline":
       switch (color) {
         case "purple":
-          borderColorClass = "border border-purple disabled:border-gray-200";
+          borderColorClass = border
+            ? "border border-purple disabled:border-gray-200"
+            : "border border-transparent disabled:border-transparent";
           break;
         case "white":
-          borderColorClass = "border border-gray-200";
+          borderColorClass = border ? "border border-gray-200" : "border border-transparent";
           break;
       }
       break;
@@ -199,7 +212,7 @@ export const Presenter: VFC<Props> = ({
   if (tag === "a") {
     return (
       <a
-        className={`${baseClass} ${sizeClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
+        className={`${baseClass} ${sizeClass} ${roundedClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
         href={href}
         style={style}
         target={target}
@@ -211,7 +224,7 @@ export const Presenter: VFC<Props> = ({
   } else {
     return (
       <button
-        className={`${baseClass} ${sizeClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
+        className={`${baseClass} ${sizeClass} ${roundedClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
         disabled={disabled || loading}
         onClick={onClick}
         style={style}

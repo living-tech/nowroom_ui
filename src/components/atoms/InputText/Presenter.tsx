@@ -13,6 +13,7 @@ export type Props = {
   anyLabel?: string;
   autocomplete?: "on" | "off" | "current-password" | "new-password";
   className?: string;
+  color?: "gray" | "white";
   createRef?: (input: HTMLInputElement) => void;
   defaultValue?: string;
   error?: string;
@@ -38,6 +39,7 @@ export const Presenter: VFC<Props> = ({
   anyLabel = "任意",
   autocomplete,
   className,
+  color = "gray",
   createRef,
   defaultValue,
   error,
@@ -58,14 +60,28 @@ export const Presenter: VFC<Props> = ({
   weight = "bold",
   ...props
 }) => {
-  const inputBaseClass = "bg-gray-100 border block w-full rounded-md placeholder-gray-400";
+  const inputBaseClass = "border block w-full placeholder-gray-400";
 
   let inputClass = "";
-
   if (error) {
     inputClass = "border-red-500 focus:ring-red-500 focus:border-red-500";
   } else {
-    inputClass = "border-gray-200 focus:ring-purple-500 focus:border-purple-500";
+    inputClass =
+      color === "gray"
+        ? "border-gray-200 focus:ring-purple-500 focus:border-purple-500"
+        : "border-transparent focus:ring-purple-500 focus:border-purple-500";
+  }
+
+  let inputBackgroundColorClass = "";
+  let roundedClass = "";
+  switch (color) {
+    case "gray":
+      inputBackgroundColorClass = "bg-gray-100";
+      roundedClass = "rounded-md";
+      break;
+    case "white":
+      inputBackgroundColorClass = "bg-white";
+      break;
   }
 
   switch (size) {
@@ -165,6 +181,7 @@ export const Presenter: VFC<Props> = ({
         {iconName && (
           <Icon
             className={"absolute pointer-events-none"}
+            color={color === "white" ? "darkGray02" : "black"}
             name={iconName}
             size={size}
             style={{
@@ -177,7 +194,7 @@ export const Presenter: VFC<Props> = ({
         <input
           ref={createRef}
           autoComplete={autocomplete}
-          className={`${inputBaseClass} ${inputClass}`}
+          className={`${inputBaseClass} ${inputClass} ${roundedClass} ${inputBackgroundColorClass}`}
           defaultValue={defaultValue}
           id={id}
           name={name}

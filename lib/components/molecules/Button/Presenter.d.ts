@@ -2,6 +2,7 @@ import { CSSProperties, ReactNode, VFC } from "react";
 import { IconName } from "../../atoms/Icon/Presenter";
 export declare type Props = {
     block?: boolean;
+    border?: boolean;
     children: ReactNode;
     className?: string;
     color?: "purple" | "white" | "mediumGray02";
@@ -12,6 +13,7 @@ export declare type Props = {
     loading?: boolean;
     onClick?: () => void;
     padding?: boolean;
+    radius?: boolean;
     shadow?: boolean;
     size?: "xs" | "sm" | "md" | "lg" | "xl";
     style?: CSSProperties;

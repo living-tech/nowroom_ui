@@ -31,3 +31,18 @@ WithError.args = {
   id: "test",
   label: "ラベル",
 };
+
+export const White = Template.bind({});
+White.args = {
+  color: "white",
+  id: "test",
+  placeholder: "テキストを入力してください",
+};
+
+export const WhiteWithIcon = Template.bind({});
+WhiteWithIcon.args = {
+  color: "white",
+  iconName: "FiSearch",
+  id: "test",
+  placeholder: "テキストを入力してください",
+};

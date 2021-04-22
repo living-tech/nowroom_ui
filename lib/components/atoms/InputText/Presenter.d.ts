@@ -7,6 +7,7 @@ export declare type Props = {
     anyLabel?: string;
     autocomplete?: "on" | "off" | "current-password" | "new-password";
     className?: string;
+    color?: "gray" | "white";
     createRef?: (input: HTMLInputElement) => void;
     defaultValue?: string;
     error?: string;
