@@ -74,7 +74,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: YakuHanJP_Noto, "Roboto", "Noto Sans JP", "Hiragino Sans",
-    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !important; /* chakra-uiを消すまでの暫定対応 */
   font-weight: 500;
   color: var(--black);
   -webkit-font-smoothing: antialiased;
