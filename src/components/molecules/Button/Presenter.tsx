@@ -53,40 +53,34 @@ export const Presenter: VFC<Props> = ({
   let iconSize: Size;
   let loadingSize;
   let spaceXSize;
-  let paddingTop: number;
   switch (size) {
     case "xs":
-      sizeClass = padding ? "pb-2 px-2 text-xs" : "text-xs";
+      sizeClass = padding ? "py-2 px-2 text-xs" : "text-xs";
       spaceXSize = 1;
-      paddingTop = 7;
       iconSize = 14;
       loadingSize = 18;
       break;
     case "sm":
-      sizeClass = padding ? "pb-2 px-6 text-sm" : "text-sm";
+      sizeClass = padding ? "py-2 px-6 text-sm" : "text-sm";
       spaceXSize = 2;
-      paddingTop = 7;
       iconSize = "sm";
       loadingSize = 18;
       break;
     case "md":
-      sizeClass = padding ? "pb-2.5 px-6 text-sm" : "text-sm";
+      sizeClass = padding ? "py-2.5 px-6 text-sm" : "text-sm";
       spaceXSize = 2;
-      paddingTop = 9;
       iconSize = "sm";
       loadingSize = 20;
       break;
     case "lg":
-      sizeClass = padding ? "pb-3 px-8 text-base" : "text-base";
+      sizeClass = padding ? "py-3 px-8 text-base" : "text-base";
       spaceXSize = 2;
-      paddingTop = 11;
       iconSize = "sm";
       loadingSize = 24;
       break;
     case "xl":
-      sizeClass = padding ? "pb-4 px-10 text-base" : "text-base";
+      sizeClass = padding ? "py-4 px-10 text-base" : "text-base";
       spaceXSize = 2;
-      paddingTop = 15;
       iconSize = "md";
       loadingSize = 24;
       break;
@@ -183,13 +177,13 @@ export const Presenter: VFC<Props> = ({
     <>
       <span className={`flex items-center ${loadingTextClass}`}>
         {iconName && iconPosition === "left" && (
-          <span className={`relative mr-${spaceXSize}`} style={{ top: 1 }}>
+          <span className={`relative mr-${spaceXSize}`}>
             <Icon name={iconName} size={iconSize} />
           </span>
         )}
         {children}
         {iconName && iconPosition === "right" && (
-          <span className={`relative ml-${spaceXSize}`} style={{ top: 1 }}>
+          <span className={`relative ml-${spaceXSize}`}>
             <Icon name={iconName} size={iconSize} />
           </span>
         )}
@@ -207,7 +201,7 @@ export const Presenter: VFC<Props> = ({
       <a
         className={`${baseClass} ${sizeClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
         href={href}
-        style={{ paddingTop, ...style }}
+        style={style}
         target={target}
         {...props}
       >
@@ -220,7 +214,7 @@ export const Presenter: VFC<Props> = ({
         className={`${baseClass} ${sizeClass} ${borderColorClass} ${backgroundColorClass} ${textColorClass} ${blockClass} ${shadowClass} ${className}`}
         disabled={disabled || loading}
         onClick={onClick}
-        style={{ paddingTop, ...style }}
+        style={style}
         type={type}
         {...props}
       >

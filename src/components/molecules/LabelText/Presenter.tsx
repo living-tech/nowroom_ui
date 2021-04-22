@@ -47,6 +47,9 @@ export const Presenter: VFC<Props> = ({
     case "sm":
       sizeClass = "py-1 px-1.5";
       break;
+    case "xs":
+      sizeClass = "py-1 px-1.5";
+      break;
   }
 
   let backgroundColorClass = "";
@@ -130,7 +133,14 @@ export const Presenter: VFC<Props> = ({
       className={`${baseClass} ${cursorClass} ${sizeClass} ${backgroundColorClass} ${backgroundColorHoverClass} ${borderColorClass} ${borderColorHoverClass}  ${className}`}
       style={style}
     >
-      <Text className=" leading-none" color={textColor} size={size === "md" ? "xs" : "xxs"} tag="span" weight={"bold"}>
+      <Text
+        className=" leading-none"
+        color={textColor}
+        size={size === "md" ? "xs" : "xxs"}
+        style={{ paddingTop: 1 }}
+        tag="span"
+        weight={"bold"}
+      >
         {children}
       </Text>
     </div>

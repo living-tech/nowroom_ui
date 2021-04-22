@@ -28,6 +28,6 @@ WhiteMd.args = {
 export const PurpleXsWithIcon = Template.bind({});
 PurpleXsWithIcon.args = {
   color: "purple",
-  iconName: "FiSearch",
-  size: "xs",
+  iconName: "FiSend",
+  size: "md",
 };
