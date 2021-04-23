@@ -21,6 +21,7 @@ export type Props = {
   id?: string;
   label?: string;
   name?: string;
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
@@ -48,6 +49,7 @@ export const Presenter: VFC<Props> = ({
   id,
   label,
   name,
+  onBlur,
   onChange,
   onFocus,
   onKeyPress,
@@ -200,6 +202,7 @@ export const Presenter: VFC<Props> = ({
           defaultValue={defaultValue}
           id={id}
           name={name}
+          onBlur={onBlur}
           onChange={onChange}
           onFocus={onFocus}
           onKeyPress={onKeyPress}

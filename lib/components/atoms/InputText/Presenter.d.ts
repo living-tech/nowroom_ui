@@ -15,6 +15,7 @@ export declare type Props = {
     id?: string;
     label?: string;
     name?: string;
+    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
     onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
