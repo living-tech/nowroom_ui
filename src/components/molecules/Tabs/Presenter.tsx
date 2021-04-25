@@ -113,9 +113,10 @@ export const Presenter: VFC<Props> = ({
 
     const { left: containerLeft } = containerElement.getBoundingClientRect();
     const { left: targetLeft } = targetElement.getBoundingClientRect();
+    const containerScrollLeft = containerElement.scrollLeft;
 
     setBorderStyle({
-      left: targetLeft - containerLeft,
+      left: targetLeft - containerLeft + containerScrollLeft,
       width: targetElement.clientWidth,
     });
   }, [hoverTab, activeIndex, tabSize]);
