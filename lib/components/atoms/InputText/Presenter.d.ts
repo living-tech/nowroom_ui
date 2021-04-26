@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, VFC } from "react";
+import { ChangeEvent, CSSProperties, FocusEvent, KeyboardEvent, VFC } from "react";
 import { IconName } from "../Icon/Presenter";
 import { Weight } from "../Text/Presenter";
 export declare type Size = "xs" | "sm" | "md";
@@ -16,10 +16,10 @@ export declare type Props = {
     inputClassName?: string;
     label?: string;
     name?: string;
-    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+    onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
-    onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
-    onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+    onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
+    onKeyPress?: (event: KeyboardEvent<HTMLInputElement>) => void;
     placeholder?: string;
     renderDescription?: () => JSX.Element;
     size?: Size;
