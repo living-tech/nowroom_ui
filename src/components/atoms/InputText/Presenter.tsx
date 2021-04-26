@@ -115,15 +115,15 @@ export const Presenter: VFC<Props> = ({
       if (unit && iconName) {
         inputClass +=
           unitPosition === "right"
-            ? ` pt-3 pl-12 pb-3 pr-${unit.length * 4 + 3}`
-            : ` pt-3 pr-12 pb-3 pl-${unit.length * 4 + 3}`;
+            ? ` pt-3 pl-9 pb-3 pr-${unit.length * 4 + 3}`
+            : ` pt-3 pr-9 pb-3 pl-${unit.length * 4 + 3}`;
       } else if (unit) {
         inputClass +=
           unitPosition === "right"
             ? ` pt-3 pl-3 pb-3 pr-${unit.length * 4 + 3}`
             : ` pt-3 pr-3 pb-3 pl-${unit.length * 4 + 3}`;
       } else if (iconName) {
-        inputClass += ` pt-3 pl-12 pb-3 pr-3`;
+        inputClass += ` pt-3 pl-9 pb-3 pr-3`;
       } else {
         inputClass += " p-3";
       }
