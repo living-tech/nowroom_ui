@@ -14,6 +14,7 @@ export declare type Props = {
     iconName?: IconName;
     id?: string;
     inputClassName?: string;
+    inputStyle?: CSSProperties;
     label?: string;
     name?: string;
     onBlur?: (event: FocusEvent<HTMLInputElement>) => void;

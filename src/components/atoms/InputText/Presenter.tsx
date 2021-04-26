@@ -20,6 +20,7 @@ export type Props = {
   iconName?: IconName;
   id?: string;
   inputClassName?: string;
+  inputStyle?: CSSProperties;
   label?: string;
   name?: string;
   onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
@@ -49,6 +50,7 @@ export const Presenter: VFC<Props> = ({
   iconName,
   id,
   inputClassName = "",
+  inputStyle,
   label,
   name,
   onBlur,
@@ -209,6 +211,7 @@ export const Presenter: VFC<Props> = ({
           onFocus={onFocus}
           onKeyPress={onKeyPress}
           placeholder={placeholder}
+          style={inputStyle}
           type={type}
           value={value}
         />
