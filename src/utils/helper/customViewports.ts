@@ -1,4 +1,11 @@
 export const customViewports = {
+  desktop: {
+    name: "Desktop(1280px)",
+    styles: {
+      height: "960px",
+      width: "1280px",
+    },
+  },
   ipad: {
     name: "iPad",
     styles: {
