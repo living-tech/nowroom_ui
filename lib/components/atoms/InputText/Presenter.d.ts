@@ -13,6 +13,7 @@ export declare type Props = {
     error?: string;
     iconName?: IconName;
     id?: string;
+    inputClassName?: string;
     label?: string;
     name?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;

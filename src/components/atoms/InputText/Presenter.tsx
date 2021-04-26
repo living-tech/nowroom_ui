@@ -19,6 +19,7 @@ export type Props = {
   error?: string;
   iconName?: IconName;
   id?: string;
+  inputClassName?: string;
   label?: string;
   name?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -38,13 +39,14 @@ export const Presenter: VFC<Props> = ({
   any,
   anyLabel = "任意",
   autocomplete,
-  className,
+  className = "",
   color = "gray",
   createRef,
   defaultValue,
   error,
   iconName,
   id,
+  inputClassName = "",
   label,
   name,
   onChange,
@@ -194,7 +196,7 @@ export const Presenter: VFC<Props> = ({
         <input
           ref={createRef}
           autoComplete={autocomplete}
-          className={`${inputBaseClass} ${inputClass} ${roundedClass} ${inputBackgroundColorClass}`}
+          className={`${inputBaseClass} ${inputClass} ${roundedClass} ${inputBackgroundColorClass} ${inputClassName}`}
           defaultValue={defaultValue}
           id={id}
           name={name}
