@@ -3,6 +3,7 @@ import { useMediaQuery } from "react-responsive";
 
 export const tabletThreshold = 768; // md
 export const desktopThreshold = 1025; // lg
+export const xlThreshold = 1281; // xl
 
 export const useBreakPoints = () => {
   const [isClient, setIsClient] = useState(false);
@@ -20,6 +21,10 @@ export const useBreakPoints = () => {
     minWidth: desktopThreshold,
   });
 
+  const isXl = useMediaQuery({
+    minWidth: xlThreshold,
+  });
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setIsClient(true);
@@ -30,5 +35,6 @@ export const useBreakPoints = () => {
     isDesktop: isClient ? isDesktop : true,
     isMobile: isClient ? isMobile : false,
     isTablet: isClient ? isTablet : false,
+    isXl: isClient ? isXl : true,
   };
 };
