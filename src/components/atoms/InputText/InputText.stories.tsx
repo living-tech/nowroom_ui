@@ -46,3 +46,32 @@ WhiteWithIcon.args = {
   id: "test",
   placeholder: "テキストを入力してください",
 };
+
+export const Md = Template.bind({});
+Md.args = {
+  any: true,
+  iconName: "FiSearch",
+  id: "test",
+  label: "人数",
+  unit: "人",
+};
+
+export const Sm = Template.bind({});
+Sm.args = {
+  any: true,
+  iconName: "FiUser",
+  id: "test",
+  label: "人数",
+  size: "sm",
+  unit: "人",
+};
+
+export const Xs = Template.bind({});
+Xs.args = {
+  any: true,
+  iconName: "FiSearch",
+  id: "test",
+  label: "人数",
+  size: "xs",
+  unit: "人",
+};

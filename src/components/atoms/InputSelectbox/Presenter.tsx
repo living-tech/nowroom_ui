@@ -64,11 +64,11 @@ export const Presenter: VFC<Props> = ({
       iconPositionClass = "right-4";
       break;
     case "sm":
-      sizeClass = "p-3 pr-10 text-sm";
+      sizeClass = "p-3 pr-10 text-base";
       iconPositionClass = "right-3";
       break;
     case "xs":
-      sizeClass = "p-2 pr-7 text-xs";
+      sizeClass = "p-2 pr-7 text-base";
       iconPositionClass = "right-2";
       break;
   }

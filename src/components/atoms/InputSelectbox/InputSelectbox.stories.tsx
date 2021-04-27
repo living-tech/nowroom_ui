@@ -20,3 +20,29 @@ Default.args = {
   ],
   label: "ラベル",
 };
+
+export const Sm = Template.bind({});
+Sm.args = {
+  id: "id",
+  items: [
+    {
+      label: "ラベル",
+      value: "value",
+    },
+  ],
+  label: "ラベル",
+  size: "sm",
+};
+
+export const Xs = Template.bind({});
+Xs.args = {
+  id: "id",
+  items: [
+    {
+      label: "ラベル",
+      value: "value",
+    },
+  ],
+  label: "ラベル",
+  size: "xs",
+};

@@ -111,7 +111,6 @@ export const Presenter: VFC<Props> = ({
       }
       break;
     case "sm":
-      inputClass += " text-sm";
       if (unit && iconName) {
         inputClass +=
           unitPosition === "right"
@@ -129,7 +128,6 @@ export const Presenter: VFC<Props> = ({
       }
       break;
     case "xs":
-      inputClass += " text-xs";
       if (unit && iconName) {
         inputClass +=
           unitPosition === "right"
@@ -191,7 +189,7 @@ export const Presenter: VFC<Props> = ({
             className={"absolute pointer-events-none"}
             color={color === "white" ? "darkGray02" : "black"}
             name={iconName}
-            size={size}
+            size={size === "md" ? "md" : "sm"}
             style={{
               left: iconPosition,
               top: "50%",
