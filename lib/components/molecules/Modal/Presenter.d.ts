@@ -8,6 +8,7 @@ export declare type Props = {
     loading?: boolean;
     maxWidth?: number;
     onRequestClose?: () => void;
+    paddingHorizontal?: boolean;
     renderFixedBottom?: () => JSX.Element;
 };
 export declare const Presenter: VFC<Props>;

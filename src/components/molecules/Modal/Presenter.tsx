@@ -18,6 +18,7 @@ export type Props = {
   loading?: boolean;
   maxWidth?: number;
   onRequestClose?: () => void;
+  paddingHorizontal?: boolean;
   renderFixedBottom?: () => JSX.Element;
 };
 
@@ -29,6 +30,7 @@ export const Presenter: VFC<Props> = ({
   loading,
   maxWidth = 400,
   onRequestClose,
+  paddingHorizontal = true,
   renderFixedBottom,
   ...props
 }) => {
@@ -38,6 +40,26 @@ export const Presenter: VFC<Props> = ({
   const [fixedBottomHeight, setFixedBottomHeight] = useState<number>(0);
 
   const fixedBottomRef = useRef<HTMLDivElement>(null);
+
+  let paddingHorizontalClass = "";
+  if (paddingHorizontal) {
+    paddingHorizontalClass = "px-4 md:px-8";
+  }
+
+  const handleKeydown = useCallback((event: KeyboardEvent) => {
+    if (!isDesktop) {
+      return true;
+    }
+
+    if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
+      event.preventDefault();
+      setVisible(false);
+      onRequestClose && onRequestClose();
+      return false;
+    }
+
+    return true;
+  }, []);
 
   useEffect(() => {
     setVisible(isVisible);
@@ -56,21 +78,6 @@ export const Presenter: VFC<Props> = ({
     }
     setFixedBottomHeight(fixedBottomRef.current.clientHeight);
   }, [visible]);
-
-  const handleKeydown = useCallback((event: KeyboardEvent) => {
-    if (!isDesktop) {
-      return true;
-    }
-
-    if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
-      event.preventDefault();
-      setVisible(false);
-      onRequestClose && onRequestClose();
-      return false;
-    }
-
-    return true;
-  }, []);
 
   return (
     <>
@@ -121,7 +128,7 @@ export const Presenter: VFC<Props> = ({
           style={{ maxHeight: isMobile ? undefined : "calc(100vh - 128px)", maxWidth }}
         >
           <div
-            className={`py-10 md:py-8 px-4 md:px-8 bg-white md:rounded-lg h-full md:h-auto cursor-auto shadow-xl overflow-y-auto`}
+            className={`py-10 md:py-8 bg-white md:rounded-lg h-full md:h-auto cursor-auto shadow-xl overflow-y-auto ${paddingHorizontalClass}`}
             style={{
               maxHeight: isMobile ? undefined : "calc(100vh - 128px)",
               maxWidth,
