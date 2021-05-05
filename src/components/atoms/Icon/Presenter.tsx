@@ -1,4 +1,5 @@
 import { CSSProperties, VFC } from "react";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { BiYen } from "react-icons/bi";
 import { FaLine } from "react-icons/fa";
 import {
@@ -627,7 +628,8 @@ export type FiIconName =
   | "FiZoomOut"
   | "FaLine"
   | "IoLogoFacebook"
-  | "IoLogoTwitter";
+  | "IoLogoTwitter"
+  | "AiOutlineQuestionCircle";
 
 export type IconName = NowRoomIconName | FiIconName;
 export type Color =
@@ -1409,6 +1411,8 @@ export const Presenter: VFC<Props> = ({
       return <IoLogoFacebook className={className} size={sizePx} {...props} />;
     case "IoLogoTwitter":
       return <IoLogoTwitter className={className} size={sizePx} {...props} />;
+    case "AiOutlineQuestionCircle":
+      return <AiOutlineQuestionCircle className={className} size={sizePx} {...props} />;
 
     default:
       return <></>;
