@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode, VFC } from "react";
-export declare type Color = "pink" | "white" | "cyan" | "blue" | "purple" | "green" | "yellow" | "mediumGray01" | "lightGray02" | "blackOpacity";
+export declare type Color = "pink" | "white" | "cyan" | "blue" | "purple" | "green" | "yellow" | "mediumGray01" | "lightGray02" | "blackOpacity" | "red";
 export declare type Props = {
     children: ReactNode;
     className?: string;

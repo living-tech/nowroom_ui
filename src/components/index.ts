@@ -125,6 +125,7 @@ export * from "./molecules/LabelText/MediumGray01";
 export * from "./molecules/LabelText/Pink";
 export { Props as LabelTextProps } from "./molecules/LabelText/Presenter";
 export * from "./molecules/LabelText/Purple";
+export * from "./molecules/LabelText/Red";
 export * from "./molecules/LabelText/White";
 export * from "./molecules/LabelText/Yellow";
 export * from "./molecules/MessageAlertBox/Danger";

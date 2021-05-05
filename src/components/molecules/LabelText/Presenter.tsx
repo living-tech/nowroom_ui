@@ -13,7 +13,8 @@ export type Color =
   | "yellow"
   | "mediumGray01"
   | "lightGray02"
-  | "blackOpacity";
+  | "blackOpacity"
+  | "red";
 
 export type Props = {
   children: ReactNode;
@@ -112,6 +113,13 @@ export const Presenter: VFC<Props> = ({
       borderColorClass = "border-gray-300";
       backgroundColorHoverClass = isClickable ? "hover:bg-gray-500" : "";
       borderColorHoverClass = isClickable ? "hover:border-gray-500" : "";
+      textColor = "white";
+      break;
+    case "red":
+      backgroundColorClass = "bg-red";
+      borderColorClass = "border-red";
+      backgroundColorHoverClass = isClickable ? "hover:bg-red-700" : "";
+      borderColorHoverClass = isClickable ? "hover:border-red-700" : "";
       textColor = "white";
       break;
     case "white":
