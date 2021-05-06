@@ -2,6 +2,7 @@ import { CSSProperties, VFC } from "react";
 
 import { Icon } from "../../atoms/Icon/Default";
 import { Color as IconColor, CurrentType, IconName, Size as IconSize } from "../../atoms/Icon/Presenter";
+import { Spinner } from "../../atoms/Spinner/Default";
 
 export type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter" | "line";
 export type Size = "sm" | "md" | "lg";
@@ -15,6 +16,7 @@ export type Props = {
   href?: string;
   iconColor?: IconColor;
   iconName: IconName;
+  loading?: boolean;
   onClick?: () => void;
   radius?: boolean;
   shadow?: boolean;
@@ -34,6 +36,7 @@ export const Presenter: VFC<Props> = ({
   href,
   iconColor,
   iconName,
+  loading,
   radius = false,
   shadow = true,
   size = "md",
@@ -48,19 +51,28 @@ export const Presenter: VFC<Props> = ({
 
   let sizeClass = "";
   let iconSize: IconSize;
+  let loadingSize;
   switch (size) {
     case "sm":
       sizeClass = "p-1";
       iconSize = "sm";
+      loadingSize = 14;
       break;
     case "md":
       sizeClass = "p-2";
       iconSize = "md";
+      loadingSize = 20;
       break;
     case "lg":
       sizeClass = "p-2";
       iconSize = "lg";
+      loadingSize = 26;
       break;
+  }
+
+  let loadingIconColorClass = "";
+  if (loading) {
+    loadingIconColorClass = "opacity-0";
   }
 
   let borderRadiusClass = "";
@@ -255,7 +267,22 @@ export const Presenter: VFC<Props> = ({
     shadowClass = "shadow";
   }
 
-  const Inner = () => <Icon color={iconColor} currentType={currentType} name={iconName} size={iconSize} />;
+  const Inner = () => (
+    <>
+      <Icon
+        className={`${loadingIconColorClass}`}
+        color={iconColor}
+        currentType={currentType}
+        name={iconName}
+        size={iconSize}
+      />
+      {loading && (
+        <span className="absolute flex top-1/2 transform -translate-y-1/2">
+          <Spinner size={loadingSize} />
+        </span>
+      )}
+    </>
+  );
 
   if (tag === "a") {
     return (
@@ -273,7 +300,7 @@ export const Presenter: VFC<Props> = ({
     return (
       <button
         className={`${baseClass} ${sizeClass} ${borderRadiusClass} ${borderColorClass} ${backgroundColorClass} ${iconColorClass} ${shadowClass} ${className}`}
-        disabled={disabled}
+        disabled={disabled || loading}
         style={style}
         type="button"
         {...props}

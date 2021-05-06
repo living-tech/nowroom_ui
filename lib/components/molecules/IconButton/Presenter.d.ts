@@ -11,6 +11,7 @@ export declare type Props = {
     href?: string;
     iconColor?: IconColor;
     iconName: IconName;
+    loading?: boolean;
     onClick?: () => void;
     radius?: boolean;
     shadow?: boolean;
