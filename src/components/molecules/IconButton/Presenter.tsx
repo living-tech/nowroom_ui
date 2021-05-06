@@ -114,22 +114,22 @@ export const Presenter: VFC<Props> = ({
       case "outline":
         switch (color) {
           case "purple":
-            borderColorClass = "border border-purple disabled:border-gray-200";
+            borderColorClass = "border border-purple";
             break;
           case "yellow":
-            borderColorClass = "border border-yellow disabled:border-gray-200";
+            borderColorClass = "border border-yellow";
             break;
           case "red":
-            borderColorClass = "border border-red disabled:border-gray-200";
+            borderColorClass = "border border-red";
             break;
           case "facebook":
-            borderColorClass = "border border-facebook disabled:border-gray-200";
+            borderColorClass = "border border-facebook";
             break;
           case "twitter":
-            borderColorClass = "border border-twitter disabled:border-gray-200";
+            borderColorClass = "border border-twitter";
             break;
           case "line":
-            borderColorClass = "border border-line disabled:border-gray-200";
+            borderColorClass = "border border-line";
             break;
           case "white":
             borderColorClass = "border border-gray-200 hover:border-purple";
@@ -203,32 +203,41 @@ export const Presenter: VFC<Props> = ({
   }
 
   let iconColorClass = "";
+  let loadingColor;
   switch (visualType) {
     case "fill":
       switch (color) {
         case "purple":
           iconColorClass = "text-white hover:text-purple disabled:text-white disabled:hover:text-white";
+          loadingColor = "white";
           break;
         case "yellow":
           iconColorClass = "text-white hover:text-yellow disabled:text-white disabled:hover:text-white";
+          loadingColor = "white";
           break;
         case "red":
           iconColorClass = "text-white hover:text-red disabled:text-white disabled:hover:text-white";
+          loadingColor = "white";
           break;
         case "facebook":
           iconColorClass = "text-white hover:text-facebook disabled:text-white disabled:hover:text-white";
+          loadingColor = "white";
           break;
         case "twitter":
           iconColorClass = "text-white hover:text-twitter disabled:text-white disabled:hover:text-white";
+          loadingColor = "white";
           break;
         case "line":
           iconColorClass = "text-white hover:text-line disabled:text-white disabled:hover:text-white";
+          loadingColor = "white";
           break;
         case "white":
           iconColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";
+          loadingColor = "black";
           break;
         case "transparent":
           iconColorClass = "text-black";
+          loadingColor = "black";
           break;
       }
       break;
@@ -236,27 +245,35 @@ export const Presenter: VFC<Props> = ({
       switch (color) {
         case "purple":
           iconColorClass = "text-purple hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
+          loadingColor = "purple";
           break;
         case "yellow":
           iconColorClass = "text-yellow hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
+          loadingColor = "yellow";
           break;
         case "red":
           iconColorClass = "text-red hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
+          loadingColor = "red";
           break;
         case "facebook":
           iconColorClass = "text-facebook hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
+          loadingColor = "purple";
           break;
         case "twitter":
           iconColorClass = "text-twitter hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
+          loadingColor = "purple";
           break;
         case "line":
           iconColorClass = "text-line hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
+          loadingColor = "purple";
           break;
         case "white":
           iconColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";
+          loadingColor = "black";
           break;
         case "transparent":
           iconColorClass = "text-black";
+          loadingColor = "black";
           break;
       }
       break;
@@ -278,7 +295,7 @@ export const Presenter: VFC<Props> = ({
       />
       {loading && (
         <span className="absolute flex top-1/2 transform -translate-y-1/2">
-          <Spinner size={loadingSize} />
+          <Spinner color={loadingColor} size={loadingSize} />
         </span>
       )}
     </>

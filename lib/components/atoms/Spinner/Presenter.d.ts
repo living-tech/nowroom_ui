@@ -1,7 +1,8 @@
 import { CSSProperties, VFC } from "react";
+export declare type Color = "white" | "purple" | "red" | "yellow" | "currentColor";
 export declare type Props = {
     className?: string;
-    color?: "white" | "purple" | "currentColor";
+    color?: Color;
     duration?: number;
     size?: number;
     style?: CSSProperties;
