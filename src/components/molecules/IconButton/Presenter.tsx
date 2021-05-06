@@ -47,7 +47,7 @@ export const Presenter: VFC<Props> = ({
   ...props
 }) => {
   const baseClass =
-    "rounded font-bold transition duration-200 ease-out inline-flex disabled:cursor-not-allowed justify-center items-center focus:outline-none";
+    "relative rounded font-bold transition duration-200 ease-out inline-flex disabled:cursor-not-allowed justify-center items-center focus:outline-none";
 
   let sizeClass = "";
   let iconSize: IconSize;
