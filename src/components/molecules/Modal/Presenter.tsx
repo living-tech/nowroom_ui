@@ -151,7 +151,7 @@ export const Presenter: VFC<Props> = ({
               </div>
             )}
             <IconButtonWhite
-              className="absolute right-4 md:-right-5 md:-top-5"
+              className="right-4 md:-right-5 md:-top-5"
               iconName={"FiX"}
               onClick={() => {
                 setVisible(false);
@@ -163,9 +163,10 @@ export const Presenter: VFC<Props> = ({
                 isMobile
                   ? {
                       bottom: closeButtonPosition === "bottom" ? fixedBottomHeight + 16 : undefined,
+                      position: "absolute",
                       top: closeButtonPosition === "top" ? 16 : undefined,
                     }
-                  : undefined
+                  : { position: "absolute" }
               }
             />
           </div>

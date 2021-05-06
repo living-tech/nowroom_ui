@@ -99,13 +99,13 @@ export const Presenter: VFC<Props> = ({
                 style={{ height: 118, width: 118 }}
               />
               <IconButtonWhite
-                className={"absolute"}
                 iconName={"FiX"}
                 onClick={() => onImageDeleteClick && onImageDeleteClick(imageUrl, index)}
                 radius={true}
                 shadow={false}
                 size={"sm"}
                 style={{
+                  position: "absolute",
                   right: 4,
                   top: 4,
                 }}
