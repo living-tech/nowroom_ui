@@ -48,7 +48,7 @@ export const Presenter: VFC<Props> = ({
     paddingHorizontalClass = "px-4 md:px-8";
   }
 
-  let modalSizeClass = "w-full";
+  let modalSizeClass = "w-full rounded";
   if (windowWidth <= maxWidth) {
     modalSizeClass = "w-full h-full md:h-auto";
   }
