@@ -1,3 +1,4 @@
+import { useWindowWidth } from "@react-hook/window-size";
 import { ReactNode, useCallback, useEffect, useRef, useState, VFC } from "react";
 import { CSSTransition } from "react-transition-group";
 
@@ -35,6 +36,7 @@ export const Presenter: VFC<Props> = ({
   ...props
 }) => {
   const { isDesktop, isMobile } = useBreakPoints();
+  const windowWidth = useWindowWidth();
 
   const [visible, setVisible] = useState<boolean>(false);
   const [fixedBottomHeight, setFixedBottomHeight] = useState<number>(0);
@@ -44,6 +46,11 @@ export const Presenter: VFC<Props> = ({
   let paddingHorizontalClass = "";
   if (paddingHorizontal) {
     paddingHorizontalClass = "px-4 md:px-8";
+  }
+
+  let modalSizeClass = "w-full";
+  if (windowWidth <= maxWidth) {
+    modalSizeClass = "w-full h-full md:h-auto";
   }
 
   const handleKeydown = useCallback((event: KeyboardEvent) => {
@@ -81,35 +88,35 @@ export const Presenter: VFC<Props> = ({
 
   return (
     <>
-      {!isMobile && (
-        <CSSTransition
-          unmountOnExit
-          classNames={{
-            enter: styles.ModalEnter,
-            enterActive: styles.ModalEnterActive,
-            exit: styles.ModalExit,
-            exitActive: styles.ModalExitActive,
+      <CSSTransition
+        unmountOnExit
+        classNames={{
+          enter: styles.ModalEnter,
+          enterActive: styles.ModalEnterActive,
+          exit: styles.ModalExit,
+          exitActive: styles.ModalExitActive,
+        }}
+        in={visible}
+        timeout={400}
+      >
+        <div
+          className="fixed top-0 left-0 z-40 w-full h-full p-4 cursor-pointer bg-overlay"
+          onClick={() => {
+            setVisible(false);
+            onRequestClose && onRequestClose();
           }}
-          in={visible}
-          timeout={400}
+          {...props}
         >
-          <div
-            className="fixed top-0 left-0 z-40 w-full h-full p-4 cursor-pointer bg-overlay"
-            onClick={() => {
-              setVisible(false);
-              onRequestClose && onRequestClose();
-            }}
-            {...props}
-          >
+          {!isMobile && (
             <div className="flex items-center">
               <LabelTextWhite>ESC</LabelTextWhite>
               <TextWhite className="ml-1" size={"sm"} weight={"bold"}>
                 {escLabel}
               </TextWhite>
             </div>
-          </div>
-        </CSSTransition>
-      )}
+          )}
+        </div>
+      </CSSTransition>
       <CSSTransition
         unmountOnExit
         classNames={{
@@ -124,13 +131,13 @@ export const Presenter: VFC<Props> = ({
         timeout={{ enter: 400, exit: 400 }}
       >
         <div
-          className="fixed z-50 w-full h-full top-1/2 left-1/2 md:h-auto"
-          style={{ maxHeight: isMobile ? undefined : "calc(100vh - 128px)", maxWidth }}
+          className={`fixed z-50 top-1/2 left-1/2 ${modalSizeClass}`}
+          style={{ maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)", maxWidth }}
         >
           <div
-            className={`py-10 md:py-8 bg-white md:rounded-lg h-full md:h-auto cursor-auto shadow-xl overflow-y-auto ${paddingHorizontalClass}`}
+            className={`py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto ${modalSizeClass} ${paddingHorizontalClass}`}
             style={{
-              maxHeight: isMobile ? undefined : "calc(100vh - 128px)",
+              maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
               maxWidth,
               paddingBottom: fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),
             }}

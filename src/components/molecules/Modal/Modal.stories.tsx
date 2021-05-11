@@ -89,7 +89,7 @@ const Template: Story<Props> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   closeButtonPosition: "bottom",
-  isVisible: false,
+  isVisible: true,
 };
 
 export const withFixedBottom = Template.bind({});
@@ -97,4 +97,11 @@ withFixedBottom.args = {
   closeButtonPosition: "top",
   isVisible: true,
   renderFixedBottom: () => <ButtonPurple>ボタン</ButtonPurple>,
+};
+
+export const maxWidthMin = Template.bind({});
+maxWidthMin.args = {
+  closeButtonPosition: "top",
+  isVisible: true,
+  maxWidth: 320,
 };
