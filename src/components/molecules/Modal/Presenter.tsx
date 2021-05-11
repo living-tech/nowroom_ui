@@ -2,7 +2,7 @@ import { useWindowWidth } from "@react-hook/window-size";
 import { ReactNode, useCallback, useEffect, useRef, useState, VFC } from "react";
 import { CSSTransition } from "react-transition-group";
 
-import { backfaceFixed, useBreakPoints } from "../../../utils";
+import { useBreakPoints } from "../../../utils";
 import { SpinnerPurple as Spinner } from "../../atoms/Spinner/Purple";
 import { TextWhite } from "../../atoms/Text/White";
 import { IconButtonWhite } from "../IconButton/White";
@@ -75,10 +75,10 @@ export const Presenter: VFC<Props> = ({
   useEffect(() => {
     if (visible) {
       window.addEventListener("keydown", handleKeydown);
-      backfaceFixed(true);
+      // backfaceFixed(true);
     } else {
       window.removeEventListener("keydown", handleKeydown);
-      backfaceFixed(false);
+      // backfaceFixed(false);
     }
     if (!fixedBottomRef?.current) {
       return;
