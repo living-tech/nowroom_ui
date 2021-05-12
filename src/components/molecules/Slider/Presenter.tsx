@@ -1,3 +1,4 @@
+import { useWindowWidth } from "@react-hook/window-size";
 import Carousel, { CarouselSlideRenderControlProps } from "nuka-carousel";
 import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
 
@@ -18,6 +19,7 @@ export type Props = {
 
 export const Presenter: VFC<Props> = ({ autoplay, className, items, style }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const windowWidth = useWindowWidth();
 
   const [width, setWidth] = useState<number | undefined>();
   const [height, setHeight] = useState<number | undefined>();
@@ -55,7 +57,7 @@ export const Presenter: VFC<Props> = ({ autoplay, className, items, style }) => 
       setWidth(width);
       setHeight((width / 4) * 3);
     }
-  }, [containerRef]);
+  }, [containerRef, windowWidth]);
 
   return (
     <div ref={containerRef} className={`${className}`} style={style}>
