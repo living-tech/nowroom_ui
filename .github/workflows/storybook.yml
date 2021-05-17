@@ -3,7 +3,7 @@ name: Build and Deploy to GCS Staging
 on:
   push:
     branches:
-      - main
+      - disabled # 一旦disabled
 
 env:
   PROJECT_ID: ${{ secrets.GCS_PROJECT }}

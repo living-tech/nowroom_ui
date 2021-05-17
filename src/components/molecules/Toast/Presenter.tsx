@@ -33,7 +33,7 @@ export const Presenter: VFC<Props> = ({
 }) => {
   const [visible, setVisible] = useState<boolean>(false);
 
-  const baseClass = "inline-flex transition-all ease-out duration-200 fixed";
+  const baseClass = "inline-flex transition-all ease-out duration-200 fixed z-50";
 
   let positionClass = "";
   switch (position) {
