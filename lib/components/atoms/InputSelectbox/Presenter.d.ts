@@ -1,4 +1,5 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
+import { Color as IconColor, IconName } from "../Icon/Presenter";
 export declare type Item = {
     key?: string | number;
     label: string;
@@ -8,11 +9,15 @@ export declare type Size = "xs" | "sm" | "md";
 export declare type Props = {
     any?: boolean;
     anyLabel?: string;
+    backgroundColor?: "gray" | "white";
     block?: boolean;
     className?: string;
     createRef?: (input: HTMLSelectElement) => void;
     defaultValue?: string | number;
     disabledPlaceholder?: boolean;
+    disabledRightArrow?: boolean;
+    iconColor?: IconColor;
+    iconName?: IconName;
     id?: string;
     items: Array<Item>;
     label?: string;

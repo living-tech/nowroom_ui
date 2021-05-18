@@ -1,5 +1,7 @@
 import { ChangeEvent, CSSProperties, useState, VFC } from "react";
 
+import { Icon } from "../Icon/Default";
+import { Color as IconColor, IconName } from "../Icon/Presenter";
 import { IconPurple } from "../Icon/Purple";
 import { TextMediumGray02 } from "../Text/MediumGray02";
 
@@ -14,11 +16,15 @@ export type Size = "xs" | "sm" | "md";
 export type Props = {
   any?: boolean;
   anyLabel?: string;
+  backgroundColor?: "gray" | "white";
   block?: boolean;
   className?: string;
   createRef?: (input: HTMLSelectElement) => void;
   defaultValue?: string | number;
   disabledPlaceholder?: boolean;
+  disabledRightArrow?: boolean;
+  iconColor?: IconColor;
+  iconName?: IconName;
   id?: string;
   items: Array<Item>;
   label?: string;
@@ -33,11 +39,15 @@ export type Props = {
 export const Presenter: VFC<Props> = ({
   any,
   anyLabel = "任意",
+  backgroundColor = "gray",
   block,
   className,
   createRef,
   defaultValue,
   disabledPlaceholder = false,
+  disabledRightArrow = false,
+  iconColor,
+  iconName,
   id,
   items,
   label,
@@ -56,26 +66,43 @@ export const Presenter: VFC<Props> = ({
     widthClass = "w-full";
   }
 
-  let sizeClass = "";
+  let paddingLeftClass = "";
+  let paddingRightClass = "";
+  let paddingYClass = "";
+  let arrowIconPositionClass = "";
   let iconPositionClass = "";
   switch (size) {
     case "md":
-      sizeClass = "p-4 pr-12 text-base";
-      iconPositionClass = "right-4";
+      paddingLeftClass = iconName ? "pl-12" : "pl-4";
+      paddingRightClass = !disabledRightArrow ? "pr-12" : "pr-4";
+      paddingYClass = "py-4";
+      arrowIconPositionClass = "right-4";
+      iconPositionClass = "left-4";
       break;
     case "sm":
-      sizeClass = "p-3 pr-10 text-base";
-      iconPositionClass = "right-3";
+      paddingLeftClass = iconName ? "pl-10" : "pl-3";
+      paddingRightClass = !disabledRightArrow ? "pr-10" : "pr-3";
+      paddingYClass = "py-3";
+      arrowIconPositionClass = "right-3";
+      iconPositionClass = "left-3";
       break;
     case "xs":
-      sizeClass = "p-2 pr-7 text-base";
-      iconPositionClass = "right-2";
+      paddingLeftClass = iconName ? "pl-7" : "pl-2";
+      paddingRightClass = !disabledRightArrow ? "pr-7" : "pr-2";
+      paddingYClass = "py-2";
+      arrowIconPositionClass = "right-2";
+      iconPositionClass = "left-2";
       break;
   }
 
   let colorClass = "";
   if (!selectedValue) {
     colorClass = "text-gray-400";
+  }
+
+  let backgroundColorClass = "bg-gray-100";
+  if (backgroundColor === "white") {
+    backgroundColorClass = "bg-white";
   }
 
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -96,9 +123,17 @@ export const Presenter: VFC<Props> = ({
         </label>
       )}
       <div className={`relative block ${widthClass}`}>
+        {iconName && (
+          <Icon
+            className={`top-1/2 absolute transform -translate-y-1/2 pointer-events-none ${iconPositionClass}`}
+            color={iconColor}
+            name={iconName}
+            size={"sm"}
+          />
+        )}
         <select
           ref={createRef}
-          className={`w-full cursor-pointer whitespace-nowrap block border font-bold border-gray-200 bg-gray-100 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${colorClass} ${sizeClass} ${widthClass}`}
+          className={`text-base w-full cursor-pointer whitespace-nowrap block border font-bold border-gray-200 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${backgroundColorClass} ${colorClass} ${paddingLeftClass} ${paddingRightClass} ${paddingYClass} ${widthClass}`}
           defaultValue={defaultValue}
           id={id}
           name={name}
@@ -112,11 +147,13 @@ export const Presenter: VFC<Props> = ({
             </option>
           ))}
         </select>
-        <IconPurple
-          className={`top-1/2 absolute transform -translate-y-1/2 pointer-events-none ${iconPositionClass}`}
-          name={"FiChevronDown"}
-          size={"sm"}
-        />
+        {!disabledRightArrow && (
+          <IconPurple
+            className={`top-1/2 absolute transform -translate-y-1/2 pointer-events-none ${arrowIconPositionClass}`}
+            name={"FiChevronDown"}
+            size={"sm"}
+          />
+        )}
       </div>
     </div>
   );
