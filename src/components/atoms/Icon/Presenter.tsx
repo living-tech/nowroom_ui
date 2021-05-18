@@ -290,6 +290,7 @@ import {
   FiZoomIn,
   FiZoomOut,
 } from "react-icons/fi";
+import { HiSortDescending } from "react-icons/hi";
 import { IoLogoFacebook, IoLogoTwitter } from "react-icons/io";
 
 import { AddBuilding } from "./svg/AddBuilding";
@@ -629,7 +630,8 @@ export type FiIconName =
   | "FaLine"
   | "IoLogoFacebook"
   | "IoLogoTwitter"
-  | "AiOutlineQuestionCircle";
+  | "AiOutlineQuestionCircle"
+  | "HiSortDescending";
 
 export type IconName = NowRoomIconName | FiIconName;
 export type Color =
@@ -1413,6 +1415,8 @@ export const Presenter: VFC<Props> = ({
       return <IoLogoTwitter className={className} size={sizePx} {...props} />;
     case "AiOutlineQuestionCircle":
       return <AiOutlineQuestionCircle className={className} size={sizePx} {...props} />;
+    case "HiSortDescending":
+      return <HiSortDescending className={className} size={sizePx} {...props} />;
 
     default:
       return <></>;
