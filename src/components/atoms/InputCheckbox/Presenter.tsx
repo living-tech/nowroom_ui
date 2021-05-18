@@ -1,5 +1,8 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
 
+import { Text } from "../Text/Default";
+import { Color, Size, Weight } from "../Text/Presenter";
+
 export type Item = {
   label: string;
   value: string;
@@ -10,12 +13,29 @@ export type Props = {
   className?: string;
   createRef?: (input: HTMLInputElement) => void;
   item: Item;
+  labelColor?: Color;
+  labelSize?: Size;
+  labelStyle?: CSSProperties;
+  labelWeight?: Weight;
   name?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
   style?: CSSProperties;
 };
 
-export const Presenter: VFC<Props> = ({ checked, className, createRef, item, name, onChange, style, ...props }) => {
+export const Presenter: VFC<Props> = ({
+  checked,
+  className,
+  createRef,
+  item,
+  labelColor,
+  labelSize,
+  labelStyle,
+  labelWeight,
+  name,
+  onChange,
+  style,
+  ...props
+}) => {
   return (
     <label className={`inline-flex items-center space-x-3 cursor-pointer ${className}`} style={style} {...props}>
       <input
@@ -34,9 +54,15 @@ export const Presenter: VFC<Props> = ({ checked, className, createRef, item, nam
         type="checkbox"
         value={item.value}
       />
-      <span className={"relative"} style={{ top: 1 }}>
+      <Text
+        className={"leading-none relative"}
+        color={labelColor}
+        size={labelSize}
+        style={{ top: 1, ...labelStyle }}
+        weight={labelWeight}
+      >
         {item.label}
-      </span>
+      </Text>
     </label>
   );
 };
