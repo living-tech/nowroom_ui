@@ -37,7 +37,7 @@ export const Presenter: VFC<Props> = ({
   ...props
 }) => {
   return (
-    <label className={`inline-flex items-center space-x-3 cursor-pointer ${className}`} style={style} {...props}>
+    <label className={`inline-flex items-center cursor-pointer ${className}`} style={style} {...props}>
       <input
         ref={createRef}
         checked={checked}
@@ -54,15 +54,17 @@ export const Presenter: VFC<Props> = ({
         type="checkbox"
         value={item.value}
       />
-      <Text
-        className={"leading-none relative"}
-        color={labelColor}
-        size={labelSize}
-        style={{ top: 1, ...labelStyle }}
-        weight={labelWeight}
-      >
-        {item.label}
-      </Text>
+      {item.label && (
+        <Text
+          className={"leading-none ml-3 relative"}
+          color={labelColor}
+          size={labelSize}
+          style={{ top: 1, ...labelStyle }}
+          weight={labelWeight}
+        >
+          {item.label}
+        </Text>
+      )}
     </label>
   );
 };
