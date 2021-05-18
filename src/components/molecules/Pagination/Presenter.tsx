@@ -39,7 +39,7 @@ export const Presenter: VFC<Props> = ({
               {nextTextLabel}
             </Text>
           )}
-          <span className={`relative`} style={{ top: 1 }}>
+          <span>
             <Icon name={"FiChevronRight"} size={14} />
           </span>
         </span>
@@ -49,7 +49,7 @@ export const Presenter: VFC<Props> = ({
       pageRangeDisplayed={isMobile ? 1 : 2}
       previousLabel={
         <span className={`flex items-center`}>
-          <span className={`relative`} style={{ top: 1 }}>
+          <span>
             <Icon name={"FiChevronLeft"} size={14} />
           </span>
           {!isMobile && (
