@@ -75,3 +75,13 @@ Xs.args = {
   size: "xs",
   unit: "人",
 };
+
+export const Xxs = Template.bind({});
+Xxs.args = {
+  any: true,
+  iconName: undefined,
+  id: "test",
+  label: "人数",
+  size: "xxs",
+  unit: "人",
+};

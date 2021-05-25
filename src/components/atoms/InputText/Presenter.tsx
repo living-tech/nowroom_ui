@@ -6,7 +6,7 @@ import { TextMediumGray02 } from "../Text/MediumGray02";
 import { Weight } from "../Text/Presenter";
 import { TextRed } from "../Text/Red";
 
-export type Size = "xs" | "sm" | "md";
+export type Size = "xxs" | "xs" | "sm" | "md";
 
 export type Props = {
   any?: boolean;
@@ -144,6 +144,23 @@ export const Presenter: VFC<Props> = ({
         inputClass += " px-2 py-2.5";
       }
       break;
+    case "xxs":
+      if (unit && iconName) {
+        inputClass +=
+          unitPosition === "right"
+            ? ` pt-1 pl-6 pb-1 pr-${unit.length * 4 + 1}`
+            : ` pt-1 pr-6 pb-1 pl-${unit.length * 4 + 1}`;
+      } else if (unit) {
+        inputClass +=
+          unitPosition === "right"
+            ? ` pt-1 pl-1 pb-1 pr-${unit.length * 4 + 1}`
+            : ` pt-1 pr-1 pb-1 pl-${unit.length * 4 + 1}`;
+      } else if (iconName) {
+        inputClass += ` pt-1 pl-6 pb-1 pr-1`;
+      } else {
+        inputClass += " px-1 py-1.5";
+      }
+      break;
   }
 
   switch (weight) {
@@ -165,6 +182,9 @@ export const Presenter: VFC<Props> = ({
       break;
     case "xs":
       iconPosition = "0.5rem";
+      break;
+    case "xxs":
+      iconPosition = "0.25rem";
       break;
     default:
       iconPosition = "1rem";

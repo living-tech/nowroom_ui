@@ -47,6 +47,19 @@ Xs.args = {
   size: "xs",
 };
 
+export const Xxs = Template.bind({});
+Xxs.args = {
+  id: "id",
+  items: [
+    {
+      label: "ラベル",
+      value: "value",
+    },
+  ],
+  label: "ラベル",
+  size: "xxs",
+};
+
 export const SmWithIcon = Template.bind({});
 SmWithIcon.args = {
   backgroundColor: "white",
@@ -75,4 +88,19 @@ XsWithIcon.args = {
   ],
   label: "ラベル",
   size: "xs",
+};
+
+export const XxsWithIcon = Template.bind({});
+XxsWithIcon.args = {
+  backgroundColor: "white",
+  iconName: "FiHeadphones",
+  id: "id",
+  items: [
+    {
+      label: "ラベル",
+      value: "value",
+    },
+  ],
+  label: "ラベル",
+  size: "xxs",
 };

@@ -1,7 +1,7 @@
 import { ChangeEvent, CSSProperties, FocusEvent, KeyboardEvent, VFC } from "react";
 import { IconName } from "../Icon/Presenter";
 import { Weight } from "../Text/Presenter";
-export declare type Size = "xs" | "sm" | "md";
+export declare type Size = "xxs" | "xs" | "sm" | "md";
 export declare type Props = {
     any?: boolean;
     anyLabel?: string;

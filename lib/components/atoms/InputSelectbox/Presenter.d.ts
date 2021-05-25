@@ -5,7 +5,7 @@ export declare type Item = {
     label: string;
     value: string | number;
 };
-export declare type Size = "xs" | "sm" | "md";
+export declare type Size = "xxs" | "xs" | "sm" | "md";
 export declare type Props = {
     any?: boolean;
     anyLabel?: string;

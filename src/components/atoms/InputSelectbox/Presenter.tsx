@@ -11,7 +11,7 @@ export type Item = {
   value: string | number;
 };
 
-export type Size = "xs" | "sm" | "md";
+export type Size = "xxs" | "xs" | "sm" | "md";
 
 export type Props = {
   any?: boolean;
@@ -92,6 +92,13 @@ export const Presenter: VFC<Props> = ({
       paddingYClass = "py-2";
       arrowIconPositionClass = "right-2";
       iconPositionClass = "left-2";
+      break;
+    case "xxs":
+      paddingLeftClass = iconName ? "pl-6" : "pl-1";
+      paddingRightClass = !disabledRightArrow ? "pr-6" : "pr-1";
+      paddingYClass = "py-1.5";
+      arrowIconPositionClass = "right-1";
+      iconPositionClass = "left-1";
       break;
   }
 
