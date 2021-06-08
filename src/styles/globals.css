@@ -13,9 +13,9 @@
   }
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap");
-@import url("https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp-noto.min.css");
-@import url("https://fonts.googleapis.com/css?family=Roboto:500,700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap"); */
+/* @import url("https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp-noto.min.css"); */
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:500,700&display=swap"); */
 @import url("./react-datepicker.css");
 
 ::selection {
@@ -30,51 +30,51 @@ html {
   --gray-200: #e7e6ef;
   --gray-400: #bfbcd0;
   --gray-600: #807d94;
-  --white: #FFFFFF;
-  --blue500: #6A95E8;
-  --blue600: #4879DB;
-  --blue700: #285EC7;
-  --cyan500: #6ACAE8;
-  --cyan600: #46B4D9;
-  --cyan700: #259BC2;
-  --gray50: #F9F9FB;
-  --gray100: #F6F6F9;
-  --gray200: #E7E6EF;
-  --gray300: #D8D6E2;
-  --gray400: #BFBCD0;
-  --gray500: #918EA3;
-  --gray600: #807D94;
+  --white: #ffffff;
+  --blue500: #6a95e8;
+  --blue600: #4879db;
+  --blue700: #285ec7;
+  --cyan500: #6acae8;
+  --cyan600: #46b4d9;
+  --cyan700: #259bc2;
+  --gray50: #f9f9fb;
+  --gray100: #f6f6f9;
+  --gray200: #e7e6ef;
+  --gray300: #d8d6e2;
+  --gray400: #bfbcd0;
+  --gray500: #918ea3;
+  --gray600: #807d94;
   --gray700: #656376;
-  --green500: #4AD7AD;
-  --pink500: #E86A81;
-  --pink600: #C9425A;
-  --pink700: #A9233B;
-  --purple100: #F6F5FE;
-  --purple200: #DEDBFD;
-  --purple400: #9992F1;
-  --purple500: #746AE8;
-  --purple600: #554ADC;
-  --purple700: #3529CB;
-  --red100: #FFE8EB;
-  --red200: #FDBBC4;
-  --red300: #FB91A0;
-  --red400: #F86579;
-  --red500: #F54159;
-  --yellow100: #FFF8EB;
-  --yellow200: #FFEFD0;
-  --yellow300: #FFE4AF;
-  --yellow400: #FFD584;
-  --yellow500: #EEBC5A;
-  --yellow600: #D49E35;
-  --yellow700: #AC7A19;
+  --green500: #4ad7ad;
+  --pink500: #e86a81;
+  --pink600: #c9425a;
+  --pink700: #a9233b;
+  --purple100: #f6f5fe;
+  --purple200: #dedbfd;
+  --purple400: #9992f1;
+  --purple500: #746ae8;
+  --purple600: #554adc;
+  --purple700: #3529cb;
+  --red100: #ffe8eb;
+  --red200: #fdbbc4;
+  --red300: #fb91a0;
+  --red400: #f86579;
+  --red500: #f54159;
+  --yellow100: #fff8eb;
+  --yellow200: #ffefd0;
+  --yellow300: #ffe4af;
+  --yellow400: #ffd584;
+  --yellow500: #eebc5a;
+  --yellow600: #d49e35;
+  --yellow700: #ac7a19;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: YakuHanJP_Noto, "Roboto", "Noto Sans JP", "Hiragino Sans",
-    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !important; /* chakra-uiを消すまでの暫定対応 */
+  font-family: YakuHanJP_Noto, "Roboto", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo,
+    sans-serif !important; /* chakra-uiを消すまでの暫定対応 */
   font-weight: 500;
   color: var(--black);
   -webkit-font-smoothing: antialiased;
@@ -118,8 +118,8 @@ input[type="radio"]:checked + label div p.text {
 .react-datepicker,
 .react-datepicker-wrapper,
 .react-datepicker__tab-loop {
-  font-family: YakuHanJP_Noto, "Roboto", "Noto Sans JP", "Hiragino Sans",
-  "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-family: YakuHanJP_Noto, "Roboto", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo,
+    sans-serif;
   font-weight: 500;
   color: #29263d;
   border: none;
@@ -253,4 +253,3 @@ ul.pagination li.disabled a {
   background: var(--gray200);
   border: 1px solid var(--gray200);
 }
-
