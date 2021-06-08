@@ -4,19 +4,24 @@
   "description": "NOW ROOM's components",
   "private": true,
   "main": "lib/index.js",
+  "module": "esm/index.js",
   "directories": {
+    "esm": "esm",
     "lib": "lib"
   },
   "files": [
+    "esm",
     "lib"
   ],
   "repository": "ssh://git@github.com/living-tech/nowroom_ui.git",
   "author": "NOW ROOM <system@nowroom.jp>",
   "scripts": {
-    "clean": "rm -rf ./lib",
+    "clean": "rm -rf ./lib ./esm",
     "prebuild": "yarn clean",
-    "build": "ts-node ./scripts/entryBuilder && tsc --build \"./tsconfig.json\"",
-    "copy-files": "copyfiles -u 1 \"src/**/*.css\" \"src/**/*.scss\" \"src/**/*.svg\" \"src/**/*.json\" lib/",
+    "build": "run-p build:*",
+    "build:lib": "ts-node ./scripts/entryBuilder && tsc --build \"./tsconfig.json\"",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "copy-files": "copyfiles -u 1 \"src/**/*.css\" \"src/**/*.scss\" \"src/**/*.svg\" \"src/**/*.json\" lib/ && copyfiles -u 1 \"src/**/*.css\" \"src/**/*.scss\" \"src/**/*.svg\" \"src/**/*.json\" esm/",
     "postbuild": "yarn run copy-files",
     "commit": "npx git-cz",
     "tsc": "tsc --noEmit",
@@ -41,6 +46,7 @@
     "gsap": "^3.6.0",
     "next": "^10.0.9",
     "now-enum-parser": "https://github.com/living-tech/now_enum_parser.git",
+    "npm-run-all": "^4.1.5",
     "nuka-carousel": "^4.7.5",
     "postcss": "^7",
     "react": "17.0.1",

@@ -1,0 +1,67 @@
+.ModalEnter {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.ModalEnterActive {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s, visibility 0.2s;
+  transition-timing-function: ease-out;
+}
+
+.ModalExit {
+  visibility: visible;
+  opacity: 1;
+}
+
+.ModalExitActive {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  transition-timing-function: ease-out;
+}
+
+.ModalInnerAppear {
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.ModalInnerEnter {
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.ModalInnerEnterActive {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+  transition-timing-function: ease-out;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center center;
+}
+
+.ModalInnerEnterDone {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.ModalInnerExit {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.ModalInnerExitActive {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+  transition-timing-function: ease-out;
+  transform: translate(-50%, -50%) scale(0.9);
+  transform-origin: center center;
+}
+
+/*# sourceMappingURL=Modal.module.scss.map */
