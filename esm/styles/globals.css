@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @responsive {
+    .scrolling-touch {
+      -webkit-overflow-scrolling: touch;
+    }
+    .scrolling-auto {
+      -webkit-overflow-scrolling: auto;
+    }
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp-noto.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:500,700&display=swap");
+@import url("./react-datepicker.css");
+
+::selection {
+  color: var(--white);
+  background: rgba(116, 106, 232, 0.6);
+}
+
+html {
+  --black: #29263d;
+  --red: #f54159;
+  --blue: #6a95e8;
+  --gray-200: #e7e6ef;
+  --gray-400: #bfbcd0;
+  --gray-600: #807d94;
+  --white: #FFFFFF;
+  --blue500: #6A95E8;
+  --blue600: #4879DB;
+  --blue700: #285EC7;
+  --cyan500: #6ACAE8;
+  --cyan600: #46B4D9;
+  --cyan700: #259BC2;
+  --gray50: #F9F9FB;
+  --gray100: #F6F6F9;
+  --gray200: #E7E6EF;
+  --gray300: #D8D6E2;
+  --gray400: #BFBCD0;
+  --gray500: #918EA3;
+  --gray600: #807D94;
+  --gray700: #656376;
+  --green500: #4AD7AD;
+  --pink500: #E86A81;
+  --pink600: #C9425A;
+  --pink700: #A9233B;
+  --purple100: #F6F5FE;
+  --purple200: #DEDBFD;
+  --purple400: #9992F1;
+  --purple500: #746AE8;
+  --purple600: #554ADC;
+  --purple700: #3529CB;
+  --red100: #FFE8EB;
+  --red200: #FDBBC4;
+  --red300: #FB91A0;
+  --red400: #F86579;
+  --red500: #F54159;
+  --yellow100: #FFF8EB;
+  --yellow200: #FFEFD0;
+  --yellow300: #FFE4AF;
+  --yellow400: #FFD584;
+  --yellow500: #EEBC5A;
+  --yellow600: #D49E35;
+  --yellow700: #AC7A19;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: YakuHanJP_Noto, "Roboto", "Noto Sans JP", "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !important; /* chakra-uiを消すまでの暫定対応 */
+  font-weight: 500;
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+textarea,
+select {
+  -webkit-appearance: none;
+}
+
+input[type="radio"] + label span.circle {
+  transition: background 0.2s, transform 0.2s;
+}
+
+input[type="radio"] + label span.circle:hover,
+input[type="radio"] + label:hover span.circle {
+}
+
+input[type="radio"]:checked + label {
+  border-color: var(--purple500);
+}
+
+input[type="radio"]:checked + label div span.circle {
+  background-color: var(--purple500);
+  border-color: var(--purple500);
+  box-shadow: 0 0 0 2px white inset;
+}
+
+input[type="radio"]:checked + label div p.text {
+  color: var(--purple500);
+}
+
+.slider-control-bottomcenter ul {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+.react-datepicker,
+.react-datepicker-wrapper,
+.react-datepicker__tab-loop {
+  font-family: YakuHanJP_Noto, "Roboto", "Noto Sans JP", "Hiragino Sans",
+  "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-weight: 500;
+  color: #29263d;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(30, 29, 37, 0.06);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.react-datepicker__header {
+  padding-top: 16px;
+  background-color: var(--white);
+  border-bottom: none;
+  border-radius: 1rem;
+}
+
+.react-datepicker__header:not(.react-datepicker__header--has-time-select) {
+  border-top-right-radius: 1rem;
+}
+
+.react-datepicker__month {
+  margin: 0 12px 12px;
+  text-align: center;
+}
+
+.react-datepicker__day-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: var(--gray-600);
+}
+
+.react-datepicker__day-name:nth-child(1) {
+  color: var(--red);
+}
+
+.react-datepicker__day-name:nth-child(7) {
+  color: var(--blue);
+}
+
+.react-datepicker__day,
+.react-datepicker__day--keyboard-selected {
+  font-size: 16px;
+  color: var(--black);
+  background-color: var(--white);
+}
+
+.react-datepicker__day--selected {
+  font-size: 16px;
+  color: var(--white);
+  background-color: var(--purple500);
+}
+
+.react-datepicker__day--outside-month {
+  color: var(--gray-400);
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  width: 44px;
+  height: 44px;
+  margin: 0.166rem;
+  line-height: 46px;
+  text-align: center;
+  border-radius: 50%;
+  outline: none;
+  transition: 0.2s ease-out;
+}
+
+.react-datepicker__day:hover {
+  color: var(--black);
+  background-color: var(--gray-200);
+  border-radius: 50%;
+}
+
+.react-datepicker__day--selected:hover {
+  color: var(--white);
+  background-color: var(--purple500);
+  border-radius: 50%;
+}
+
+ul.pagination {
+  display: inline-flex;
+}
+
+ul.pagination li {
+  margin-left: 12px;
+}
+
+ul.pagination li:first-child {
+  margin-left: 0;
+}
+
+ul.pagination li a {
+  border-radius: 2px;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  color: var(--black);
+  position: relative;
+  min-width: 37px;
+  min-height: 37px;
+  padding: 7px 0.5rem 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  border: 1px solid var(--gray200);
+  background: var(--white);
+  box-shadow: 0 2px 4px rgba(30, 29, 37, 0.02);
+  outline: none;
+}
+
+ul.pagination li a:hover {
+  color: var(--purple500);
+  background: var(--purple100);
+}
+
+ul.pagination li.active a {
+  cursor: auto;
+  color: var(--white);
+  background: var(--purple500);
+  border: 1px solid var(--purple500);
+}
+
+ul.pagination li.disabled a {
+  cursor: not-allowed;
+  color: var(--gray500);
+  background: var(--gray200);
+  border: 1px solid var(--gray200);
+}
+
