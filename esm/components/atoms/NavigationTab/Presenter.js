@@ -32,6 +32,6 @@ export var Presenter = forwardRef(function (_a, ref) {
     if (router.pathname === item.href) {
         activeClass = "text-purple";
     }
-    return (_jsx("li", __assign({ ref: ref, className: "relative inline-block text-center list-none cursor-pointer hover:text-purple transition duration-200 ease-out", id: id, onMouseEnter: function () { return onLinkMouseEnter && onLinkMouseEnter(item.href); }, onMouseLeave: onLinkMouseLeave, style: style }, props, { children: _jsx(Link, __assign({ passHref: true, href: item.href }, { children: _jsx("a", __assign({ className: "inline-block px-4 py-5" }, { children: _jsx(Text, __assign({ className: "transition duration-200 ease-out " + activeClass, size: "sm", tag: "span", weight: "bold" }, { children: item.label }), void 0) }), void 0) }), void 0) }), void 0));
+    return (_jsx("li", __assign({ ref: ref, className: "relative inline-block text-center list-none cursor-pointer hover:text-purple transition duration-200 ease-out", id: id, onMouseEnter: function () { return onLinkMouseEnter && onLinkMouseEnter(item.href); }, onMouseLeave: onLinkMouseLeave, style: style }, props, { children: _jsx(Link, __assign({ passHref: true, href: item.href, prefetch: false }, { children: _jsx("a", __assign({ className: "inline-block px-4 py-5" }, { children: _jsx(Text, __assign({ className: "transition duration-200 ease-out " + activeClass, size: "sm", tag: "span", weight: "bold" }, { children: item.label }), void 0) }), void 0) }), void 0) }), void 0));
 });
 //# sourceMappingURL=Presenter.js.map

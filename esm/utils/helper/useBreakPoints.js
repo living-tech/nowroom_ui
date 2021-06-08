@@ -24,10 +24,10 @@ export var useBreakPoints = function () {
         }
     }, []);
     return {
-        isDesktop: isClient ? isDesktop : true,
-        isMobile: isClient ? isMobile : false,
+        isDesktop: isClient ? isDesktop : false,
+        isMobile: isClient ? isMobile : true,
         isTablet: isClient ? isTablet : false,
-        isXl: isClient ? isXl : true,
+        isXl: isClient ? isXl : false,
     };
 };
 //# sourceMappingURL=useBreakPoints.js.map
