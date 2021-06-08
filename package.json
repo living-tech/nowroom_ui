@@ -6,6 +6,7 @@
   "main": "lib/index.js",
   "module": "esm/index.js",
   "directories": {
+    "esm": "esm",
     "lib": "lib"
   },
   "files": [
@@ -15,7 +16,7 @@
   "repository": "ssh://git@github.com/living-tech/nowroom_ui.git",
   "author": "NOW ROOM <system@nowroom.jp>",
   "scripts": {
-    "clean": "rm -rf ./lib",
+    "clean": "rm -rf ./lib ./esm",
     "prebuild": "yarn clean",
     "build": "run-p build:*",
     "build:lib": "ts-node ./scripts/entryBuilder && tsc --build \"./tsconfig.json\"",
