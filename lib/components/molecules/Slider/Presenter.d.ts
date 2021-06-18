@@ -1,4 +1,4 @@
-import { CSSProperties, ImgHTMLAttributes, VFC } from "react";
+import { CSSProperties, VFC } from "react";
 export declare type Item = {
     alt: string;
     path: string;
@@ -6,7 +6,6 @@ export declare type Item = {
 export declare type Props = {
     autoplay?: boolean;
     className?: string;
-    imageTag: ImgHTMLAttributes<HTMLImageElement>;
     items: Array<Item>;
     style?: CSSProperties;
 };

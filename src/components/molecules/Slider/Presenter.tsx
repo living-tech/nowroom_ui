@@ -1,6 +1,6 @@
 import { useWindowWidth } from "@react-hook/window-size";
 import Carousel, { CarouselSlideRenderControlProps } from "nuka-carousel";
-import { CSSProperties, ImgHTMLAttributes, useEffect, useRef, useState, VFC } from "react";
+import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
 
 import { carouselPaginationWidth } from "../../../constnats";
 import { Image } from "../../atoms/Image/Default";
@@ -14,7 +14,6 @@ export type Item = {
 export type Props = {
   autoplay?: boolean;
   className?: string;
-  imageTag: ImgHTMLAttributes<HTMLImageElement>;
   items: Array<Item>;
   style?: CSSProperties;
 };
