@@ -14,6 +14,7 @@ import { useWindowWidth } from "@react-hook/window-size";
 import Carousel from "nuka-carousel";
 import { useEffect, useRef, useState } from "react";
 import { carouselPaginationWidth } from "../../../constnats";
+import { Image } from "../../atoms/Image/Default";
 import { LabelTextBlackOpacity } from "../LabelText/BlackOpacity";
 export var Presenter = function (_a) {
     var autoplay = _a.autoplay, className = _a.className, items = _a.items, style = _a.style;
@@ -41,6 +42,6 @@ export var Presenter = function (_a) {
             setHeight((width_1 / 4) * 3);
         }
     }, [containerRef, windowWidth]);
-    return (_jsx("div", __assign({ ref: containerRef, className: "" + className, style: style }, { children: _jsx(Carousel, __assign({ disableEdgeSwiping: true, wrapAround: true, autoplay: autoplay, height: height ? height + "px" : undefined, renderBottomCenterControls: renderBottomCenterControls, renderCenterLeftControls: null, renderCenterRightControls: null, renderTopRightControls: renderTopRightControls }, { children: items.map(function (item, index) { return (_jsx("img", { alt: item.alt, className: "object-contain", src: item.path, style: { height: height, width: width } }, index)); }) }), void 0) }), void 0));
+    return (_jsx("div", __assign({ ref: containerRef, className: "" + className, style: style }, { children: _jsx(Carousel, __assign({ disableEdgeSwiping: true, wrapAround: true, autoplay: autoplay, height: height ? height + "px" : undefined, renderBottomCenterControls: renderBottomCenterControls, renderCenterLeftControls: null, renderCenterRightControls: null, renderTopRightControls: renderTopRightControls }, { children: items.map(function (item, index) { return (_jsx(Image, { alt: item.alt, className: "object-contain", height: height !== null && height !== void 0 ? height : 0, src: item.path, width: width !== null && width !== void 0 ? width : 0 }, index)); }) }), void 0) }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map
