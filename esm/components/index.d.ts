@@ -18,6 +18,8 @@ export * from "./atoms/Icon/Purple";
 export * from "./atoms/Icon/Red";
 export * from "./atoms/Icon/White";
 export * from "./atoms/Icon/Yellow";
+export * from "./atoms/Image/Default";
+export { Props as ImageProps } from "./atoms/Image/Presenter";
 export * from "./atoms/InputCheckbox/Default";
 export { Props as InputCheckboxProps } from "./atoms/InputCheckbox/Presenter";
 export * from "./atoms/InputDatePicker/Default";

@@ -18,6 +18,7 @@ export * from "./atoms/Icon/Purple";
 export * from "./atoms/Icon/Red";
 export * from "./atoms/Icon/White";
 export * from "./atoms/Icon/Yellow";
+export * from "./atoms/Image/Default";
 export * from "./atoms/InputCheckbox/Default";
 export * from "./atoms/InputDatePicker/Default";
 export * from "./atoms/InputRadio/Default";

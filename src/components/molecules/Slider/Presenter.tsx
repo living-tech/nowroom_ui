@@ -79,6 +79,7 @@ export const Presenter: VFC<Props> = ({ autoplay, className, items, style }) => 
             alt={item.alt}
             className="object-contain"
             height={height ?? 0}
+            loading="lazy"
             src={item.path}
             width={width ?? 0}
           />
