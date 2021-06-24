@@ -3,6 +3,7 @@ export declare type Props = {
     any?: boolean;
     anyLabel?: string;
     className?: string;
+    createRef?: (input: HTMLInputElement) => void;
     dragAndDropLabel?: string;
     fileSelectLabel?: string;
     gallerySelectLabel?: string;

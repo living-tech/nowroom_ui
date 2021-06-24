@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, DragEvent, useRef, useState, VFC } from "react";
+import { ChangeEvent, CSSProperties, DragEvent, useState, VFC } from "react";
 
 import { IconMediumGray02 } from "../../atoms/Icon/MediumGray02";
 import { TextMediumGray02 } from "../../atoms/Text/MediumGray02";
@@ -10,6 +10,7 @@ export type Props = {
   any?: boolean;
   anyLabel?: string;
   className?: string;
+  createRef?: (input: HTMLInputElement) => void;
   dragAndDropLabel?: string;
   fileSelectLabel?: string;
   gallerySelectLabel?: string;
@@ -28,6 +29,7 @@ export const Presenter: VFC<Props> = ({
   any,
   anyLabel = "任意",
   className,
+  createRef,
   dragAndDropLabel = "ドラッグ＆ドロップまたはファイル選択",
   fileSelectLabel = "ファイル選択",
   gallerySelectLabel = "ギャラリーから選択",
@@ -42,7 +44,6 @@ export const Presenter: VFC<Props> = ({
   style,
   ...props
 }) => {
-  const inputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState<boolean>(false);
 
   const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
@@ -58,9 +59,6 @@ export const Presenter: VFC<Props> = ({
   const handleDrop = (event: DragEvent<HTMLDivElement>) => {
     event.preventDefault();
     setIsDragging(false);
-    if (inputRef.current) {
-      inputRef.current.files = event.dataTransfer.files;
-    }
     onHandleDrop && onHandleDrop(event);
   };
 
@@ -136,7 +134,7 @@ export const Presenter: VFC<Props> = ({
               <label className={"py-2.5 px-8 cursor-pointer"} htmlFor={id}>
                 {fileSelectLabel}
                 <input
-                  ref={inputRef}
+                  ref={createRef}
                   accept="image/*"
                   className="sr-only"
                   id={id}
