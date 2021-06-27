@@ -15,6 +15,7 @@ export type Item = {
 export type Props = {
   className?: string;
   id?: string;
+  initialContainerWidth?: number;
   items: Array<Item>;
   panelsContainerClassName?: string;
   panelsContainerStyle?: CSSProperties;
@@ -34,6 +35,7 @@ const uuid = uuidv4();
 export const Presenter: VFC<Props> = ({
   id = uuid,
   className = "",
+  initialContainerWidth,
   items,
   panelsContainerClassName = "",
   panelsContainerStyle,
@@ -49,7 +51,7 @@ export const Presenter: VFC<Props> = ({
 }) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [containerWidth, setContainerWidth] = useState<number>(0);
+  const [containerWidth, setContainerWidth] = useState<number>(initialContainerWidth ?? 0);
   const [borderStyle, setBorderStyle] = useState<{ left: number; width: number } | null>(null);
   const [hoverTab, setHoverTab] = useState<number | null>(null);
 
@@ -126,6 +128,9 @@ export const Presenter: VFC<Props> = ({
       <Measure
         bounds
         onResize={(contentRect) => {
+          if (initialContainerWidth) {
+            return;
+          }
           setContainerWidth(contentRect.bounds?.width || 0);
         }}
       >

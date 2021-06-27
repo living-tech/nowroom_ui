@@ -7,6 +7,7 @@ export declare type Item = {
 export declare type Props = {
     className?: string;
     id?: string;
+    initialContainerWidth?: number;
     items: Array<Item>;
     panelsContainerClassName?: string;
     panelsContainerStyle?: CSSProperties;
