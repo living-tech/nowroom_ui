@@ -21,6 +21,7 @@ export type Props = {
   onRequestClose?: () => void;
   paddingHorizontal?: boolean;
   renderFixedBottom?: () => JSX.Element;
+  zIndex?: number;
 };
 
 export const Presenter: VFC<Props> = ({
@@ -33,6 +34,7 @@ export const Presenter: VFC<Props> = ({
   onRequestClose,
   paddingHorizontal = true,
   renderFixedBottom,
+  zIndex = 50,
   ...props
 }) => {
   const { isDesktop, isMobile } = useBreakPoints();
@@ -100,11 +102,12 @@ export const Presenter: VFC<Props> = ({
         timeout={400}
       >
         <div
-          className="fixed top-0 left-0 z-40 w-full h-full p-4 cursor-pointer bg-overlay"
+          className="fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay"
           onClick={() => {
             setVisible(false);
             onRequestClose && onRequestClose();
           }}
+          style={{ zIndex }}
           {...props}
         >
           {!isMobile && (
@@ -131,11 +134,12 @@ export const Presenter: VFC<Props> = ({
         timeout={{ enter: 400, exit: 400 }}
       >
         <div
-          className={`fixed z-50 top-1/2 left-1/2 ${modalSizeClass}`}
+          className={`fixed top-1/2 left-1/2 ${modalSizeClass}`}
           style={{
             maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
             maxWidth,
             minHeight: loading ? 200 : undefined,
+            zIndex: zIndex + 1,
           }}
         >
           <div

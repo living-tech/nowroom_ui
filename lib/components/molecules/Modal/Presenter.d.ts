@@ -10,6 +10,7 @@ export declare type Props = {
     onRequestClose?: () => void;
     paddingHorizontal?: boolean;
     renderFixedBottom?: () => JSX.Element;
+    zIndex?: number;
 };
 export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

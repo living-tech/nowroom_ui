@@ -31,11 +31,11 @@ import { IconButtonWhite } from "../IconButton/White";
 import { LabelTextWhite } from "../LabelText/White";
 import styles from "./Modal.module.scss";
 export var Presenter = function (_a) {
-    var children = _a.children, _b = _a.closeButtonPosition, closeButtonPosition = _b === void 0 ? "top" : _b, _c = _a.escLabel, escLabel = _c === void 0 ? "を押して閉じる" : _c, isVisible = _a.isVisible, loading = _a.loading, _d = _a.maxWidth, maxWidth = _d === void 0 ? 400 : _d, onRequestClose = _a.onRequestClose, _e = _a.paddingHorizontal, paddingHorizontal = _e === void 0 ? true : _e, renderFixedBottom = _a.renderFixedBottom, props = __rest(_a, ["children", "closeButtonPosition", "escLabel", "isVisible", "loading", "maxWidth", "onRequestClose", "paddingHorizontal", "renderFixedBottom"]);
-    var _f = useBreakPoints(), isDesktop = _f.isDesktop, isMobile = _f.isMobile;
+    var children = _a.children, _b = _a.closeButtonPosition, closeButtonPosition = _b === void 0 ? "top" : _b, _c = _a.escLabel, escLabel = _c === void 0 ? "を押して閉じる" : _c, isVisible = _a.isVisible, loading = _a.loading, _d = _a.maxWidth, maxWidth = _d === void 0 ? 400 : _d, onRequestClose = _a.onRequestClose, _e = _a.paddingHorizontal, paddingHorizontal = _e === void 0 ? true : _e, renderFixedBottom = _a.renderFixedBottom, _f = _a.zIndex, zIndex = _f === void 0 ? 50 : _f, props = __rest(_a, ["children", "closeButtonPosition", "escLabel", "isVisible", "loading", "maxWidth", "onRequestClose", "paddingHorizontal", "renderFixedBottom", "zIndex"]);
+    var _g = useBreakPoints(), isDesktop = _g.isDesktop, isMobile = _g.isMobile;
     var windowWidth = useWindowWidth();
-    var _g = useState(false), visible = _g[0], setVisible = _g[1];
-    var _h = useState(0), fixedBottomHeight = _h[0], setFixedBottomHeight = _h[1];
+    var _h = useState(false), visible = _h[0], setVisible = _h[1];
+    var _j = useState(0), fixedBottomHeight = _j[0], setFixedBottomHeight = _j[1];
     var fixedBottomRef = useRef(null);
     var paddingHorizontalClass = "";
     if (paddingHorizontal) {
@@ -79,10 +79,10 @@ export var Presenter = function (_a) {
                     enterActive: styles.ModalEnterActive,
                     exit: styles.ModalExit,
                     exitActive: styles.ModalExitActive,
-                }, in: visible, timeout: 400 }, { children: _jsx("div", __assign({ className: "fixed top-0 left-0 z-40 w-full h-full p-4 cursor-pointer bg-overlay", onClick: function () {
+                }, in: visible, timeout: 400 }, { children: _jsx("div", __assign({ className: "fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay", onClick: function () {
                         setVisible(false);
                         onRequestClose && onRequestClose();
-                    } }, props, { children: !isMobile && (_jsxs("div", __assign({ className: "flex items-center" }, { children: [_jsx(LabelTextWhite, { children: "ESC" }, void 0),
+                    }, style: { zIndex: zIndex } }, props, { children: !isMobile && (_jsxs("div", __assign({ className: "flex items-center" }, { children: [_jsx(LabelTextWhite, { children: "ESC" }, void 0),
                             _jsx(TextWhite, __assign({ className: "ml-1", size: "sm", weight: "bold" }, { children: escLabel }), void 0)] }), void 0)) }), void 0) }), void 0),
             _jsx(CSSTransition, __assign({ unmountOnExit: true, classNames: {
                     appear: styles.ModalInnerAppear,
@@ -91,10 +91,11 @@ export var Presenter = function (_a) {
                     enterDone: styles.ModalInnerEnterDone,
                     exit: styles.ModalInnerExit,
                     exitActive: styles.ModalInnerExitActive,
-                }, in: visible, timeout: { enter: 400, exit: 400 } }, { children: _jsx("div", __assign({ className: "fixed z-50 top-1/2 left-1/2 " + modalSizeClass, style: {
+                }, in: visible, timeout: { enter: 400, exit: 400 } }, { children: _jsx("div", __assign({ className: "fixed top-1/2 left-1/2 " + modalSizeClass, style: {
                         maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
                         maxWidth: maxWidth,
                         minHeight: loading ? 200 : undefined,
+                        zIndex: zIndex + 1,
                     } }, { children: _jsxs("div", __assign({ className: "transition-all ease-out duration-200 py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto " + modalSizeClass + " " + paddingHorizontalClass, style: {
                             maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
                             maxWidth: maxWidth,
