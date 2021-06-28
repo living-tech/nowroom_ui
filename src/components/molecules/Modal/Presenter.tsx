@@ -131,11 +131,11 @@ export const Presenter: VFC<Props> = ({
         timeout={{ enter: 400, exit: 400 }}
       >
         <div
-          className={`fixed z-50 top-1/2 left-1/2 ${modalSizeClass}`}
+          className={`transition-all ease-out duration-200 fixed z-50 top-1/2 left-1/2 ${modalSizeClass}`}
           style={{ maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)", maxWidth }}
         >
           <div
-            className={`py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto ${modalSizeClass} ${paddingHorizontalClass}`}
+            className={`transition-all ease-out duration-200 py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto ${modalSizeClass} ${paddingHorizontalClass}`}
             style={{
               maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
               maxWidth,
