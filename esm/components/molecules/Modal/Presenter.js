@@ -98,6 +98,7 @@ export var Presenter = function (_a) {
                     } }, { children: _jsxs("div", __assign({ className: "transition-all ease-out duration-200 py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto " + modalSizeClass + " " + paddingHorizontalClass, style: {
                             maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
                             maxWidth: maxWidth,
+                            minHeight: loading ? 200 : undefined,
                             paddingBottom: fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),
                         } }, { children: [loading ? (_jsx("span", __assign({ className: "absolute flex top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2" }, { children: _jsx(Spinner, {}, void 0) }), void 0)) : (_jsx("div", { children: children }, void 0)),
                             renderFixedBottom && !loading && (_jsx("div", __assign({ ref: fixedBottomRef, className: "absolute bottom-0 left-0 w-full px-4 py-3 bg-gray-100 border-t border-gray-200 md:px-8 md:py-4 md:rounded-b-lg" }, { children: renderFixedBottom() }), void 0)),

@@ -143,6 +143,7 @@ export const Presenter: VFC<Props> = ({
             style={{
               maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
               maxWidth,
+              minHeight: loading ? 200 : undefined,
               paddingBottom: fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),
             }}
           >
