@@ -143,13 +143,13 @@ export const Presenter: VFC<Props> = ({
             }}
           >
             {loading ? (
-              <span className="absolute flex top-1/2 transform -translate-y-1/2">
+              <span className="absolute flex top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
                 <Spinner />
               </span>
             ) : (
               <div>{children}</div>
             )}
-            {renderFixedBottom && (
+            {renderFixedBottom && !loading && (
               <div
                 ref={fixedBottomRef}
                 className="absolute bottom-0 left-0 w-full px-4 py-3 bg-gray-100 border-t border-gray-200 md:px-8 md:py-4 md:rounded-b-lg"

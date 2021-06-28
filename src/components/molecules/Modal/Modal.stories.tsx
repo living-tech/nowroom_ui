@@ -105,3 +105,10 @@ maxWidthMin.args = {
   isVisible: true,
   maxWidth: 320,
 };
+
+export const loading = Template.bind({});
+loading.args = {
+  closeButtonPosition: "bottom",
+  isVisible: true,
+  loading: true,
+};
