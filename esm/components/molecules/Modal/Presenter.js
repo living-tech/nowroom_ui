@@ -73,7 +73,7 @@ export var Presenter = function (_a) {
             return;
         }
         setFixedBottomHeight(fixedBottomRef.current.clientHeight);
-    }, [visible]);
+    }, [visible, fixedBottomRef]);
     return (_jsxs(_Fragment, { children: [_jsx(CSSTransition, __assign({ unmountOnExit: true, classNames: {
                     enter: styles.ModalEnter,
                     enterActive: styles.ModalEnterActive,
@@ -91,7 +91,11 @@ export var Presenter = function (_a) {
                     enterDone: styles.ModalInnerEnterDone,
                     exit: styles.ModalInnerExit,
                     exitActive: styles.ModalInnerExitActive,
-                }, in: visible, timeout: { enter: 400, exit: 400 } }, { children: _jsx("div", __assign({ className: "fixed z-50 top-1/2 left-1/2 " + modalSizeClass, style: { maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)", maxWidth: maxWidth } }, { children: _jsxs("div", __assign({ className: "transition-all ease-out duration-200 py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto " + modalSizeClass + " " + paddingHorizontalClass, style: {
+                }, in: visible, timeout: { enter: 400, exit: 400 } }, { children: _jsx("div", __assign({ className: "fixed z-50 top-1/2 left-1/2 " + modalSizeClass, style: {
+                        maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
+                        maxWidth: maxWidth,
+                        minHeight: loading ? 200 : undefined,
+                    } }, { children: _jsxs("div", __assign({ className: "transition-all ease-out duration-200 py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto " + modalSizeClass + " " + paddingHorizontalClass, style: {
                             maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
                             maxWidth: maxWidth,
                             paddingBottom: fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),

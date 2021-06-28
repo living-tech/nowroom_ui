@@ -84,7 +84,7 @@ export const Presenter: VFC<Props> = ({
       return;
     }
     setFixedBottomHeight(fixedBottomRef.current.clientHeight);
-  }, [visible]);
+  }, [visible, fixedBottomRef]);
 
   return (
     <>
@@ -132,7 +132,11 @@ export const Presenter: VFC<Props> = ({
       >
         <div
           className={`fixed z-50 top-1/2 left-1/2 ${modalSizeClass}`}
-          style={{ maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)", maxWidth }}
+          style={{
+            maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
+            maxWidth,
+            minHeight: loading ? 200 : undefined,
+          }}
         >
           <div
             className={`transition-all ease-out duration-200 py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto ${modalSizeClass} ${paddingHorizontalClass}`}
