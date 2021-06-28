@@ -131,7 +131,7 @@ export const Presenter: VFC<Props> = ({
         timeout={{ enter: 400, exit: 400 }}
       >
         <div
-          className={`transition-all ease-out duration-200 fixed z-50 top-1/2 left-1/2 ${modalSizeClass}`}
+          className={`fixed z-50 top-1/2 left-1/2 ${modalSizeClass}`}
           style={{ maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)", maxWidth }}
         >
           <div
