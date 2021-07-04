@@ -4,7 +4,7 @@ import { Icon } from "../../atoms/Icon/Default";
 import { Color as IconColor, CurrentType, IconName, Size as IconSize } from "../../atoms/Icon/Presenter";
 import { Spinner } from "../../atoms/Spinner/Default";
 
-export type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter" | "line";
+export type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter" | "line" | "gray";
 export type Size = "sm" | "md" | "lg";
 
 export type Props = {
@@ -106,6 +106,9 @@ export const Presenter: VFC<Props> = ({
           case "white":
             borderColorClass = "border border-gray-200 hover:border-purple";
             break;
+          case "gray":
+            borderColorClass = "border border-gray-200 disabled:border-gray-200";
+            break;
           case "transparent":
             borderColorClass = "border border-transparent";
             break;
@@ -133,6 +136,9 @@ export const Presenter: VFC<Props> = ({
             break;
           case "white":
             borderColorClass = "border border-gray-200 hover:border-purple";
+            break;
+          case "gray":
+            borderColorClass = "border border-gray-200";
             break;
           case "transparent":
             borderColorClass = "border border-transparent";
@@ -167,6 +173,9 @@ export const Presenter: VFC<Props> = ({
         case "white":
           backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
           break;
+        case "gray":
+          backgroundColorClass = "bg-white hover:bg-white";
+          break;
         case "transparent":
           backgroundColorClass = "bg-transparent hover:bg-gray-200";
           break;
@@ -194,6 +203,9 @@ export const Presenter: VFC<Props> = ({
           break;
         case "white":
           backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
+          break;
+        case "gray":
+          backgroundColorClass = "bg-gray-500 hover:bg-gray-400 disabled:bg-gray-500 disabled:hover:bg-gray-500";
           break;
         case "transparent":
           backgroundColorClass = "bg-transparent hover:bg-gray-200";
@@ -235,6 +247,10 @@ export const Presenter: VFC<Props> = ({
           iconColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";
           loadingColor = "black";
           break;
+        case "gray":
+          iconColorClass = "text-gray-500 hover:text-gray-400 disabled:text-gray-500 disabled:hover:text-gray-500";
+          loadingColor = "black";
+          break;
         case "transparent":
           iconColorClass = "text-black";
           loadingColor = "black";
@@ -269,6 +285,10 @@ export const Presenter: VFC<Props> = ({
           break;
         case "white":
           iconColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";
+          loadingColor = "black";
+          break;
+        case "gray":
+          iconColorClass = "text-white";
           loadingColor = "black";
           break;
         case "transparent":

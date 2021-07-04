@@ -27,3 +27,10 @@ White.args = {
   color: "white",
   iconName: "FiMoreVertical",
 };
+
+export const Gray = Template.bind({});
+Gray.args = {
+  color: "gray",
+  iconName: "IoLogoTwitter",
+  visualType: "outline",
+};
