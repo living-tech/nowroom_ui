@@ -63,6 +63,7 @@ export * from "./molecules/DrawerMenu/Default";
 export * from "./molecules/EmptyPreviewContainer/Default";
 export * from "./molecules/GoogleMap/Default";
 export * from "./molecules/IconButton/Default";
+export * from "./molecules/IconButton/Gray";
 export * from "./molecules/IconButton/Purple";
 export * from "./molecules/IconButton/PurpleOutline";
 export * from "./molecules/IconButton/Red";
