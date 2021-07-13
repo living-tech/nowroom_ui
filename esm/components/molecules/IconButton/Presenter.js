@@ -80,6 +80,9 @@ export var Presenter = function (_a) {
                     case "white":
                         borderColorClass = "border border-gray-200 hover:border-purple";
                         break;
+                    case "gray":
+                        borderColorClass = "border border-gray-200 disabled:border-gray-200";
+                        break;
                     case "transparent":
                         borderColorClass = "border border-transparent";
                         break;
@@ -107,6 +110,9 @@ export var Presenter = function (_a) {
                         break;
                     case "white":
                         borderColorClass = "border border-gray-200 hover:border-purple";
+                        break;
+                    case "gray":
+                        borderColorClass = "border border-gray-200";
                         break;
                     case "transparent":
                         borderColorClass = "border border-transparent";
@@ -140,6 +146,9 @@ export var Presenter = function (_a) {
                 case "white":
                     backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
                     break;
+                case "gray":
+                    backgroundColorClass = "bg-white hover:bg-white";
+                    break;
                 case "transparent":
                     backgroundColorClass = "bg-transparent hover:bg-gray-200";
                     break;
@@ -167,6 +176,9 @@ export var Presenter = function (_a) {
                     break;
                 case "white":
                     backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
+                    break;
+                case "gray":
+                    backgroundColorClass = "bg-gray-500 hover:bg-gray-400 disabled:bg-gray-500 disabled:hover:bg-gray-500";
                     break;
                 case "transparent":
                     backgroundColorClass = "bg-transparent hover:bg-gray-200";
@@ -207,6 +219,10 @@ export var Presenter = function (_a) {
                     iconColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";
                     loadingColor = "black";
                     break;
+                case "gray":
+                    iconColorClass = "text-gray-500 hover:text-gray-400 disabled:text-gray-500 disabled:hover:text-gray-500";
+                    loadingColor = "black";
+                    break;
                 case "transparent":
                     iconColorClass = "text-black";
                     loadingColor = "black";
@@ -241,6 +257,10 @@ export var Presenter = function (_a) {
                     break;
                 case "white":
                     iconColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";
+                    loadingColor = "black";
+                    break;
+                case "gray":
+                    iconColorClass = "text-white";
                     loadingColor = "black";
                     break;
                 case "transparent":

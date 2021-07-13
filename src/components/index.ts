@@ -95,6 +95,7 @@ export { Props as EmptyPreviewContainerProps } from "./molecules/EmptyPreviewCon
 export * from "./molecules/GoogleMap/Default";
 export { Props as GoogleMapProps } from "./molecules/GoogleMap/Presenter";
 export * from "./molecules/IconButton/Default";
+export * from "./molecules/IconButton/Gray";
 export { Props as IconButtonProps } from "./molecules/IconButton/Presenter";
 export * from "./molecules/IconButton/Purple";
 export * from "./molecules/IconButton/PurpleOutline";
