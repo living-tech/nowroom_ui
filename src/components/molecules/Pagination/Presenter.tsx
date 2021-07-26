@@ -1,9 +1,10 @@
+/* eslint-disable */
 import { VFC } from "react";
 import ReactPaginate from "react-paginate";
 
-import { useBreakPoints } from "../../../utils";
+// import { useBreakPoints } from "../../../utils";
 import { Icon } from "../../atoms/Icon/Default";
-import { Text } from "../../atoms/Text/Default";
+// import { Text } from "../../atoms/Text/Default";
 
 export type Props = {
   className?: string;
@@ -17,12 +18,12 @@ export type Props = {
 export const Presenter: VFC<Props> = ({
   className = "",
   initialPage,
-  nextTextLabel = "次のページ",
+  // nextTextLabel = "次のページ",
   onPageChange,
   pageCount,
-  previousTextLabel = "前のページ",
+  // previousTextLabel = "前のページ",
 }) => {
-  const { isMobile } = useBreakPoints();
+  // const { isMobile } = useBreakPoints();
 
   return (
     <ReactPaginate
@@ -31,14 +32,15 @@ export const Presenter: VFC<Props> = ({
       breakLabel={<Icon name={"FiMoreHorizontal"} size={20} />}
       containerClassName={`pagination ${className}`}
       initialPage={initialPage - 1}
-      marginPagesDisplayed={isMobile ? 1 : 2}
+      // marginPagesDisplayed={isMobile ? 1 : 2}
+      marginPagesDisplayed={1}
       nextLabel={
         <span className={`flex items-center`}>
-          {!isMobile && (
+          {/* {!isMobile && (
             <Text className="mr-1" size={"sm"} weight={"bold"}>
               {nextTextLabel}
             </Text>
-          )}
+          )} */}
           <span>
             <Icon name={"FiChevronRight"} size={14} />
           </span>
@@ -46,17 +48,18 @@ export const Presenter: VFC<Props> = ({
       }
       onPageChange={({ selected }) => onPageChange && onPageChange(selected + 1)}
       pageCount={pageCount}
-      pageRangeDisplayed={isMobile ? 1 : 2}
+      // pageRangeDisplayed={isMobile ? 1 : 2}
+      pageRangeDisplayed={1}
       previousLabel={
         <span className={`flex items-center`}>
           <span>
             <Icon name={"FiChevronLeft"} size={14} />
           </span>
-          {!isMobile && (
+          {/* {!isMobile && (
             <Text className="ml-1" size={"sm"} weight={"bold"}>
               {previousTextLabel}
             </Text>
-          )}
+          )} */}
         </span>
       }
     />

@@ -1,12 +1,13 @@
+/* eslint-disable */
 import { useWindowWidth } from "@react-hook/window-size";
 import { ReactNode, useCallback, useEffect, useRef, useState, VFC } from "react";
 import { CSSTransition } from "react-transition-group";
 
-import { useBreakPoints } from "../../../utils";
+// import { useBreakPoints } from "../../../utils";
 import { SpinnerPurple as Spinner } from "../../atoms/Spinner/Purple";
-import { TextWhite } from "../../atoms/Text/White";
+// import { TextWhite } from "../../atoms/Text/White";
 import { IconButtonWhite } from "../IconButton/White";
-import { LabelTextWhite } from "../LabelText/White";
+// import { LabelTextWhite } from "../LabelText/White";
 import styles from "./Modal.module.scss";
 
 export type CloseButtonPosition = "top" | "bottom";
@@ -37,7 +38,7 @@ export const Presenter: VFC<Props> = ({
   zIndex = 50,
   ...props
 }) => {
-  const { isDesktop, isMobile } = useBreakPoints();
+  // const { isDesktop, isMobile } = useBreakPoints();
   const windowWidth = useWindowWidth();
 
   const [visible, setVisible] = useState<boolean>(false);
@@ -55,19 +56,19 @@ export const Presenter: VFC<Props> = ({
     modalSizeClass = "w-full h-full md:h-auto";
   }
 
-  const handleKeydown = useCallback((event: KeyboardEvent) => {
-    if (!isDesktop) {
-      return true;
-    }
-
-    if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
-      event.preventDefault();
-      setVisible(false);
-      onRequestClose && onRequestClose();
-      return false;
-    }
-
+  const handleKeydown = useCallback((/*event: KeyboardEvent*/) => {
+    // if (!isDesktop) {
     return true;
+    // }
+
+    // if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
+    //   event.preventDefault();
+    //   setVisible(false);
+    //   onRequestClose && onRequestClose();
+    //   return false;
+    // }
+
+    // return true;
   }, []);
 
   useEffect(() => {
@@ -110,14 +111,14 @@ export const Presenter: VFC<Props> = ({
           style={{ zIndex }}
           {...props}
         >
-          {!isMobile && (
+          {/* {!isMobile && (
             <div className="flex items-center">
               <LabelTextWhite>ESC</LabelTextWhite>
               <TextWhite className="ml-1" size={"sm"} weight={"bold"}>
                 {escLabel}
               </TextWhite>
             </div>
-          )}
+          )} */}
         </div>
       </CSSTransition>
       <CSSTransition
@@ -136,7 +137,8 @@ export const Presenter: VFC<Props> = ({
         <div
           className={`fixed top-1/2 left-1/2 ${modalSizeClass}`}
           style={{
-            maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
+            // maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
+            maxHeight: windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
             maxWidth,
             minHeight: loading ? 200 : undefined,
             zIndex: zIndex + 1,
@@ -145,10 +147,12 @@ export const Presenter: VFC<Props> = ({
           <div
             className={`transition-all ease-out duration-200 py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto ${modalSizeClass} ${paddingHorizontalClass}`}
             style={{
-              maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
+              // maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
+              maxHeight: windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
               maxWidth,
               minHeight: loading ? 200 : undefined,
-              paddingBottom: fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),
+              // paddingBottom: fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),
+              paddingBottom: fixedBottomHeight + 40 + (closeButtonPosition === "bottom" ? 62 : 0),
             }}
           >
             {loading ? (
@@ -176,13 +180,13 @@ export const Presenter: VFC<Props> = ({
               radius={true}
               shadow={false}
               style={
-                isMobile
-                  ? {
+                // isMobile
+                 /* ?*/ {
                       bottom: closeButtonPosition === "bottom" ? fixedBottomHeight + 16 : undefined,
                       position: "absolute",
                       top: closeButtonPosition === "top" ? 16 : undefined,
                     }
-                  : { position: "absolute" }
+                  // : { position: "absolute" }
               }
             />
           </div>
