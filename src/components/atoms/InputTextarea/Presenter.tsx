@@ -20,6 +20,7 @@ export type Props = {
   resize?: boolean;
   rows?: number;
   style?: CSSProperties;
+  value?: string;
   weight?: Weight;
 };
 
@@ -39,6 +40,7 @@ export const Presenter: VFC<Props> = ({
   resize = false,
   rows,
   style,
+  value,
   weight = "bold",
   ...props
 }) => {
@@ -90,6 +92,7 @@ export const Presenter: VFC<Props> = ({
           onChange={onChange}
           placeholder={placeholder}
           rows={rows}
+          value={value}
         />
       </div>
       {error && (
