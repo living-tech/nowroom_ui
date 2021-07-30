@@ -31,7 +31,7 @@ export * from "./NavigationTab/Default";
 export { Props as NavigationTabProps } from "./NavigationTab/Presenter";
 export * from "./ProgressBar/Default";
 export { Props as ProgressBarProps } from "./ProgressBar/Presenter";
-export * from "./Separator/Default";
+export * from "./Separator";
 export { Props as SeparatorProps } from "./Separator/Presenter";
 export * from "./Spinner/Default";
 export { Props as SpinnerProps } from "./Spinner/Presenter";

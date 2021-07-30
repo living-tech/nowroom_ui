@@ -15,7 +15,7 @@ export * from "./MessageBox/Default";
 export * from "./NavigationDrawerMenuItem/Default";
 export * from "./NavigationTab/Default";
 export * from "./ProgressBar/Default";
-export * from "./Separator/Default";
+export * from "./Separator";
 export * from "./Spinner/Default";
 export * from "./Spinner/Purple";
 export * from "./Spinner/White";
