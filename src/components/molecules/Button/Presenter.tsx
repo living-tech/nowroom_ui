@@ -9,7 +9,7 @@ export type Props = {
   border?: boolean;
   children: ReactNode;
   className?: string;
-  color?: "purple" | "white" | "mediumGray02";
+  color?: "purple" | "white" | "mediumGray02" | "red";
   disabled?: boolean;
   href?: string;
   iconName?: IconName;
@@ -112,6 +112,11 @@ export const Presenter: VFC<Props> = ({
         case "white":
           borderColorClass = border ? "border border-gray-200" : "border border-transparent";
           break;
+        case "red":
+          borderColorClass = border
+            ? "border border-red disabled:border-gray-500"
+            : "border border-transparent disabled:border-transparent";
+          break;
       }
       break;
     case "outline":
@@ -123,6 +128,11 @@ export const Presenter: VFC<Props> = ({
           break;
         case "white":
           borderColorClass = border ? "border border-gray-200" : "border border-transparent";
+          break;
+        case "red":
+          borderColorClass = border
+            ? "border border-red disabled:border-gray-200"
+            : "border border-transparent disabled:border-transparent";
           break;
       }
       break;
@@ -138,6 +148,9 @@ export const Presenter: VFC<Props> = ({
         case "white":
           backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
           break;
+        case "red":
+          backgroundColorClass = "bg-red hover:bg-white disabled:bg-gray-500 disabled:hover:bg-gray-500";
+          break;
       }
       break;
     case "outline":
@@ -147,6 +160,9 @@ export const Presenter: VFC<Props> = ({
           break;
         case "white":
           backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
+          break;
+        case "red":
+          backgroundColorClass = "bg-red hover:bg-white disabled:bg-gray-500 disabled:hover:bg-gray-500";
           break;
       }
       break;
@@ -162,6 +178,9 @@ export const Presenter: VFC<Props> = ({
         case "white":
           textColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";
           break;
+        case "red":
+          textColorClass = "text-white hover:text-red disabled:text-white disabled:hover:text-white";
+          break;
       }
       break;
     case "outline":
@@ -171,6 +190,9 @@ export const Presenter: VFC<Props> = ({
           break;
         case "white":
           textColorClass = "text-black hover:text-white disabled:text-gray-200 disabled:hover:text-gray-200";
+          break;
+        case "red":
+          textColorClass = "text-red hover:text-white disabled:text-gray-500 disabled:hover:text-gray-500";
           break;
       }
       break;
