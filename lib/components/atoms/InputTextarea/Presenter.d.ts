@@ -16,6 +16,7 @@ export declare type Props = {
     resize?: boolean;
     rows?: number;
     style?: CSSProperties;
+    value?: string;
     weight?: Weight;
 };
 export declare const Presenter: VFC<Props>;
