@@ -33,7 +33,7 @@ export const Presenter = forwardRef<HTMLDivElement, Props>(({ className, item, s
     return (
       <Link passHref href={item.href}>
         <a className={`${colorClass} ${baseClass} ${className}`} style={style}>
-          {`aaa${item.label}`}
+          {`${item.label}`}
         </a>
       </Link>
     );
