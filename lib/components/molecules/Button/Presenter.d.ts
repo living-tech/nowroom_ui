@@ -5,7 +5,7 @@ export declare type Props = {
     border?: boolean;
     children: ReactNode;
     className?: string;
-    color?: "purple" | "white" | "mediumGray02";
+    color?: "purple" | "white" | "mediumGray02" | "red";
     disabled?: boolean;
     href?: string;
     iconName?: IconName;

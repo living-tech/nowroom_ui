@@ -23,6 +23,7 @@ export var Presenter = forwardRef(function (_a, _ref) {
         return (_jsx("button", __assign({ className: colorClass + " " + baseClass + " " + className, onClick: item.onClick, style: style }, { children: item.label }), void 0));
     }
     else if (item.href) {
+        console.log(item.href);
         return (_jsx(Link, __assign({ href: item.href }, { children: _jsx(_Fragment, { children: _jsx("a", __assign({ className: colorClass + " " + baseClass + " " + className, style: style }, { children: item.label }), void 0) }, void 0) }), void 0));
     }
     else {
