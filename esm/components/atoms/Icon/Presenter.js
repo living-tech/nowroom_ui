@@ -24,7 +24,128 @@ import { jsx as _jsx, Fragment as _Fragment } from "react/jsx-runtime";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 import { BiYen } from "react-icons/bi";
 import { FaLine } from "react-icons/fa";
-import { FiActivity, FiAirplay, FiAlertCircle, FiAlertOctagon, FiAlertTriangle, FiAlignCenter, FiAlignJustify, FiAlignLeft, FiAlignRight, FiAnchor, FiAperture, FiArchive, FiArrowDown, FiArrowDownCircle, FiArrowDownLeft, FiArrowDownRight, FiArrowLeft, FiArrowLeftCircle, FiArrowRight, FiArrowRightCircle, FiArrowUp, FiArrowUpCircle, FiArrowUpLeft, FiArrowUpRight, FiAtSign, FiAward, FiBarChart, FiBarChart2, FiBattery, FiBatteryCharging, FiBell, FiBellOff, FiBluetooth, FiBold, FiBook, FiBookmark, FiBookOpen, FiBox, FiBriefcase, FiCalendar, FiCamera, FiCameraOff, FiCast, FiCheck, FiCheckCircle, FiCheckSquare, FiChevronDown, FiChevronLeft, FiChevronRight, FiChevronsDown, FiChevronsLeft, FiChevronsRight, FiChevronsUp, FiChevronUp, FiChrome, FiCircle, FiClipboard, FiClock, FiCloud, FiCloudDrizzle, FiCloudLightning, FiCloudOff, FiCloudRain, FiCloudSnow, FiCode, FiCodepen, FiCodesandbox, FiCoffee, FiColumns, FiCommand, FiCompass, FiCopy, FiCornerDownLeft, FiCornerDownRight, FiCornerLeftDown, FiCornerLeftUp, FiCornerRightDown, FiCornerRightUp, FiCornerUpLeft, FiCornerUpRight, FiCpu, FiCreditCard, FiCrop, FiCrosshair, FiDatabase, FiDelete, FiDisc, FiDivide, FiDivideCircle, FiDivideSquare, FiDollarSign, FiDownload, FiDownloadCloud, FiDribbble, FiDroplet, FiEdit, FiEdit2, FiEdit3, FiExternalLink, FiEye, FiEyeOff, FiFacebook, FiFastForward, FiFeather, FiFigma, FiFile, FiFileMinus, FiFilePlus, FiFileText, FiFilm, FiFilter, FiFlag, FiFolder, FiFolderMinus, FiFolderPlus, FiFramer, FiFrown, FiGift, FiGitBranch, FiGitCommit, FiGithub, FiGitlab, FiGitMerge, FiGitPullRequest, FiGlobe, FiGrid, FiHardDrive, FiHash, FiHeadphones, FiHeart, FiHelpCircle, FiHexagon, FiHome, FiImage, FiInbox, FiInfo, FiInstagram, FiItalic, FiKey, FiLayers, FiLayout, FiLifeBuoy, FiLink, FiLink2, FiLinkedin, FiList, FiLoader, FiLock, FiLogIn, FiLogOut, FiMail, FiMap, FiMapPin, FiMaximize, FiMaximize2, FiMeh, FiMenu, FiMessageCircle, FiMessageSquare, FiMic, FiMicOff, FiMinimize, FiMinimize2, FiMinus, FiMinusCircle, FiMinusSquare, FiMonitor, FiMoon, FiMoreHorizontal, FiMoreVertical, FiMousePointer, FiMove, FiMusic, FiNavigation, FiNavigation2, FiOctagon, FiPackage, FiPaperclip, FiPause, FiPauseCircle, FiPenTool, FiPercent, FiPhone, FiPhoneCall, FiPhoneForwarded, FiPhoneIncoming, FiPhoneMissed, FiPhoneOff, FiPhoneOutgoing, FiPieChart, FiPlay, FiPlayCircle, FiPlus, FiPlusCircle, FiPlusSquare, FiPocket, FiPower, FiPrinter, FiRadio, FiRefreshCcw, FiRefreshCw, FiRepeat, FiRewind, FiRotateCcw, FiRotateCw, FiRss, FiSave, FiScissors, FiSearch, FiSend, FiServer, FiSettings, FiShare, FiShare2, FiShield, FiShieldOff, FiShoppingBag, FiShoppingCart, FiShuffle, FiSidebar, FiSkipBack, FiSkipForward, FiSlack, FiSlash, FiSliders, FiSmartphone, FiSmile, FiSpeaker, FiSquare, FiStar, FiStopCircle, FiSun, FiSunrise, FiSunset, FiTablet, FiTag, FiTarget, FiTerminal, FiThermometer, FiThumbsDown, FiThumbsUp, FiToggleLeft, FiToggleRight, FiTool, FiTrash, FiTrash2, FiTrello, FiTrendingDown, FiTrendingUp, FiTriangle, FiTruck, FiTv, FiTwitch, FiTwitter, FiType, FiUmbrella, FiUnderline, FiUnlock, FiUpload, FiUploadCloud, FiUser, FiUserCheck, FiUserMinus, FiUserPlus, FiUsers, FiUserX, FiVideo, FiVideoOff, FiVoicemail, FiVolume, FiVolume1, FiVolume2, FiVolumeX, FiWatch, FiWifi, FiWifiOff, FiWind, FiX, FiXCircle, FiXOctagon, FiXSquare, FiYoutube, FiZap, FiZapOff, FiZoomIn, FiZoomOut, } from "react-icons/fi";
+import { FiActivity, FiAirplay, FiAlertCircle, FiAlertOctagon, FiAlertTriangle, FiAlignCenter, FiAlignJustify, FiAlignLeft, FiAlignRight, FiAnchor, FiAperture, FiArchive, FiArrowDown, FiArrowDownCircle, FiArrowDownLeft, FiArrowDownRight, FiArrowLeft, FiArrowLeftCircle, FiArrowRight, FiArrowRightCircle, FiArrowUp, FiArrowUpCircle, FiArrowUpLeft, FiArrowUpRight, FiAtSign, FiAward, FiBarChart, FiBarChart2, FiBattery, FiBatteryCharging, FiBell, FiBellOff, FiBluetooth, FiBold, FiBook, FiBookmark, FiBookOpen, FiBox, FiBriefcase, FiCalendar, FiCamera, FiCameraOff, FiCast, FiCheck, FiCheckCircle, FiCheckSquare, FiChevronDown, FiChevronLeft, FiChevronRight, FiChevronsDown, FiChevronsLeft, FiChevronsRight, FiChevronsUp, FiChevronUp, FiChrome, FiCircle, FiClipboard, FiClock, FiCloud, FiCloudDrizzle, FiCloudLightning, FiCloudOff, FiCloudRain, FiCloudSnow, FiCode, FiCodepen, FiCodesandbox, FiCoffee, FiColumns, FiCommand, FiCompass, FiCopy, FiCornerDownLeft, FiCornerDownRight, FiCornerLeftDown, FiCornerLeftUp, FiCornerRightDown, FiCornerRightUp, FiCornerUpLeft, FiCornerUpRight, FiCpu, FiCreditCard, FiCrop, FiCrosshair, FiDatabase, FiDelete, FiDisc, FiDivide, FiDivideCircle, FiDivideSquare, FiDollarSign, FiDownload, FiDownloadCloud, FiDribbble, FiDroplet, FiEdit, FiEdit2, FiEdit3, FiExternalLink, FiEye, FiEyeOff, FiFacebook, FiFastForward, FiFeather, FiFigma, FiFile, FiFileMinus, FiFilePlus, FiFileText, FiFilm, FiFilter, FiFlag, FiFolder, FiFolderMinus, FiFolderPlus, FiFramer, FiFrown, 
+// FiGift,
+// FiGitBranch,
+// FiGitCommit,
+// FiGithub,
+// FiGitlab,
+// FiGitMerge,
+// FiGitPullRequest,
+// FiGlobe,
+FiGrid, FiHardDrive, FiHash, FiHeadphones, FiHeart, FiHelpCircle, FiHexagon, FiHome, FiImage, FiInbox, FiInfo, FiInstagram, FiItalic, FiKey, 
+// FiLayers,
+// FiLayout,
+// FiLifeBuoy,
+// FiLink,
+// FiLink2,
+// FiLinkedin,
+// FiList,
+// FiLoader,
+// FiLock,
+// FiLogIn,
+// FiLogOut,
+FiMail, FiMap, FiMapPin, FiMaximize, FiMaximize2, FiMeh, FiMenu, FiMessageCircle, FiMessageSquare, FiMic, FiMicOff, FiMinimize, FiMinimize2, FiMinus, FiMinusCircle, FiMinusSquare, FiMonitor, FiMoon, FiMoreHorizontal, FiMoreVertical, FiMousePointer, FiMove, FiMusic, FiNavigation, FiNavigation2, FiOctagon, 
+// FiPackage,
+// FiPaperclip,
+// FiPause,
+// FiPauseCircle,
+// FiPenTool,
+// FiPercent,
+// FiPhone,
+FiPhoneCall, 
+// FiPhoneForwarded,
+// FiPhoneIncoming,
+// FiPhoneMissed,
+// FiPhoneOff,
+// FiPhoneOutgoing,
+// FiPieChart,
+// FiPlay,
+// FiPlayCircle,
+FiPlus, 
+// FiPlusCircle,
+// FiPlusSquare,
+// FiPocket,
+// FiPower,
+// FiPrinter,
+FiRadio, FiRefreshCcw, FiRefreshCw, FiRepeat, FiRewind, FiRotateCcw, FiRotateCw, FiRss, 
+// FiSave,
+// FiScissors,
+FiSearch, 
+// FiSend,
+// FiServer,
+// FiSettings,
+// FiShare,
+// FiShare2,
+// FiShield,
+// FiShieldOff,
+// FiShoppingBag,
+// FiShoppingCart,
+// FiShuffle,
+// FiSidebar,
+// FiSkipBack,
+// FiSkipForward,
+// FiSlack,
+// FiSlash,
+// FiSliders,
+// FiSmartphone,
+// FiSmile,
+// FiSpeaker,
+// FiSquare,
+// FiStar,
+// FiStopCircle,
+// FiSun,
+// FiSunrise,
+// FiSunset,
+// FiTablet,
+// FiTag,
+// FiTarget,
+// FiTerminal,
+// FiThermometer,
+// FiThumbsDown,
+// FiThumbsUp,
+// FiToggleLeft,
+// FiToggleRight,
+// FiTool,
+// FiTrash,
+// FiTrash2,
+// FiTrello,
+// FiTrendingDown,
+// FiTrendingUp,
+// FiTriangle,
+// FiTruck,
+// FiTv,
+// FiTwitch,
+// FiTwitter,
+// FiType,
+// FiUmbrella,
+// FiUnderline,
+// FiUnlock,
+// FiUpload,
+// FiUploadCloud,
+FiUser, 
+// FiUserCheck,
+// FiUserMinus,
+// FiUserPlus,
+// FiUsers,
+// FiUserX,
+FiVideo, FiVideoOff, FiVoicemail, 
+// FiVolume,
+// FiVolume1,
+// FiVolume2,
+// FiVolumeX,
+FiWatch, 
+// FiWifi,
+// FiWifiOff,
+FiWind, FiX, FiXCircle, 
+// FiXOctagon,
+// FiXSquare,
+// FiYoutube,
+FiZap,
+// FiZapOff,
+// FiZoomIn,
+// FiZoomOut,
+ } from "react-icons/fi";
 import { HiSortDescending } from "react-icons/hi";
 import { IoLogoFacebook, IoLogoInstagram, IoLogoTwitter } from "react-icons/io";
 import { AddBuilding } from "./svg/AddBuilding";
@@ -434,22 +555,22 @@ export var Presenter = function (_a) {
             return _jsx(FiFramer, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiFrown":
             return _jsx(FiFrown, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiGift":
-            return _jsx(FiGift, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiGitBranch":
-            return _jsx(FiGitBranch, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiGitCommit":
-            return _jsx(FiGitCommit, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiGitMerge":
-            return _jsx(FiGitMerge, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiGitPullRequest":
-            return _jsx(FiGitPullRequest, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiGithub":
-            return _jsx(FiGithub, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiGitlab":
-            return _jsx(FiGitlab, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiGlobe":
-            return _jsx(FiGlobe, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiGift":
+        //   return <FiGift className={className} size={sizePx} {...props} />;
+        // case "FiGitBranch":
+        //   return <FiGitBranch className={className} size={sizePx} {...props} />;
+        // case "FiGitCommit":
+        //   return <FiGitCommit className={className} size={sizePx} {...props} />;
+        // case "FiGitMerge":
+        //   return <FiGitMerge className={className} size={sizePx} {...props} />;
+        // case "FiGitPullRequest":
+        //   return <FiGitPullRequest className={className} size={sizePx} {...props} />;
+        // case "FiGithub":
+        //   return <FiGithub className={className} size={sizePx} {...props} />;
+        // case "FiGitlab":
+        //   return <FiGitlab className={className} size={sizePx} {...props} />;
+        // case "FiGlobe":
+        //   return <FiGlobe className={className} size={sizePx} {...props} />;
         case "FiGrid":
             return _jsx(FiGrid, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiHardDrive":
@@ -478,28 +599,28 @@ export var Presenter = function (_a) {
             return _jsx(FiItalic, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiKey":
             return _jsx(FiKey, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiLayers":
-            return _jsx(FiLayers, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiLayout":
-            return _jsx(FiLayout, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiLifeBuoy":
-            return _jsx(FiLifeBuoy, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiLink2":
-            return _jsx(FiLink2, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiLink":
-            return _jsx(FiLink, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiLinkedin":
-            return _jsx(FiLinkedin, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiList":
-            return _jsx(FiList, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiLoader":
-            return _jsx(FiLoader, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiLock":
-            return _jsx(FiLock, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiLogIn":
-            return _jsx(FiLogIn, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiLogOut":
-            return _jsx(FiLogOut, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiLayers":
+        //   return <FiLayers className={className} size={sizePx} {...props} />;
+        // case "FiLayout":
+        //   return <FiLayout className={className} size={sizePx} {...props} />;
+        // case "FiLifeBuoy":
+        //   return <FiLifeBuoy className={className} size={sizePx} {...props} />;
+        // case "FiLink2":
+        //   return <FiLink2 className={className} size={sizePx} {...props} />;
+        // case "FiLink":
+        //   return <FiLink className={className} size={sizePx} {...props} />;
+        // case "FiLinkedin":
+        //   return <FiLinkedin className={className} size={sizePx} {...props} />;
+        // case "FiList":
+        //   return <FiList className={className} size={sizePx} {...props} />;
+        // case "FiLoader":
+        //   return <FiLoader className={className} size={sizePx} {...props} />;
+        // case "FiLock":
+        //   return <FiLock className={className} size={sizePx} {...props} />;
+        // case "FiLogIn":
+        //   return <FiLogIn className={className} size={sizePx} {...props} />;
+        // case "FiLogOut":
+        //   return <FiLogOut className={className} size={sizePx} {...props} />;
         case "FiMail":
             return _jsx(FiMail, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiMapPin":
@@ -552,50 +673,50 @@ export var Presenter = function (_a) {
             return _jsx(FiNavigation, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiOctagon":
             return _jsx(FiOctagon, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPackage":
-            return _jsx(FiPackage, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPaperclip":
-            return _jsx(FiPaperclip, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPauseCircle":
-            return _jsx(FiPauseCircle, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPause":
-            return _jsx(FiPause, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPenTool":
-            return _jsx(FiPenTool, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPercent":
-            return _jsx(FiPercent, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiPackage":
+        //   return <FiPackage className={className} size={sizePx} {...props} />;
+        // case "FiPaperclip":
+        //   return <FiPaperclip className={className} size={sizePx} {...props} />;
+        // case "FiPauseCircle":
+        //   return <FiPauseCircle className={className} size={sizePx} {...props} />;
+        // case "FiPause":
+        //   return <FiPause className={className} size={sizePx} {...props} />;
+        // case "FiPenTool":
+        //   return <FiPenTool className={className} size={sizePx} {...props} />;
+        // case "FiPercent":
+        //   return <FiPercent className={className} size={sizePx} {...props} />;
         case "FiPhoneCall":
             return _jsx(FiPhoneCall, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPhoneForwarded":
-            return _jsx(FiPhoneForwarded, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPhoneIncoming":
-            return _jsx(FiPhoneIncoming, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPhoneMissed":
-            return _jsx(FiPhoneMissed, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPhoneOff":
-            return _jsx(FiPhoneOff, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPhoneOutgoing":
-            return _jsx(FiPhoneOutgoing, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPhone":
-            return _jsx(FiPhone, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPieChart":
-            return _jsx(FiPieChart, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPlayCircle":
-            return _jsx(FiPlayCircle, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPlay":
-            return _jsx(FiPlay, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPlusCircle":
-            return _jsx(FiPlusCircle, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPlusSquare":
-            return _jsx(FiPlusSquare, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiPhoneForwarded":
+        //   return <FiPhoneForwarded className={className} size={sizePx} {...props} />;
+        // case "FiPhoneIncoming":
+        //   return <FiPhoneIncoming className={className} size={sizePx} {...props} />;
+        // case "FiPhoneMissed":
+        //   return <FiPhoneMissed className={className} size={sizePx} {...props} />;
+        // case "FiPhoneOff":
+        //   return <FiPhoneOff className={className} size={sizePx} {...props} />;
+        // case "FiPhoneOutgoing":
+        //   return <FiPhoneOutgoing className={className} size={sizePx} {...props} />;
+        // case "FiPhone":
+        //   return <FiPhone className={className} size={sizePx} {...props} />;
+        // case "FiPieChart":
+        //   return <FiPieChart className={className} size={sizePx} {...props} />;
+        // case "FiPlayCircle":
+        //   return <FiPlayCircle className={className} size={sizePx} {...props} />;
+        // case "FiPlay":
+        //   return <FiPlay className={className} size={sizePx} {...props} />;
+        // case "FiPlusCircle":
+        //   return <FiPlusCircle className={className} size={sizePx} {...props} />;
+        // case "FiPlusSquare":
+        //   return <FiPlusSquare className={className} size={sizePx} {...props} />;
         case "FiPlus":
             return _jsx(FiPlus, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPocket":
-            return _jsx(FiPocket, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPower":
-            return _jsx(FiPower, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiPrinter":
-            return _jsx(FiPrinter, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiPocket":
+        //   return <FiPocket className={className} size={sizePx} {...props} />;
+        // case "FiPower":
+        //   return <FiPower className={className} size={sizePx} {...props} />;
+        // case "FiPrinter":
+        //   return <FiPrinter className={className} size={sizePx} {...props} />;
         case "FiRadio":
             return _jsx(FiRadio, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiRefreshCcw":
@@ -612,166 +733,166 @@ export var Presenter = function (_a) {
             return _jsx(FiRotateCw, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiRss":
             return _jsx(FiRss, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSave":
-            return _jsx(FiSave, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiScissors":
-            return _jsx(FiScissors, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiSave":
+        //   return <FiSave className={className} size={sizePx} {...props} />;
+        // case "FiScissors":
+        //   return <FiScissors className={className} size={sizePx} {...props} />;
         case "FiSearch":
             return _jsx(FiSearch, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSend":
-            return _jsx(FiSend, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiServer":
-            return _jsx(FiServer, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSettings":
-            return _jsx(FiSettings, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiShare2":
-            return _jsx(FiShare2, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiShare":
-            return _jsx(FiShare, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiShieldOff":
-            return _jsx(FiShieldOff, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiShield":
-            return _jsx(FiShield, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiShoppingBag":
-            return _jsx(FiShoppingBag, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiShoppingCart":
-            return _jsx(FiShoppingCart, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiShuffle":
-            return _jsx(FiShuffle, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSidebar":
-            return _jsx(FiSidebar, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSkipBack":
-            return _jsx(FiSkipBack, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSkipForward":
-            return _jsx(FiSkipForward, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSlack":
-            return _jsx(FiSlack, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSlash":
-            return _jsx(FiSlash, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSliders":
-            return _jsx(FiSliders, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSmartphone":
-            return _jsx(FiSmartphone, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSmile":
-            return _jsx(FiSmile, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSpeaker":
-            return _jsx(FiSpeaker, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSquare":
-            return _jsx(FiSquare, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiStar":
-            return _jsx(FiStar, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiStopCircle":
-            return _jsx(FiStopCircle, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSun":
-            return _jsx(FiSun, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSunrise":
-            return _jsx(FiSunrise, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiSunset":
-            return _jsx(FiSunset, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTablet":
-            return _jsx(FiTablet, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTag":
-            return _jsx(FiTag, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTarget":
-            return _jsx(FiTarget, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTerminal":
-            return _jsx(FiTerminal, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiThermometer":
-            return _jsx(FiThermometer, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiThumbsDown":
-            return _jsx(FiThumbsDown, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiThumbsUp":
-            return _jsx(FiThumbsUp, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiToggleLeft":
-            return _jsx(FiToggleLeft, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiToggleRight":
-            return _jsx(FiToggleRight, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTool":
-            return _jsx(FiTool, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTrash2":
-            return _jsx(FiTrash2, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTrash":
-            return _jsx(FiTrash, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTrello":
-            return _jsx(FiTrello, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTrendingDown":
-            return _jsx(FiTrendingDown, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTrendingUp":
-            return _jsx(FiTrendingUp, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTriangle":
-            return _jsx(FiTriangle, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTruck":
-            return _jsx(FiTruck, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTv":
-            return _jsx(FiTv, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTwitch":
-            return _jsx(FiTwitch, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiTwitter":
-            return _jsx(FiTwitter, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiType":
-            return _jsx(FiType, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiUmbrella":
-            return _jsx(FiUmbrella, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiUnderline":
-            return _jsx(FiUnderline, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiUnlock":
-            return _jsx(FiUnlock, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiUploadCloud":
-            return _jsx(FiUploadCloud, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiUpload":
-            return _jsx(FiUpload, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiUserCheck":
-            return _jsx(FiUserCheck, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiUserMinus":
-            return _jsx(FiUserMinus, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiUserPlus":
-            return _jsx(FiUserPlus, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiUserX":
-            return _jsx(FiUserX, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiSend":
+        //   return <FiSend className={className} size={sizePx} {...props} />;
+        // case "FiServer":
+        //   return <FiServer className={className} size={sizePx} {...props} />;
+        // case "FiSettings":
+        //   return <FiSettings className={className} size={sizePx} {...props} />;
+        // case "FiShare2":
+        //   return <FiShare2 className={className} size={sizePx} {...props} />;
+        // case "FiShare":
+        //   return <FiShare className={className} size={sizePx} {...props} />;
+        // case "FiShieldOff":
+        //   return <FiShieldOff className={className} size={sizePx} {...props} />;
+        // case "FiShield":
+        //   return <FiShield className={className} size={sizePx} {...props} />;
+        // case "FiShoppingBag":
+        //   return <FiShoppingBag className={className} size={sizePx} {...props} />;
+        // case "FiShoppingCart":
+        //   return <FiShoppingCart className={className} size={sizePx} {...props} />;
+        // case "FiShuffle":
+        //   return <FiShuffle className={className} size={sizePx} {...props} />;
+        // case "FiSidebar":
+        //   return <FiSidebar className={className} size={sizePx} {...props} />;
+        // case "FiSkipBack":
+        //   return <FiSkipBack className={className} size={sizePx} {...props} />;
+        // case "FiSkipForward":
+        //   return <FiSkipForward className={className} size={sizePx} {...props} />;
+        // case "FiSlack":
+        //   return <FiSlack className={className} size={sizePx} {...props} />;
+        // case "FiSlash":
+        //   return <FiSlash className={className} size={sizePx} {...props} />;
+        // case "FiSliders":
+        //   return <FiSliders className={className} size={sizePx} {...props} />;
+        // case "FiSmartphone":
+        //   return <FiSmartphone className={className} size={sizePx} {...props} />;
+        // case "FiSmile":
+        //   return <FiSmile className={className} size={sizePx} {...props} />;
+        // case "FiSpeaker":
+        //   return <FiSpeaker className={className} size={sizePx} {...props} />;
+        // case "FiSquare":
+        //   return <FiSquare className={className} size={sizePx} {...props} />;
+        // case "FiStar":
+        //   return <FiStar className={className} size={sizePx} {...props} />;
+        // case "FiStopCircle":
+        //   return <FiStopCircle className={className} size={sizePx} {...props} />;
+        // case "FiSun":
+        //   return <FiSun className={className} size={sizePx} {...props} />;
+        // case "FiSunrise":
+        //   return <FiSunrise className={className} size={sizePx} {...props} />;
+        // case "FiSunset":
+        //   return <FiSunset className={className} size={sizePx} {...props} />;
+        // case "FiTablet":
+        //   return <FiTablet className={className} size={sizePx} {...props} />;
+        // case "FiTag":
+        //   return <FiTag className={className} size={sizePx} {...props} />;
+        // case "FiTarget":
+        //   return <FiTarget className={className} size={sizePx} {...props} />;
+        // case "FiTerminal":
+        //   return <FiTerminal className={className} size={sizePx} {...props} />;
+        // case "FiThermometer":
+        //   return <FiThermometer className={className} size={sizePx} {...props} />;
+        // case "FiThumbsDown":
+        //   return <FiThumbsDown className={className} size={sizePx} {...props} />;
+        // case "FiThumbsUp":
+        //   return <FiThumbsUp className={className} size={sizePx} {...props} />;
+        // case "FiToggleLeft":
+        //   return <FiToggleLeft className={className} size={sizePx} {...props} />;
+        // case "FiToggleRight":
+        //   return <FiToggleRight className={className} size={sizePx} {...props} />;
+        // case "FiTool":
+        //   return <FiTool className={className} size={sizePx} {...props} />;
+        // case "FiTrash2":
+        //   return <FiTrash2 className={className} size={sizePx} {...props} />;
+        // case "FiTrash":
+        //   return <FiTrash className={className} size={sizePx} {...props} />;
+        // case "FiTrello":
+        //   return <FiTrello className={className} size={sizePx} {...props} />;
+        // case "FiTrendingDown":
+        //   return <FiTrendingDown className={className} size={sizePx} {...props} />;
+        // case "FiTrendingUp":
+        //   return <FiTrendingUp className={className} size={sizePx} {...props} />;
+        // case "FiTriangle":
+        //   return <FiTriangle className={className} size={sizePx} {...props} />;
+        // case "FiTruck":
+        //   return <FiTruck className={className} size={sizePx} {...props} />;
+        // case "FiTv":
+        //   return <FiTv className={className} size={sizePx} {...props} />;
+        // case "FiTwitch":
+        //   return <FiTwitch className={className} size={sizePx} {...props} />;
+        // case "FiTwitter":
+        //   return <FiTwitter className={className} size={sizePx} {...props} />;
+        // case "FiType":
+        //   return <FiType className={className} size={sizePx} {...props} />;
+        // case "FiUmbrella":
+        //   return <FiUmbrella className={className} size={sizePx} {...props} />;
+        // case "FiUnderline":
+        //   return <FiUnderline className={className} size={sizePx} {...props} />;
+        // case "FiUnlock":
+        //   return <FiUnlock className={className} size={sizePx} {...props} />;
+        // case "FiUploadCloud":
+        //   return <FiUploadCloud className={className} size={sizePx} {...props} />;
+        // case "FiUpload":
+        //   return <FiUpload className={className} size={sizePx} {...props} />;
+        // case "FiUserCheck":
+        //   return <FiUserCheck className={className} size={sizePx} {...props} />;
+        // case "FiUserMinus":
+        //   return <FiUserMinus className={className} size={sizePx} {...props} />;
+        // case "FiUserPlus":
+        //   return <FiUserPlus className={className} size={sizePx} {...props} />;
+        // case "FiUserX":
+        //   return <FiUserX className={className} size={sizePx} {...props} />;
         case "FiUser":
             return _jsx(FiUser, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiUsers":
-            return _jsx(FiUsers, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiUsers":
+        //   return <FiUsers className={className} size={sizePx} {...props} />;
         case "FiVideoOff":
             return _jsx(FiVideoOff, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiVideo":
             return _jsx(FiVideo, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiVoicemail":
             return _jsx(FiVoicemail, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiVolume1":
-            return _jsx(FiVolume1, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiVolume2":
-            return _jsx(FiVolume2, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiVolumeX":
-            return _jsx(FiVolumeX, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiVolume":
-            return _jsx(FiVolume, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiVolume1":
+        //   return <FiVolume1 className={className} size={sizePx} {...props} />;
+        // case "FiVolume2":
+        //   return <FiVolume2 className={className} size={sizePx} {...props} />;
+        // case "FiVolumeX":
+        //   return <FiVolumeX className={className} size={sizePx} {...props} />;
+        // case "FiVolume":
+        //   return <FiVolume className={className} size={sizePx} {...props} />;
         case "FiWatch":
             return _jsx(FiWatch, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiWifiOff":
-            return _jsx(FiWifiOff, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiWifi":
-            return _jsx(FiWifi, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiWifiOff":
+        //   return <FiWifiOff className={className} size={sizePx} {...props} />;
+        // case "FiWifi":
+        //   return <FiWifi className={className} size={sizePx} {...props} />;
         case "FiWind":
             return _jsx(FiWind, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiXCircle":
             return _jsx(FiXCircle, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiXOctagon":
-            return _jsx(FiXOctagon, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiXSquare":
-            return _jsx(FiXSquare, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiXOctagon":
+        //   return <FiXOctagon className={className} size={sizePx} {...props} />;
+        // case "FiXSquare":
+        //   return <FiXSquare className={className} size={sizePx} {...props} />;
         case "FiX":
             return _jsx(FiX, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiYoutube":
-            return _jsx(FiYoutube, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiZapOff":
-            return _jsx(FiZapOff, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiYoutube":
+        //   return <FiYoutube className={className} size={sizePx} {...props} />;
+        // case "FiZapOff":
+        //   return <FiZapOff className={className} size={sizePx} {...props} />;
         case "FiZap":
             return _jsx(FiZap, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiZoomIn":
-            return _jsx(FiZoomIn, __assign({ className: className, size: sizePx }, props), void 0);
-        case "FiZoomOut":
-            return _jsx(FiZoomOut, __assign({ className: className, size: sizePx }, props), void 0);
+        // case "FiZoomIn":
+        //   return <FiZoomIn className={className} size={sizePx} {...props} />;
+        // case "FiZoomOut":
+        //   return <FiZoomOut className={className} size={sizePx} {...props} />;
         case "FaLine":
             return _jsx(FaLine, __assign({ className: className, size: sizePx }, props), void 0);
         case "IoLogoFacebook":
