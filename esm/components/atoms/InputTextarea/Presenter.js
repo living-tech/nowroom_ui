@@ -24,7 +24,7 @@ import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { TextMediumGray02 } from "../Text/MediumGray02";
 import { TextRed } from "../Text/Red";
 export var Presenter = function (_a) {
-    var any = _a.any, _b = _a.anyLabel, anyLabel = _b === void 0 ? "任意" : _b, className = _a.className, createRef = _a.createRef, defaultValue = _a.defaultValue, error = _a.error, id = _a.id, label = _a.label, name = _a.name, onChange = _a.onChange, placeholder = _a.placeholder, renderDescription = _a.renderDescription, _c = _a.resize, resize = _c === void 0 ? false : _c, rows = _a.rows, style = _a.style, _d = _a.weight, weight = _d === void 0 ? "bold" : _d, props = __rest(_a, ["any", "anyLabel", "className", "createRef", "defaultValue", "error", "id", "label", "name", "onChange", "placeholder", "renderDescription", "resize", "rows", "style", "weight"]);
+    var any = _a.any, _b = _a.anyLabel, anyLabel = _b === void 0 ? "任意" : _b, className = _a.className, createRef = _a.createRef, defaultValue = _a.defaultValue, error = _a.error, id = _a.id, label = _a.label, name = _a.name, onChange = _a.onChange, placeholder = _a.placeholder, renderDescription = _a.renderDescription, _c = _a.resize, resize = _c === void 0 ? false : _c, rows = _a.rows, style = _a.style, value = _a.value, _d = _a.weight, weight = _d === void 0 ? "bold" : _d, props = __rest(_a, ["any", "anyLabel", "className", "createRef", "defaultValue", "error", "id", "label", "name", "onChange", "placeholder", "renderDescription", "resize", "rows", "style", "value", "weight"]);
     var inputBaseClass = "bg-gray-100 border block w-full rounded-md p-4 placeholder-gray-400";
     var inputClass = "";
     if (error) {
@@ -50,7 +50,7 @@ export var Presenter = function (_a) {
     }
     return (_jsxs("div", __assign({ className: className, style: style }, props, { children: [label && (_jsxs("label", __assign({ className: "block mb-3 text-sm font-bold text-gray-700 cursor-pointer", htmlFor: id }, { children: [label, any && (_jsx(TextMediumGray02, __assign({ className: "ml-3", size: "sm", tag: "span" }, { children: anyLabel }), void 0))] }), void 0)),
             renderDescription && _jsx("div", __assign({ className: "mb-3" }, { children: renderDescription() }), void 0),
-            _jsx("div", __assign({ className: "relative" }, { children: _jsx("textarea", { ref: createRef, className: inputBaseClass + " " + inputClass + " " + inputResizeClass, defaultValue: defaultValue, id: id, name: name, onChange: onChange, placeholder: placeholder, rows: rows }, void 0) }), void 0),
+            _jsx("div", __assign({ className: "relative" }, { children: _jsx("textarea", { ref: createRef, className: inputBaseClass + " " + inputClass + " " + inputResizeClass, defaultValue: defaultValue, id: id, name: name, onChange: onChange, placeholder: placeholder, rows: rows, value: value }, void 0) }), void 0),
             error && (_jsx(TextRed, __assign({ className: "mt-2", size: "sm" }, { children: error }), void 0))] }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map

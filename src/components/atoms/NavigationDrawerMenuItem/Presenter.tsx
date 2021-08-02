@@ -31,12 +31,10 @@ export const Presenter = forwardRef<HTMLDivElement, Props>(({ className, item, s
     );
   } else if (item.href) {
     return (
-      <Link href={item.href}>
-        <>
-          <a className={`${colorClass} ${baseClass} ${className}`} style={style}>
-            {item.label}
-          </a>
-        </>
+      <Link passHref href={item.href}>
+        <a className={`${colorClass} ${baseClass} ${className}`} style={style}>
+          {`${item.label}`}
+        </a>
       </Link>
     );
   } else {
