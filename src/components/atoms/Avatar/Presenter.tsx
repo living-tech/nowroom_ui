@@ -3,7 +3,7 @@ import { CSSProperties, VFC } from "react";
 export type Props = {
   alt?: string | null;
   className?: string;
-  size?: "xs" | "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   src?: string | null;
   style?: CSSProperties;
 };
@@ -11,8 +11,11 @@ export type Props = {
 export const Presenter: VFC<Props> = ({ alt, className, size = "md", src, style, ...props }) => {
   let px;
   switch (size) {
-    case "lg":
+    case "xl":
       px = 64;
+      break;
+    case "lg":
+      px = 56;
       break;
     case "md":
       px = 44;
