@@ -111,6 +111,11 @@ export var Presenter = function (_a) {
             borderColorClass = "border-transparent";
             textColor = "white";
             break;
+        case "purpleOutline":
+            backgroundColorClass = "bg-transparent";
+            borderColorClass = "border-purple";
+            textColor = "purple";
+            break;
     }
     return (_jsx("div", __assign({ className: baseClass + " " + cursorClass + " " + sizeClass + " " + backgroundColorClass + " " + backgroundColorHoverClass + " " + borderColorClass + " " + borderColorHoverClass + "  " + className, style: style }, { children: _jsx(Text, __assign({ className: " leading-none", color: textColor, size: size === "md" ? "xs" : "xxs", style: { paddingTop: 1 }, tag: "span", weight: "bold" }, { children: children }), void 0) }), void 0));
 };
