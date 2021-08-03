@@ -14,7 +14,8 @@ export type Color =
   | "mediumGray01"
   | "lightGray02"
   | "blackOpacity"
-  | "red";
+  | "red"
+  | "purpleOutline";
 
 export type Props = {
   children: ReactNode;
@@ -133,6 +134,11 @@ export const Presenter: VFC<Props> = ({
       backgroundColorClass = "bg-black-opacity";
       borderColorClass = "border-transparent";
       textColor = "white";
+      break;
+    case "purpleOutline":
+      backgroundColorClass = "bg-transparent";
+      borderColorClass = "border-purple";
+      textColor = "purple";
       break;
   }
 
