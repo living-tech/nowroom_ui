@@ -39,12 +39,8 @@ import {
 import { HiSortDescending } from "react-icons/hi";
 import { IoLogoFacebook, IoLogoInstagram, IoLogoTwitter } from "react-icons/io";
 
-import { AddBuilding } from "./svg/AddBuilding";
-import { AddRoom } from "./svg/AddRoom";
 import { AirCon } from "./svg/AirCon";
 import { AppListing } from "./svg/AppListing";
-import { AutoLock } from "./svg/AutoLock";
-import { Bath } from "./svg/Bath";
 import { Bed } from "./svg/Bed";
 import { Building } from "./svg/Building";
 import { Desk } from "./svg/Desk";
@@ -55,7 +51,6 @@ import { NoSmoking } from "./svg/NoSmoking";
 import { Pet } from "./svg/Pet";
 import { Refrigerator } from "./svg/Refrigerator";
 import { Room } from "./svg/Room";
-import { StockSettings } from "./svg/StockSettings";
 import { WashMachine } from "./svg/WashMachine";
 import { Wifi } from "./svg/Wifi";
 import { Woman } from "./svg/Woman";
@@ -65,8 +60,6 @@ import { Woman } from "./svg/Woman";
 export type Size = "xs" | "sm" | "md" | "lg" | "xl" | number;
 export type NowRoomIconName =
   | "AirCon"
-  | "AutoLock"
-  | "Bath"
   | "Bed"
   | "Desk"
   | "Dryer"
@@ -78,12 +71,9 @@ export type NowRoomIconName =
   | "WashMachine"
   | "Wifi"
   | "Woman"
-  | "AddBuilding"
-  | "AddRoom"
   | "AppListing"
   | "Building"
-  | "Room"
-  | "StockSettings";
+  | "Room";
 
 export type FiIconName =
   | "BiYen"
@@ -169,12 +159,8 @@ export type SvgProps = {
 };
 
 const currentTypes: { [key in IconName | string]: "stroke" | "fill" | "both" } = {
-  AddBuilding: "stroke",
-  AddRoom: "stroke",
   AirCon: "stroke",
   AppListing: "stroke",
-  AutoLock: "stroke",
-  Bath: "stroke",
   Bed: "stroke",
   Building: "stroke",
   Desk: "stroke",
@@ -185,7 +171,6 @@ const currentTypes: { [key in IconName | string]: "stroke" | "fill" | "both" } =
   Pet: "stroke",
   Refrigerator: "stroke",
   Room: "stroke",
-  StockSettings: "stroke",
   WashMachine: "stroke",
   Wifi: "fill",
   Woman: "stroke",
@@ -292,10 +277,6 @@ export const Presenter: VFC<Props> = ({
   switch (name) {
     case "AirCon":
       return <AirCon className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
-    case "AutoLock":
-      return <AutoLock className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
-    case "Bath":
-      return <Bath className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Bed":
       return <Bed className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Desk":
@@ -318,20 +299,12 @@ export const Presenter: VFC<Props> = ({
       return <Wifi className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Woman":
       return <Woman className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
-    case "AddBuilding":
-      return <AddBuilding className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
-    case "AddRoom":
-      return <AddRoom className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "AppListing":
       return <AppListing className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Building":
       return <Building className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
     case "Room":
       return <Room className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />;
-    case "StockSettings":
-      return (
-        <StockSettings className={className} size={sizePx} style={{ strokeWidth: 2, ...props.style }} {...props} />
-      );
 
     case "BiYen":
       return <BiYen className={className} size={sizePx} {...props} />;

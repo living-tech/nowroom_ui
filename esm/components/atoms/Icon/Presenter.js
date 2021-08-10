@@ -27,12 +27,8 @@ import { FaLine } from "react-icons/fa";
 import { FiAlertCircle, FiArrowDown, FiArrowLeft, FiArrowRight, FiCalendar, FiCheck, FiCheckCircle, FiChevronDown, FiChevronLeft, FiChevronRight, FiChevronUp, FiCopy, FiFacebook, FiFilter, FiGrid, FiHeart, FiImage, FiInfo, FiInstagram, FiMapPin, FiMenu, FiMessageCircle, FiMinus, FiMoreHorizontal, FiPhoneCall, FiPlus, FiSearch, FiSliders, FiTwitter, FiUser, FiX, FiZap, } from "react-icons/fi";
 import { HiSortDescending } from "react-icons/hi";
 import { IoLogoFacebook, IoLogoInstagram, IoLogoTwitter } from "react-icons/io";
-import { AddBuilding } from "./svg/AddBuilding";
-import { AddRoom } from "./svg/AddRoom";
 import { AirCon } from "./svg/AirCon";
 import { AppListing } from "./svg/AppListing";
-import { AutoLock } from "./svg/AutoLock";
-import { Bath } from "./svg/Bath";
 import { Bed } from "./svg/Bed";
 import { Building } from "./svg/Building";
 import { Desk } from "./svg/Desk";
@@ -43,17 +39,12 @@ import { NoSmoking } from "./svg/NoSmoking";
 import { Pet } from "./svg/Pet";
 import { Refrigerator } from "./svg/Refrigerator";
 import { Room } from "./svg/Room";
-import { StockSettings } from "./svg/StockSettings";
 import { WashMachine } from "./svg/WashMachine";
 import { Wifi } from "./svg/Wifi";
 import { Woman } from "./svg/Woman";
 var currentTypes = {
-    AddBuilding: "stroke",
-    AddRoom: "stroke",
     AirCon: "stroke",
     AppListing: "stroke",
-    AutoLock: "stroke",
-    Bath: "stroke",
     Bed: "stroke",
     Building: "stroke",
     Desk: "stroke",
@@ -64,7 +55,6 @@ var currentTypes = {
     Pet: "stroke",
     Refrigerator: "stroke",
     Room: "stroke",
-    StockSettings: "stroke",
     WashMachine: "stroke",
     Wifi: "fill",
     Woman: "stroke",
@@ -160,10 +150,6 @@ export var Presenter = function (_a) {
     switch (name) {
         case "AirCon":
             return _jsx(AirCon, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
-        case "AutoLock":
-            return _jsx(AutoLock, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
-        case "Bath":
-            return _jsx(Bath, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
         case "Bed":
             return _jsx(Bed, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
         case "Desk":
@@ -186,18 +172,12 @@ export var Presenter = function (_a) {
             return _jsx(Wifi, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
         case "Woman":
             return _jsx(Woman, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
-        case "AddBuilding":
-            return _jsx(AddBuilding, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
-        case "AddRoom":
-            return _jsx(AddRoom, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
         case "AppListing":
             return _jsx(AppListing, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
         case "Building":
             return _jsx(Building, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
         case "Room":
             return _jsx(Room, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0);
-        case "StockSettings":
-            return (_jsx(StockSettings, __assign({ className: className, size: sizePx, style: __assign({ strokeWidth: 2 }, props.style) }, props), void 0));
         case "BiYen":
             return _jsx(BiYen, __assign({ className: className, size: sizePx }, props), void 0);
         case "FiAlertCircle":
