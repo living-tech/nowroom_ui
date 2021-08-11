@@ -7,6 +7,7 @@ export * from "./LightGray01";
 export * from "./LightGray02";
 export * from "./MediumGray01";
 export * from "./MediumGray02";
+export * from "./Presenter";
 export * from "./Purple";
 export * from "./Red";
 export * from "./White";
