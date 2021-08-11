@@ -51,7 +51,7 @@ export const Presenter: VFC<Props> = ({
 
   let sizeClass = "";
   let iconSize: IconSize;
-  let loadingSize;
+  let loadingSize: number;
   switch (size) {
     case "sm":
       sizeClass = "p-1";
