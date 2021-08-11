@@ -1,7 +1,7 @@
 export * from "./Default";
 export * from "./Gray";
-export { Color as IconButtonColor } from "./Presenter";
-export { Props as IconButtonProps } from "./Presenter";
+export type { Color as IconButtonColor } from "./Presenter";
+export type { Props as IconButtonProps } from "./Presenter";
 export * from "./Purple";
 export * from "./PurpleOutline";
 export * from "./Red";

@@ -1,1 +1,1 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/components/molecules/Button/index.ts"],"names":[],"mappings":"AAAA,cAAc,WAAW,CAAC;AAC1B,OAAO,EAAE,KAAK,IAAI,WAAW,EAAE,MAAM,aAAa,CAAC;AACnD,cAAc,UAAU,CAAC;AACzB,cAAc,iBAAiB,CAAC;AAChC,cAAc,SAAS,CAAC"}
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/components/molecules/Button/index.ts"],"names":[],"mappings":"AAAA,cAAc,WAAW,CAAC;AAC1B,YAAY,EAAE,KAAK,IAAI,WAAW,EAAE,MAAM,aAAa,CAAC;AACxD,cAAc,UAAU,CAAC;AACzB,cAAc,iBAAiB,CAAC;AAChC,cAAc,SAAS,CAAC"}
