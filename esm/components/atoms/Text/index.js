@@ -8,7 +8,6 @@ export * from "./LightGray02";
 export * from "./MediumGray01";
 export * from "./MediumGray02";
 export * from "./Presenter";
-export * as Text from "./Presenter";
 export * from "./Purple";
 export * from "./Red";
 export * from "./White";
