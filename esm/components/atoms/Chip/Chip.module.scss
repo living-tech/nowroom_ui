@@ -1,0 +1,16 @@
+.Container {
+  &:hover {
+    .circleSelected {
+      background-color: var(--purple);
+      svg {
+        stroke: var(--white);
+      }
+    }
+    .circleUnselected {
+      background-color: var(--white);
+      svg {
+        stroke: var(--purple);
+      }
+    }
+  }
+}
