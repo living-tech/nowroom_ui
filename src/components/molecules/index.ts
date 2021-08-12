@@ -45,6 +45,7 @@ export { Props as SliderProps } from "./Slider/Presenter";
 export * from "./SwitchTabs/Default";
 export { Props as SwitchTabsProps } from "./SwitchTabs/Presenter";
 export * from "./Tabs/Default";
+export { Item as TabsItem } from "./Tabs/Presenter";
 export { Props as TabsProps } from "./Tabs/Presenter";
 export * from "./TextButton";
 export * from "./Toast/Default";
