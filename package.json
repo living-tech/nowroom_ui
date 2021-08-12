@@ -22,7 +22,7 @@
     "build": "run-p build:*",
     "build:lib": "tsc --build \"./tsconfig.json\"",
     "build:esm": "tsc -p tsconfig.esm.json",
-    "copy-files": "copyfiles -u 1 \"src/**/*.css\" \"src/**/*.svg\" \"src/**/*.json\" lib/ && copyfiles -u 1 \"src/**/*.css\" \"src/**/*.svg\" \"src/**/*.json\" esm/",
+    "copy-files": "copyfiles -u 1 \"src/**/*.css\" \"src/**/*.scss\" \"src/**/*.svg\" \"src/**/*.json\" lib/ && copyfiles -u 1 \"src/**/*.css\" \"src/**/*.scss\" \"src/**/*.svg\" \"src/**/*.json\" esm/",
     "postbuild": "yarn run copy-files",
     "commit": "npx git-cz",
     "tsc": "tsc --noEmit",
