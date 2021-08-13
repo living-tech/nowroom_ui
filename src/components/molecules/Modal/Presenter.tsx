@@ -20,6 +20,7 @@ export type Props = {
   maxWidth?: number;
   onRequestClose?: () => void;
   paddingHorizontal?: boolean;
+  paddingVertical?: boolean;
   renderFixedBottom?: () => JSX.Element;
   zIndex?: number;
 };
@@ -33,6 +34,7 @@ export const Presenter: VFC<Props> = ({
   maxWidth = 400,
   onRequestClose,
   paddingHorizontal = true,
+  paddingVertical = true,
   renderFixedBottom,
   zIndex = 50,
   ...props
@@ -48,6 +50,11 @@ export const Presenter: VFC<Props> = ({
   let paddingHorizontalClass = "";
   if (paddingHorizontal) {
     paddingHorizontalClass = "px-4 md:px-8";
+  }
+
+  let paddingVerticalClass = "";
+  if (paddingVertical) {
+    paddingVerticalClass = "py-10 md:py-8";
   }
 
   let modalSizeClass = "w-full rounded";
@@ -143,12 +150,14 @@ export const Presenter: VFC<Props> = ({
           }}
         >
           <div
-            className={`transition-all ease-out duration-200 py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto ${modalSizeClass} ${paddingHorizontalClass}`}
+            className={`transition-all ease-out duration-200 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto ${modalSizeClass} ${paddingHorizontalClass} ${paddingVerticalClass}`}
             style={{
               maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
               maxWidth,
               minHeight: loading ? 200 : undefined,
-              paddingBottom: fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),
+              paddingBottom: paddingVertical
+                ? fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0)
+                : 0,
             }}
           >
             {loading ? (
