@@ -30,6 +30,7 @@ export const Presenter: VFC<Props> = ({
       breakClassName={"break-me"}
       breakLabel={<Icon name={"FiMoreHorizontal"} size={20} />}
       containerClassName={`pagination ${className}`}
+      disableInitialCallback={true}
       initialPage={initialPage - 1}
       marginPagesDisplayed={isMobile ? 1 : 2}
       nextLabel={
