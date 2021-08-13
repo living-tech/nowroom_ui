@@ -9,6 +9,7 @@ export declare type Props = {
     maxWidth?: number;
     onRequestClose?: () => void;
     paddingHorizontal?: boolean;
+    paddingVertical?: boolean;
     renderFixedBottom?: () => JSX.Element;
     zIndex?: number;
 };

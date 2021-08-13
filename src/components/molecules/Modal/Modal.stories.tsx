@@ -86,6 +86,12 @@ const Template: Story<Props> = (args) => (
   </Presenter>
 );
 
+const ImageTemplate: Story<Props> = (args) => (
+  <Presenter {...args}>
+    <img className={"object-fill"} src="https://picsum.photos/400/1600" />
+  </Presenter>
+);
+
 export const Default = Template.bind({});
 Default.args = {
   closeButtonPosition: "bottom",
@@ -111,4 +117,12 @@ loading.args = {
   closeButtonPosition: "bottom",
   isVisible: true,
   loading: true,
+};
+
+export const image = ImageTemplate.bind({});
+image.args = {
+  closeButtonPosition: "top",
+  isVisible: true,
+  paddingHorizontal: false,
+  paddingVertical: false,
 };

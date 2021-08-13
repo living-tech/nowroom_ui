@@ -31,15 +31,19 @@ import { IconButtonWhite } from "../IconButton/White";
 import { LabelTextWhite } from "../LabelText/White";
 import styles from "./Modal.module.scss";
 export var Presenter = function (_a) {
-    var children = _a.children, _b = _a.closeButtonPosition, closeButtonPosition = _b === void 0 ? "top" : _b, _c = _a.escLabel, escLabel = _c === void 0 ? "を押して閉じる" : _c, isVisible = _a.isVisible, loading = _a.loading, _d = _a.maxWidth, maxWidth = _d === void 0 ? 400 : _d, onRequestClose = _a.onRequestClose, _e = _a.paddingHorizontal, paddingHorizontal = _e === void 0 ? true : _e, renderFixedBottom = _a.renderFixedBottom, _f = _a.zIndex, zIndex = _f === void 0 ? 50 : _f, props = __rest(_a, ["children", "closeButtonPosition", "escLabel", "isVisible", "loading", "maxWidth", "onRequestClose", "paddingHorizontal", "renderFixedBottom", "zIndex"]);
-    var _g = useBreakPoints(), isDesktop = _g.isDesktop, isMobile = _g.isMobile;
+    var children = _a.children, _b = _a.closeButtonPosition, closeButtonPosition = _b === void 0 ? "top" : _b, _c = _a.escLabel, escLabel = _c === void 0 ? "を押して閉じる" : _c, isVisible = _a.isVisible, loading = _a.loading, _d = _a.maxWidth, maxWidth = _d === void 0 ? 400 : _d, onRequestClose = _a.onRequestClose, _e = _a.paddingHorizontal, paddingHorizontal = _e === void 0 ? true : _e, _f = _a.paddingVertical, paddingVertical = _f === void 0 ? true : _f, renderFixedBottom = _a.renderFixedBottom, _g = _a.zIndex, zIndex = _g === void 0 ? 50 : _g, props = __rest(_a, ["children", "closeButtonPosition", "escLabel", "isVisible", "loading", "maxWidth", "onRequestClose", "paddingHorizontal", "paddingVertical", "renderFixedBottom", "zIndex"]);
+    var _h = useBreakPoints(), isDesktop = _h.isDesktop, isMobile = _h.isMobile;
     var windowWidth = useWindowWidth();
-    var _h = useState(false), visible = _h[0], setVisible = _h[1];
-    var _j = useState(0), fixedBottomHeight = _j[0], setFixedBottomHeight = _j[1];
+    var _j = useState(false), visible = _j[0], setVisible = _j[1];
+    var _k = useState(0), fixedBottomHeight = _k[0], setFixedBottomHeight = _k[1];
     var fixedBottomRef = useRef(null);
     var paddingHorizontalClass = "";
     if (paddingHorizontal) {
         paddingHorizontalClass = "px-4 md:px-8";
+    }
+    var paddingVerticalClass = "";
+    if (paddingVertical) {
+        paddingVerticalClass = "py-10 md:py-8";
     }
     var modalSizeClass = "w-full rounded";
     if (windowWidth <= maxWidth) {
@@ -96,11 +100,13 @@ export var Presenter = function (_a) {
                         maxWidth: maxWidth,
                         minHeight: loading ? 200 : undefined,
                         zIndex: zIndex + 1,
-                    } }, { children: _jsxs("div", __assign({ className: "transition-all ease-out duration-200 py-10 md:py-8 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto " + modalSizeClass + " " + paddingHorizontalClass, style: {
+                    } }, { children: _jsxs("div", __assign({ className: "transition-all ease-out duration-200 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto " + modalSizeClass + " " + paddingHorizontalClass + " " + paddingVerticalClass, style: {
                             maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
                             maxWidth: maxWidth,
                             minHeight: loading ? 200 : undefined,
-                            paddingBottom: fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0),
+                            paddingBottom: paddingVertical
+                                ? fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0)
+                                : 0,
                         } }, { children: [loading ? (_jsx("span", __assign({ className: "absolute flex top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2" }, { children: _jsx(Spinner, {}, void 0) }), void 0)) : (_jsx("div", { children: children }, void 0)),
                             renderFixedBottom && !loading && (_jsx("div", __assign({ ref: fixedBottomRef, className: "absolute bottom-0 left-0 w-full px-4 py-3 bg-gray-100 border-t border-gray-200 md:px-8 md:py-4 md:rounded-b-lg" }, { children: renderFixedBottom() }), void 0)),
                             _jsx(IconButtonWhite, { className: "right-4 md:-right-5 md:-top-5", iconName: "FiX", onClick: function () {
