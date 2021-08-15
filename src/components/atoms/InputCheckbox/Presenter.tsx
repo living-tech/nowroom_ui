@@ -1,11 +1,11 @@
-import { ChangeEvent, CSSProperties, VFC } from "react";
+import { ChangeEvent, CSSProperties, ReactNode, VFC } from "react";
 
 import { Text } from "../Text/Default";
 import { Color, Size, Weight } from "../Text/Presenter";
 import { TextRed } from "../Text/Red";
 
 export type Item = {
-  label: string;
+  label: string | ReactNode;
   value: string;
 };
 
