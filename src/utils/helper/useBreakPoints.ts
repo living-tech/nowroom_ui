@@ -10,7 +10,7 @@ export const xlThreshold = 1281; // xl
 export const useBreakPoints = () => {
   const [isClient, setIsClient] = useState(false);
 
-  const isWentzMiddleMobile = useMediaQuery({ maxWidth: middleMobile });
+  const isMiddleMobile = useMediaQuery({ maxWidth: middleMobile });
   const isMobile = useMediaQuery({
     maxWidth: tabletThreshold - 1,
   });
@@ -40,9 +40,9 @@ export const useBreakPoints = () => {
 
   return {
     isDesktop: isClient ? isDesktop : true,
+    isMiddleMobile: isClient ? isMiddleMobile : false,
     isMobile: isClient ? isMobile : false,
     isTablet: isClient ? isTablet : false,
-    isWentzMiddleMobile: isClient ? isWentzMiddleMobile : false,
     isXl: isClient ? isXl : true,
     isXlTailwind: isClient ? isXlTailwind : false,
   };
