@@ -78,7 +78,11 @@ export const Presenter: VFC<Props> = ({
           </Text>
         )}
       </label>
-      {error && <TextRed size={"sm"}>{error}</TextRed>}
+      {error && (
+        <TextRed className={"mt-2"} size={"sm"}>
+          {error}
+        </TextRed>
+      )}
     </>
   );
 };

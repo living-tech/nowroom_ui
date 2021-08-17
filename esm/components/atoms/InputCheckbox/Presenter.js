@@ -41,6 +41,6 @@ export var Presenter = function (_a) {
                             backgroundSize: "12px 12px",
                         }, type: "checkbox", value: item.value }, void 0),
                     item.label && (_jsx(Text, __assign({ className: "leading-none ml-3 relative", color: labelColor, size: labelSize, style: __assign({ top: 1 }, labelStyle), weight: labelWeight }, { children: item.label }), void 0))] }), void 0),
-            error && _jsx(TextRed, __assign({ size: "sm" }, { children: error }), void 0)] }, void 0));
+            error && (_jsx(TextRed, __assign({ className: "mt-2", size: "sm" }, { children: error }), void 0))] }, void 0));
 };
 //# sourceMappingURL=Presenter.js.map

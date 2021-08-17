@@ -16,6 +16,7 @@ export declare type Props = {
     defaultValue?: string | number;
     disabledPlaceholder?: boolean;
     disabledRightArrow?: boolean;
+    error?: string;
     iconColor?: IconColor;
     iconName?: IconName;
     id?: string;
