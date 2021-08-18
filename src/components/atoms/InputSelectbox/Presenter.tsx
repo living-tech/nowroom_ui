@@ -4,6 +4,7 @@ import { Icon } from "../Icon/Default";
 import { Color as IconColor, IconName } from "../Icon/Presenter";
 import { IconPurple } from "../Icon/Purple";
 import { TextMediumGray02 } from "../Text/MediumGray02";
+import { TextRed } from "../Text/Red";
 
 export type Item = {
   key?: string | number;
@@ -23,6 +24,7 @@ export type Props = {
   defaultValue?: string | number;
   disabledPlaceholder?: boolean;
   disabledRightArrow?: boolean;
+  error?: string;
   iconColor?: IconColor;
   iconName?: IconName;
   id?: string;
@@ -46,6 +48,7 @@ export const Presenter: VFC<Props> = ({
   defaultValue,
   disabledPlaceholder = false,
   disabledRightArrow = false,
+  error,
   iconColor,
   iconName,
   id,
@@ -117,6 +120,11 @@ export const Presenter: VFC<Props> = ({
     setSelectedValue(event.target.value);
   };
 
+  let inputClass = "";
+  if (error) {
+    inputClass = "border-red-500 focus:ring-red-500 focus:border-red-500";
+  }
+
   return (
     <div className={className} style={style} {...props}>
       {label && (
@@ -140,7 +148,7 @@ export const Presenter: VFC<Props> = ({
         )}
         <select
           ref={createRef}
-          className={`text-base w-full cursor-pointer whitespace-nowrap block border font-bold border-gray-200 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${backgroundColorClass} ${colorClass} ${paddingLeftClass} ${paddingRightClass} ${paddingYClass} ${widthClass}`}
+          className={`text-base w-full cursor-pointer whitespace-nowrap block border font-bold border-gray-200 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${backgroundColorClass} ${colorClass} ${paddingLeftClass} ${paddingRightClass} ${paddingYClass} ${widthClass} ${inputClass}`}
           defaultValue={defaultValue}
           id={id}
           name={name}
@@ -162,6 +170,11 @@ export const Presenter: VFC<Props> = ({
           />
         )}
       </div>
+      {error && (
+        <TextRed className={"mt-2"} size={"sm"}>
+          {error}
+        </TextRed>
+      )}
     </div>
   );
 };
