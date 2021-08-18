@@ -14,7 +14,7 @@ export declare type Props = {
     className?: string;
     createRef?: (input: HTMLSelectElement) => void;
     defaultValue?: string | number;
-    disabled: boolean;
+    disabled?: boolean;
     disabledPlaceholder?: boolean;
     disabledRightArrow?: boolean;
     error?: string;

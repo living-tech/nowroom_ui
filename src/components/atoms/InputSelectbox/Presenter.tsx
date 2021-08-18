@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, useEffect, useState, VFC } from "react";
+import { ChangeEvent, CSSProperties, useState, VFC } from "react";
 
 import { Icon } from "../Icon/Default";
 import { Color as IconColor, IconName } from "../Icon/Presenter";
@@ -22,7 +22,7 @@ export type Props = {
   className?: string;
   createRef?: (input: HTMLSelectElement) => void;
   defaultValue?: string | number;
-  disabled: boolean;
+  disabled?: boolean;
   disabledPlaceholder?: boolean;
   disabledRightArrow?: boolean;
   error?: string;
@@ -47,7 +47,7 @@ export const Presenter: VFC<Props> = ({
   className,
   createRef,
   defaultValue,
-  disabled,
+  disabled = false,
   disabledPlaceholder = false,
   disabledRightArrow = false,
   error,
@@ -65,10 +65,6 @@ export const Presenter: VFC<Props> = ({
   ...props
 }) => {
   const [selectedValue, setSelectedValue] = useState<string | number>(value ?? defaultValue ?? "");
-
-  useEffect(() => {
-    setSelectedValue(value ?? defaultValue ?? "");
-  }, [value, defaultValue]);
 
   let widthClass = "";
   if (block) {
