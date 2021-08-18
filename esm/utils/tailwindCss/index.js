@@ -106,7 +106,8 @@ export var tailwindCssConfig = {
             },
             maxWidth: {
                 inner: innerWidth,
-                test: [10000, 10000],
+                xs: 528,
+                xxs: 428,
             },
             screens: {
                 xl: innerWidth + "px",
