@@ -24,6 +24,6 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import { Presenter } from "./Presenter";
 export var TextDarkGray02 = function (_a) {
     var children = _a.children, _b = _a.color, color = _b === void 0 ? "darkGray02" : _b, props = __rest(_a, ["children", "color"]);
-    return (_jsx(Presenter, __assign({ color: color }, props, { children: children }), void 0));
+    return (_jsx(Presenter, __assign({ color: color }, props, { className: "" }, { children: children }), void 0));
 };
 //# sourceMappingURL=DarkGray02.js.map

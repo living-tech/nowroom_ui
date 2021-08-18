@@ -94,11 +94,10 @@ export declare const tailwindCssConfig: {
             };
             maxWidth: {
                 inner: number;
-                innerS: {
-                    DEFAULT: number;
-                    s: number;
+                test: {
+                    lg: number;
+                    sm: number;
                 };
-                large: number;
             };
             screens: {
                 xl: string;

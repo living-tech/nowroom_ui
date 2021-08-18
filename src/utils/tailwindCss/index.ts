@@ -148,12 +148,10 @@ export const tailwindCssConfig = {
       },
       maxWidth: {
         inner: innerWidth,
-        innerS: {
-          DEFAULT: 1000,
-          s: 100,
+        test: {
+          lg: 10000,
+          sm: 10000,
         },
-        // innerS: 1000,
-        large: 100,
       },
       screens: {
         xl: `${innerWidth}px`,

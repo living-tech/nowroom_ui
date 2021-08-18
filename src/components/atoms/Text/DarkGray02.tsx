@@ -4,7 +4,7 @@ import { Presenter, Props } from "./Presenter";
 
 export const TextDarkGray02: VFC<Props> = ({ children, color = "darkGray02", ...props }) => {
   return (
-    <Presenter color={color} {...props}>
+    <Presenter color={color} {...props} className={""}>
       {children}
     </Presenter>
   );
