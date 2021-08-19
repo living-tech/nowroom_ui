@@ -3,11 +3,11 @@ export declare type Color = "white" | "gray";
 export declare type Props = {
     any?: boolean;
     anyLabel?: string;
-    backgroundColor: Color;
+    backgroundColor?: Color;
     className?: string;
     createRef?: (input: HTMLInputElement) => void;
     disabled?: boolean;
-    displayFileChangeButton: boolean;
+    displayFileChangeButton?: boolean;
     dragAndDropFileSelectLabel?: string;
     dragAndDropLabel?: string;
     fileSelectLabel?: string;
