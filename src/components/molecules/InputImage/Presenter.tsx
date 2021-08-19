@@ -162,14 +162,14 @@ export const Presenter: VFC<Props> = ({
             )}
           </div>
 
-          <div className="flex justify-center mt-4 space-x-3">
+          <div className="flex justify-center space-x-3">
             {onGalleryClick && (
-              <ButtonWhite onClick={onGalleryClick} size={"sm"}>
+              <ButtonWhite className={"mt-4"} onClick={onGalleryClick} size={"sm"}>
                 {gallerySelectLabel}
               </ButtonWhite>
             )}
             {displayFileChangeButton && (
-              <ButtonPurple disabled={disabled} padding={false} size={"sm"}>
+              <ButtonPurple className={"pt-4"} disabled={disabled} padding={false} size={"sm"}>
                 <label className={"py-2.5 px-8 cursor-pointer"} htmlFor={id}>
                   {fileSelectLabel}
                   <input
