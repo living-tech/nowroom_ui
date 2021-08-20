@@ -64,7 +64,7 @@ export const Presenter: VFC<Props> = ({
   value,
   ...props
 }) => {
-  const [selectedValue, setSelectedValue] = useState<string | number>(value ?? defaultValue ?? "");
+  const [selectedValue2, setSelectedValue2] = useState<string | number>(value ?? defaultValue ?? "");
 
   let widthClass = "";
   if (block) {
@@ -109,12 +109,12 @@ export const Presenter: VFC<Props> = ({
   console.log("--------------------------------------");
   console.log("name:" + name);
   console.log("value:" + value);
-  console.log("selectedValue:" + selectedValue);
+  console.log("selectedValue:" + selectedValue2);
   console.log("defaultValue):" + defaultValue);
   console.log(props);
 
   let colorClass = "";
-  if (!selectedValue) {
+  if (!selectedValue2) {
     colorClass = "text-gray-400";
     console.log("text-gray-400");
   }
@@ -127,7 +127,7 @@ export const Presenter: VFC<Props> = ({
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     console.log("onChange:" + event.target.value);
     onChange && onChange(event);
-    setSelectedValue(event.target.value);
+    setSelectedValue2(event.target.value);
   };
 
   let inputClass = "";
