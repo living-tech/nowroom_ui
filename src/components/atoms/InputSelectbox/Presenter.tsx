@@ -106,8 +106,12 @@ export const Presenter: VFC<Props> = ({
       iconPositionClass = "left-1";
       break;
   }
+  console.log("--------------------------------------");
+  console.log("name:" + name);
+  console.log("value:" + value);
+  console.log("selectedValue:" + selectedValue);
+  console.log("defaultValue):" + defaultValue);
 
-  console.log(selectedValue);
   let colorClass = "";
   if (!selectedValue) {
     colorClass = "text-gray-400";

@@ -69,7 +69,11 @@ export var Presenter = function (_a) {
             iconPositionClass = "left-1";
             break;
     }
-    console.log(selectedValue);
+    console.log("--------------------------------------");
+    console.log("name:" + name);
+    console.log("value:" + value);
+    console.log("selectedValue:" + selectedValue);
+    console.log("defaultValue):" + defaultValue);
     var colorClass = "";
     if (!selectedValue) {
         colorClass = "text-gray-400";
