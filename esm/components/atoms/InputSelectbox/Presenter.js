@@ -74,6 +74,7 @@ export var Presenter = function (_a) {
     console.log("value:" + value);
     console.log("selectedValue:" + selectedValue);
     console.log("defaultValue):" + defaultValue);
+    console.log(props);
     var colorClass = "";
     if (!selectedValue) {
         colorClass = "text-gray-400";
@@ -84,6 +85,7 @@ export var Presenter = function (_a) {
         backgroundColorClass = "bg-white";
     }
     var handleChange = function (event) {
+        console.log("onChange:" + event.target.value);
         onChange && onChange(event);
         setSelectedValue(event.target.value);
     };

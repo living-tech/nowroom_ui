@@ -111,6 +111,7 @@ export const Presenter: VFC<Props> = ({
   console.log("value:" + value);
   console.log("selectedValue:" + selectedValue);
   console.log("defaultValue):" + defaultValue);
+  console.log(props);
 
   let colorClass = "";
   if (!selectedValue) {
@@ -124,6 +125,7 @@ export const Presenter: VFC<Props> = ({
   }
 
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    console.log("onChange:" + event.target.value);
     onChange && onChange(event);
     setSelectedValue(event.target.value);
   };
