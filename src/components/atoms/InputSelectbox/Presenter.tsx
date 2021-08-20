@@ -107,9 +107,11 @@ export const Presenter: VFC<Props> = ({
       break;
   }
 
+  console.log(selectedValue);
   let colorClass = "";
   if (!selectedValue) {
     colorClass = "text-gray-400";
+    console.log("text-gray-400");
   }
 
   let backgroundColorClass = "bg-gray-100";
