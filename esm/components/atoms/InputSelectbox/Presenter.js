@@ -29,7 +29,7 @@ import { TextRed } from "../Text/Red";
 export var Presenter = function (_a) {
     var _b;
     var any = _a.any, _c = _a.anyLabel, anyLabel = _c === void 0 ? "任意" : _c, _d = _a.backgroundColor, backgroundColor = _d === void 0 ? "gray" : _d, block = _a.block, className = _a.className, createRef = _a.createRef, defaultValue = _a.defaultValue, _e = _a.disabled, disabled = _e === void 0 ? false : _e, _f = _a.disabledPlaceholder, disabledPlaceholder = _f === void 0 ? false : _f, _g = _a.disabledRightArrow, disabledRightArrow = _g === void 0 ? false : _g, error = _a.error, iconColor = _a.iconColor, iconName = _a.iconName, id = _a.id, items = _a.items, label = _a.label, name = _a.name, onChange = _a.onChange, _h = _a.placeholder, placeholder = _h === void 0 ? "選択してください" : _h, _j = _a.size, size = _j === void 0 ? "md" : _j, style = _a.style, value = _a.value, props = __rest(_a, ["any", "anyLabel", "backgroundColor", "block", "className", "createRef", "defaultValue", "disabled", "disabledPlaceholder", "disabledRightArrow", "error", "iconColor", "iconName", "id", "items", "label", "name", "onChange", "placeholder", "size", "style", "value"]);
-    var _k = useState((_b = value !== null && value !== void 0 ? value : defaultValue) !== null && _b !== void 0 ? _b : ""), selectedValue2 = _k[0], setSelectedValue2 = _k[1];
+    var _k = useState((_b = value !== null && value !== void 0 ? value : defaultValue) !== null && _b !== void 0 ? _b : ""), selectedValue = _k[0], setSelectedValue = _k[1];
     var widthClass = "";
     if (block) {
         widthClass = "w-full";
@@ -69,25 +69,17 @@ export var Presenter = function (_a) {
             iconPositionClass = "left-1";
             break;
     }
-    console.log("--------------------------------------");
-    console.log("name:" + name);
-    console.log("value:" + value);
-    console.log("selectedValue:" + selectedValue2);
-    console.log("defaultValue):" + defaultValue);
-    console.log(props);
     var colorClass = "";
-    if (!selectedValue2) {
+    if (!selectedValue) {
         colorClass = "text-gray-400";
-        console.log("text-gray-400");
     }
     var backgroundColorClass = "bg-gray-100";
     if (backgroundColor === "white") {
         backgroundColorClass = "bg-white";
     }
     var handleChange = function (event) {
-        console.log("onChange:" + event.target.value);
         onChange && onChange(event);
-        setSelectedValue2(event.target.value);
+        setSelectedValue(event.target.value);
     };
     var inputClass = "";
     if (error) {
