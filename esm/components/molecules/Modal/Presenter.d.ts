@@ -3,6 +3,7 @@ export declare type CloseButtonPosition = "top" | "bottom";
 export declare type Props = {
     children: ReactNode;
     closeButtonPosition?: CloseButtonPosition;
+    disabledClose?: boolean;
     escLabel?: string;
     isVisible: boolean;
     loading?: boolean;

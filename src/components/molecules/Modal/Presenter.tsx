@@ -14,6 +14,7 @@ export type CloseButtonPosition = "top" | "bottom";
 export type Props = {
   children: ReactNode;
   closeButtonPosition?: CloseButtonPosition;
+  disabledClose?: boolean;
   escLabel?: string;
   isVisible: boolean;
   loading?: boolean;
@@ -28,6 +29,7 @@ export type Props = {
 export const Presenter: VFC<Props> = ({
   children,
   closeButtonPosition = "top",
+  disabledClose = false,
   escLabel = "を押して閉じる",
   isVisible,
   loading,
@@ -62,20 +64,25 @@ export const Presenter: VFC<Props> = ({
     modalSizeClass = "w-full h-full md:h-auto";
   }
 
-  const handleKeydown = useCallback((event: KeyboardEvent) => {
-    if (!isDesktop) {
+  const handleKeydown = useCallback(
+    (event: KeyboardEvent) => {
+      if (!isDesktop) {
+        return true;
+      }
+
+      if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
+        event.preventDefault();
+        if (disabledClose) {
+          return false;
+        }
+        setVisible(false);
+        onRequestClose && onRequestClose();
+        return false;
+      }
       return true;
-    }
-
-    if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
-      event.preventDefault();
-      setVisible(false);
-      onRequestClose && onRequestClose();
-      return false;
-    }
-
-    return true;
-  }, []);
+    },
+    [disabledClose]
+  );
 
   useEffect(() => {
     setVisible(isVisible);
@@ -109,15 +116,18 @@ export const Presenter: VFC<Props> = ({
         timeout={400}
       >
         <div
-          className="fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay"
+          className={`fixed top-0 left-0 w-full h-full p-4 bg-overlay ${disabledClose ? "" : "cursor-pointer"}`}
           onClick={() => {
+            if (disabledClose) {
+              return;
+            }
             setVisible(false);
             onRequestClose && onRequestClose();
           }}
           style={{ zIndex }}
           {...props}
         >
-          {!isMobile && (
+          {!isMobile && !disabledClose && (
             <div className="flex items-center">
               <LabelTextWhite>ESC</LabelTextWhite>
               <TextWhite className="ml-1" size={"sm"} weight={"bold"}>
@@ -175,25 +185,27 @@ export const Presenter: VFC<Props> = ({
                 {renderFixedBottom()}
               </div>
             )}
-            <IconButtonWhite
-              className="right-4 md:-right-5 md:-top-5"
-              iconName={"FiX"}
-              onClick={() => {
-                setVisible(false);
-                onRequestClose && onRequestClose();
-              }}
-              radius={true}
-              shadow={false}
-              style={
-                isMobile
-                  ? {
-                      bottom: closeButtonPosition === "bottom" ? fixedBottomHeight + 16 : undefined,
-                      position: "absolute",
-                      top: closeButtonPosition === "top" ? 16 : undefined,
-                    }
-                  : { position: "absolute" }
-              }
-            />
+            {!disabledClose && (
+              <IconButtonWhite
+                className="right-4 md:-right-5 md:-top-5"
+                iconName={"FiX"}
+                onClick={() => {
+                  setVisible(false);
+                  onRequestClose && onRequestClose();
+                }}
+                radius={true}
+                shadow={false}
+                style={
+                  isMobile
+                    ? {
+                        bottom: closeButtonPosition === "bottom" ? fixedBottomHeight + 16 : undefined,
+                        position: "absolute",
+                        top: closeButtonPosition === "top" ? 16 : undefined,
+                      }
+                    : { position: "absolute" }
+                }
+              />
+            )}
           </div>
         </div>
       </CSSTransition>
