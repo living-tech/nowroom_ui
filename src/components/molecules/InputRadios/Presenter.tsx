@@ -15,6 +15,7 @@ export type Props = {
   label?: string;
   name?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  size?: "sm" | "md";
   style?: CSSProperties;
 };
 
@@ -29,6 +30,7 @@ export const Presenter: VFC<Props> = ({
   label,
   name,
   onChange,
+  size = "md",
   style,
   ...props
 }) => {
@@ -46,7 +48,14 @@ export const Presenter: VFC<Props> = ({
       )}
       <div className={`grid grid-cols-${columns} gap-6`}>
         {items.map((item) => (
-          <InputRadio key={`radio-${item.value}`} createRef={createRef} item={item} name={name} onChange={onChange} />
+          <InputRadio
+            key={`radio-${item.value}`}
+            createRef={createRef}
+            item={item}
+            name={name}
+            onChange={onChange}
+            size={size}
+          />
         ))}
       </div>
     </div>
