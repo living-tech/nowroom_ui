@@ -1,4 +1,4 @@
-import { CSSProperties, ReactNode, VFC } from "react";
+import { CSSProperties, ReactNode, VFC, memo } from "react";
 
 export type Weight = "normal" | "bold";
 export type Color =
@@ -60,7 +60,7 @@ export type Props = {
   weight?: Weight;
 };
 
-export const Presenter: VFC<Props> = ({
+export const Presenter: VFC<Props> = memo(({
   children,
   className,
   color,
@@ -168,4 +168,4 @@ export const Presenter: VFC<Props> = ({
       {children}
     </Tag>
   );
-};
+});

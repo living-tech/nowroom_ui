@@ -21,7 +21,8 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-export var Presenter = function (_a) {
+import { memo } from "react";
+export var Presenter = memo(function (_a) {
     var children = _a.children, className = _a.className, color = _a.color, _b = _a.size, size = _b === void 0 ? "md" : _b, _c = _a.tag, tag = _c === void 0 ? "p" : _c, _d = _a.weight, weight = _d === void 0 ? "normal" : _d, props = __rest(_a, ["children", "className", "color", "size", "tag", "weight"]);
     var Tag = tag;
     var baseClass = "whitespace-pre-wrap";
@@ -113,5 +114,5 @@ export var Presenter = function (_a) {
             break;
     }
     return (_jsx(Tag, __assign({ className: baseClass + " " + fontSizeClass + " " + fontWeightClass + " " + colorClass + " " + className }, props, { children: children }), void 0));
-};
+});
 //# sourceMappingURL=Presenter.js.map
