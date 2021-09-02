@@ -25,7 +25,6 @@ import { memo } from "react";
 import { Presenter } from "./Presenter";
 export var TextWhite = memo(function (_a) {
     var children = _a.children, _b = _a.color, color = _b === void 0 ? "white" : _b, props = __rest(_a, ["children", "color"]);
-    console.log('TextWhite');
     return (_jsx(Presenter, __assign({ color: color }, props, { children: children }), void 0));
 });
 //# sourceMappingURL=White.js.map
