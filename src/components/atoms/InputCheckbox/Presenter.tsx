@@ -48,8 +48,6 @@ export const Presenter: VFC<Props> = memo(({
       "w-5 h-5 bg-white border-2 border-gray-700 appearance-none cursor-pointer form-tick bg-check checked:bg-purple checked:border-transparent focus:outline-none transition duration-200 ease-out rounded-md";
   }
 
-  console.log("InputCheckBoxのレンダリング")
-
   return (
     <>
       <label className={`inline-flex items-center cursor-pointer ${className}`} style={style} {...props}>
