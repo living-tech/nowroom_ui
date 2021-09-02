@@ -21,9 +21,10 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+import { memo } from "react";
 import { Text } from "../Text/Default";
 import { TextRed } from "../Text/Red";
-export var Presenter = function (_a) {
+export var Presenter = memo(function (_a) {
     var checked = _a.checked, className = _a.className, createRef = _a.createRef, error = _a.error, item = _a.item, labelColor = _a.labelColor, labelSize = _a.labelSize, labelStyle = _a.labelStyle, labelWeight = _a.labelWeight, name = _a.name, onChange = _a.onChange, style = _a.style, props = __rest(_a, ["checked", "className", "createRef", "error", "item", "labelColor", "labelSize", "labelStyle", "labelWeight", "name", "onChange", "style"]);
     var inputClass = "";
     if (error) {
@@ -42,5 +43,5 @@ export var Presenter = function (_a) {
                         }, type: "checkbox", value: item.value }, void 0),
                     item.label && (_jsx(Text, __assign({ className: "leading-none ml-3 relative", color: labelColor, size: labelSize, style: __assign({ top: 1 }, labelStyle), weight: labelWeight }, { children: item.label }), void 0))] }), void 0),
             error && (_jsx(TextRed, __assign({ className: "mt-2", size: "sm" }, { children: error }), void 0))] }, void 0));
-};
+});
 //# sourceMappingURL=Presenter.js.map
