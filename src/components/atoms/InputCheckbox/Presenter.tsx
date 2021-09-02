@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, ReactNode, VFC } from "react";
+import { ChangeEvent, CSSProperties, ReactNode, VFC, memo } from "react";
 
 import { Text } from "../Text/Default";
 import { Color, Size, Weight } from "../Text/Presenter";
@@ -24,7 +24,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: VFC<Props> = ({
+export const Presenter: VFC<Props> = memo(({
   checked,
   className,
   createRef,
@@ -47,6 +47,9 @@ export const Presenter: VFC<Props> = ({
     inputClass =
       "w-5 h-5 bg-white border-2 border-gray-700 appearance-none cursor-pointer form-tick bg-check checked:bg-purple checked:border-transparent focus:outline-none transition duration-200 ease-out rounded-md";
   }
+
+  console.log("InputCheckBoxのレンダリング")
+
   return (
     <>
       <label className={`inline-flex items-center cursor-pointer ${className}`} style={style} {...props}>
@@ -85,4 +88,4 @@ export const Presenter: VFC<Props> = ({
       )}
     </>
   );
-};
+});
