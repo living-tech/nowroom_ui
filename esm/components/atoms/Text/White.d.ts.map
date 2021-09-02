@@ -1,1 +1,1 @@
-{"version":3,"file":"White.d.ts","sourceRoot":"","sources":["../../../../src/components/atoms/Text/White.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,GAAG,EAAE,MAAM,OAAO,CAAC;AAE5B,OAAO,EAAa,KAAK,EAAE,MAAM,aAAa,CAAC;AAE/C,eAAO,MAAM,SAAS,EAAE,GAAG,CAAC,KAAK,CAMhC,CAAC"}
+{"version":3,"file":"White.d.ts","sourceRoot":"","sources":["../../../../src/components/atoms/Text/White.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAE,GAAG,EAAQ,MAAM,OAAO,CAAC;AAElC,OAAO,EAAa,KAAK,EAAE,MAAM,aAAa,CAAC;AAE/C,eAAO,MAAM,SAAS,EAAE,GAAG,CAAC,KAAK,CAQ/B,CAAC"}
