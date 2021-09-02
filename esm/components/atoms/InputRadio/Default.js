@@ -12,6 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Presenter } from "./Presenter";
 export var InputRadio = function (props) {
+    console.log('📻 InputRadio');
     return _jsx(Presenter, __assign({}, props), void 0);
 };
 //# sourceMappingURL=Default.js.map

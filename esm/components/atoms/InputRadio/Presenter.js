@@ -23,6 +23,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 export var Presenter = function (_a) {
     var checked = _a.checked, className = _a.className, createRef = _a.createRef, item = _a.item, name = _a.name, onChange = _a.onChange, style = _a.style, props = __rest(_a, ["checked", "className", "createRef", "item", "name", "onChange", "style"]);
+    console.log('🌟 src/components/atoms/InputRadio/Presenter.tsx');
     return (_jsxs("div", __assign({ className: className, style: style }, props, { children: [_jsx("input", { ref: createRef, checked: checked, className: "hidden", id: name + "-" + item.value, name: name, onChange: onChange, type: "radio", value: item.value }, void 0),
             _jsx("label", __assign({ className: "flex items-center w-full p-4 border border-gray-300 rounded cursor-pointer transition duration-200 ease-out", htmlFor: name + "-" + item.value }, { children: _jsxs("div", __assign({ className: "flex w-full" }, { children: [_jsx("span", { className: "inline-block w-5 h-5 border rounded-full circle border-grey checked:border-blue-500 transition duration-200 ease-out" }, void 0),
                         _jsx("p", __assign({ className: "flex-grow ml-2 text-sm font-bold text-center text-gray-600 text transition duration-200 ease-out" }, { children: item.label }), void 0)] }), void 0) }), void 0)] }), void 0));

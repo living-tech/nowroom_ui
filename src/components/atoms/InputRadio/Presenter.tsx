@@ -16,6 +16,8 @@ export type Props = {
 };
 
 export const Presenter: VFC<Props> = ({ checked, className, createRef, item, name, onChange, style, ...props }) => {
+  console.log('🌟 src/components/atoms/InputRadio/Presenter.tsx');
+  
   return (
     <div className={className} style={style} {...props}>
       <input
