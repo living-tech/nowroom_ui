@@ -190,8 +190,6 @@ export const Presenter: VFC<Props> = memo(({
       iconPosition = "1rem";
   }
 
-  console.log("InputTextのレンダリング")
-
   return (
     <div className={className} style={style} {...props}>
       {label && (

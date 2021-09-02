@@ -156,7 +156,6 @@ export var Presenter = memo(function (_a) {
         default:
             iconPosition = "1rem";
     }
-    console.log("InputTextのレンダリング");
     return (_jsxs("div", __assign({ className: className, style: style }, props, { children: [label && (_jsxs("label", __assign({ className: "block mb-3 text-sm font-bold text-gray-700 cursor-pointer", htmlFor: id }, { children: [label, any && (_jsx(TextMediumGray02, __assign({ className: "ml-3", size: "sm", tag: "span" }, { children: anyLabel }), void 0))] }), void 0)),
             renderDescription && _jsx("div", __assign({ className: "mb-3" }, { children: renderDescription() }), void 0),
             _jsxs("div", __assign({ className: "relative" }, { children: [iconName && (_jsx(Icon, { className: "absolute pointer-events-none", color: color === "white" ? "darkGray02" : "black", name: iconName, size: size === "md" ? "md" : "sm", style: {
