@@ -1,7 +1,7 @@
-import { VFC, memo } from "react";
+import { VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 
-export const InputText: VFC<Props> = memo((props) => {
+export const InputText: VFC<Props> = (props) => {
   return <Presenter {...props} />;
-});
+};

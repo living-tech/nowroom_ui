@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, FocusEvent, KeyboardEvent, VFC, memo } from "react";
+import { ChangeEvent, CSSProperties, FocusEvent, KeyboardEvent, VFC } from "react";
 
 import { Icon } from "../Icon/Default";
 import { IconName } from "../Icon/Presenter";
@@ -38,7 +38,7 @@ export type Props = {
   weight?: Weight;
 };
 
-export const Presenter: VFC<Props> = memo(({
+export const Presenter: VFC<Props> = ({
   any,
   anyLabel = "任意",
   autocomplete,
@@ -269,4 +269,4 @@ export const Presenter: VFC<Props> = memo(({
       )}
     </div>
   );
-});
+};
