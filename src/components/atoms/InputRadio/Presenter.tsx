@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, VFC } from "react";
+import { ChangeEvent, CSSProperties, memo, VFC } from "react";
 
 export type Item = {
   label: string;
@@ -15,9 +15,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: VFC<Props> = ({ checked, className, createRef, item, name, onChange, style, ...props }) => {
-  console.log('🌟 src/components/atoms/InputRadio/Presenter.tsx');
-  
+export const Presenter: VFC<Props> = memo(({ checked, className, createRef, item, name, onChange, style, ...props }) => {  
   return (
     <div className={className} style={style} {...props}>
       <input
@@ -43,4 +41,4 @@ export const Presenter: VFC<Props> = ({ checked, className, createRef, item, nam
       </label>
     </div>
   );
-};
+});

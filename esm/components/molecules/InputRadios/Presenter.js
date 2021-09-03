@@ -21,11 +21,12 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { memo } from "react";
 import { InputRadio } from "../../atoms/InputRadio/Default";
 import { TextMediumGray02 } from "../../atoms/Text/MediumGray02";
-export var Presenter = function (_a) {
+export var Presenter = memo(function (_a) {
     var any = _a.any, _b = _a.anyLabel, anyLabel = _b === void 0 ? "任意" : _b, className = _a.className, _c = _a.columns, columns = _c === void 0 ? 2 : _c, createRef = _a.createRef, id = _a.id, items = _a.items, label = _a.label, name = _a.name, onChange = _a.onChange, style = _a.style, props = __rest(_a, ["any", "anyLabel", "className", "columns", "createRef", "id", "items", "label", "name", "onChange", "style"]);
     return (_jsxs("div", __assign({ className: "" + className, id: id, style: style }, props, { children: [label && (_jsxs("label", __assign({ className: "block mb-3 text-sm font-bold text-gray-700" }, { children: [label, any && (_jsx(TextMediumGray02, __assign({ className: "ml-3", size: "sm", tag: "span" }, { children: anyLabel }), void 0))] }), void 0)),
             _jsx("div", __assign({ className: "grid grid-cols-" + columns + " gap-6" }, { children: items.map(function (item) { return (_jsx(InputRadio, { createRef: createRef, item: item, name: name, onChange: onChange }, "radio-" + item.value)); }) }), void 0)] }), void 0));
-};
+});
 //# sourceMappingURL=Presenter.js.map

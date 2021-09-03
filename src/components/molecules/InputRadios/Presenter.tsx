@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, VFC } from "react";
+import { ChangeEvent, CSSProperties, memo, VFC } from "react";
 
 import { InputRadio } from "../../atoms/InputRadio/Default";
 import { Item } from "../../atoms/InputRadio/Presenter";
@@ -18,7 +18,7 @@ export type Props = {
   style?: CSSProperties;
 };
 
-export const Presenter: VFC<Props> = ({
+export const Presenter: VFC<Props> = memo(({
   any,
   anyLabel = "任意",
   className,
@@ -51,4 +51,4 @@ export const Presenter: VFC<Props> = ({
       </div>
     </div>
   );
-};
+});
