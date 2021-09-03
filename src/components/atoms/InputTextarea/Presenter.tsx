@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, VFC } from "react";
+import { ChangeEvent, CSSProperties, VFC, memo } from "react";
 
 import { TextMediumGray02 } from "../Text/MediumGray02";
 import { Weight } from "../Text/Presenter";
@@ -24,7 +24,7 @@ export type Props = {
   weight?: Weight;
 };
 
-export const Presenter: VFC<Props> = ({
+export const Presenter: VFC<Props> = memo(({
   any,
   anyLabel = "任意",
   className,
@@ -69,6 +69,8 @@ export const Presenter: VFC<Props> = ({
       break;
   }
 
+  console.log("InputTextareaコンポーネントのレンダリング")
+
   return (
     <div className={className} style={style} {...props}>
       {label && (
@@ -102,4 +104,4 @@ export const Presenter: VFC<Props> = ({
       )}
     </div>
   );
-};
+});
