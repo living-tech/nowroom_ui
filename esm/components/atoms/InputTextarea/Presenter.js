@@ -49,7 +49,6 @@ export var Presenter = memo(function (_a) {
             inputClass += " font-medium";
             break;
     }
-    console.log("InputTextareaコンポーネントのレンダリング");
     return (_jsxs("div", __assign({ className: className, style: style }, props, { children: [label && (_jsxs("label", __assign({ className: "block mb-3 text-sm font-bold text-gray-700 cursor-pointer", htmlFor: id }, { children: [label, any && (_jsx(TextMediumGray02, __assign({ className: "ml-3", size: "sm", tag: "span" }, { children: anyLabel }), void 0))] }), void 0)),
             renderDescription && _jsx("div", __assign({ className: "mb-3" }, { children: renderDescription() }), void 0),
             _jsx("div", __assign({ className: "relative" }, { children: _jsx("textarea", { ref: createRef, className: inputBaseClass + " " + inputClass + " " + inputResizeClass, defaultValue: defaultValue, id: id, name: name, onChange: onChange, placeholder: placeholder, rows: rows, value: value }, void 0) }), void 0),

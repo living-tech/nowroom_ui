@@ -69,8 +69,6 @@ export const Presenter: VFC<Props> = memo(({
       break;
   }
 
-  console.log("InputTextareaコンポーネントのレンダリング")
-
   return (
     <div className={className} style={style} {...props}>
       {label && (
