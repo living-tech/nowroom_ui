@@ -21,10 +21,9 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { memo } from "react";
 import { Presenter } from "./Presenter";
-export var Text = memo(function (_a) {
+export var Text = function (_a) {
     var children = _a.children, color = _a.color, props = __rest(_a, ["children", "color"]);
     return (_jsx(Presenter, __assign({ color: color }, props, { children: children }), void 0));
-});
+};
 //# sourceMappingURL=Default.js.map
