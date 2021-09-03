@@ -21,10 +21,9 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { memo } from "react";
 import { Presenter } from "./Presenter";
-export var TextPurple = memo(function (_a) {
+export var TextPurple = function (_a) {
     var children = _a.children, _b = _a.color, color = _b === void 0 ? "purple" : _b, props = __rest(_a, ["children", "color"]);
     return (_jsx(Presenter, __assign({ color: color }, props, { children: children }), void 0));
-});
+};
 //# sourceMappingURL=Purple.js.map
