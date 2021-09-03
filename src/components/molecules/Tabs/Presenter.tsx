@@ -1,6 +1,6 @@
 import gsap, { Expo } from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
+import { CSSProperties, useEffect, useRef, useState, VFC, memo } from "react";
 import Measure from "react-measure";
 import { v4 as uuidv4 } from "uuid";
 
@@ -32,7 +32,7 @@ export type Props = {
 
 const uuid = uuidv4();
 
-export const Presenter: VFC<Props> = ({
+export const Presenter: VFC<Props> = memo(({
   id = uuid,
   className = "",
   initialContainerWidth,
@@ -180,4 +180,4 @@ export const Presenter: VFC<Props> = ({
       </div>
     </div>
   );
-};
+});
