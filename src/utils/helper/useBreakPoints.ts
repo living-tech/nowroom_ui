@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
 export const middleMobile = 500; // sm中サイズ
@@ -7,7 +7,7 @@ export const desktopThreshold = 1025; // lg
 export const xlTailwind = 1120; // tailwindでのxl
 export const xlThreshold = 1281; // xl
 
-export const useBreakPoints = useCallback(() => {
+export const useBreakPoints = () => {
   const [isClient, setIsClient] = useState(false);
 
   const isMiddleMobile = useMediaQuery({ maxWidth: middleMobile });
@@ -46,4 +46,4 @@ export const useBreakPoints = useCallback(() => {
     isXl: isClient ? isXl : true,
     isXlTailwind: isClient ? isXlTailwind : false,
   };
-}, []);
+};
