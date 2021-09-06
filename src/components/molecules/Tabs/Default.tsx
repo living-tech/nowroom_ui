@@ -1,4 +1,4 @@
-import { VFC, memo } from "react";
+import { memo, VFC } from "react";
 
 import { Presenter, Props } from "./Presenter";
 

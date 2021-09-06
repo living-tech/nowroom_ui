@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import gsap, { Expo } from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-import { useEffect, useRef, useState, memo } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import Measure from "react-measure";
 import { v4 as uuidv4 } from "uuid";
 import { Tab } from "../../atoms/Tab/Default";
@@ -82,6 +82,7 @@ export var Presenter = memo(function (_a) {
             width: targetElement.clientWidth,
         });
     }, [hoverTab, activeIndex, tabSize]);
+    console.log("Tabsコンポーネントのレンダリング");
     return (_jsxs("div", __assign({ className: className, style: style }, { children: [_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
                     var _a;
                     if (initialContainerWidth) {
