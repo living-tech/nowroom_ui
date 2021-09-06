@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 export var middleMobile = 500; // sm中サイズ
 export var tabletThreshold = 768; // md
 export var desktopThreshold = 1025; // lg
 export var xlTailwind = 1120; // tailwindでのxl
 export var xlThreshold = 1281; // xl
-export var useBreakPoints = function () {
+export var useBreakPoints = useCallback(function () {
     var _a = useState(false), isClient = _a[0], setIsClient = _a[1];
     var isMiddleMobile = useMediaQuery({ maxWidth: middleMobile });
     var isMobile = useMediaQuery({
@@ -37,5 +37,5 @@ export var useBreakPoints = function () {
         isXl: isClient ? isXl : true,
         isXlTailwind: isClient ? isXlTailwind : false,
     };
-};
+}, []);
 //# sourceMappingURL=useBreakPoints.js.map
