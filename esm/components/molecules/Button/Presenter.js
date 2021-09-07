@@ -176,7 +176,6 @@ export var Presenter = memo(function (_a) {
     }
     var Inner = function () { return (_jsxs(_Fragment, { children: [_jsxs("span", __assign({ className: "flex items-center " + loadingTextClass }, { children: [iconName && iconPosition === "left" && (_jsx("span", __assign({ className: "relative mr-" + spaceXSize }, { children: _jsx(Icon, { name: iconName, size: iconSize }, void 0) }), void 0)), children, iconName && iconPosition === "right" && (_jsx("span", __assign({ className: "relative ml-" + spaceXSize }, { children: _jsx(Icon, { name: iconName, size: iconSize }, void 0) }), void 0))] }), void 0),
             loading && (_jsx("span", __assign({ className: "absolute flex top-1/2 transform -translate-y-1/2" }, { children: _jsx(Spinner, { size: loadingSize }, void 0) }), void 0))] }, void 0)); };
-    console.log("buttonのレンダリング");
     if (tag === "a") {
         return (_jsx("a", __assign({ className: baseClass + " " + sizeClass + " " + roundedClass + " " + borderColorClass + " " + backgroundColorClass + " " + textColorClass + " " + blockClass + " " + shadowClass + " " + className, href: href, style: style, target: target }, props, { children: _jsx(Inner, {}, void 0) }), void 0));
     }

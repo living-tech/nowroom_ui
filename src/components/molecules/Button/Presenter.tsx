@@ -232,8 +232,6 @@ export const Presenter: VFC<Props> = memo(
       </>
     );
 
-    console.log("buttonのレンダリング");
-
     if (tag === "a") {
       return (
         <a
