@@ -12,12 +12,12 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import gsap, { Expo } from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
-import { memo, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Measure from "react-measure";
 import { v4 as uuidv4 } from "uuid";
 import { Tab } from "../../atoms/Tab/Default";
 var uuid = uuidv4();
-export var Presenter = memo(function (_a) {
+export var Presenter = function (_a) {
     var _b = _a.id, id = _b === void 0 ? uuid : _b, _c = _a.className, className = _c === void 0 ? "" : _c, initialContainerWidth = _a.initialContainerWidth, items = _a.items, _d = _a.panelsContainerClassName, panelsContainerClassName = _d === void 0 ? "" : _d, panelsContainerStyle = _a.panelsContainerStyle, style = _a.style, _e = _a.tabContainerClassName, tabContainerClassName = _e === void 0 ? "" : _e, tabContainerStyle = _a.tabContainerStyle, _f = _a.tabsPosition, tabsPosition = _f === void 0 ? "left" : _f, _g = _a.tabSize, tabSize = _g === void 0 ? "md" : _g, _h = _a.tabsContainerClassName, tabsContainerClassName = _h === void 0 ? "" : _h, tabsContainerStyle = _a.tabsContainerStyle, _j = _a.tabsUnderLine, tabsUnderLine = _j === void 0 ? true : _j, _k = _a.tabsWidth, tabsWidth = _k === void 0 ? "full" : _k;
     var panelRef = useRef(null);
     var _l = useState(0), activeIndex = _l[0], setActiveIndex = _l[1];
@@ -99,5 +99,5 @@ export var Presenter = memo(function (_a) {
                                     } }, void 0))] }), void 0) }), void 0));
                 } }), void 0),
             _jsx("div", __assign({ ref: panelRef, className: "w-full overflow-x-hidden whitespace-nowrap " + panelsContainerClassName, style: panelsContainerStyle }, { children: items.map(function (item, index) { return (_jsx("div", __assign({ className: "inline-block w-full align-top" }, { children: item.renderPanel() }), index)); }) }), void 0)] }), void 0));
-});
+};
 //# sourceMappingURL=Presenter.js.map
