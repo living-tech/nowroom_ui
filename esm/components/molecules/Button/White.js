@@ -21,9 +21,10 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
+import { memo } from "react";
 import { Presenter } from "./Presenter";
-export var ButtonWhite = function (_a) {
+export var ButtonWhite = memo(function (_a) {
     var children = _a.children, _b = _a.color, color = _b === void 0 ? "white" : _b, _c = _a.visualType, visualType = _c === void 0 ? "fill" : _c, props = __rest(_a, ["children", "color", "visualType"]);
     return (_jsx(Presenter, __assign({ color: color, visualType: visualType }, props, { children: children }), void 0));
-};
+});
 //# sourceMappingURL=White.js.map
