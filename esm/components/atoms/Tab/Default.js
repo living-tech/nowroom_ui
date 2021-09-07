@@ -10,9 +10,9 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { forwardRef } from "react";
+import { forwardRef, memo } from "react";
 import { Presenter } from "./Presenter";
-export var Tab = forwardRef(function (props, ref) {
+export var Tab = memo(forwardRef(function (props, ref) {
     return _jsx(Presenter, __assign({}, props, { ref: ref }), void 0);
-});
+}));
 //# sourceMappingURL=Default.js.map

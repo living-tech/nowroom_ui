@@ -21,9 +21,9 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { forwardRef } from "react";
+import { forwardRef, memo } from "react";
 import { Text } from "../Text/Default";
-export var Presenter = forwardRef(function (_a, ref) {
+export var Presenter = memo(forwardRef(function (_a, ref) {
     var active = _a.active, _b = _a.className, className = _b === void 0 ? "" : _b, id = _a.id, index = _a.index, label = _a.label, onClick = _a.onClick, onTabMouseEnter = _a.onTabMouseEnter, onTabMouseLeave = _a.onTabMouseLeave, _c = _a.size, size = _c === void 0 ? "md" : _c, style = _a.style, _d = _a.tabUnderLine, tabUnderLine = _d === void 0 ? true : _d, props = __rest(_a, ["active", "className", "id", "index", "label", "onClick", "onTabMouseEnter", "onTabMouseLeave", "size", "style", "tabUnderLine"]);
     var textColorClass = "";
     if (active) {
@@ -45,6 +45,7 @@ export var Presenter = forwardRef(function (_a, ref) {
             paddingClass = "pt-5 px-10 pb-4";
             break;
     }
+    console.log("Tabコンポーネントのレンダリング!!!!!");
     return (_jsx("li", __assign({ ref: ref, className: "relative inline-block w-full text-center list-none cursor-pointer hover:bg-purple-100 transition duration-200 ease-out " + paddingClass + " " + borderClass + " " + className, id: id, onClick: function () { return onClick && onClick(index); }, onMouseEnter: function () { return onTabMouseEnter(index); }, onMouseLeave: onTabMouseLeave, style: style }, props, { children: _jsx(Text, __assign({ className: "transition duration-200 ease-out " + textColorClass, size: textSize, style: { whiteSpace: "nowrap" }, weight: "bold" }, { children: label }), void 0) }), void 0));
-});
+}));
 //# sourceMappingURL=Presenter.js.map

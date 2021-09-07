@@ -13,5 +13,5 @@ export declare type Props = {
     style?: CSSProperties;
     tabUnderLine?: boolean;
 };
-export declare const Presenter: import("react").ForwardRefExoticComponent<Props & import("react").RefAttributes<HTMLLIElement>>;
+export declare const Presenter: import("react").MemoExoticComponent<import("react").ForwardRefExoticComponent<Props & import("react").RefAttributes<HTMLLIElement>>>;
 //# sourceMappingURL=Presenter.d.ts.map

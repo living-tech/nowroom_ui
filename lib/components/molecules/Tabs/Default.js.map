@@ -1,1 +1,1 @@
-{"version":3,"file":"Default.js","sourceRoot":"","sources":["../../../../src/components/molecules/Tabs/Default.tsx"],"names":[],"mappings":";;;;;;;;;;;;;;;AAEA,yCAA+C;AAExC,IAAM,IAAI,GAAe,UAAC,KAAK;IACpC,OAAO,kBAAC,qBAAS,eAAK,KAAK,UAAI,CAAC;AAClC,CAAC,CAAC;AAFW,QAAA,IAAI,QAEf"}
+{"version":3,"file":"Default.js","sourceRoot":"","sources":["../../../../src/components/molecules/Tabs/Default.tsx"],"names":[],"mappings":";;;;;;;;;;;;;;;AAAA,+BAAkC;AAElC,yCAA+C;AAElC,QAAA,IAAI,GAAe,YAAI,CAAC,UAAC,KAAK;IACzC,OAAO,kBAAC,qBAAS,eAAK,KAAK,UAAI,CAAC;AAClC,CAAC,CAAC,CAAC"}
