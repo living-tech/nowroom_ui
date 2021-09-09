@@ -10,7 +10,8 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-export var Presenter = function (_a) {
+import { memo } from "react";
+export var Presenter = memo(function (_a) {
     var children = _a.children, className = _a.className, _b = _a.color, color = _b === void 0 ? "purple" : _b, _c = _a.isClickable, isClickable = _c === void 0 ? false : _c, _d = _a.size, size = _d === void 0 ? "md" : _d, style = _a.style;
     var baseClass = "inline-flex items-center border rounded transition ease-out duration-200 font-bold leading-none whitespace-pre-wrap";
     var cursorClass = "";
@@ -122,5 +123,5 @@ export var Presenter = function (_a) {
     }
     console.log("LabelTextのレンダリング");
     return (_jsx("div", __assign({ className: baseClass + " " + cursorClass + " " + sizeClass + " " + fontSize + " " + backgroundColorClass + " " + backgroundColorHoverClass + " " + borderColorClass + " " + textColor + " " + borderColorHoverClass + " " + className, style: style }, { children: children }), void 0));
-};
+});
 //# sourceMappingURL=Presenter.js.map
