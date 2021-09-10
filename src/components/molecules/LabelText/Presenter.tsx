@@ -34,26 +34,22 @@ export const Presenter: VFC<Props> = ({
   style,
 }) => {
   const baseClass =
-    "inline-flex items-center border rounded transition ease-out duration-200 font-bold leading-none whitespace-pre-wrap px-1.5";
+    "inline-flex items-center border rounded transition ease-out duration-200 font-bold leading-none whitespace-pre-wrap pb-1 px-1.5";
 
   let cursorClass = "";
   if (isClickable) {
     cursorClass = "cursor-pointer";
   }
 
-  // let sizeClass = "";
   let fontSize = "";
   switch (size) {
     case "md":
-      // sizeClass = "py-1 px-1.5";
       fontSize = "text-xs";
       break;
     case "sm":
-      // sizeClass = "py-1 px-1.5";
       fontSize = "text-xxs";
       break;
     case "xs":
-      // sizeClass = "py-1 px-1.5";
       fontSize = "text-xxs";
       break;
   }
@@ -146,17 +142,10 @@ export const Presenter: VFC<Props> = ({
       break;
   }
 
-  console.log("LabelTextのレンダリング");
-
   return (
     <div
       className={`${baseClass} ${cursorClass} ${fontSize} ${backgroundColorClass} ${backgroundColorHoverClass} ${borderColorClass} ${textColor} ${borderColorHoverClass} ${className}`}
-      // style={style}
       style={{
-        // display: "table-cell",
-        // verticalAlign: "-1px",
-        // paddingTop: "1px",
-        paddingBottom: "3px",
         paddingTop: "5px",
         ...style,
       }}

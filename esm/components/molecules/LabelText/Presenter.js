@@ -12,24 +12,20 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 export var Presenter = function (_a) {
     var children = _a.children, className = _a.className, _b = _a.color, color = _b === void 0 ? "purple" : _b, _c = _a.isClickable, isClickable = _c === void 0 ? false : _c, _d = _a.size, size = _d === void 0 ? "md" : _d, style = _a.style;
-    var baseClass = "inline-flex items-center border rounded transition ease-out duration-200 font-bold leading-none whitespace-pre-wrap px-1.5";
+    var baseClass = "inline-flex items-center border rounded transition ease-out duration-200 font-bold leading-none whitespace-pre-wrap pb-1 px-1.5";
     var cursorClass = "";
     if (isClickable) {
         cursorClass = "cursor-pointer";
     }
-    // let sizeClass = "";
     var fontSize = "";
     switch (size) {
         case "md":
-            // sizeClass = "py-1 px-1.5";
             fontSize = "text-xs";
             break;
         case "sm":
-            // sizeClass = "py-1 px-1.5";
             fontSize = "text-xxs";
             break;
         case "xs":
-            // sizeClass = "py-1 px-1.5";
             fontSize = "text-xxs";
             break;
     }
@@ -120,13 +116,6 @@ export var Presenter = function (_a) {
             textColor = "text-purple";
             break;
     }
-    console.log("LabelTextのレンダリング");
-    return (_jsx("div", __assign({ className: baseClass + " " + cursorClass + " " + fontSize + " " + backgroundColorClass + " " + backgroundColorHoverClass + " " + borderColorClass + " " + textColor + " " + borderColorHoverClass + " " + className, 
-        // style={style}
-        style: __assign({ 
-            // display: "table-cell",
-            // verticalAlign: "-1px",
-            // paddingTop: "1px",
-            paddingBottom: "3px", paddingTop: "5px" }, style) }, { children: children }), void 0));
+    return (_jsx("div", __assign({ className: baseClass + " " + cursorClass + " " + fontSize + " " + backgroundColorClass + " " + backgroundColorHoverClass + " " + borderColorClass + " " + textColor + " " + borderColorHoverClass + " " + className, style: __assign({ paddingTop: "5px" }, style) }, { children: children }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map
