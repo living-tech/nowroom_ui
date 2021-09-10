@@ -1,5 +1,7 @@
 import { CSSProperties, ReactNode, VFC } from "react";
 
+import styles from "./LabelText.module.scss";
+
 export type Color =
   | "pink"
   | "white"
@@ -144,13 +146,8 @@ export const Presenter: VFC<Props> = ({
 
   return (
     <div
-      className={`${baseClass} ${cursorClass} ${fontSize} ${backgroundColorClass} ${backgroundColorHoverClass} ${borderColorClass} ${textColor} ${borderColorHoverClass} ${className}`}
-      style={{
-        fontFamily:
-          "Noto Sans JP, YakuHanJP_Noto, Roboto, Noto Sans JP, Hiragino Sans, Hiragino Kaku Gothic ProN, Meiryo, sans-serif",
-        paddingTop: "5px",
-        ...style,
-      }}
+      className={`${baseClass} ${cursorClass} ${fontSize} ${backgroundColorClass} ${backgroundColorHoverClass} ${borderColorClass} ${textColor} ${borderColorHoverClass} ${className} ${styles.divStyle}`}
+      style={style}
     >
       {children}
     </div>

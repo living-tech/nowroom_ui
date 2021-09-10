@@ -10,6 +10,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
+import styles from "./LabelText.module.scss";
 export var Presenter = function (_a) {
     var children = _a.children, className = _a.className, _b = _a.color, color = _b === void 0 ? "purple" : _b, _c = _a.isClickable, isClickable = _c === void 0 ? false : _c, _d = _a.size, size = _d === void 0 ? "md" : _d, style = _a.style;
     var baseClass = "inline-flex items-center border rounded transition ease-out duration-200 font-bold leading-none whitespace-pre-wrap pb-1 px-1.5";
@@ -116,6 +117,6 @@ export var Presenter = function (_a) {
             textColor = "text-purple";
             break;
     }
-    return (_jsx("div", __assign({ className: baseClass + " " + cursorClass + " " + fontSize + " " + backgroundColorClass + " " + backgroundColorHoverClass + " " + borderColorClass + " " + textColor + " " + borderColorHoverClass + " " + className, style: __assign({ fontFamily: "Noto Sans JP, YakuHanJP_Noto, Roboto, Noto Sans JP, Hiragino Sans, Hiragino Kaku Gothic ProN, Meiryo, sans-serif", paddingTop: "5px" }, style) }, { children: children }), void 0));
+    return (_jsx("div", __assign({ className: baseClass + " " + cursorClass + " " + fontSize + " " + backgroundColorClass + " " + backgroundColorHoverClass + " " + borderColorClass + " " + textColor + " " + borderColorHoverClass + " " + className + " " + styles.divStyle, style: style }, { children: children }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map
