@@ -116,6 +116,6 @@ export var Presenter = function (_a) {
             textColor = "text-purple";
             break;
     }
-    return (_jsx("div", __assign({ className: baseClass + " " + cursorClass + " " + fontSize + " " + backgroundColorClass + " " + backgroundColorHoverClass + " " + borderColorClass + " " + textColor + " " + borderColorHoverClass + " " + className, style: __assign({ paddingTop: "5px" }, style) }, { children: children }), void 0));
+    return (_jsx("div", __assign({ className: baseClass + " " + cursorClass + " " + fontSize + " " + backgroundColorClass + " " + backgroundColorHoverClass + " " + borderColorClass + " " + textColor + " " + borderColorHoverClass + " " + className, style: __assign({ fontFamily: "Noto Sans JP, YakuHanJP_Noto, Roboto, Noto Sans JP, Hiragino Sans, Hiragino Kaku Gothic ProN, Meiryo, sans-serif", paddingTop: "5px" }, style) }, { children: children }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map

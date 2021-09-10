@@ -146,6 +146,8 @@ export const Presenter: VFC<Props> = ({
     <div
       className={`${baseClass} ${cursorClass} ${fontSize} ${backgroundColorClass} ${backgroundColorHoverClass} ${borderColorClass} ${textColor} ${borderColorHoverClass} ${className}`}
       style={{
+        fontFamily:
+          "Noto Sans JP, YakuHanJP_Noto, Roboto, Noto Sans JP, Hiragino Sans, Hiragino Kaku Gothic ProN, Meiryo, sans-serif",
         paddingTop: "5px",
         ...style,
       }}
