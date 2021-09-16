@@ -1,20 +1,19 @@
 import { useWindowWidth } from "@react-hook/window-size";
 import Carousel, { CarouselSlideRenderControlProps } from "nuka-carousel";
-import { CSSProperties, ReactNode, useEffect, useRef, useState, VFC } from "react";
+import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
 
 import { carouselPaginationWidth } from "../../../constnats";
 import { LabelTextBlackOpacity } from "../LabelText/BlackOpacity";
 
 export type Item = {
   alt: string;
-  node?: ReactNode;
   path: string;
 };
 
 export type Props = {
   autoplay?: boolean;
   className?: string;
-  items: Array<Item>;
+  items: Array<Item> | Array<JSX.Element>;
   style?: CSSProperties;
 };
 
