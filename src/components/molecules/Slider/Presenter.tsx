@@ -1,12 +1,13 @@
 import { useWindowWidth } from "@react-hook/window-size";
 import Carousel, { CarouselSlideRenderControlProps } from "nuka-carousel";
-import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
+import { CSSProperties, ReactNode, useEffect, useRef, useState, VFC } from "react";
 
 import { carouselPaginationWidth } from "../../../constnats";
 import { LabelTextBlackOpacity } from "../LabelText/BlackOpacity";
 
 export type Item = {
   alt: string;
+  node?: ReactNode;
   path: string;
 };
 
@@ -71,9 +72,14 @@ export const Presenter: VFC<Props> = ({ autoplay, className, items, style }) => 
         renderCenterRightControls={null}
         renderTopRightControls={renderTopRightControls}
       >
-        {items.map((item, index) => (
-          <img key={index} alt={item.alt} className="object-contain" src={item.path} style={{ height, width }} />
-        ))}
+        {items.map((item, index) => {
+          if ("path" in item) {
+            return (
+              <img key={index} alt={item.alt} className="object-contain" src={item.path} style={{ height, width }} />
+            );
+          }
+          return item;
+        })}
       </Carousel>
     </div>
   );
