@@ -73,12 +73,12 @@ export const Presenter: VFC<Props> = ({ autoplay, className, items, style }) => 
         renderTopRightControls={renderTopRightControls}
       >
         {items.map((item, index) => {
-          if (item.node) {
-            return item.node;
+          if ("path" in item) {
+            return (
+              <img key={index} alt={item.alt} className="object-contain" src={item.path} style={{ height, width }} />
+            );
           }
-          return (
-            <img key={index} alt={item.alt} className="object-contain" src={item.path} style={{ height, width }} />
-          );
+          return item;
         })}
       </Carousel>
     </div>

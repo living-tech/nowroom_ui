@@ -42,10 +42,10 @@ export var Presenter = function (_a) {
         }
     }, [containerRef, windowWidth]);
     return (_jsx("div", __assign({ ref: containerRef, className: "" + className, style: style }, { children: _jsx(Carousel, __assign({ disableEdgeSwiping: true, wrapAround: true, autoplay: autoplay, height: height ? height + "px" : undefined, renderBottomCenterControls: renderBottomCenterControls, renderCenterLeftControls: null, renderCenterRightControls: null, renderTopRightControls: renderTopRightControls }, { children: items.map(function (item, index) {
-                if (item.node) {
-                    return item.node;
+                if ("path" in item) {
+                    return (_jsx("img", { alt: item.alt, className: "object-contain", src: item.path, style: { height: height, width: width } }, index));
                 }
-                return (_jsx("img", { alt: item.alt, className: "object-contain", src: item.path, style: { height: height, width: width } }, index));
+                return item;
             }) }), void 0) }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map
