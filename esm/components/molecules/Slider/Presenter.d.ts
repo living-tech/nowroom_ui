@@ -1,6 +1,7 @@
-import { CSSProperties, VFC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 export declare type Item = {
     alt: string;
+    node?: ReactNode;
     path: string;
 };
 export declare type Props = {

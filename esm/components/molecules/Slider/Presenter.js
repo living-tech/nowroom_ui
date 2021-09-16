@@ -41,6 +41,11 @@ export var Presenter = function (_a) {
             setHeight((width_1 / 4) * 3);
         }
     }, [containerRef, windowWidth]);
-    return (_jsx("div", __assign({ ref: containerRef, className: "" + className, style: style }, { children: _jsx(Carousel, __assign({ disableEdgeSwiping: true, wrapAround: true, autoplay: autoplay, height: height ? height + "px" : undefined, renderBottomCenterControls: renderBottomCenterControls, renderCenterLeftControls: null, renderCenterRightControls: null, renderTopRightControls: renderTopRightControls }, { children: items.map(function (item, index) { return (_jsx("img", { alt: item.alt, className: "object-contain", src: item.path, style: { height: height, width: width } }, index)); }) }), void 0) }), void 0));
+    return (_jsx("div", __assign({ ref: containerRef, className: "" + className, style: style }, { children: _jsx(Carousel, __assign({ disableEdgeSwiping: true, wrapAround: true, autoplay: autoplay, height: height ? height + "px" : undefined, renderBottomCenterControls: renderBottomCenterControls, renderCenterLeftControls: null, renderCenterRightControls: null, renderTopRightControls: renderTopRightControls }, { children: items.map(function (item, index) {
+                if (item.node) {
+                    return item.node;
+                }
+                return (_jsx("img", { alt: item.alt, className: "object-contain", src: item.path, style: { height: height, width: width } }, index));
+            }) }), void 0) }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map
