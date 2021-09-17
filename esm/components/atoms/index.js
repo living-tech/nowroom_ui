@@ -3,7 +3,6 @@ export * from "./CalendarCell/Default";
 export * from "./Chip/Default";
 export * from "./Icon";
 export * from "./InputCheckbox/Default";
-export * from "./InputDatePicker/Default";
 export * from "./InputRadio/Default";
 export * from "./InputSelectbox/Default";
 export * from "./InputSwitch/Default";
