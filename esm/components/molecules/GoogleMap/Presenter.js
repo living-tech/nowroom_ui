@@ -34,6 +34,7 @@ export var Presenter = function (_a) {
     };
     return (_jsx("div", __assign({ className: "" + className, style: __assign({ height: height }, style) }, { children: _jsx(GoogleMapReact, __assign({ bootstrapURLKeys: {
                 key: apiKey,
+                v: "3.32",
             }, defaultCenter: {
                 lat: latitude,
                 lng: longitude,

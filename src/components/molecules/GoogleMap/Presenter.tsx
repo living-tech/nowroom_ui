@@ -39,6 +39,7 @@ export const Presenter: VFC<Props> = ({ apiKey, className, height = 400, latitud
       <GoogleMapReact
         bootstrapURLKeys={{
           key: apiKey,
+          v: "3.32",
         }}
         defaultCenter={{
           lat: latitude,

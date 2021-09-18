@@ -36,7 +36,7 @@ export const Presenter = forwardRef<HTMLLIElement, Props>(
         style={style}
         {...props}
       >
-        <Link passHref href={item.href}>
+        <Link passHref href={item.href} prefetch={false}>
           <a className="inline-block px-4 py-5">
             <Text
               className={`transition duration-200 ease-out ${activeClass}`}
