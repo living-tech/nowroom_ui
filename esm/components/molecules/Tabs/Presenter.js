@@ -24,6 +24,7 @@ export var Presenter = function (_a) {
     var _m = useState(initialContainerWidth !== null && initialContainerWidth !== void 0 ? initialContainerWidth : 0), containerWidth = _m[0], setContainerWidth = _m[1];
     var _o = useState(null), borderStyle = _o[0], setBorderStyle = _o[1];
     var _p = useState(null), hoverTab = _p[0], setHoverTab = _p[1];
+    var _q = useState(false), isClicked = _q[0], setIsClicked = _q[1];
     var tabDisplayClass = "";
     switch (tabsWidth) {
         case "full":
@@ -48,6 +49,7 @@ export var Presenter = function (_a) {
         setHoverTab(null);
     };
     var onTabClick = function (index) {
+        setIsClicked(true);
         setActiveIndex(index);
         if (panelRef === null || panelRef === void 0 ? void 0 : panelRef.current) {
             gsap.to(panelRef.current, {
@@ -97,6 +99,6 @@ export var Presenter = function (_a) {
                                         width: borderStyle.width,
                                     } }, void 0))] }), void 0) }), void 0));
                 } }), void 0),
-            _jsx("div", __assign({ ref: panelRef, className: "w-full overflow-x-hidden whitespace-nowrap " + panelsContainerClassName, style: panelsContainerStyle }, { children: items.map(function (item, index) { return (_jsx("div", __assign({ className: "inline-block w-full align-top" }, { children: item.renderPanel() }), index)); }) }), void 0)] }), void 0));
+            _jsx("div", __assign({ ref: panelRef, className: "w-full overflow-x-hidden whitespace-nowrap " + panelsContainerClassName, style: panelsContainerStyle }, { children: isClicked ? (items.map(function (item, index) { return (_jsx("div", __assign({ className: "inline-block w-full align-top" }, { children: item.renderPanel() }), index)); })) : (_jsx("div", __assign({ className: "inline-block w-full align-top" }, { children: items[activeIndex].renderPanel() }), void 0)) }), void 0)] }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map

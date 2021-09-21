@@ -54,6 +54,7 @@ export const Presenter: VFC<Props> = ({
   const [containerWidth, setContainerWidth] = useState<number>(initialContainerWidth ?? 0);
   const [borderStyle, setBorderStyle] = useState<{ left: number; width: number } | null>(null);
   const [hoverTab, setHoverTab] = useState<number | null>(null);
+  const [isClicked, setIsClicked] = useState<boolean>(false);
 
   let tabDisplayClass = "";
   switch (tabsWidth) {
@@ -83,6 +84,7 @@ export const Presenter: VFC<Props> = ({
   };
 
   const onTabClick = (index: number) => {
+    setIsClicked(true);
     setActiveIndex(index);
     if (panelRef?.current) {
       gsap.to(panelRef.current, {
@@ -172,11 +174,15 @@ export const Presenter: VFC<Props> = ({
         className={`w-full overflow-x-hidden whitespace-nowrap ${panelsContainerClassName}`}
         style={panelsContainerStyle}
       >
-        {items.map((item, index) => (
-          <div key={index} className="inline-block w-full align-top">
-            {item.renderPanel()}
-          </div>
-        ))}
+        {isClicked ? (
+          items.map((item, index) => (
+            <div key={index} className="inline-block w-full align-top">
+              {item.renderPanel()}
+            </div>
+          ))
+        ) : (
+          <div className="inline-block w-full align-top">{items[activeIndex].renderPanel()}</div>
+        )}
       </div>
     </div>
   );
