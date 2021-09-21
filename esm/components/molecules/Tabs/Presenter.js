@@ -49,7 +49,8 @@ export var Presenter = function (_a) {
         setHoverTab(null);
     };
     var onTabClick = function (index) {
-        setIsClicked(true);
+        var newIsClicked = true;
+        setIsClicked(newIsClicked);
         setActiveIndex(index);
         if (panelRef === null || panelRef === void 0 ? void 0 : panelRef.current) {
             gsap.to(panelRef.current, {

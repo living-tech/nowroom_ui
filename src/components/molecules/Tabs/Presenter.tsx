@@ -84,7 +84,8 @@ export const Presenter: VFC<Props> = ({
   };
 
   const onTabClick = (index: number) => {
-    setIsClicked(true);
+    const newIsClicked = true;
+    setIsClicked(newIsClicked);
     setActiveIndex(index);
     if (panelRef?.current) {
       gsap.to(panelRef.current, {
