@@ -19,7 +19,7 @@ export var Presenter = function (_a) {
     var autoplay = _a.autoplay, className = _a.className, items = _a.items, style = _a.style;
     var containerRef = useRef(null);
     var windowWidth = useWindowWidth();
-    var _b = useState(), width = _b[0], setWidth = _b[1];
+    var _b = useState(), setWidth = _b[1];
     var _c = useState(), height = _c[0], setHeight = _c[1];
     var renderTopRightControls = function (_a) {
         var currentSlide = _a.currentSlide, slideCount = _a.slideCount;
@@ -36,15 +36,12 @@ export var Presenter = function (_a) {
     };
     useEffect(function () {
         if (containerRef && containerRef.current) {
-            var width_1 = containerRef.current.offsetWidth;
-            setWidth(width_1);
-            setHeight((width_1 / 4) * 3);
+            var width = containerRef.current.offsetWidth;
+            setWidth(width);
+            setHeight((width / 4) * 3);
         }
     }, [containerRef, windowWidth]);
-    return (_jsx("div", __assign({ ref: containerRef, className: "" + className, style: style }, { children: _jsx(Carousel, __assign({ disableEdgeSwiping: true, wrapAround: true, autoplay: autoplay, height: height ? height + "px" : undefined, renderBottomCenterControls: renderBottomCenterControls, renderCenterLeftControls: null, renderCenterRightControls: null, renderTopRightControls: renderTopRightControls }, { children: items.map(function (item, index) {
-                if ("path" in item) {
-                    return (_jsx("img", { alt: item.alt, className: "object-contain", src: item.path, style: { height: height, width: width } }, index));
-                }
+    return (_jsx("div", __assign({ ref: containerRef, className: "" + className, style: style }, { children: _jsx(Carousel, __assign({ disableEdgeSwiping: true, wrapAround: true, autoplay: autoplay, height: height ? height + "px" : undefined, renderBottomCenterControls: renderBottomCenterControls, renderCenterLeftControls: null, renderCenterRightControls: null, renderTopRightControls: renderTopRightControls }, { children: items.map(function (item) {
                 return item;
             }) }), void 0) }), void 0));
 };
