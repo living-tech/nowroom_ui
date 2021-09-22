@@ -39,9 +39,9 @@ export const useBreakPoints = () => {
   }, []);
 
   return {
-    isDesktop: isClient ? isDesktop : true,
+    isDesktop: isClient ? isDesktop : false,
     isMiddleMobile: isClient ? isMiddleMobile : false,
-    isMobile: isClient ? isMobile : false,
+    isMobile: isClient ? isMobile : true,
     isTablet: isClient ? isTablet : false,
     isXl: isClient ? isXl : true,
     isXlTailwind: isClient ? isXlTailwind : false,
