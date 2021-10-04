@@ -1,7 +1,7 @@
 import { Dayjs } from "dayjs";
 import { CSSProperties, VFC } from "react";
-import { Size } from "../InputText/Presenter";
-import { Weight } from "../Text/Presenter";
+import { Size } from "../atoms/InputText/Presenter";
+import { Weight } from "../atoms/Text/Presenter";
 export declare type Props = {
     any?: boolean;
     anyLabel?: string;
