@@ -18,11 +18,11 @@ import dayjs from "dayjs";
 import { useState } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import { CSSTransition } from "react-transition-group";
-import { IconButtonTransparent } from "../../molecules/IconButton/Transparent";
-import { Icon } from "../Icon/Default";
-import { TextDarkGray02 } from "../Text/DarkGray02";
-import { TextMediumGray02 } from "../Text/MediumGray02";
-import { TextRed } from "../Text/Red";
+import { Icon } from "../atoms/Icon/Default";
+import { TextDarkGray02 } from "../atoms/Text/DarkGray02";
+import { TextMediumGray02 } from "../atoms/Text/MediumGray02";
+import { TextRed } from "../atoms/Text/Red";
+import { IconButtonTransparent } from "../molecules/IconButton/Transparent";
 import styles from "./InputDatePicker.module.scss";
 registerLocale("ja", ja);
 export var Presenter = function (_a) {

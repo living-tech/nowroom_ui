@@ -4,4 +4,5 @@
  */
 
 export * from "./atoms";
+export * from "./InputDatePicker";
 export * from "./molecules";

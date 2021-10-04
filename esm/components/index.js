@@ -3,5 +3,6 @@
  * $ ts-node ./scripts/entryBuilder
  */
 export * from "./atoms";
+export * from "./InputDatePicker";
 export * from "./molecules";
 //# sourceMappingURL=index.js.map
