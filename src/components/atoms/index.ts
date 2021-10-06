@@ -7,8 +7,6 @@ export { Props as ChipProps } from "./Chip/Presenter";
 export * from "./Icon";
 export * from "./InputCheckbox/Default";
 export { Props as InputCheckboxProps } from "./InputCheckbox/Presenter";
-export * from "./InputDatePicker/Default";
-export { Props as InputDatePickerProps } from "./InputDatePicker/Presenter";
 export * from "./InputRadio/Default";
 export { Props as InputRadioProps } from "./InputRadio/Presenter";
 export * from "./InputSelectbox/Default";

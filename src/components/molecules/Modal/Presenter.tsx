@@ -13,6 +13,7 @@ export type CloseButtonPosition = "top" | "bottom";
 
 export type Props = {
   children: ReactNode;
+  className?: string;
   closeButtonPosition?: CloseButtonPosition;
   escLabel?: string;
   isVisible: boolean;
@@ -141,7 +142,7 @@ export const Presenter: VFC<Props> = ({
         timeout={{ enter: 400, exit: 400 }}
       >
         <div
-          className={`fixed top-1/2 left-1/2 ${modalSizeClass}`}
+          className={`fixed top-1/2 left-1/2 ${modalSizeClass} ${props.className ?? ""}`}
           style={{
             maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
             maxWidth,

@@ -2,6 +2,7 @@ import { ReactNode, VFC } from "react";
 export declare type CloseButtonPosition = "top" | "bottom";
 export declare type Props = {
     children: ReactNode;
+    className?: string;
     closeButtonPosition?: CloseButtonPosition;
     escLabel?: string;
     isVisible: boolean;
