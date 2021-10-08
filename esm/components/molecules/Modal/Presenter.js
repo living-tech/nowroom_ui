@@ -84,10 +84,10 @@ export var Presenter = function (_a) {
                     enterActive: styles.ModalEnterActive,
                     exit: styles.ModalExit,
                     exitActive: styles.ModalExitActive,
-                }, in: visible, timeout: 400 }, { children: _jsx("div", __assign({ onClick: function () {
+                }, in: visible, timeout: 400 }, { children: _jsx("div", __assign({ className: "fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay", onClick: function () {
                         setVisible(false);
                         onRequestClose && onRequestClose();
-                    }, style: { zIndex: zIndex } }, __assign(__assign({}, props), { className: "fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay" }), { children: !isMobile && (_jsxs("div", __assign({ className: "flex items-center" }, { children: [_jsx(LabelTextWhite, { children: "ESC" }, void 0),
+                    }, style: { zIndex: zIndex } }, { children: !isMobile && (_jsxs("div", __assign({ className: "flex items-center" }, { children: [_jsx(LabelTextWhite, { children: "ESC" }, void 0),
                             _jsx(TextWhite, __assign({ className: "ml-1", size: "sm", weight: "bold" }, { children: escLabel }), void 0)] }), void 0)) }), void 0) }), void 0),
             _jsx(CSSTransition, __assign({ unmountOnExit: true, classNames: {
                     appear: styles.ModalInnerAppear,
@@ -108,7 +108,7 @@ export var Presenter = function (_a) {
                             paddingBottom: paddingVertical
                                 ? fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0)
                                 : 0,
-                        } }, { children: [loading ? (_jsx("span", __assign({ className: "absolute flex top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2" }, { children: _jsx(Spinner, {}, void 0) }), void 0)) : (_jsx("div", { children: children }, void 0)),
+                        } }, { children: [loading ? (_jsx("span", __assign({ className: "absolute flex top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2" }, { children: _jsx(Spinner, {}, void 0) }), void 0)) : (_jsx(_Fragment, { children: _jsx("div", { children: children }, void 0) }, void 0)),
                             renderFixedBottom && !loading && (_jsx("div", __assign({ ref: fixedBottomRef, className: "absolute bottom-0 left-0 w-full px-4 py-3 bg-gray-100 border-t border-gray-200 md:px-8 md:py-4 md:rounded-b-lg" }, { children: renderFixedBottom() }), void 0)),
                             _jsx(IconButtonWhite, { className: "right-4 md:-right-5 md:-top-5", iconName: "FiX", onClick: function () {
                                     setVisible(false);
