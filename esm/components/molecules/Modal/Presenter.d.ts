@@ -2,12 +2,12 @@ import { ReactNode, VFC } from "react";
 export declare type CloseButtonPosition = "top" | "bottom";
 export declare type Props = {
     children: ReactNode;
+    className?: string;
     closeButtonPosition?: CloseButtonPosition;
     escLabel?: string;
     isVisible: boolean;
     loading?: boolean;
     maxWidth?: number;
-    modalClassName?: string;
     onRequestClose?: () => void;
     paddingHorizontal?: boolean;
     paddingVertical?: boolean;
