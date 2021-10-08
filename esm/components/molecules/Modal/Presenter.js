@@ -84,10 +84,10 @@ export var Presenter = function (_a) {
                     enterActive: styles.ModalEnterActive,
                     exit: styles.ModalExit,
                     exitActive: styles.ModalExitActive,
-                }, in: visible, timeout: 400 }, { children: _jsx("div", __assign({ onClick: function () {
+                }, in: visible, timeout: 400 }, { children: _jsx("div", __assign({ className: "fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay", onClick: function () {
                         setVisible(false);
                         onRequestClose && onRequestClose();
-                    }, style: { zIndex: zIndex } }, __assign(__assign({}, props), { className: "fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay" }), { children: !isMobile && (_jsxs("div", __assign({ className: "flex items-center" }, { children: [_jsx(LabelTextWhite, { children: "ESC" }, void 0),
+                    }, style: { zIndex: zIndex } }, { children: !isMobile && (_jsxs("div", __assign({ className: "flex items-center" }, { children: [_jsx(LabelTextWhite, { children: "ESC" }, void 0),
                             _jsx(TextWhite, __assign({ className: "ml-1", size: "sm", weight: "bold" }, { children: escLabel }), void 0)] }), void 0)) }), void 0) }), void 0),
             _jsx(CSSTransition, __assign({ unmountOnExit: true, classNames: {
                     appear: styles.ModalInnerAppear,

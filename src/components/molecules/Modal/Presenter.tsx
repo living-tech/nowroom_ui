@@ -110,12 +110,12 @@ export const Presenter: VFC<Props> = ({
         timeout={400}
       >
         <div
+          className="fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay"
           onClick={() => {
             setVisible(false);
             onRequestClose && onRequestClose();
           }}
           style={{ zIndex }}
-          {...{ ...props, className: "fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay" }}
         >
           {!isMobile && (
             <div className="flex items-center">
