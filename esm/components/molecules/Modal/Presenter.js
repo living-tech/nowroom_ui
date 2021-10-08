@@ -96,7 +96,7 @@ export var Presenter = function (_a) {
                     enterDone: styles.ModalInnerEnterDone,
                     exit: styles.ModalInnerExit,
                     exitActive: styles.ModalInnerExitActive,
-                }, in: visible, timeout: { enter: 400, exit: 400 } }, { children: _jsx("div", __assign({ className: "fixed top-1/2 left-1/2 " + modalSizeClass + " " + ((_b = props.className) !== null && _b !== void 0 ? _b : ""), style: {
+                }, in: visible, timeout: { enter: 400, exit: 400 } }, { children: _jsx("div", __assign({ className: "fixed top-1/2 left-1/2 " + modalSizeClass + " " + ((_b = props.modalClassName) !== null && _b !== void 0 ? _b : ""), style: {
                         maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
                         maxWidth: maxWidth,
                         minHeight: loading ? 200 : undefined,
