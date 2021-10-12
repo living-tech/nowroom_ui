@@ -51,6 +51,7 @@ export var Presenter = function (_a) {
     }
     var handleKeydown = useCallback(function (event) {
         var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+        console.log("userAgent", navigator.userAgent);
         if (isMobile) {
             return true;
         }

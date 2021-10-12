@@ -64,6 +64,7 @@ export const Presenter: VFC<Props> = ({
 
   const handleKeydown = useCallback((event: KeyboardEvent) => {
     const isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+    console.log("userAgent", navigator.userAgent);
 
     if (isMobile) {
       return true;
