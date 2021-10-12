@@ -42,6 +42,7 @@ export const Presenter: VFC<Props> = ({
 }) => {
   const windowWidth = useWindowWidth();
 
+  console.log("userAgent", navigator.userAgent);
   const [visible, setVisible] = useState<boolean>(false);
   const [fixedBottomHeight, setFixedBottomHeight] = useState<number>(0);
 
