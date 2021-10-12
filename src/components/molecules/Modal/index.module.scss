@@ -1,0 +1,38 @@
+.isGreatterthanMaxWidth[data-greatterthan="false"] {
+    @media screen and (min-width: 768px) {
+        max-height: calc(100vh - 128px);
+    }
+}
+.fixedbottomheightMDMB[data-paddingvertical="true"][data-closebuttonposition="top"] {
+    @media screen and (min-width: 768px) {
+        padding-bottom: 106px;
+    }
+    padding-bottom: 114px;
+}
+
+.fixedbottomheightMDMB[data-paddingvertical="true"][data-closebuttonposition="bottom"] {
+    @media screen and (min-width: 768px) {
+        padding-bottom: 168px;
+    }
+    padding-bottom: 176px;
+}
+
+.fixedbottomheightMDMB[data-paddingvertical="false"] {
+    padding-bottom: 0;
+}
+
+button.IconButtonWhiteStyle[data-closebuttonposition="top"] {
+    @media screen and (max-width: 767px) {
+        position: absolute;
+        top: 16px;
+    }
+    position: absolute;
+}
+
+button.IconButtonWhiteStyle[data-closebuttonposition="bottom"] {
+    @media screen and (max-width: 767px) {
+        position: absolute;
+        bottom: 82px;
+    }
+    position: absolute;
+}
