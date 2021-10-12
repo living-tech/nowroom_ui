@@ -42,7 +42,6 @@ export const Presenter: VFC<Props> = ({
 }) => {
   const windowWidth = useWindowWidth();
 
-  console.log("userAgent", navigator.userAgent);
   const [visible, setVisible] = useState<boolean>(false);
   const [fixedBottomHeight, setFixedBottomHeight] = useState<number>(0);
 
@@ -64,13 +63,6 @@ export const Presenter: VFC<Props> = ({
   }
 
   const handleKeydown = useCallback((event: KeyboardEvent) => {
-    const isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
-    console.log("userAgent", navigator.userAgent);
-
-    if (isMobile) {
-      return true;
-    }
-
     if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
       event.preventDefault();
       setVisible(false);
