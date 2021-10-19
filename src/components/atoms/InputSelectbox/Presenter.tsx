@@ -22,6 +22,7 @@ export type Props = {
   className?: string;
   createRef?: (input: HTMLSelectElement) => void;
   defaultValue?: string | number;
+  disabled?: boolean;
   disabledPlaceholder?: boolean;
   disabledRightArrow?: boolean;
   error?: string;
@@ -46,6 +47,7 @@ export const Presenter: VFC<Props> = ({
   className,
   createRef,
   defaultValue,
+  disabled = false,
   disabledPlaceholder = false,
   disabledRightArrow = false,
   error,
@@ -150,6 +152,7 @@ export const Presenter: VFC<Props> = ({
           ref={createRef}
           className={`text-base w-full cursor-pointer whitespace-nowrap block border font-bold border-gray-200 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${backgroundColorClass} ${colorClass} ${paddingLeftClass} ${paddingRightClass} ${paddingYClass} ${widthClass} ${inputClass}`}
           defaultValue={defaultValue}
+          disabled={disabled}
           id={id}
           name={name}
           onChange={handleChange}

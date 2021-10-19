@@ -4,6 +4,7 @@ export declare type Props = {
     children: ReactNode;
     className?: string;
     closeButtonPosition?: CloseButtonPosition;
+    disabledClose?: boolean;
     escLabel?: string;
     isVisible: boolean;
     loading?: boolean;

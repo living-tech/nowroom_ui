@@ -32,11 +32,11 @@ import { LabelTextWhite } from "../LabelText/White";
 import styles from "./Modal.module.scss";
 export var Presenter = function (_a) {
     var _b;
-    var children = _a.children, _c = _a.closeButtonPosition, closeButtonPosition = _c === void 0 ? "top" : _c, _d = _a.escLabel, escLabel = _d === void 0 ? "を押して閉じる" : _d, isVisible = _a.isVisible, loading = _a.loading, _e = _a.maxWidth, maxWidth = _e === void 0 ? 400 : _e, onRequestClose = _a.onRequestClose, _f = _a.paddingHorizontal, paddingHorizontal = _f === void 0 ? true : _f, _g = _a.paddingVertical, paddingVertical = _g === void 0 ? true : _g, renderFixedBottom = _a.renderFixedBottom, _h = _a.zIndex, zIndex = _h === void 0 ? 50 : _h, props = __rest(_a, ["children", "closeButtonPosition", "escLabel", "isVisible", "loading", "maxWidth", "onRequestClose", "paddingHorizontal", "paddingVertical", "renderFixedBottom", "zIndex"]);
-    var _j = useBreakPoints(), isDesktop = _j.isDesktop, isMobile = _j.isMobile;
+    var children = _a.children, _c = _a.closeButtonPosition, closeButtonPosition = _c === void 0 ? "top" : _c, _d = _a.disabledClose, disabledClose = _d === void 0 ? false : _d, _e = _a.escLabel, escLabel = _e === void 0 ? "を押して閉じる" : _e, isVisible = _a.isVisible, loading = _a.loading, _f = _a.maxWidth, maxWidth = _f === void 0 ? 400 : _f, onRequestClose = _a.onRequestClose, _g = _a.paddingHorizontal, paddingHorizontal = _g === void 0 ? true : _g, _h = _a.paddingVertical, paddingVertical = _h === void 0 ? true : _h, renderFixedBottom = _a.renderFixedBottom, _j = _a.zIndex, zIndex = _j === void 0 ? 50 : _j, props = __rest(_a, ["children", "closeButtonPosition", "disabledClose", "escLabel", "isVisible", "loading", "maxWidth", "onRequestClose", "paddingHorizontal", "paddingVertical", "renderFixedBottom", "zIndex"]);
+    var _k = useBreakPoints(), isDesktop = _k.isDesktop, isMobile = _k.isMobile;
     var windowWidth = useWindowWidth();
-    var _k = useState(false), visible = _k[0], setVisible = _k[1];
-    var _l = useState(0), fixedBottomHeight = _l[0], setFixedBottomHeight = _l[1];
+    var _l = useState(false), visible = _l[0], setVisible = _l[1];
+    var _m = useState(0), fixedBottomHeight = _m[0], setFixedBottomHeight = _m[1];
     var fixedBottomRef = useRef(null);
     var paddingHorizontalClass = "";
     if (paddingHorizontal) {
@@ -56,12 +56,15 @@ export var Presenter = function (_a) {
         }
         if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
             event.preventDefault();
+            if (disabledClose) {
+                return false;
+            }
             setVisible(false);
             onRequestClose && onRequestClose();
             return false;
         }
         return true;
-    }, []);
+    }, [disabledClose]);
     useEffect(function () {
         setVisible(isVisible);
     }, [isVisible]);
@@ -84,10 +87,13 @@ export var Presenter = function (_a) {
                     enterActive: styles.ModalEnterActive,
                     exit: styles.ModalExit,
                     exitActive: styles.ModalExitActive,
-                }, in: visible, timeout: 400 }, { children: _jsx("div", __assign({ className: "fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay", onClick: function () {
+                }, in: visible, timeout: 400 }, { children: _jsx("div", __assign({ className: "fixed top-0 left-0 w-full h-full p-4 bg-overlay " + (disabledClose ? "" : "cursor-pointer"), onClick: function () {
+                        if (disabledClose) {
+                            return;
+                        }
                         setVisible(false);
                         onRequestClose && onRequestClose();
-                    }, style: { zIndex: zIndex } }, { children: !isMobile && (_jsxs("div", __assign({ className: "flex items-center" }, { children: [_jsx(LabelTextWhite, { children: "ESC" }, void 0),
+                    }, style: { zIndex: zIndex } }, { children: !isMobile && !disabledClose && (_jsxs("div", __assign({ className: "flex items-center" }, { children: [_jsx(LabelTextWhite, { children: "ESC" }, void 0),
                             _jsx(TextWhite, __assign({ className: "ml-1", size: "sm", weight: "bold" }, { children: escLabel }), void 0)] }), void 0)) }), void 0) }), void 0),
             _jsx(CSSTransition, __assign({ unmountOnExit: true, classNames: {
                     appear: styles.ModalInnerAppear,
@@ -110,7 +116,7 @@ export var Presenter = function (_a) {
                                 : 0,
                         } }, { children: [loading ? (_jsx("span", __assign({ className: "absolute flex top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2" }, { children: _jsx(Spinner, {}, void 0) }), void 0)) : (_jsx(_Fragment, { children: _jsx("div", { children: children }, void 0) }, void 0)),
                             renderFixedBottom && !loading && (_jsx("div", __assign({ ref: fixedBottomRef, className: "absolute bottom-0 left-0 w-full px-4 py-3 bg-gray-100 border-t border-gray-200 md:px-8 md:py-4 md:rounded-b-lg" }, { children: renderFixedBottom() }), void 0)),
-                            _jsx(IconButtonWhite, { className: "right-4 md:-right-5 md:-top-5", iconName: "FiX", onClick: function () {
+                            !disabledClose && (_jsx(IconButtonWhite, { className: "right-4 md:-right-5 md:-top-5", iconName: "FiX", onClick: function () {
                                     setVisible(false);
                                     onRequestClose && onRequestClose();
                                 }, radius: true, shadow: false, style: isMobile
@@ -119,6 +125,6 @@ export var Presenter = function (_a) {
                                         position: "absolute",
                                         top: closeButtonPosition === "top" ? 16 : undefined,
                                     }
-                                    : { position: "absolute" } }, void 0)] }), void 0) }), void 0) }), void 0)] }, void 0));
+                                    : { position: "absolute" } }, void 0))] }), void 0) }), void 0) }), void 0)] }, void 0));
 };
 //# sourceMappingURL=Presenter.js.map
