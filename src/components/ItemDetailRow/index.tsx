@@ -33,7 +33,7 @@ export const ItemDetailRowRoomType: VFC<ItemDetailRowRoomTypeProps> = ({ classNa
       <ItemDetailRow
         className={className ?? ""}
         left={title}
-        right={<TextRed size="xs">{`${createRoomPriceUnit(value)}`} </TextRed>}
+        right={<TextRed size="xs">{`${createRoomPriceUnit(value)}`}</TextRed>}
       />
     );
   }
@@ -51,8 +51,7 @@ export const isMonthUnit = (value: number) => {
 
 export const createRoomPriceUnit = (value?: number | null) => {
   if (value === undefined || value === null || value === 0) {
-    const num = 0;
-    return `¥${num.toLocaleString("ja-JP")}`;
+    return `¥0`;
   }
 
   return isMonthUnit(value) ? `${value}ヶ月` : `¥${value.toLocaleString("ja-JP")}`;

@@ -23,7 +23,7 @@ export var ItemDetailRowRoomType = function (_a) {
     var className = _a.className, title = _a.title, value = _a.value;
     // 0以下は赤にする。
     if (value <= 0) {
-        return (_jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: _jsxs(TextRed, __assign({ size: "xs" }, { children: ["" + createRoomPriceUnit(value), " "] }), void 0) }, void 0));
+        return (_jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: _jsx(TextRed, __assign({ size: "xs" }, { children: "" + createRoomPriceUnit(value) }), void 0) }, void 0));
     }
     return _jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: "" + createRoomPriceUnit(value) }, void 0);
 };
@@ -35,8 +35,7 @@ export var isMonthUnit = function (value) {
 };
 export var createRoomPriceUnit = function (value) {
     if (value === undefined || value === null || value === 0) {
-        var num = 0;
-        return "\u00A5" + num.toLocaleString("ja-JP");
+        return "\u00A50";
     }
     return isMonthUnit(value) ? value + "\u30F6\u6708" : "\u00A5" + value.toLocaleString("ja-JP");
 };
