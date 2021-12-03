@@ -51,7 +51,7 @@ export const isMonthUnit = (value: number) => {
 
 export const createRoomPriceUnit = (value?: number | null) => {
   if (value === undefined || value === null || value === 0) {
-    return `¥0`;
+    return "¥0";
   }
 
   return isMonthUnit(value) ? `${value}ヶ月` : `¥${value.toLocaleString("ja-JP")}`;
