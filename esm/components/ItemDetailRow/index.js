@@ -34,7 +34,7 @@ export var isMonthUnit = function (value) {
     return false;
 };
 export var createRoomPriceUnit = function (value) {
-    if (value === undefined || value === null) {
+    if (value === undefined || value === null || value === 0) {
         return "\u00A50";
     }
     return isMonthUnit(value) ? value + "\u30F6\u6708" : "\u00A5" + value.toLocaleString("ja-JP");
