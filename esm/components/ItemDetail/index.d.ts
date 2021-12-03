@@ -1,7 +1,7 @@
 import { ReactNode, VFC } from "react";
 interface ItemDetailProps {
     children: ReactNode;
-    className: string;
+    className?: string;
     title: ReactNode;
 }
 export declare const ItemDetail: VFC<ItemDetailProps>;

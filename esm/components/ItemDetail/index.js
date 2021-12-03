@@ -16,6 +16,6 @@ import { TextDarkGray02 } from "../atoms";
  */
 export var ItemDetail = function (_a) {
     var children = _a.children, className = _a.className, title = _a.title;
-    return (_jsxs("div", __assign({ className: "" + className }, { children: [_jsx("div", __assign({ className: "py-1 text-center bg-gray-200" }, { children: _jsx(TextDarkGray02, __assign({ size: "xs" }, { children: title }), void 0) }), void 0), children] }), void 0));
+    return (_jsxs("div", __assign({ className: "" + (className !== null && className !== void 0 ? className : "") }, { children: [_jsx("div", __assign({ className: "py-1 text-center bg-gray-200" }, { children: _jsx(TextDarkGray02, __assign({ size: "xs" }, { children: title }), void 0) }), void 0), children] }), void 0));
 };
 //# sourceMappingURL=index.js.map
