@@ -1,4 +1,4 @@
-import React, { ReactNode, VFC } from "react";
+import { ReactNode, VFC } from "react";
 
 import { TextDarkGray02 } from "../atoms";
 
