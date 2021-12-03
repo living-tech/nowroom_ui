@@ -16,16 +16,16 @@ import { TextDarkGray02, TextRed } from "../atoms";
  */
 export var ItemDetailRow = function (_a) {
     var className = _a.className, left = _a.left, right = _a.right;
-    return (_jsxs("div", __assign({ className: "flex justify-between mt-1 " + className }, { children: [_jsx(TextDarkGray02, __assign({ size: "xs" }, { children: left }), void 0),
+    return (_jsxs("div", __assign({ className: "flex justify-between mt-1 " + (className !== null && className !== void 0 ? className : "") }, { children: [_jsx(TextDarkGray02, __assign({ size: "xs" }, { children: left }), void 0),
             _jsx(TextDarkGray02, __assign({ size: "xs" }, { children: right }), void 0)] }), void 0));
 };
 export var ItemDetailRowRoomType = function (_a) {
     var className = _a.className, title = _a.title, value = _a.value;
     // 0以下は赤にする。
     if (value <= 0) {
-        return (_jsx(ItemDetailRow, { className: className, left: title, right: _jsxs(TextRed, __assign({ size: "xs" }, { children: ["" + createRoomPriceUnit(value), " "] }), void 0) }, void 0));
+        return (_jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: _jsxs(TextRed, __assign({ size: "xs" }, { children: ["" + createRoomPriceUnit(value), " "] }), void 0) }, void 0));
     }
-    return _jsx(ItemDetailRow, { className: className, left: title, right: "" + createRoomPriceUnit(value) }, void 0);
+    return _jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: "" + createRoomPriceUnit(value) }, void 0);
 };
 export var isMonthUnit = function (value) {
     if (value <= 100) {

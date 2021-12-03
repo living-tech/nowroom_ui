@@ -3,7 +3,7 @@ import { ReactNode, VFC } from "react";
 import { TextDarkGray02, TextRed } from "../atoms";
 
 interface ItemDetailRowProps {
-  className: string;
+  className?: string;
   left: ReactNode;
   right: ReactNode;
 }
@@ -13,7 +13,7 @@ interface ItemDetailRowProps {
  */
 export const ItemDetailRow: VFC<ItemDetailRowProps> = ({ className, left, right }) => {
   return (
-    <div className={`flex justify-between mt-1 ${className}`}>
+    <div className={`flex justify-between mt-1 ${className ?? ""}`}>
       <TextDarkGray02 size="xs">{left}</TextDarkGray02>
       <TextDarkGray02 size="xs">{right}</TextDarkGray02>
     </div>
@@ -21,7 +21,7 @@ export const ItemDetailRow: VFC<ItemDetailRowProps> = ({ className, left, right 
 };
 
 interface ItemDetailRowRoomTypeProps {
-  className: ItemDetailRowProps["className"];
+  className?: ItemDetailRowProps["className"];
   title: ItemDetailRowProps["left"];
   value: number;
 }
@@ -31,14 +31,14 @@ export const ItemDetailRowRoomType: VFC<ItemDetailRowRoomTypeProps> = ({ classNa
   if (value <= 0) {
     return (
       <ItemDetailRow
-        className={className}
+        className={className ?? ""}
         left={title}
         right={<TextRed size="xs">{`${createRoomPriceUnit(value)}`} </TextRed>}
       />
     );
   }
 
-  return <ItemDetailRow className={className} left={title} right={`${createRoomPriceUnit(value)}`} />;
+  return <ItemDetailRow className={className ?? ""} left={title} right={`${createRoomPriceUnit(value)}`} />;
 };
 
 export const isMonthUnit = (value: number) => {

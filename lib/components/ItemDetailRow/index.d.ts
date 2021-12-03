@@ -1,12 +1,12 @@
 import { ReactNode, VFC } from "react";
 interface ItemDetailRowProps {
-    className: string;
+    className?: string;
     left: ReactNode;
     right: ReactNode;
 }
 export declare const ItemDetailRow: VFC<ItemDetailRowProps>;
 interface ItemDetailRowRoomTypeProps {
-    className: ItemDetailRowProps["className"];
+    className?: ItemDetailRowProps["className"];
     title: ItemDetailRowProps["left"];
     value: number;
 }
