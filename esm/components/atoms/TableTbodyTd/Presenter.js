@@ -11,11 +11,11 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 export var Presenter = function (_a) {
-    var children = _a.children, className = _a.className, _b = _a.isShowBorderBottom, isShowBorderBottom = _b === void 0 ? true : _b, style = _a.style;
+    var _b = _a.align, align = _b === void 0 ? "middle" : _b, children = _a.children, className = _a.className, _c = _a.isShowBorderBottom, isShowBorderBottom = _c === void 0 ? true : _c, style = _a.style;
     var borderClass = "";
     if (isShowBorderBottom) {
         borderClass = "border-b";
     }
-    return (_jsx("td", __assign({ className: "align-middle px-4 py-3 text-left border-gray-200 " + borderClass + " " + className, style: style }, { children: children }), void 0));
+    return (_jsx("td", __assign({ className: "align-" + align + " px-4 py-3 text-left border-gray-200 " + borderClass + " " + className, style: style }, { children: children }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map

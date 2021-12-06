@@ -11,6 +11,7 @@ export declare type Props = {
     label?: string;
     name?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+    size?: "sm" | "md";
     style?: CSSProperties;
 };
 export declare const Presenter: VFC<Props>;

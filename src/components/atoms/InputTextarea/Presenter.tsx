@@ -7,6 +7,7 @@ import { TextRed } from "../Text/Red";
 export type Props = {
   any?: boolean;
   anyLabel?: string;
+  backgroundColor?: "gray" | "white";
   className?: string;
   createRef?: (input: HTMLTextAreaElement) => void;
   defaultValue?: string;
@@ -27,6 +28,7 @@ export type Props = {
 export const Presenter: VFC<Props> = ({
   any,
   anyLabel = "任意",
+  backgroundColor = "gray",
   className,
   createRef,
   defaultValue,
@@ -44,7 +46,9 @@ export const Presenter: VFC<Props> = ({
   weight = "bold",
   ...props
 }) => {
-  const inputBaseClass = "bg-gray-100 border block w-full rounded-md p-4 placeholder-gray-400";
+  const inputBaseClass = `${
+    backgroundColor === "gray" ? "bg-gray-100" : "bg-white"
+  } border block w-full rounded-md p-4 placeholder-gray-400`;
 
   let inputClass = "";
   if (error) {
