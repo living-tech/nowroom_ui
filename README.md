@@ -7,6 +7,7 @@ $ yarn add git+ssh://git@github.com:living-tech/nowroom_components.git
 ```
 
 ### tailwind.config.js
+
 ```js
 const { tailwindCssConfig } = require("nowroom-components/lib/utils");
 
@@ -34,20 +35,14 @@ import { iPhoneMockWidth } from "nowroom-components";
 
 # 開発方法
 
-## コンポーネント雛形作成
+## storybook 立ち上げ
 
-以下、コマンドを打ち質問に答えていくとファイルの雛形が生成されます。
-
-```bash
-$ yarn new:fc
-```
-
-## storybook立ち上げ
 ```bash
 $ yarn storybook
 ```
 
 ## build
+
 ```bash
 $ yarn build
 ```
