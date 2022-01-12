@@ -116,5 +116,11 @@
       "yarn lint:fix"
     ],
     "./src/*.{css,scss}": "yarn lint:css:fix"
+  },
+  "resolutions": {
+    "colors": "1.4.0"
+  },
+  "overrides": {
+    "colors": "1.4.0"
   }
 }
