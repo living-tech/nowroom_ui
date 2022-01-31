@@ -11,6 +11,7 @@ export type Props = {
   onPageChange?: (selected: number) => void;
   pageCount: number;
   previousTextLabel?: string;
+  withoutArrow?: boolean;
 };
 
 export const Presenter: VFC<Props> = ({
@@ -20,6 +21,7 @@ export const Presenter: VFC<Props> = ({
   onPageChange,
   pageCount,
   previousTextLabel = "前のページ",
+  withoutArrow = false,
 }) => {
   return (
     <>
@@ -32,7 +34,7 @@ export const Presenter: VFC<Props> = ({
           disableInitialCallback={true}
           initialPage={initialPage - 1}
           marginPagesDisplayed={1}
-          nextClassName={nextTextLabel === "" ? "hidden" : undefined}
+          nextClassName={withoutArrow ? "hidden" : undefined}
           nextLabel={
             <span className={`flex items-center`}>
               <Text className="hidden mr-1 md:block" size={"sm"} weight={"bold"}>
@@ -46,7 +48,7 @@ export const Presenter: VFC<Props> = ({
           onPageChange={({ selected }) => onPageChange && onPageChange(selected + 1)}
           pageCount={pageCount}
           pageRangeDisplayed={1}
-          previousClassName={previousTextLabel === "" ? "hidden" : undefined}
+          previousClassName={withoutArrow ? "hidden" : undefined}
           previousLabel={
             <span className={`flex items-center`}>
               <span>
@@ -68,7 +70,7 @@ export const Presenter: VFC<Props> = ({
           disableInitialCallback={true}
           initialPage={initialPage - 1}
           marginPagesDisplayed={2}
-          nextClassName={nextTextLabel === "" ? "hidden" : undefined}
+          nextClassName={withoutArrow ? "hidden" : undefined}
           nextLabel={
             <span className={`flex items-center`}>
               <Text className="hidden mr-1 md:block" size={"sm"} weight={"bold"}>
@@ -82,7 +84,7 @@ export const Presenter: VFC<Props> = ({
           onPageChange={({ selected }) => onPageChange && onPageChange(selected + 1)}
           pageCount={pageCount}
           pageRangeDisplayed={2}
-          previousClassName={previousTextLabel === "" ? "hidden" : undefined}
+          previousClassName={withoutArrow ? "hidden" : undefined}
           previousLabel={
             <span className={`flex items-center`}>
               <span>
