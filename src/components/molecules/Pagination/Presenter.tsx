@@ -34,7 +34,7 @@ export const Presenter: VFC<Props> = ({
       containerClassName={`pagination ${className}`}
       disableInitialCallback={true}
       initialPage={initialPage - 1}
-      marginPagesDisplayed={isMobile ? 1 : 2}
+      marginPagesDisplayed={1}
       nextClassName={withoutArrow ? "hidden" : undefined}
       nextLabel={
         <span className={`flex items-center`}>
@@ -50,7 +50,7 @@ export const Presenter: VFC<Props> = ({
       }
       onPageChange={({ selected }) => onPageChange && onPageChange(selected + 1)}
       pageCount={pageCount}
-      pageRangeDisplayed={isMobile ? 1 : 2}
+      pageRangeDisplayed={3}
       previousClassName={withoutArrow ? "hidden" : undefined}
       previousLabel={
         <span className={`flex items-center`}>
