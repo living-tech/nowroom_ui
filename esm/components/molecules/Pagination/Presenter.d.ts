@@ -6,6 +6,7 @@ export declare type Props = {
     onPageChange?: (selected: number) => void;
     pageCount: number;
     previousTextLabel?: string;
+    withoutArrow?: boolean;
 };
 export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

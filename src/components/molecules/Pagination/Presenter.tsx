@@ -12,6 +12,7 @@ export type Props = {
   onPageChange?: (selected: number) => void;
   pageCount: number;
   previousTextLabel?: string;
+  withoutArrow?: boolean;
 };
 
 export const Presenter: VFC<Props> = ({
@@ -21,6 +22,7 @@ export const Presenter: VFC<Props> = ({
   onPageChange,
   pageCount,
   previousTextLabel = "前のページ",
+  withoutArrow = false,
 }) => {
   const { isMobile } = useBreakPoints();
 
@@ -33,6 +35,7 @@ export const Presenter: VFC<Props> = ({
       disableInitialCallback={true}
       initialPage={initialPage - 1}
       marginPagesDisplayed={isMobile ? 1 : 2}
+      nextClassName={withoutArrow ? "hidden" : undefined}
       nextLabel={
         <span className={`flex items-center`}>
           {!isMobile && (
@@ -48,6 +51,7 @@ export const Presenter: VFC<Props> = ({
       onPageChange={({ selected }) => onPageChange && onPageChange(selected + 1)}
       pageCount={pageCount}
       pageRangeDisplayed={isMobile ? 1 : 2}
+      previousClassName={withoutArrow ? "hidden" : undefined}
       previousLabel={
         <span className={`flex items-center`}>
           <span>
