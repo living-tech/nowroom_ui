@@ -8,9 +8,11 @@ import { Text } from "../../atoms/Text/Default";
 export type Props = {
   className?: string;
   initialPage: number;
+  marginPagesDisplayed?: number;
   nextTextLabel?: string;
   onPageChange?: (selected: number) => void;
   pageCount: number;
+  pageRangeDisplayed?: number;
   previousTextLabel?: string;
   withoutArrow?: boolean;
 };
@@ -18,13 +20,16 @@ export type Props = {
 export const Presenter: VFC<Props> = ({
   className = "",
   initialPage,
+  marginPagesDisplayed,
   nextTextLabel = "次のページ",
   onPageChange,
   pageCount,
+  pageRangeDisplayed,
   previousTextLabel = "前のページ",
   withoutArrow = false,
 }) => {
   const { isMobile } = useBreakPoints();
+  const displayedNum = isMobile ? 1 : 2;
 
   return (
     <ReactPaginate
@@ -34,7 +39,7 @@ export const Presenter: VFC<Props> = ({
       containerClassName={`pagination ${className}`}
       disableInitialCallback={true}
       initialPage={initialPage - 1}
-      marginPagesDisplayed={1}
+      marginPagesDisplayed={marginPagesDisplayed ? marginPagesDisplayed : displayedNum}
       nextClassName={withoutArrow ? "hidden" : undefined}
       nextLabel={
         <span className={`flex items-center`}>
@@ -50,7 +55,7 @@ export const Presenter: VFC<Props> = ({
       }
       onPageChange={({ selected }) => onPageChange && onPageChange(selected + 1)}
       pageCount={pageCount}
-      pageRangeDisplayed={3}
+      pageRangeDisplayed={pageRangeDisplayed ? pageRangeDisplayed : displayedNum}
       previousClassName={withoutArrow ? "hidden" : undefined}
       previousLabel={
         <span className={`flex items-center`}>

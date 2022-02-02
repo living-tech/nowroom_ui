@@ -2,9 +2,11 @@ import { VFC } from "react";
 export declare type Props = {
     className?: string;
     initialPage: number;
+    marginPagesDisplayed?: number;
     nextTextLabel?: string;
     onPageChange?: (selected: number) => void;
     pageCount: number;
+    pageRangeDisplayed?: number;
     previousTextLabel?: string;
     withoutArrow?: boolean;
 };
