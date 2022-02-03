@@ -17,6 +17,7 @@ export type Props = {
   id?: string;
   initialContainerWidth?: number;
   items: Array<Item>;
+  onClickTab?: (index: number) => void;
   panelsContainerClassName?: string;
   panelsContainerStyle?: CSSProperties;
   style?: CSSProperties;
@@ -37,6 +38,7 @@ export const Presenter: VFC<Props> = ({
   className = "",
   initialContainerWidth,
   items,
+  onClickTab,
   panelsContainerClassName = "",
   panelsContainerStyle,
   style,
@@ -83,6 +85,7 @@ export const Presenter: VFC<Props> = ({
   };
 
   const onTabClick = (index: number) => {
+    onClickTab && onClickTab(index);
     setActiveIndex(index);
     if (panelRef?.current) {
       gsap.to(panelRef.current, {
