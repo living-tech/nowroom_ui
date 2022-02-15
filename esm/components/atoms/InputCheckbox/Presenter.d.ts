@@ -16,6 +16,7 @@ export declare type Props = {
     labelWeight?: Weight;
     name?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+    onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
     style?: CSSProperties;
 };
 export declare const Presenter: VFC<Props>;
