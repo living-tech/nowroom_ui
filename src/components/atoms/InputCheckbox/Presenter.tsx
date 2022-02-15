@@ -1,4 +1,5 @@
-import { ChangeEvent, CSSProperties, ReactNode, VFC } from "react";
+import { ChangeEvent, CSSProperties, ReactNode, useMemo, VFC } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 import { Text } from "../Text/Default";
 import { Color, Size, Weight } from "../Text/Presenter";
@@ -49,13 +50,17 @@ export const Presenter: VFC<Props> = ({
     inputClass =
       "w-5 h-5 bg-white border-2 border-gray-700 appearance-none cursor-pointer form-tick bg-check checked:bg-purple checked:border-transparent focus:outline-none transition duration-200 ease-out rounded-md";
   }
+
+  const id = useMemo(() => uuidv4(), []);
+
   return (
     <>
-      <label className={`inline-flex items-center cursor-pointer ${className}`} style={style} {...props}>
+      <label className={`inline-flex items-center cursor-pointer ${className}`} htmlFor={id} style={style} {...props}>
         <input
           ref={createRef}
           checked={checked}
           className={inputClass}
+          id={uuidv4()}
           name={name}
           onChange={onChange}
           onClick={onClick}
