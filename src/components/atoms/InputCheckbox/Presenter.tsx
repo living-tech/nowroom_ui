@@ -51,16 +51,16 @@ export const Presenter: VFC<Props> = ({
       "w-5 h-5 bg-white border-2 border-gray-700 appearance-none cursor-pointer form-tick bg-check checked:bg-purple checked:border-transparent focus:outline-none transition duration-200 ease-out rounded-md";
   }
 
-  const id = useMemo(() => uuidv4(), []);
+  const uuid = useMemo(() => uuidv4(), []);
 
   return (
     <>
-      <label className={`inline-flex items-center cursor-pointer ${className}`} htmlFor={id} style={style} {...props}>
+      <label className={`inline-flex items-center cursor-pointer ${className}`} htmlFor={uuid} style={style} {...props}>
         <input
           ref={createRef}
           checked={checked}
           className={inputClass}
-          id={uuidv4()}
+          id={uuid}
           name={name}
           onChange={onChange}
           onClick={onClick}
