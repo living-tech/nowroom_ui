@@ -1,4 +1,4 @@
-import { VFC } from "react";
+import { useEffect, VFC } from "react";
 import ReactPaginate from "react-paginate";
 
 import { useBreakPoints } from "../../../utils";
@@ -32,6 +32,10 @@ export const Presenter: VFC<Props> = ({
 }) => {
   const { isMobile } = useBreakPoints();
   const displayedNum = isMobile ? 1 : 2;
+
+  useEffect(() => {
+    console.log("forcePage", forcePage);
+  }, [forcePage]);
 
   return (
     <ReactPaginate
