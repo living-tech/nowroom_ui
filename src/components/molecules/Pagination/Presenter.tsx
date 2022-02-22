@@ -7,6 +7,7 @@ import { Text } from "../../atoms/Text/Default";
 
 export type Props = {
   className?: string;
+  forcePage: number;
   initialPage: number;
   marginPagesDisplayed?: number;
   nextTextLabel?: string;
@@ -19,6 +20,7 @@ export type Props = {
 
 export const Presenter: VFC<Props> = ({
   className = "",
+  forcePage,
   initialPage,
   marginPagesDisplayed,
   nextTextLabel = "次のページ",
@@ -38,6 +40,7 @@ export const Presenter: VFC<Props> = ({
       breakLabel={<Icon name={"FiMoreHorizontal"} size={20} />}
       containerClassName={`pagination ${className}`}
       disableInitialCallback={true}
+      forcePage={forcePage - 1}
       initialPage={initialPage - 1}
       marginPagesDisplayed={marginPagesDisplayed ? marginPagesDisplayed : displayedNum}
       nextClassName={withoutArrow ? "hidden" : undefined}
