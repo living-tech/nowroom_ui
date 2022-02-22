@@ -22,7 +22,10 @@ export var Presenter = function (_a) {
     useEffect(function () {
         console.log("forcePage", forcePage);
     }, [forcePage]);
-    return (_jsx(ReactPaginate, { activeClassName: "active", breakClassName: "break-me", breakLabel: _jsx(Icon, { name: "FiMoreHorizontal", size: 20 }, void 0), containerClassName: "pagination " + className, disableInitialCallback: true, forcePage: forcePage - 1, initialPage: initialPage - 1, marginPagesDisplayed: marginPagesDisplayed ? marginPagesDisplayed : displayedNum, nextClassName: withoutArrow ? "hidden" : undefined, nextLabel: _jsxs("span", __assign({ className: "flex items-center" }, { children: [!isMobile && (_jsx(Text, __assign({ className: "mr-1", size: "sm", weight: "bold" }, { children: nextTextLabel }), void 0)),
+    useEffect(function () {
+        console.log("initialPage", initialPage);
+    }, [forcePage]);
+    return (_jsx(ReactPaginate, { activeClassName: "active", breakClassName: "break-me", breakLabel: _jsx(Icon, { name: "FiMoreHorizontal", size: 20 }, void 0), containerClassName: "pagination " + className, disableInitialCallback: true, forcePage: typeof forcePage === "number" ? forcePage - 1 : undefined, initialPage: initialPage - 1, marginPagesDisplayed: marginPagesDisplayed ? marginPagesDisplayed : displayedNum, nextClassName: withoutArrow ? "hidden" : undefined, nextLabel: _jsxs("span", __assign({ className: "flex items-center" }, { children: [!isMobile && (_jsx(Text, __assign({ className: "mr-1", size: "sm", weight: "bold" }, { children: nextTextLabel }), void 0)),
                 _jsx("span", { children: _jsx(Icon, { name: "FiChevronRight", size: 14 }, void 0) }, void 0)] }), void 0), onPageChange: function (_a) {
             var selected = _a.selected;
             return onPageChange && onPageChange(selected + 1);

@@ -7,7 +7,7 @@ import { Text } from "../../atoms/Text/Default";
 
 export type Props = {
   className?: string;
-  forcePage: number;
+  forcePage?: number;
   initialPage: number;
   marginPagesDisplayed?: number;
   nextTextLabel?: string;
@@ -37,6 +37,10 @@ export const Presenter: VFC<Props> = ({
     console.log("forcePage", forcePage);
   }, [forcePage]);
 
+  useEffect(() => {
+    console.log("initialPage", initialPage);
+  }, [forcePage]);
+
   return (
     <ReactPaginate
       activeClassName={"active"}
@@ -44,7 +48,7 @@ export const Presenter: VFC<Props> = ({
       breakLabel={<Icon name={"FiMoreHorizontal"} size={20} />}
       containerClassName={`pagination ${className}`}
       disableInitialCallback={true}
-      forcePage={forcePage - 1}
+      forcePage={typeof forcePage === "number" ? forcePage - 1 : undefined}
       initialPage={initialPage - 1}
       marginPagesDisplayed={marginPagesDisplayed ? marginPagesDisplayed : displayedNum}
       nextClassName={withoutArrow ? "hidden" : undefined}
