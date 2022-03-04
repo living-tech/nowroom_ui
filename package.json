@@ -31,8 +31,7 @@
     "lint:css": "prettier-stylelint-formatter 'src/**/*.{css,scss}'",
     "lint:css:fix": "prettier-stylelint-formatter --quiet --write 'src/**/*.{css,scss}'",
     "storybook": "NODE_ENV=storybook start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook -o dist/storybook/components",
-    "new:fc": "hygen new fc && yarn lint:fix"
+    "build-storybook": "build-storybook -o dist/storybook/components"
   },
   "dependencies": {
     "@date-io/date-fns": "1.x",
@@ -117,5 +116,11 @@
       "yarn lint:fix"
     ],
     "./src/*.{css,scss}": "yarn lint:css:fix"
+  },
+  "resolutions": {
+    "colors": "1.4.0"
+  },
+  "overrides": {
+    "colors": "1.4.0"
   }
 }

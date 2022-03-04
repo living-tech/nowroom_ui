@@ -2,11 +2,11 @@ import { useWindowWidth } from "@react-hook/window-size";
 import { ReactNode, useCallback, useEffect, useRef, useState, VFC } from "react";
 import { CSSTransition } from "react-transition-group";
 
+import { useBreakPoints } from "../../../utils";
 import { SpinnerPurple as Spinner } from "../../atoms/Spinner/Purple";
 import { TextWhite } from "../../atoms/Text/White";
 import { IconButtonWhite } from "../IconButton/White";
 import { LabelTextWhite } from "../LabelText/White";
-import indexStyles from "./index.module.scss";
 import styles from "./Modal.module.scss";
 
 export type CloseButtonPosition = "top" | "bottom";
@@ -15,6 +15,7 @@ export type Props = {
   children: ReactNode;
   className?: string;
   closeButtonPosition?: CloseButtonPosition;
+  disabledClose?: boolean;
   escLabel?: string;
   isVisible: boolean;
   loading?: boolean;
@@ -29,6 +30,7 @@ export type Props = {
 export const Presenter: VFC<Props> = ({
   children,
   closeButtonPosition = "top",
+  disabledClose = false,
   escLabel = "を押して閉じる",
   isVisible,
   loading,
@@ -40,6 +42,7 @@ export const Presenter: VFC<Props> = ({
   zIndex = 50,
   ...props
 }) => {
+  const { isDesktop, isMobile } = useBreakPoints();
   const windowWidth = useWindowWidth();
 
   const [visible, setVisible] = useState<boolean>(false);
@@ -62,16 +65,25 @@ export const Presenter: VFC<Props> = ({
     modalSizeClass = "w-full h-full md:h-auto";
   }
 
-  const handleKeydown = useCallback((event: KeyboardEvent) => {
-    if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
-      event.preventDefault();
-      setVisible(false);
-      onRequestClose && onRequestClose();
-      return false;
-    }
+  const handleKeydown = useCallback(
+    (event: KeyboardEvent) => {
+      if (!isDesktop) {
+        return true;
+      }
 
-    return true;
-  }, []);
+      if (event.key == "Escape" || event.key == "Esc" || event.keyCode == 27) {
+        event.preventDefault();
+        if (disabledClose) {
+          return false;
+        }
+        setVisible(false);
+        onRequestClose && onRequestClose();
+        return false;
+      }
+      return true;
+    },
+    [disabledClose]
+  );
 
   useEffect(() => {
     setVisible(isVisible);
@@ -105,19 +117,24 @@ export const Presenter: VFC<Props> = ({
         timeout={400}
       >
         <div
-          className="fixed top-0 left-0 w-full h-full p-4 cursor-pointer bg-overlay"
+          className={`fixed top-0 left-0 w-full h-full p-4 bg-overlay ${disabledClose ? "" : "cursor-pointer"}`}
           onClick={() => {
+            if (disabledClose) {
+              return;
+            }
             setVisible(false);
             onRequestClose && onRequestClose();
           }}
           style={{ zIndex }}
         >
-          <div className="items-center hidden md:flex">
-            <LabelTextWhite>ESC</LabelTextWhite>
-            <TextWhite className="ml-1" size={"sm"} weight={"bold"}>
-              {escLabel}
-            </TextWhite>
-          </div>
+          {!isMobile && !disabledClose && (
+            <div className="flex items-center">
+              <LabelTextWhite>ESC</LabelTextWhite>
+              <TextWhite className="ml-1" size={"sm"} weight={"bold"}>
+                {escLabel}
+              </TextWhite>
+            </div>
+          )}
         </div>
       </CSSTransition>
       <CSSTransition
@@ -134,24 +151,23 @@ export const Presenter: VFC<Props> = ({
         timeout={{ enter: 400, exit: 400 }}
       >
         <div
-          className={`fixed top-1/2 left-1/2 ${modalSizeClass} ${props.className ?? ""} ${
-            indexStyles.isGreatterthanMaxWidth
-          }`}
-          data-greatterthan={windowWidth <= maxWidth}
+          className={`fixed top-1/2 left-1/2 ${modalSizeClass} ${props.className ?? ""}`}
           style={{
+            maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
             maxWidth,
             minHeight: loading ? 200 : undefined,
             zIndex: zIndex + 1,
           }}
         >
           <div
-            className={`transition-all ease-out duration-200 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto ${modalSizeClass} ${paddingHorizontalClass} ${paddingVerticalClass} ${indexStyles.isGreatterthanMaxWidth} ${indexStyles.fixedbottomheightMDMB}`}
-            data-closebuttonposition={closeButtonPosition}
-            data-greatterthan={windowWidth <= maxWidth}
-            data-paddingvertical={paddingVertical}
+            className={`transition-all ease-out duration-200 bg-white md:rounded-lg cursor-auto shadow-xl overflow-y-auto ${modalSizeClass} ${paddingHorizontalClass} ${paddingVerticalClass}`}
             style={{
+              maxHeight: isMobile && windowWidth <= maxWidth ? undefined : "calc(100vh - 128px)",
               maxWidth,
               minHeight: loading ? 200 : undefined,
+              paddingBottom: paddingVertical
+                ? fixedBottomHeight + (isMobile ? 40 : 32) + (closeButtonPosition === "bottom" ? 62 : 0)
+                : 0,
             }}
           >
             {loading ? (
@@ -171,18 +187,27 @@ export const Presenter: VFC<Props> = ({
                 {renderFixedBottom()}
               </div>
             )}
-            <IconButtonWhite
-              className={`right-4 md:-right-5 md:-top-5 test123 ${indexStyles.IconButtonWhiteStyle}`}
-              data-closebuttonposition={closeButtonPosition}
-              data-fixedbottomheight={fixedBottomHeight}
-              iconName={"FiX"}
-              onClick={() => {
-                setVisible(false);
-                onRequestClose && onRequestClose();
-              }}
-              radius={true}
-              shadow={false}
-            />
+            {!disabledClose && (
+              <IconButtonWhite
+                className="right-4 md:-right-5 md:-top-5"
+                iconName={"FiX"}
+                onClick={() => {
+                  setVisible(false);
+                  onRequestClose && onRequestClose();
+                }}
+                radius={true}
+                shadow={false}
+                style={
+                  isMobile
+                    ? {
+                        bottom: closeButtonPosition === "bottom" ? fixedBottomHeight + 16 : undefined,
+                        position: "absolute",
+                        top: closeButtonPosition === "top" ? 16 : undefined,
+                      }
+                    : { position: "absolute" }
+                }
+              />
+            )}
           </div>
         </div>
       </CSSTransition>

@@ -1,4 +1,4 @@
-import { CSSProperties, useState, VFC } from "react";
+import { CSSProperties, VFC } from "react";
 
 import { Chip } from "../../atoms/Chip/Default";
 import { IconMediumGray01 } from "../../atoms/Icon/MediumGray01";
@@ -34,18 +34,18 @@ export const Presenter: VFC<Props> = ({
   value,
   ...props
 }) => {
-  const [selectedItems, setSelectedItems] = useState<Array<Item>>(value || []);
+  // const [selectedItems, setSelectedItems] = useState<Array<Item>>(value || []);
 
   const onAddClick = (item: Item) => {
-    const newItems = selectedItems.concat();
+    const newItems = (value || []).concat();
     newItems.push(item);
-    setSelectedItems(newItems);
+    // setSelectedItems(newItems);
     onChange && onChange(newItems);
   };
 
   const onRemoveClick = (item: Item) => {
-    const newItems = selectedItems.filter((i) => i.value !== item.value);
-    setSelectedItems(newItems);
+    const newItems = (value || []).filter((i) => i.value !== item.value);
+    // setSelectedItems(newItems);
     onChange && onChange(newItems);
   };
 
@@ -65,7 +65,7 @@ export const Presenter: VFC<Props> = ({
           )}
           <div className="flex-wrap flex-grow p-4 pt-1 bg-gray-100 border rounded-md" style={{ minHeight }}>
             {items
-              .filter((item) => !selectedItems.find((s) => s.value === item.value))
+              .filter((item) => !value?.find((s) => s.value === item.value))
               .map((item) => (
                 <Chip
                   key={item.value}
@@ -87,7 +87,7 @@ export const Presenter: VFC<Props> = ({
             </TextPurple>
           )}
           <div className="flex-wrap flex-grow p-4 pt-1 bg-gray-100 border rounded-md" style={{ minHeight }}>
-            {selectedItems.map((item) => (
+            {value?.map((item) => (
               <Chip
                 key={item.value}
                 className={"mr-3 last:mr-0 mt-3"}

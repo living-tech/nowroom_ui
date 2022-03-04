@@ -18,3 +18,13 @@ Default.args = {
     console.table(event);
   },
 };
+
+export const Small = Template.bind({});
+Small.args = {
+  imageUrls: ["https://picsum.photos/200", "https://picsum.photos/200", "https://picsum.photos/200"],
+  label: "キッチン",
+  onFileChange: (event: ChangeEvent<HTMLInputElement>) => {
+    console.table(event);
+  },
+  onGalleryClick: undefined,
+};

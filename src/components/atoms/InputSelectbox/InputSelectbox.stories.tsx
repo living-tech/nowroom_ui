@@ -104,3 +104,16 @@ XxsWithIcon.args = {
   label: "ラベル",
   size: "xxs",
 };
+
+export const DefaultValue = Template.bind({});
+DefaultValue.args = {
+  defaultValue: "value",
+  id: "id",
+  items: [
+    {
+      label: "ラベル",
+      value: "value",
+    },
+  ],
+  label: "ラベル",
+};

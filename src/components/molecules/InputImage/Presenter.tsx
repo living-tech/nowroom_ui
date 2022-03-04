@@ -2,15 +2,22 @@ import { ChangeEvent, CSSProperties, DragEvent, useState, VFC } from "react";
 
 import { IconMediumGray02 } from "../../atoms/Icon/MediumGray02";
 import { TextMediumGray02 } from "../../atoms/Text/MediumGray02";
+import { TextPurple } from "../../atoms/Text/Purple";
 import { ButtonPurple } from "../Button/Purple";
 import { ButtonWhite } from "../Button/White";
 import { IconButtonWhite } from "../IconButton/White";
 
+export type Color = "white" | "gray";
+
 export type Props = {
   any?: boolean;
   anyLabel?: string;
+  backgroundColor?: Color;
   className?: string;
   createRef?: (input: HTMLInputElement) => void;
+  disabled?: boolean;
+  displayFileChangeButton?: boolean;
+  dragAndDropFileSelectLabel?: string;
   dragAndDropLabel?: string;
   fileSelectLabel?: string;
   gallerySelectLabel?: string;
@@ -28,9 +35,13 @@ export type Props = {
 export const Presenter: VFC<Props> = ({
   any,
   anyLabel = "任意",
+  backgroundColor = "gray",
   className,
   createRef,
-  dragAndDropLabel = "ドラッグ＆ドロップまたはファイル選択",
+  disabled = false,
+  displayFileChangeButton = false,
+  dragAndDropFileSelectLabel = "ファイル選択",
+  dragAndDropLabel = "ドラッグ＆ドロップまたは",
   fileSelectLabel = "ファイル選択",
   gallerySelectLabel = "ギャラリーから選択",
   id,
@@ -63,10 +74,15 @@ export const Presenter: VFC<Props> = ({
   };
 
   let borderClass = "";
-  if (isDragging) {
+  if (isDragging && !disabled) {
     borderClass = "border border-purple border-dashed";
   } else {
     borderClass = "border border-gray-200";
+  }
+
+  let backgroundColorClass = "bg-white";
+  if (backgroundColor === "gray") {
+    backgroundColorClass = "bg-gray-50";
   }
 
   return (
@@ -116,35 +132,60 @@ export const Presenter: VFC<Props> = ({
       )}
 
       <div onDragLeave={handleDragLeave} onDragOver={handleDragOver} onDrop={handleDrop}>
-        <div className={`flex flex-col justify-center px-32 py-8 rounded-md ${borderClass}`}>
+        <div className={`flex flex-col justify-center px-32 py-8 rounded-md ${borderClass} ${backgroundColorClass}`}>
           <div className={"flex justify-center items-center"}>
             <IconMediumGray02 name={"FiImage"} />
             <TextMediumGray02 className={"ml-3"} size={"sm"} weight={"bold"}>
               {dragAndDropLabel}
             </TextMediumGray02>
+            {disabled ? (
+              <TextMediumGray02 className={"px-2"} size={"sm"} weight={"bold"}>
+                {dragAndDropFileSelectLabel}
+              </TextMediumGray02>
+            ) : (
+              <TextPurple size={"sm"} weight={"bold"}>
+                <label className={"py-2.5 px-2 cursor-pointer hover:underline"} htmlFor={id}>
+                  {dragAndDropFileSelectLabel}
+                  <input
+                    ref={createRef}
+                    accept="image/png,image/jpeg"
+                    className="sr-only"
+                    disabled={disabled}
+                    id={id}
+                    multiple={true}
+                    name={name}
+                    onChange={onFileChange}
+                    type="file"
+                  />
+                </label>
+              </TextPurple>
+            )}
           </div>
 
-          <div className="flex justify-center mt-4 space-x-3">
+          <div className="flex justify-center space-x-3">
             {onGalleryClick && (
-              <ButtonWhite onClick={onGalleryClick} size={"sm"}>
+              <ButtonWhite className={"mt-4"} onClick={onGalleryClick} size={"sm"}>
                 {gallerySelectLabel}
               </ButtonWhite>
             )}
-            <ButtonPurple padding={false} size={"sm"}>
-              <label className={"py-2.5 px-8 cursor-pointer"} htmlFor={id}>
-                {fileSelectLabel}
-                <input
-                  ref={createRef}
-                  accept="image/*"
-                  className="sr-only"
-                  id={id}
-                  multiple={true}
-                  name={name}
-                  onChange={onFileChange}
-                  type="file"
-                />
-              </label>
-            </ButtonPurple>
+            {displayFileChangeButton && (
+              <ButtonPurple className={"pt-4"} disabled={disabled} padding={false} size={"sm"}>
+                <label className={"py-2.5 px-8 cursor-pointer"} htmlFor={id}>
+                  {fileSelectLabel}
+                  <input
+                    ref={createRef}
+                    accept="image/png,image/jpeg"
+                    className="sr-only"
+                    disabled={disabled}
+                    id={id}
+                    multiple={true}
+                    name={name}
+                    onChange={onFileChange}
+                    type="file"
+                  />
+                </label>
+              </ButtonPurple>
+            )}
           </div>
         </div>
       </div>
