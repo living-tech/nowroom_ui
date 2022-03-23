@@ -11,6 +11,7 @@ export type Props = {
   className?: string;
   createRef?: (input: HTMLTextAreaElement) => void;
   defaultValue?: string;
+  disabled?: boolean;
   error?: string;
   id?: string;
   label?: string;
@@ -32,6 +33,7 @@ export const Presenter: VFC<Props> = ({
   className,
   createRef,
   defaultValue,
+  disabled = false,
   error,
   id,
   label,
@@ -91,6 +93,7 @@ export const Presenter: VFC<Props> = ({
           ref={createRef}
           className={`${inputBaseClass} ${inputClass} ${inputResizeClass}`}
           defaultValue={defaultValue}
+          disabled={disabled}
           id={id}
           name={name}
           onChange={onChange}

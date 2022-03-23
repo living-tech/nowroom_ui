@@ -16,6 +16,7 @@ export type Props = {
   color?: "gray" | "white";
   createRef?: (input: HTMLInputElement) => void;
   defaultValue?: string;
+  disabled?: boolean;
   error?: string;
   iconName?: IconName;
   id?: string;
@@ -46,6 +47,7 @@ export const Presenter: VFC<Props> = ({
   color = "gray",
   createRef,
   defaultValue,
+  disabled = false,
   error,
   iconName,
   id,
@@ -222,6 +224,7 @@ export const Presenter: VFC<Props> = ({
           autoComplete={autocomplete}
           className={`${inputBaseClass} ${inputClass} ${roundedClass} ${inputBackgroundColorClass} ${inputClassName}`}
           defaultValue={defaultValue}
+          disabled={disabled}
           id={id}
           name={name}
           onBlur={onBlur}
