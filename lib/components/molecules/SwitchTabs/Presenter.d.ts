@@ -1,7 +1,7 @@
-import { CSSProperties, VFC } from "react";
+import { CSSProperties, ReactNode, VFC } from "react";
 import { Color, Size } from "../../atoms/Text/Presenter";
 export declare type Item = {
-    label: string;
+    label: ReactNode;
     value: string | number;
 };
 export declare type Props = {

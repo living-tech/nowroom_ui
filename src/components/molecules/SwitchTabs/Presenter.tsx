@@ -1,10 +1,10 @@
-import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
+import { CSSProperties, ReactNode, useEffect, useRef, useState, VFC } from "react";
 
 import { Text } from "../../atoms/Text/Default";
 import { Color, Size } from "../../atoms/Text/Presenter";
 
 export type Item = {
-  label: string;
+  label: ReactNode;
   value: string | number;
 };
 
