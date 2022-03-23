@@ -222,9 +222,7 @@ export const Presenter: VFC<Props> = ({
         <input
           ref={createRef}
           autoComplete={autocomplete}
-          className={`${inputBaseClass} ${inputClass} ${roundedClass} ${inputBackgroundColorClass} ${inputClassName} ${
-            disabled ? "opacity-40 cursor-not-allowed" : ""
-          }`}
+          className={`${inputBaseClass} ${inputClass} ${roundedClass} ${inputBackgroundColorClass} ${inputClassName} disabled:opacity-40 disabled:cursor-not-allowed`}
           defaultValue={defaultValue}
           disabled={disabled}
           id={id}
