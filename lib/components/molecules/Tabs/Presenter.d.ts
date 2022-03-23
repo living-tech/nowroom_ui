@@ -9,6 +9,7 @@ export declare type Props = {
     id?: string;
     initialContainerWidth?: number;
     items: Array<Item>;
+    onClickTab?: (index: number) => void;
     panelsContainerClassName?: string;
     panelsContainerStyle?: CSSProperties;
     style?: CSSProperties;
