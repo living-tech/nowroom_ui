@@ -50,7 +50,7 @@ export var Presenter = function (_a) {
     }
     return (_jsxs("div", __assign({ className: className, style: style }, props, { children: [label && (_jsxs("label", __assign({ className: "block mb-3 text-sm font-bold text-gray-700 cursor-pointer", htmlFor: id }, { children: [label, any && (_jsx(TextMediumGray02, __assign({ className: "ml-3", size: "sm", tag: "span" }, { children: anyLabel }), void 0))] }), void 0)),
             renderDescription && _jsx("div", __assign({ className: "mb-3" }, { children: renderDescription() }), void 0),
-            _jsx("div", __assign({ className: "relative" }, { children: _jsx("textarea", { ref: createRef, className: inputBaseClass + " " + inputClass + " " + inputResizeClass, defaultValue: defaultValue, disabled: disabled, id: id, name: name, onChange: onChange, placeholder: placeholder, rows: rows, value: value }, void 0) }), void 0),
+            _jsx("div", __assign({ className: "relative" }, { children: _jsx("textarea", { ref: createRef, className: inputBaseClass + " " + inputClass + " " + inputResizeClass + " " + (disabled ? "opacity-40 cursor-not-allowed" : ""), defaultValue: defaultValue, disabled: disabled, id: id, name: name, onChange: onChange, placeholder: placeholder, rows: rows, value: value }, void 0) }), void 0),
             error && (_jsx(TextRed, __assign({ className: "mt-2", size: "sm" }, { children: error }), void 0))] }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map

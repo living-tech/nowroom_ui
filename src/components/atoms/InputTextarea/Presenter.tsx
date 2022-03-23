@@ -91,7 +91,9 @@ export const Presenter: VFC<Props> = ({
       <div className={"relative"}>
         <textarea
           ref={createRef}
-          className={`${inputBaseClass} ${inputClass} ${inputResizeClass}`}
+          className={`${inputBaseClass} ${inputClass} ${inputResizeClass} ${
+            disabled ? "opacity-40 cursor-not-allowed" : ""
+          }`}
           defaultValue={defaultValue}
           disabled={disabled}
           id={id}

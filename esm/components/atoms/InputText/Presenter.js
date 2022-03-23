@@ -162,7 +162,7 @@ export var Presenter = function (_a) {
                             top: "50%",
                             transform: "translateY(-50%)",
                         } }, void 0)),
-                    _jsx("input", { ref: createRef, autoComplete: autocomplete, className: inputBaseClass + " " + inputClass + " " + roundedClass + " " + inputBackgroundColorClass + " " + inputClassName, defaultValue: defaultValue, disabled: disabled, id: id, name: name, onBlur: onBlur, onChange: onChange, onFocus: onFocus, onKeyPress: onKeyPress, placeholder: placeholder, style: inputStyle, type: type, value: value }, void 0),
+                    _jsx("input", { ref: createRef, autoComplete: autocomplete, className: inputBaseClass + " " + inputClass + " " + roundedClass + " " + inputBackgroundColorClass + " " + inputClassName + " " + (disabled ? "opacity-40 cursor-not-allowed" : ""), defaultValue: defaultValue, disabled: disabled, id: id, name: name, onBlur: onBlur, onChange: onChange, onFocus: onFocus, onKeyPress: onKeyPress, placeholder: placeholder, style: inputStyle, type: type, value: value }, void 0),
                     unit && unitPosition === "right" && (_jsx(TextMediumGray02, __assign({ className: "absolute pointer-events-none", size: size === "md" ? "sm" : "xs", style: {
                             right: iconPosition,
                             top: "50%",
