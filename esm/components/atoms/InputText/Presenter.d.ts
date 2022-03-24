@@ -10,6 +10,7 @@ export declare type Props = {
     color?: "gray" | "white";
     createRef?: (input: HTMLInputElement) => void;
     defaultValue?: string;
+    disabled?: boolean;
     error?: string;
     iconName?: IconName;
     id?: string;
