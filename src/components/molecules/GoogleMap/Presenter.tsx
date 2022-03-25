@@ -10,6 +10,7 @@ export type Props = {
   latitude: number;
   longitude: number;
   style?: CSSProperties;
+  customizedMapOptions?: MapOptions;
 };
 
 const AnyReactComponent: VFC<{
@@ -18,7 +19,7 @@ const AnyReactComponent: VFC<{
   lng: number;
 }> = ({ children }) => <div>{children}</div>;
 
-export const Presenter: VFC<Props> = ({ apiKey, className, height = 400, latitude, longitude, style }) => {
+export const Presenter: VFC<Props> = ({ apiKey, className, height = 400, latitude, longitude, style, customizedMapOptions }) => {
   const createMapOptions = (maps: Maps): MapOptions => {
     return {
       fullscreenControl: false,
@@ -34,6 +35,7 @@ export const Presenter: VFC<Props> = ({ apiKey, className, height = 400, latitud
       zoomControlOptions: {
         position: 9,
       },
+      ...customizedMapOptions
     };
   };
 

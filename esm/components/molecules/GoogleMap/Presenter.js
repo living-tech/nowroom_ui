@@ -17,23 +17,13 @@ var AnyReactComponent = function (_a) {
     return _jsx("div", { children: children }, void 0);
 };
 export var Presenter = function (_a) {
-    var apiKey = _a.apiKey, className = _a.className, _b = _a.height, height = _b === void 0 ? 400 : _b, latitude = _a.latitude, longitude = _a.longitude, style = _a.style;
+    var apiKey = _a.apiKey, className = _a.className, _b = _a.height, height = _b === void 0 ? 400 : _b, latitude = _a.latitude, longitude = _a.longitude, style = _a.style, customizedMapOptions = _a.customizedMapOptions;
     var createMapOptions = function (maps) {
-        return {
-            fullscreenControl: false,
-            mapTypeControl: false,
-            mapTypeControlOptions: {
+        return __assign({ fullscreenControl: false, mapTypeControl: false, mapTypeControlOptions: {
                 position: maps.ControlPosition.TOP_RIGHT,
-            },
-            panControl: false,
-            scaleControl: false,
-            scrollwheel: false,
-            streetViewControl: false,
-            zoomControl: false,
-            zoomControlOptions: {
+            }, panControl: false, scaleControl: false, scrollwheel: false, streetViewControl: false, zoomControl: false, zoomControlOptions: {
                 position: 9,
-            },
-        };
+            } }, customizedMapOptions);
     };
     return (_jsx("div", __assign({ className: "" + className, style: __assign({ height: height }, style) }, { children: _jsx(GoogleMapReact, __assign({ bootstrapURLKeys: {
                 key: apiKey,
