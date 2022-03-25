@@ -26,10 +26,10 @@ export var Presenter = function (_a) {
                 position: maps.ControlPosition.TOP_RIGHT,
             },
             panControl: false,
-            scaleControl: false,
+            scaleControl: true,
             scrollwheel: false,
             streetViewControl: false,
-            zoomControl: true,
+            zoomControl: false,
         };
     };
     return (_jsx("div", __assign({ className: "" + className, style: __assign({ height: height }, style) }, { children: _jsx(GoogleMapReact, __assign({ bootstrapURLKeys: {
