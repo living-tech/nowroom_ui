@@ -19,12 +19,12 @@ var AnyReactComponent = function (_a) {
 };
 export var Presenter = function (_a) {
     var apiKey = _a.apiKey, className = _a.className, customizedMapOptions = _a.customizedMapOptions, _b = _a.height, height = _b === void 0 ? 400 : _b, latitude = _a.latitude, longitude = _a.longitude, style = _a.style;
-    var createMapOptions = function (maps) {
+    var createMapOptions = function () {
         return {
             fullscreenControl: false,
             mapTypeControl: false,
             mapTypeControlOptions: {
-                position: maps.ControlPosition.TOP_RIGHT,
+                position: "TOP_RIGHT",
             },
             panControl: false,
             scaleControl: false,

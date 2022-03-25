@@ -1,4 +1,4 @@
-import GoogleMapReact, { MapOptions, Maps } from "google-map-react";
+import GoogleMapReact, { MapOptions } from "google-map-react";
 import { CSSProperties, ReactNode, useEffect, useState, VFC } from "react";
 
 import { MapPin } from "../../atoms/MapPin/Default";
@@ -28,12 +28,12 @@ export const Presenter: VFC<Props> = ({
   longitude,
   style,
 }) => {
-  const createMapOptions = (maps: Maps): MapOptions => {
+  const createMapOptions = (): MapOptions => {
     return {
       fullscreenControl: false,
       mapTypeControl: false,
       mapTypeControlOptions: {
-        position: maps.ControlPosition.TOP_RIGHT,
+        position: "TOP_RIGHT",
       },
       panControl: false,
       scaleControl: false,
@@ -42,7 +42,7 @@ export const Presenter: VFC<Props> = ({
       zoomControl: false,
     };
   };
-  const [mapOptionsState, setMapOptions] = useState<MapOptions>(createMapOptions as MapOptions);
+  const [mapOptionsState, setMapOptions] = useState<MapOptions>(createMapOptions);
   useEffect(() => {
     customizedMapOptions && setMapOptions({ ...customizedMapOptions });
   }, [customizedMapOptions]);
