@@ -27,10 +27,13 @@ export const Presenter: VFC<Props> = ({ apiKey, className, height = 400, latitud
         position: maps.ControlPosition.TOP_RIGHT,
       },
       panControl: false,
-      scaleControl: true,
+      scaleControl: false,
       scrollwheel: false,
       streetViewControl: false,
-      zoomControl: true,
+      zoomControl: false,
+      zoomControlOptions: {
+        position: 9,
+      },
     };
   };
 
