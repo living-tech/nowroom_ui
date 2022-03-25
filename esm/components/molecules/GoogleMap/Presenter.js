@@ -29,7 +29,7 @@ export var Presenter = function (_a) {
             scaleControl: false,
             scrollwheel: false,
             streetViewControl: false,
-            zoomControl: false,
+            zoomControl: true,
         };
     };
     return (_jsx("div", __assign({ className: "" + className, style: __assign({ height: height }, style) }, { children: _jsx(GoogleMapReact, __assign({ bootstrapURLKeys: {

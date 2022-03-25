@@ -30,7 +30,7 @@ export const Presenter: VFC<Props> = ({ apiKey, className, height = 400, latitud
       scaleControl: false,
       scrollwheel: false,
       streetViewControl: false,
-      zoomControl: false,
+      zoomControl: true,
     };
   };
 
