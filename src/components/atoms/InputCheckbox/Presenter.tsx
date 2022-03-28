@@ -1,3 +1,4 @@
+import { isNil } from "lodash";
 import { ChangeEvent, CSSProperties, ReactNode, useEffect, useMemo, useState, VFC } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -47,15 +48,14 @@ export const Presenter: VFC<Props> = ({
   const [checked, setChecked] = useState<boolean>(defaultChecked);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (typeof forceChecked === "undefined") {
+    if (isNil(forceChecked)) {
       setChecked(!checked);
     }
-
     onChange && onChange(event);
   };
 
   useEffect(() => {
-    if (typeof forceChecked !== "undefined") {
+    if (!isNil(forceChecked)) {
       if (forceChecked && !checked) {
         setChecked(true);
       }
