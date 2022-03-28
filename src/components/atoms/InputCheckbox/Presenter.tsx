@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, ReactNode, useState, VFC } from "react";
+import { ChangeEvent, CSSProperties, ReactNode, useEffect, useState, VFC } from "react";
 
 import { Text } from "../Text/Default";
 import { Color, Size, Weight } from "../Text/Presenter";
@@ -14,6 +14,7 @@ export type Props = {
   className?: string;
   createRef?: (input: HTMLInputElement) => void;
   error?: string;
+  forceChecked?: boolean;
   item: Item;
   labelColor?: Color;
   labelSize?: Size;
@@ -29,6 +30,7 @@ export const Presenter: VFC<Props> = ({
   className,
   createRef,
   error,
+  forceChecked,
   item,
   labelColor,
   labelSize,
@@ -42,9 +44,23 @@ export const Presenter: VFC<Props> = ({
   const [checked, setChecked] = useState<boolean>(defaultChecked);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setChecked(!checked);
+    if (typeof forceChecked === "undefined") {
+      setChecked(!checked);
+    }
+
     onChange && onChange(event);
   };
+
+  useEffect(() => {
+    if (typeof forceChecked !== "undefined") {
+      if (forceChecked && !checked) {
+        setChecked(true);
+      }
+      if (!forceChecked && checked) {
+        setChecked(false);
+      }
+    }
+  }, [forceChecked]);
 
   let inputClass = "";
   if (error) {

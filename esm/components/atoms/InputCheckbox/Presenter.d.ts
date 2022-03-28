@@ -9,6 +9,7 @@ export declare type Props = {
     className?: string;
     createRef?: (input: HTMLInputElement) => void;
     error?: string;
+    forceChecked?: boolean;
     item: Item;
     labelColor?: Color;
     labelSize?: Size;
