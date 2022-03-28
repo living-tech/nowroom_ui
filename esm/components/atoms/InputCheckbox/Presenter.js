@@ -21,7 +21,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
-import { isNil } from "lodash";
+import isNil from "lodash/isNil";
 import { useEffect, useMemo, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Text } from "../Text/Default";

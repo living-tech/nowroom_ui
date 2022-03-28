@@ -1,4 +1,4 @@
-import { isNil } from "lodash";
+import isNil from "lodash/isNil";
 import { ChangeEvent, CSSProperties, ReactNode, useEffect, useMemo, useState, VFC } from "react";
 import { v4 as uuidv4 } from "uuid";
 
