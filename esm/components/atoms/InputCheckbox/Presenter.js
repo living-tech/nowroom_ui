@@ -21,17 +21,29 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { Text } from "../Text/Default";
 import { TextRed } from "../Text/Red";
 export var Presenter = function (_a) {
-    var _b = _a.checked, defaultChecked = _b === void 0 ? false : _b, className = _a.className, createRef = _a.createRef, error = _a.error, item = _a.item, labelColor = _a.labelColor, labelSize = _a.labelSize, labelStyle = _a.labelStyle, labelWeight = _a.labelWeight, name = _a.name, onChange = _a.onChange, onClick = _a.onClick, style = _a.style, props = __rest(_a, ["checked", "className", "createRef", "error", "item", "labelColor", "labelSize", "labelStyle", "labelWeight", "name", "onChange", "onClick", "style"]);
+    var _b = _a.checked, defaultChecked = _b === void 0 ? false : _b, className = _a.className, createRef = _a.createRef, error = _a.error, forceChecked = _a.forceChecked, item = _a.item, labelColor = _a.labelColor, labelSize = _a.labelSize, labelStyle = _a.labelStyle, labelWeight = _a.labelWeight, name = _a.name, onChange = _a.onChange, onClick = _a.onClick, style = _a.style, props = __rest(_a, ["checked", "className", "createRef", "error", "forceChecked", "item", "labelColor", "labelSize", "labelStyle", "labelWeight", "name", "onChange", "onClick", "style"]);
     var _c = useState(defaultChecked), checked = _c[0], setChecked = _c[1];
     var handleChange = function (event) {
-        setChecked(!checked);
+        if (typeof forceChecked === "undefined") {
+            setChecked(!checked);
+        }
         onChange && onChange(event);
     };
+    useEffect(function () {
+        if (typeof forceChecked !== "undefined") {
+            if (forceChecked && !checked) {
+                setChecked(true);
+            }
+            if (!forceChecked && checked) {
+                setChecked(false);
+            }
+        }
+    }, [forceChecked]);
     var inputClass = "";
     if (error) {
         inputClass =
