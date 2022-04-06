@@ -5,6 +5,7 @@ export declare type Item = {
     value: string;
 };
 export declare type Props = {
+    checkBoxClass?: string;
     checked?: boolean;
     className?: string;
     createRef?: (input: HTMLInputElement) => void;
