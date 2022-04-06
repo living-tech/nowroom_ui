@@ -10,6 +10,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+/* eslint-disable no-constant-condition */
 import gsap, { Expo } from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { useEffect, useRef, useState } from "react";
@@ -84,7 +85,7 @@ export var Presenter = function (_a) {
         });
     }, [hoverTab, activeIndex, tabSize]);
     console.log("items", items);
-    return (_jsxs("div", __assign({ className: className, style: style }, { children: [1 === items.length && items[0].label === undefined ? (_jsx("div", { children: "ABC" }, void 0)) : (_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
+    return (_jsxs("div", __assign({ className: className, style: style }, { children: [true ? (_jsx("div", { children: "ABC" }, void 0)) : (_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
                     var _a;
                     if (initialContainerWidth) {
                         return;

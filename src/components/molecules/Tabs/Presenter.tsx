@@ -1,3 +1,4 @@
+/* eslint-disable no-constant-condition */
 import gsap, { Expo } from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { CSSProperties, useEffect, useRef, useState, VFC } from "react";
@@ -130,7 +131,7 @@ export const Presenter: VFC<Props> = ({
 
   return (
     <div className={className} style={style}>
-      {1 === items.length && items[0].label === undefined ? (
+      {true ? (
         <div>ABC</div>
       ) : (
         <Measure
