@@ -83,7 +83,7 @@ export var Presenter = function (_a) {
             width: targetElement.clientWidth,
         });
     }, [hoverTab, activeIndex, tabSize]);
-    return (_jsxs("div", __assign({ className: className, style: style }, { children: [1 < items.length && !items[0].label ? (_jsx(_Fragment, {}, void 0)) : (_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
+    return (_jsxs("div", __assign({ className: className, style: style }, { children: [0 < items.length && !items[0].label ? (_jsx(_Fragment, {}, void 0)) : (_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
                     var _a;
                     if (initialContainerWidth) {
                         return;

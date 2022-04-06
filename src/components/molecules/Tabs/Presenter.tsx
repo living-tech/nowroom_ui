@@ -128,7 +128,7 @@ export const Presenter: VFC<Props> = ({
 
   return (
     <div className={className} style={style}>
-      {1 < items.length && !items[0].label ? (
+      {0 < items.length && !items[0].label ? (
         <></>
       ) : (
         <Measure
