@@ -126,10 +126,12 @@ export const Presenter: VFC<Props> = ({
     });
   }, [hoverTab, activeIndex, tabSize]);
 
+  console.log("items", items);
+
   return (
     <div className={className} style={style}>
       {1 === items.length && items[0].label === undefined ? (
-        <></>
+        <div>ABC</div>
       ) : (
         <Measure
           bounds
