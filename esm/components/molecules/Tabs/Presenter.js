@@ -9,7 +9,7 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { Fragment as _Fragment, jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import gsap, { Expo } from "gsap";
 import ScrollToPlugin from "gsap/dist/ScrollToPlugin";
 import { useEffect, useRef, useState } from "react";
@@ -91,7 +91,7 @@ export var Presenter = function (_a) {
                     setContainerWidth(((_a = contentRect.bounds) === null || _a === void 0 ? void 0 : _a.width) || 0);
                 } }, { children: function (_a) {
                     var measureRef = _a.measureRef;
-                    return (_jsx("div", __assign({ ref: measureRef, className: "relative " + tabsPositionClass }, { children: _jsxs("ul", __assign({ className: "relative " + tabDisplayClass + " " + tabsContainerClassName, id: id, style: tabsContainerStyle }, { children: [items.map(function (item, index) { return (_jsx(Tab, { active: activeIndex === index, className: tabContainerClassName, id: id + "-" + index, index: index, label: item.label, onClick: onTabClick, onTabMouseEnter: onTabMouseEnter, onTabMouseLeave: onTabMouseLeave, size: tabSize, style: tabContainerStyle, tabUnderLine: tabsUnderLine }, index)); }),
+                    return 1 < items.length && items[0].label ? (_jsx(_Fragment, {}, void 0)) : (_jsx("div", __assign({ ref: measureRef, className: "relative " + tabsPositionClass }, { children: _jsxs("ul", __assign({ className: "relative " + tabDisplayClass + " " + tabsContainerClassName, id: id, style: tabsContainerStyle }, { children: [items.map(function (item, index) { return (_jsx(Tab, { active: activeIndex === index, className: tabContainerClassName, id: id + "-" + index, index: index, label: item.label, onClick: onTabClick, onTabMouseEnter: onTabMouseEnter, onTabMouseLeave: onTabMouseLeave, size: tabSize, style: tabContainerStyle, tabUnderLine: tabsUnderLine }, index)); }),
                                 borderStyle && (_jsx("span", { className: "absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out", style: {
                                         height: 2,
                                         left: borderStyle.left,

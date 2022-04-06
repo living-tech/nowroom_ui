@@ -137,38 +137,46 @@ export const Presenter: VFC<Props> = ({
           setContainerWidth(contentRect.bounds?.width || 0);
         }}
       >
-        {({ measureRef }) => (
-          <div ref={measureRef} className={`relative ${tabsPositionClass}`}>
-            <ul className={`relative ${tabDisplayClass} ${tabsContainerClassName}`} id={id} style={tabsContainerStyle}>
-              {items.map((item, index) => (
-                <Tab
-                  key={index}
-                  active={activeIndex === index}
-                  className={tabContainerClassName}
-                  id={`${id}-${index}`}
-                  index={index}
-                  label={item.label}
-                  onClick={onTabClick}
-                  onTabMouseEnter={onTabMouseEnter}
-                  onTabMouseLeave={onTabMouseLeave}
-                  size={tabSize}
-                  style={tabContainerStyle}
-                  tabUnderLine={tabsUnderLine}
-                />
-              ))}
-              {borderStyle && (
-                <span
-                  className="absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out"
-                  style={{
-                    height: 2,
-                    left: borderStyle.left,
-                    width: borderStyle.width,
-                  }}
-                />
-              )}
-            </ul>
-          </div>
-        )}
+        {({ measureRef }) => {
+          return 1 < items.length && items[0].label ? (
+            <></>
+          ) : (
+            <div ref={measureRef} className={`relative ${tabsPositionClass}`}>
+              <ul
+                className={`relative ${tabDisplayClass} ${tabsContainerClassName}`}
+                id={id}
+                style={tabsContainerStyle}
+              >
+                {items.map((item, index) => (
+                  <Tab
+                    key={index}
+                    active={activeIndex === index}
+                    className={tabContainerClassName}
+                    id={`${id}-${index}`}
+                    index={index}
+                    label={item.label}
+                    onClick={onTabClick}
+                    onTabMouseEnter={onTabMouseEnter}
+                    onTabMouseLeave={onTabMouseLeave}
+                    size={tabSize}
+                    style={tabContainerStyle}
+                    tabUnderLine={tabsUnderLine}
+                  />
+                ))}
+                {borderStyle && (
+                  <span
+                    className="absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out"
+                    style={{
+                      height: 2,
+                      left: borderStyle.left,
+                      width: borderStyle.width,
+                    }}
+                  />
+                )}
+              </ul>
+            </div>
+          );
+        }}
       </Measure>
       <div
         ref={panelRef}
