@@ -85,7 +85,8 @@ export var Presenter = function (_a) {
         });
     }, [hoverTab, activeIndex, tabSize]);
     console.log("items", items);
-    return (_jsxs("div", __assign({ className: className, style: style }, { children: [true ? (_jsx("div", { children: "ABC" }, void 0)) : (_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
+    return (_jsxs("div", __assign({ className: className, style: style }, { children: [_jsx("p", { children: "AAAAAAAAAAAAAAAAAAA" }, void 0),
+            true ? (_jsx("div", { children: "ABC" }, void 0)) : (_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
                     var _a;
                     if (initialContainerWidth) {
                         return;
