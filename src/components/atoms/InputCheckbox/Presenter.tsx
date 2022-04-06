@@ -12,6 +12,7 @@ export type Item = {
 };
 
 export type Props = {
+  checkBoxClass?: string;
   checked?: boolean;
   className?: string;
   createRef?: (input: HTMLInputElement) => void;
@@ -29,6 +30,7 @@ export type Props = {
 };
 
 export const Presenter: VFC<Props> = ({
+  checkBoxClass = "",
   checked: defaultChecked = false,
   className,
   createRef,
@@ -82,7 +84,7 @@ export const Presenter: VFC<Props> = ({
         <input
           ref={createRef}
           checked={checked}
-          className={inputClass}
+          className={`${inputClass} ${checkBoxClass}`}
           id={uuid}
           name={name}
           onChange={handleChange}
