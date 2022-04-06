@@ -128,7 +128,7 @@ export const Presenter: VFC<Props> = ({
 
   return (
     <div className={className} style={style}>
-      {0 < items.length && !items[0].label ? (
+      {1 === items.length && items[0].label === undefined ? (
         <></>
       ) : (
         <Measure
@@ -141,7 +141,7 @@ export const Presenter: VFC<Props> = ({
           }}
         >
           {({ measureRef }) => (
-            <div ref={measureRef} className={`relative ${tabsPositionClass}`}>
+            <div ref={measureRef} className={`relative abc ${tabsPositionClass}`}>
               <ul
                 className={`relative ${tabDisplayClass} ${tabsContainerClassName}`}
                 id={id}
