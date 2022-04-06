@@ -1,7 +1,7 @@
 import { CSSProperties, VFC } from "react";
 import { Size } from "../../atoms/Tab/Presenter";
 export declare type Item = {
-    label: string;
+    label?: string;
     renderPanel: () => JSX.Element;
 };
 export declare type Props = {

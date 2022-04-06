@@ -8,7 +8,7 @@ import { Tab } from "../../atoms/Tab/Default";
 import { Size } from "../../atoms/Tab/Presenter";
 
 export type Item = {
-  label: string;
+  label?: string;
   renderPanel: () => JSX.Element;
 };
 
@@ -154,7 +154,7 @@ export const Presenter: VFC<Props> = ({
                     className={tabContainerClassName}
                     id={`${id}-${index}`}
                     index={index}
-                    label={item.label}
+                    label={item.label ?? ""}
                     onClick={onTabClick}
                     onTabMouseEnter={onTabMouseEnter}
                     onTabMouseLeave={onTabMouseLeave}
