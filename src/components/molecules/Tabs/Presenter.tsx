@@ -128,19 +128,19 @@ export const Presenter: VFC<Props> = ({
 
   return (
     <div className={className} style={style}>
-      <Measure
-        bounds
-        onResize={(contentRect) => {
-          if (initialContainerWidth) {
-            return;
-          }
-          setContainerWidth(contentRect.bounds?.width || 0);
-        }}
-      >
-        {({ measureRef }) => {
-          return 1 < items.length && items[0].label ? (
-            <></>
-          ) : (
+      {1 < items.length && !items[0].label ? (
+        <></>
+      ) : (
+        <Measure
+          bounds
+          onResize={(contentRect) => {
+            if (initialContainerWidth) {
+              return;
+            }
+            setContainerWidth(contentRect.bounds?.width || 0);
+          }}
+        >
+          {({ measureRef }) => (
             <div ref={measureRef} className={`relative ${tabsPositionClass}`}>
               <ul
                 className={`relative ${tabDisplayClass} ${tabsContainerClassName}`}
@@ -175,9 +175,9 @@ export const Presenter: VFC<Props> = ({
                 )}
               </ul>
             </div>
-          );
-        }}
-      </Measure>
+          )}
+        </Measure>
+      )}
       <div
         ref={panelRef}
         className={`w-full overflow-x-hidden whitespace-nowrap ${panelsContainerClassName}`}

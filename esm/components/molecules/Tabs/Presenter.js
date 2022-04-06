@@ -83,7 +83,7 @@ export var Presenter = function (_a) {
             width: targetElement.clientWidth,
         });
     }, [hoverTab, activeIndex, tabSize]);
-    return (_jsxs("div", __assign({ className: className, style: style }, { children: [_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
+    return (_jsxs("div", __assign({ className: className, style: style }, { children: [1 < items.length && !items[0].label ? (_jsx(_Fragment, {}, void 0)) : (_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
                     var _a;
                     if (initialContainerWidth) {
                         return;
@@ -91,7 +91,7 @@ export var Presenter = function (_a) {
                     setContainerWidth(((_a = contentRect.bounds) === null || _a === void 0 ? void 0 : _a.width) || 0);
                 } }, { children: function (_a) {
                     var measureRef = _a.measureRef;
-                    return 1 < items.length && items[0].label ? (_jsx(_Fragment, {}, void 0)) : (_jsx("div", __assign({ ref: measureRef, className: "relative " + tabsPositionClass }, { children: _jsxs("ul", __assign({ className: "relative " + tabDisplayClass + " " + tabsContainerClassName, id: id, style: tabsContainerStyle }, { children: [items.map(function (item, index) {
+                    return (_jsx("div", __assign({ ref: measureRef, className: "relative " + tabsPositionClass }, { children: _jsxs("ul", __assign({ className: "relative " + tabDisplayClass + " " + tabsContainerClassName, id: id, style: tabsContainerStyle }, { children: [items.map(function (item, index) {
                                     var _a;
                                     return (_jsx(Tab, { active: activeIndex === index, className: tabContainerClassName, id: id + "-" + index, index: index, label: (_a = item.label) !== null && _a !== void 0 ? _a : "", onClick: onTabClick, onTabMouseEnter: onTabMouseEnter, onTabMouseLeave: onTabMouseLeave, size: tabSize, style: tabContainerStyle, tabUnderLine: tabsUnderLine }, index));
                                 }),
@@ -100,7 +100,7 @@ export var Presenter = function (_a) {
                                         left: borderStyle.left,
                                         width: borderStyle.width,
                                     } }, void 0))] }), void 0) }), void 0));
-                } }), void 0),
+                } }), void 0)),
             _jsx("div", __assign({ ref: panelRef, className: "w-full overflow-x-hidden whitespace-nowrap " + panelsContainerClassName, style: panelsContainerStyle }, { children: items.map(function (item, index) { return (_jsx("div", __assign({ className: "inline-block w-full align-top" }, { children: item.renderPanel() }), index)); }) }), void 0)] }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map
