@@ -96,6 +96,7 @@ export const Presenter: VFC<Props> = ({
             backgroundPosition: "center 1px",
             backgroundRepeat: "no-repeat",
             backgroundSize: "12px 12px",
+            color: checked ? "#FFF" : "#BFBCD0",
           }}
           type="checkbox"
           value={item.value}

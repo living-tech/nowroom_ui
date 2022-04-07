@@ -62,6 +62,7 @@ export var Presenter = function (_a) {
                             backgroundPosition: "center 1px",
                             backgroundRepeat: "no-repeat",
                             backgroundSize: "12px 12px",
+                            color: checked ? "#FFF" : "#BFBCD0",
                         }, type: "checkbox", value: item.value }, void 0),
                     item.label && (_jsx(Text, __assign({ className: "leading-none ml-3 relative", color: labelColor, size: labelSize, style: __assign({ top: 1 }, labelStyle), weight: labelWeight }, { children: item.label }), void 0))] }), void 0),
             error && (_jsx(TextRed, __assign({ className: "mt-2", size: "sm" }, { children: error }), void 0))] }, void 0));
