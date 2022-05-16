@@ -148,6 +148,9 @@ export const Presenter: VFC<Props> = ({
 
   backgroundColorClass = colorDense ? `${backgroundColorClass}-${colorDense}` : backgroundColorClass;
   borderColorClass = colorDense ? `${borderColorClass}-${colorDense}` : borderColorClass;
+  console.log("colorDense", colorDense);
+  console.log("backgroundColorClass", backgroundColorClass);
+  console.log("borderColorClass", borderColorClass);
 
   return (
     <div
