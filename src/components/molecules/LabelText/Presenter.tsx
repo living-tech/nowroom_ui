@@ -22,6 +22,7 @@ export type Props = {
   children: ReactNode;
   className?: string;
   color?: Color;
+  colorDense?: number;
   isClickable?: boolean;
   size?: "md" | "sm" | "xs";
   style?: CSSProperties;
@@ -31,6 +32,7 @@ export const Presenter: VFC<Props> = ({
   children,
   className,
   color = "purple",
+  colorDense = 500,
   isClickable = false,
   size = "md",
   style,
@@ -143,6 +145,9 @@ export const Presenter: VFC<Props> = ({
       textColor = "text-purple";
       break;
   }
+
+  backgroundColorClass = colorDense ? `${backgroundColorClass}-${colorDense}` : backgroundColorClass;
+  borderColorClass = colorDense ? `${borderColorClass}-${colorDense}` : borderColorClass;
 
   return (
     <div

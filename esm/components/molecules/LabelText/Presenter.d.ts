@@ -5,6 +5,7 @@ export declare type Props = {
     children: ReactNode;
     className?: string;
     color?: Color;
+    colorDense?: number;
     isClickable?: boolean;
     size?: "md" | "sm" | "xs";
     style?: CSSProperties;
