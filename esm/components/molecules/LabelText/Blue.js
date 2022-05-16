@@ -23,7 +23,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Presenter } from "./Presenter";
 export var LabelTextBlue = function (_a) {
-    var _b = _a.color, color = _b === void 0 ? "blue" : _b, props = __rest(_a, ["color"]);
-    return _jsx(Presenter, __assign({ color: color }, props), void 0);
+    var _b = _a.color, color = _b === void 0 ? "blue" : _b, _c = _a.colorDense, colorDense = _c === void 0 ? 500 : _c, props = __rest(_a, ["color", "colorDense"]);
+    return _jsx(Presenter, __assign({ color: color, colorDense: colorDense }, props), void 0);
 };
 //# sourceMappingURL=Blue.js.map
