@@ -5,6 +5,9 @@ export const blue500 = "#6A95E8";
 export const blue600 = "#4879DB";
 export const blue700 = "#285EC7";
 
+
+export const cyan100 = "#CFFAFE";
+export const cyan400 = "#67E8F9";
 export const cyan500 = "#6ACAE8";
 export const cyan600 = "#46B4D9";
 export const cyan700 = "#259BC2";
