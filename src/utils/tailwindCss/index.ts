@@ -5,6 +5,7 @@ import {
   blue500,
   blue600,
   blue700,
+  cyan100,
   cyan500,
   cyan600,
   cyan700,
@@ -42,6 +43,7 @@ import {
   yellow500,
   yellow600,
   yellow700,
+  cyan400,
 } from "../../constnats";
 
 const checkedLabelPlugin = plugin(function ({ addVariant, e }) {
@@ -80,6 +82,8 @@ export const tailwindCssConfig = {
         },
         current: "currentColor",
         cyan: {
+          100: cyan100,
+          400: cyan400,
           600: cyan600,
           700: cyan700,
           DEFAULT: cyan500,

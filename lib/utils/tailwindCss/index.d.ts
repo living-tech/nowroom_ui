@@ -26,6 +26,8 @@ export declare const tailwindCssConfig: {
                 };
                 current: string;
                 cyan: {
+                    100: string;
+                    400: string;
                     600: string;
                     700: string;
                     DEFAULT: string;

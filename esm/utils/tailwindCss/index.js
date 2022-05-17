@@ -1,5 +1,5 @@
 import plugin from "tailwindcss/plugin";
-import { black, blue500, blue600, blue700, cyan500, cyan600, cyan700, facebookColor, gray50, gray100, gray200, gray300, gray400, gray500, gray600, gray700, green500, innerWidth, lineColor, pink500, pink600, pink700, purple100, purple200, purple400, purple500, purple600, purple700, red100, red200, red300, red400, red500, twitterColor, yellow100, yellow200, yellow300, yellow400, yellow500, yellow600, yellow700, } from "../../constnats";
+import { black, blue500, blue600, blue700, cyan100, cyan500, cyan600, cyan700, facebookColor, gray50, gray100, gray200, gray300, gray400, gray500, gray600, gray700, green500, innerWidth, lineColor, pink500, pink600, pink700, purple100, purple200, purple400, purple500, purple600, purple700, red100, red200, red300, red400, red500, twitterColor, yellow100, yellow200, yellow300, yellow400, yellow500, yellow600, yellow700, cyan400, } from "../../constnats";
 var checkedLabelPlugin = plugin(function (_a) {
     var addVariant = _a.addVariant, e = _a.e;
     addVariant("checked-label", function (_a) {
@@ -38,6 +38,8 @@ export var tailwindCssConfig = {
                 },
                 current: "currentColor",
                 cyan: {
+                    100: cyan100,
+                    400: cyan400,
                     600: cyan600,
                     700: cyan700,
                     DEFAULT: cyan500,
