@@ -94,8 +94,8 @@ export const Presenter: VFC<Props> = ({
       textColor = "text-white";
       break;
     case "blue":
-      backgroundColorClass = "bg-blue";
-      borderColorClass = "border-blue";
+      backgroundColorClass = colorDense ? `bg-blue-${colorDense}` : "bg-blue";
+      borderColorClass = colorDense ? `border-blue-${colorDense}` : "border-blue";
       backgroundColorHoverClass = isClickable ? "hover:bg-blue-700" : "";
       borderColorHoverClass = isClickable ? "hover:border-blue-700" : "";
       textColor = "text-white";
