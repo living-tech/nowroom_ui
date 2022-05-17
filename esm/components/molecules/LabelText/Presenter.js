@@ -124,11 +124,11 @@ export var Presenter = function (_a) {
             textColor = "text-purple";
             break;
     }
-    backgroundColorClass = colorDense ? backgroundColorClass + "-" + colorDense : backgroundColorClass;
-    borderColorClass = colorDense ? borderColorClass + "-" + colorDense : borderColorClass;
-    console.log("colorDense", colorDense);
-    console.log("backgroundColorClass", backgroundColorClass);
-    console.log("borderColorClass", borderColorClass);
+    // backgroundColorClass = colorDense ? `${backgroundColorClass}-${colorDense}` : backgroundColorClass;
+    // borderColorClass = colorDense ? `${borderColorClass}-${colorDense}` : borderColorClass;
+    // console.log("colorDense", colorDense);
+    // console.log("backgroundColorClass", backgroundColorClass);
+    // console.log("borderColorClass", borderColorClass);
     return (_jsx("div", __assign({ className: baseClass + " " + cursorClass + " " + fontSize + " " + backgroundColorClass + " " + backgroundColorHoverClass + " " + borderColorClass + " " + textColor + " " + borderColorHoverClass + " " + className + " " + styles.divStyle, style: style }, { children: children }), void 0));
 };
 //# sourceMappingURL=Presenter.js.map
