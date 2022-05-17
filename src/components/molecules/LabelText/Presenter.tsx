@@ -33,7 +33,7 @@ export const Presenter: VFC<Props> = ({
   children,
   className,
   color = "purple",
-  colorDense = 500,
+  colorDense = "",
   isClickable = false,
   size = "md",
   style,

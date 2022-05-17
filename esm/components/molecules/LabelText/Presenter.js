@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import styles from "./LabelText.module.scss";
 export var Presenter = function (_a) {
-    var children = _a.children, className = _a.className, _b = _a.color, color = _b === void 0 ? "purple" : _b, _c = _a.colorDense, colorDense = _c === void 0 ? 500 : _c, _d = _a.isClickable, isClickable = _d === void 0 ? false : _d, _e = _a.size, size = _e === void 0 ? "md" : _e, style = _a.style;
+    var children = _a.children, className = _a.className, _b = _a.color, color = _b === void 0 ? "purple" : _b, _c = _a.colorDense, colorDense = _c === void 0 ? "" : _c, _d = _a.isClickable, isClickable = _d === void 0 ? false : _d, _e = _a.size, size = _e === void 0 ? "md" : _e, style = _a.style;
     var baseClass = "inline-flex items-center border rounded transition ease-out duration-200 font-bold leading-none whitespace-pre-wrap pb-1 px-1.5";
     var cursorClass = "";
     if (isClickable) {
