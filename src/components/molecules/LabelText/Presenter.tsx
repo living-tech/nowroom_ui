@@ -6,6 +6,7 @@ export type Color =
   | "pink"
   | "white"
   | "cyan"
+  | "cyan600"
   | "blue"
   | "purple"
   | "green"
@@ -81,6 +82,13 @@ export const Presenter: VFC<Props> = ({
     case "cyan":
       backgroundColorClass = "bg-cyan";
       borderColorClass = "border-cyan";
+      backgroundColorHoverClass = isClickable ? "hover:bg-cyan-700" : "";
+      borderColorHoverClass = isClickable ? "hover:border-cyan-700" : "";
+      textColor = "text-white";
+      break;
+    case "cyan600":
+      backgroundColorClass = "bg-cyan-600";
+      borderColorClass = "border-cyan-600";
       backgroundColorHoverClass = isClickable ? "hover:bg-cyan-700" : "";
       borderColorHoverClass = isClickable ? "hover:border-cyan-700" : "";
       textColor = "text-white";
