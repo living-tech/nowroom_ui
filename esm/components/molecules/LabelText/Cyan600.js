@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Presenter } from "./Presenter";
-export var LabelTextCyan600 = function (_a) {
+export var LabelTextCyanD600 = function (_a) {
     var _b = _a.color, color = _b === void 0 ? "cyan600" : _b, props = __rest(_a, ["color"]);
     return _jsx(Presenter, __assign({ color: color }, props), void 0);
 };
