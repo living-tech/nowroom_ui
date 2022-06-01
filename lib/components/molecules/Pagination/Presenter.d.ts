@@ -2,6 +2,7 @@ import { VFC } from "react";
 export declare type Props = {
     className?: string;
     forcePage?: number;
+    hrefs?: Array<string>;
     initialPage: number;
     marginPagesDisplayed?: number;
     nextTextLabel?: string;
