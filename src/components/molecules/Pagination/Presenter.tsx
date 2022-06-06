@@ -8,6 +8,7 @@ import { Text } from "../../atoms/Text/Default";
 export type Props = {
   className?: string;
   forcePage?: number;
+  hrefs?: Array<string>;
   initialPage: number;
   marginPagesDisplayed?: number;
   nextTextLabel?: string;
@@ -21,6 +22,7 @@ export type Props = {
 export const Presenter: VFC<Props> = ({
   className = "",
   forcePage,
+  hrefs,
   initialPage,
   marginPagesDisplayed,
   nextTextLabel = "次のページ",
@@ -33,6 +35,14 @@ export const Presenter: VFC<Props> = ({
   const { isMobile } = useBreakPoints();
   const displayedNum = isMobile ? 1 : 2;
 
+  // @ts-ignore TS6133
+  const hrefBuilder = (pageIndex: number, pageCount: number, selectedPage: number) => {
+    if (!hrefs || hrefs.length < pageIndex) {
+      return "";
+    }
+    return pageIndex === selectedPage ? "" : hrefs[pageIndex - 1];
+  };
+
   return (
     <ReactPaginate
       activeClassName={"active"}
@@ -41,6 +51,7 @@ export const Presenter: VFC<Props> = ({
       containerClassName={`pagination ${className}`}
       disableInitialCallback={true}
       forcePage={typeof forcePage === "number" ? forcePage - 1 : undefined}
+      hrefBuilder={hrefs ? ((hrefBuilder as unknown) as (pageIndex: number) => void) : undefined}
       initialPage={initialPage - 1}
       marginPagesDisplayed={marginPagesDisplayed ? marginPagesDisplayed : displayedNum}
       nextClassName={withoutArrow ? "hidden" : undefined}
