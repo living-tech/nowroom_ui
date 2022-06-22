@@ -18,7 +18,7 @@ import { v4 as uuidv4 } from "uuid";
 import { Tab } from "../../atoms/Tab/Default";
 var uuid = uuidv4();
 export var Presenter = function (_a) {
-    var _b = _a.id, id = _b === void 0 ? uuid : _b, _c = _a.className, className = _c === void 0 ? "" : _c, initialContainerWidth = _a.initialContainerWidth, items = _a.items, onClickTab = _a.onClickTab, _d = _a.panelsContainerClassName, panelsContainerClassName = _d === void 0 ? "" : _d, panelsContainerStyle = _a.panelsContainerStyle, style = _a.style, _e = _a.tabContainerClassName, tabContainerClassName = _e === void 0 ? "" : _e, tabContainerStyle = _a.tabContainerStyle, _f = _a.tabsPosition, tabsPosition = _f === void 0 ? "left" : _f, _g = _a.tabSize, tabSize = _g === void 0 ? "md" : _g, _h = _a.tabsContainerClassName, tabsContainerClassName = _h === void 0 ? "" : _h, tabsContainerStyle = _a.tabsContainerStyle, _j = _a.tabsUnderLine, tabsUnderLine = _j === void 0 ? true : _j, _k = _a.tabsWidth, tabsWidth = _k === void 0 ? "full" : _k;
+    var _b = _a.id, id = _b === void 0 ? uuid : _b, _c = _a.className, className = _c === void 0 ? "" : _c, hiddenTabLabels = _a.hiddenTabLabels, initialContainerWidth = _a.initialContainerWidth, items = _a.items, onClickTab = _a.onClickTab, _d = _a.panelsContainerClassName, panelsContainerClassName = _d === void 0 ? "" : _d, panelsContainerStyle = _a.panelsContainerStyle, style = _a.style, _e = _a.tabContainerClassName, tabContainerClassName = _e === void 0 ? "" : _e, tabContainerStyle = _a.tabContainerStyle, _f = _a.tabsPosition, tabsPosition = _f === void 0 ? "left" : _f, _g = _a.tabSize, tabSize = _g === void 0 ? "md" : _g, _h = _a.tabsContainerClassName, tabsContainerClassName = _h === void 0 ? "" : _h, tabsContainerStyle = _a.tabsContainerStyle, _j = _a.tabsUnderLine, tabsUnderLine = _j === void 0 ? true : _j, _k = _a.tabsWidth, tabsWidth = _k === void 0 ? "full" : _k;
     var panelRef = useRef(null);
     var _l = useState(0), activeIndex = _l[0], setActiveIndex = _l[1];
     var _m = useState(initialContainerWidth !== null && initialContainerWidth !== void 0 ? initialContainerWidth : 0), containerWidth = _m[0], setContainerWidth = _m[1];
@@ -83,7 +83,7 @@ export var Presenter = function (_a) {
             width: targetElement.clientWidth,
         });
     }, [hoverTab, activeIndex, tabSize]);
-    return (_jsxs("div", __assign({ className: className, style: style }, { children: [1 === items.length && items[0].label === undefined ? (_jsx(_Fragment, {}, void 0)) : (_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
+    return (_jsxs("div", __assign({ className: className, style: style }, { children: [hiddenTabLabels ? (_jsx(_Fragment, {}, void 0)) : (_jsx(Measure, __assign({ bounds: true, onResize: function (contentRect) {
                     var _a;
                     if (initialContainerWidth) {
                         return;

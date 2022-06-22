@@ -8,12 +8,13 @@ import { Tab } from "../../atoms/Tab/Default";
 import { Size } from "../../atoms/Tab/Presenter";
 
 export type Item = {
-  label?: string;
+  label: string;
   renderPanel: () => JSX.Element;
 };
 
 export type Props = {
   className?: string;
+  hiddenTabLabels?: boolean;
   id?: string;
   initialContainerWidth?: number;
   items: Array<Item>;
@@ -36,6 +37,7 @@ const uuid = uuidv4();
 export const Presenter: VFC<Props> = ({
   id = uuid,
   className = "",
+  hiddenTabLabels,
   initialContainerWidth,
   items,
   onClickTab,
@@ -128,7 +130,7 @@ export const Presenter: VFC<Props> = ({
 
   return (
     <div className={className} style={style}>
-      {1 === items.length && items[0].label === undefined ? (
+      {hiddenTabLabels ? (
         <></>
       ) : (
         <Measure
