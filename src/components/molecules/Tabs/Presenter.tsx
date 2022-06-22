@@ -14,6 +14,7 @@ export type Item = {
 
 export type Props = {
   className?: string;
+  hiddenTabLabels?: boolean;
   id?: string;
   initialContainerWidth?: number;
   items: Array<Item>;
@@ -36,6 +37,7 @@ const uuid = uuidv4();
 export const Presenter: VFC<Props> = ({
   id = uuid,
   className = "",
+  hiddenTabLabels,
   initialContainerWidth,
   items,
   onClickTab,
@@ -128,48 +130,56 @@ export const Presenter: VFC<Props> = ({
 
   return (
     <div className={className} style={style}>
-      <Measure
-        bounds
-        onResize={(contentRect) => {
-          if (initialContainerWidth) {
-            return;
-          }
-          setContainerWidth(contentRect.bounds?.width || 0);
-        }}
-      >
-        {({ measureRef }) => (
-          <div ref={measureRef} className={`relative ${tabsPositionClass}`}>
-            <ul className={`relative ${tabDisplayClass} ${tabsContainerClassName}`} id={id} style={tabsContainerStyle}>
-              {items.map((item, index) => (
-                <Tab
-                  key={index}
-                  active={activeIndex === index}
-                  className={tabContainerClassName}
-                  id={`${id}-${index}`}
-                  index={index}
-                  label={item.label}
-                  onClick={onTabClick}
-                  onTabMouseEnter={onTabMouseEnter}
-                  onTabMouseLeave={onTabMouseLeave}
-                  size={tabSize}
-                  style={tabContainerStyle}
-                  tabUnderLine={tabsUnderLine}
-                />
-              ))}
-              {borderStyle && (
-                <span
-                  className="absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out"
-                  style={{
-                    height: 2,
-                    left: borderStyle.left,
-                    width: borderStyle.width,
-                  }}
-                />
-              )}
-            </ul>
-          </div>
-        )}
-      </Measure>
+      {hiddenTabLabels ? (
+        <></>
+      ) : (
+        <Measure
+          bounds
+          onResize={(contentRect) => {
+            if (initialContainerWidth) {
+              return;
+            }
+            setContainerWidth(contentRect.bounds?.width || 0);
+          }}
+        >
+          {({ measureRef }) => (
+            <div ref={measureRef} className={`relative abc ${tabsPositionClass}`}>
+              <ul
+                className={`relative ${tabDisplayClass} ${tabsContainerClassName}`}
+                id={id}
+                style={tabsContainerStyle}
+              >
+                {items.map((item, index) => (
+                  <Tab
+                    key={index}
+                    active={activeIndex === index}
+                    className={tabContainerClassName}
+                    id={`${id}-${index}`}
+                    index={index}
+                    label={item.label ?? ""}
+                    onClick={onTabClick}
+                    onTabMouseEnter={onTabMouseEnter}
+                    onTabMouseLeave={onTabMouseLeave}
+                    size={tabSize}
+                    style={tabContainerStyle}
+                    tabUnderLine={tabsUnderLine}
+                  />
+                ))}
+                {borderStyle && (
+                  <span
+                    className="absolute bottom-0 pointer-events-none bg-purple transition-all duration-500 ease-out"
+                    style={{
+                      height: 2,
+                      left: borderStyle.left,
+                      width: borderStyle.width,
+                    }}
+                  />
+                )}
+              </ul>
+            </div>
+          )}
+        </Measure>
+      )}
       <div
         ref={panelRef}
         className={`w-full overflow-x-hidden whitespace-nowrap ${panelsContainerClassName}`}

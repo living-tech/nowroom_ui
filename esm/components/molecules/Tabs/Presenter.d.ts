@@ -6,6 +6,7 @@ export declare type Item = {
 };
 export declare type Props = {
     className?: string;
+    hiddenTabLabels?: boolean;
     id?: string;
     initialContainerWidth?: number;
     items: Array<Item>;
