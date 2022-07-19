@@ -1,4 +1,4 @@
-import { ChangeEvent, CSSProperties, useState, VFC } from "react";
+import { ChangeEvent, CSSProperties, VFC } from "react";
 
 import { Icon } from "../Icon/Default";
 import { Color as IconColor, IconName } from "../Icon/Presenter";
@@ -64,8 +64,6 @@ export const Presenter: VFC<Props> = ({
   value,
   ...props
 }) => {
-  const [selectedValue, setSelectedValue] = useState<string | number>(value ?? defaultValue ?? "");
-
   let widthClass = "";
   if (block) {
     widthClass = "w-full";
@@ -107,11 +105,6 @@ export const Presenter: VFC<Props> = ({
       break;
   }
 
-  let colorClass = "";
-  if (!selectedValue) {
-    colorClass = "text-gray-400";
-  }
-
   let backgroundColorClass = "bg-gray-100";
   if (backgroundColor === "white") {
     backgroundColorClass = "bg-white";
@@ -119,7 +112,6 @@ export const Presenter: VFC<Props> = ({
 
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     onChange && onChange(event);
-    setSelectedValue(event.target.value);
   };
 
   let inputClass = "";
@@ -150,7 +142,7 @@ export const Presenter: VFC<Props> = ({
         )}
         <select
           ref={createRef}
-          className={`text-base w-full cursor-pointer whitespace-nowrap block border font-bold border-gray-200 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${backgroundColorClass} ${colorClass} ${paddingLeftClass} ${paddingRightClass} ${paddingYClass} ${widthClass} ${inputClass}`}
+          className={`text-base w-full cursor-pointer whitespace-nowrap block border font-bold border-gray-200 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 ${backgroundColorClass} ${paddingLeftClass} ${paddingRightClass} ${paddingYClass} ${widthClass} ${inputClass}`}
           defaultValue={defaultValue}
           disabled={disabled}
           id={id}
