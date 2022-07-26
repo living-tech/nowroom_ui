@@ -13,6 +13,8 @@ export declare type Props = {
     name?: string;
     onChange?: (date: Dayjs) => void;
     placeholder?: string;
+    selectableFrom?: Date;
+    selectableTo?: Date;
     size?: Size;
     style?: CSSProperties;
     value?: Dayjs;

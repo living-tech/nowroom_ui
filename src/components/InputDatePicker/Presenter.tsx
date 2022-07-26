@@ -29,6 +29,8 @@ export type Props = {
   name?: string;
   onChange?: (date: Dayjs) => void;
   placeholder?: string;
+  selectableFrom?: Date;
+  selectableTo?: Date;
   size?: Size;
   style?: CSSProperties;
   value?: Dayjs;
@@ -47,6 +49,8 @@ export const Presenter: VFC<Props> = ({
   name,
   onChange,
   placeholder,
+  selectableFrom,
+  selectableTo,
   size = "md",
   style,
   value,
@@ -92,6 +96,16 @@ export const Presenter: VFC<Props> = ({
     }
 
     onChange && onChange(dayjs(date));
+  };
+
+  const isDaySelectable = (day: Date) => {
+    if (selectableFrom && day < selectableFrom) {
+      return false;
+    }
+    if (selectableTo && selectableTo < day) {
+      return false;
+    }
+    return true;
   };
 
   return (
@@ -149,6 +163,7 @@ export const Presenter: VFC<Props> = ({
           <div className="absolute left-0 z-10 inline-block" style={{ top: "106%" }}>
             <DatePicker
               inline
+              filterDate={(day) => isDaySelectable(day)}
               locale="ja"
               onChange={handleDateChange}
               renderCustomHeader={({
