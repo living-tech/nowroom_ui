@@ -201,6 +201,16 @@ input[type="radio"]:checked + label div p.text {
   border-radius: 50%;
 }
 
+.react-datepicker__day--disabled{
+  cursor: default;
+  color: var(--gray-200);
+}
+
+.react-datepicker__day--disabled:hover{
+  color: var(--gray-200);
+  background-color: transparent;
+}
+
 ul.pagination {
   display: inline-flex;
 }
