@@ -23,6 +23,7 @@ export type Props = {
   inputClassName?: string;
   inputStyle?: CSSProperties;
   label?: string;
+  list?: string;
   name?: string;
   onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -54,6 +55,7 @@ export const Presenter: VFC<Props> = ({
   inputClassName = "",
   inputStyle,
   label,
+  list,
   name,
   onBlur,
   onChange,
@@ -226,6 +228,7 @@ export const Presenter: VFC<Props> = ({
           defaultValue={defaultValue}
           disabled={disabled}
           id={id}
+          list={list}
           name={name}
           onBlur={onBlur}
           onChange={onChange}

@@ -17,6 +17,7 @@ export declare type Props = {
     inputClassName?: string;
     inputStyle?: CSSProperties;
     label?: string;
+    list?: string;
     name?: string;
     onBlur?: (event: FocusEvent<HTMLInputElement>) => void;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
