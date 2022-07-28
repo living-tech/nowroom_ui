@@ -4,8 +4,18 @@ import { Icon } from "../../atoms/Icon/Default";
 import { Color as IconColor, CurrentType, IconName, Size as IconSize } from "../../atoms/Icon/Presenter";
 import { Spinner } from "../../atoms/Spinner/Default";
 
-export type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter" | "line" | "gray";
-export type Size = "sm" | "md" | "lg";
+export type Color =
+  | "purple"
+  | "yellow"
+  | "red"
+  | "white"
+  | "transparent"
+  | "facebook"
+  | "twitter"
+  | "line"
+  | "gray"
+  | "mediumGray01";
+export type Size = "xs" | "sm" | "md" | "lg";
 
 export type Props = {
   border?: boolean;
@@ -21,6 +31,7 @@ export type Props = {
   radius?: boolean;
   shadow?: boolean;
   size?: Size;
+  strokeWidth?: number;
   style?: CSSProperties;
   tag?: "button" | "a";
   target?: "_blank";
@@ -40,6 +51,7 @@ export const Presenter: VFC<Props> = ({
   radius = false,
   shadow = true,
   size = "md",
+  strokeWidth,
   style,
   tag = "button",
   target,
@@ -52,7 +64,19 @@ export const Presenter: VFC<Props> = ({
   let sizeClass = "";
   let iconSize: IconSize;
   let loadingSize: number;
+
+  const iconStyle: CSSProperties | undefined = strokeWidth
+    ? {
+        strokeWidth: strokeWidth,
+      }
+    : undefined;
+
   switch (size) {
+    case "xs":
+      sizeClass = "w-4 h-4";
+      iconSize = "xs";
+      loadingSize = 10;
+      break;
     case "sm":
       sizeClass = "p-1";
       iconSize = "sm";
@@ -176,6 +200,9 @@ export const Presenter: VFC<Props> = ({
         case "gray":
           backgroundColorClass = "bg-white hover:bg-white";
           break;
+        case "mediumGray01":
+          backgroundColorClass = "bg-white hover:bg-white";
+          break;
         case "transparent":
           backgroundColorClass = "bg-transparent hover:bg-gray-200";
           break;
@@ -206,6 +233,9 @@ export const Presenter: VFC<Props> = ({
           break;
         case "gray":
           backgroundColorClass = "bg-gray-500 hover:bg-gray-400 disabled:bg-gray-500 disabled:hover:bg-gray-500";
+          break;
+        case "mediumGray01":
+          backgroundColorClass = "bg-gray-400 hover:bg-gray-300 disabled:bg-gray-400 disabled:hover:bg-gray-400";
           break;
         case "transparent":
           backgroundColorClass = "bg-transparent hover:bg-gray-200";
@@ -251,6 +281,10 @@ export const Presenter: VFC<Props> = ({
           iconColorClass = "text-gray-500 hover:text-gray-400 disabled:text-gray-500 disabled:hover:text-gray-500";
           loadingColor = "black";
           break;
+        case "mediumGray01":
+          iconColorClass = "text-gray-400 hover:text-gray-300 disabled:text-gray-400 disabled:hover:text-gray-400";
+          loadingColor = "black";
+          break;
         case "transparent":
           iconColorClass = "text-black";
           loadingColor = "black";
@@ -291,6 +325,10 @@ export const Presenter: VFC<Props> = ({
           iconColorClass = "text-white";
           loadingColor = "black";
           break;
+        case "mediumGray01":
+          iconColorClass = "text-white";
+          loadingColor = "black";
+          break;
         case "transparent":
           iconColorClass = "text-black";
           loadingColor = "black";
@@ -312,6 +350,7 @@ export const Presenter: VFC<Props> = ({
         currentType={currentType}
         name={iconName}
         size={iconSize}
+        style={iconStyle}
       />
       {loading && (
         <span className="absolute flex top-1/2 transform -translate-y-1/2">
