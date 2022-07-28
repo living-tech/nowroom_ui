@@ -1,7 +1,7 @@
 import { CSSProperties, VFC } from "react";
 import { Color as IconColor, CurrentType, IconName } from "../../atoms/Icon/Presenter";
-export declare type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter" | "line" | "gray";
-export declare type Size = "sm" | "md" | "lg";
+export declare type Color = "purple" | "yellow" | "red" | "white" | "transparent" | "facebook" | "twitter" | "line" | "gray" | "mediumGray01";
+export declare type Size = "xs" | "sm" | "md" | "lg";
 export declare type Props = {
     border?: boolean;
     className?: string;
@@ -16,6 +16,7 @@ export declare type Props = {
     radius?: boolean;
     shadow?: boolean;
     size?: Size;
+    strokeWidth?: number;
     style?: CSSProperties;
     tag?: "button" | "a";
     target?: "_blank";

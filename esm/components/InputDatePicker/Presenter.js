@@ -22,11 +22,12 @@ import { Icon } from "../atoms/Icon/Default";
 import { TextDarkGray02 } from "../atoms/Text/DarkGray02";
 import { TextMediumGray02 } from "../atoms/Text/MediumGray02";
 import { TextRed } from "../atoms/Text/Red";
+import { IconButtonGray } from "../molecules";
 import { IconButtonTransparent } from "../molecules/IconButton/Transparent";
 import styles from "./InputDatePicker.module.scss";
 registerLocale("ja", ja);
 export var Presenter = function (_a) {
-    var any = _a.any, _b = _a.anyLabel, anyLabel = _b === void 0 ? "任意" : _b, className = _a.className, error = _a.error, id = _a.id, label = _a.label, _c = _a.monthLabel, monthLabel = _c === void 0 ? "月" : _c, name = _a.name, onChange = _a.onChange, placeholder = _a.placeholder, selectableFrom = _a.selectableFrom, selectableTo = _a.selectableTo, _d = _a.size, size = _d === void 0 ? "md" : _d, style = _a.style, value = _a.value, _e = _a.weight, weight = _e === void 0 ? "bold" : _e, _f = _a.yearLabel, yearLabel = _f === void 0 ? "年" : _f;
+    var any = _a.any, _b = _a.anyLabel, anyLabel = _b === void 0 ? "任意" : _b, className = _a.className, error = _a.error, id = _a.id, label = _a.label, _c = _a.monthLabel, monthLabel = _c === void 0 ? "月" : _c, name = _a.name, onChange = _a.onChange, onClear = _a.onClear, placeholder = _a.placeholder, selectableFrom = _a.selectableFrom, selectableTo = _a.selectableTo, _d = _a.size, size = _d === void 0 ? "md" : _d, style = _a.style, value = _a.value, _e = _a.weight, weight = _e === void 0 ? "bold" : _e, _f = _a.yearLabel, yearLabel = _f === void 0 ? "年" : _f;
     var inputBaseClass = "inline-block bg-gray-100 border w-full rounded-md cursor-pointer";
     var inputClass = "";
     if (error) {
@@ -70,12 +71,18 @@ export var Presenter = function (_a) {
         return true;
     };
     return (_jsxs("div", __assign({ className: "relative " + className, style: style }, { children: [_jsxs("div", { children: [label && (_jsxs("label", __assign({ className: "block mb-3 text-sm font-bold text-gray-700 cursor-pointer", htmlFor: id }, { children: [label, any && (_jsx(TextMediumGray02, __assign({ className: "ml-3", size: "sm", tag: "span" }, { children: anyLabel }), void 0))] }), void 0)),
-                    _jsxs("div", __assign({ className: "relative", onClick: function () { return setIsShowCalendar(true); } }, { children: [_jsx("input", { disabled: true, className: inputBaseClass + " " + inputClass, id: id, name: name, placeholder: placeholder, value: value === null || value === void 0 ? void 0 : value.format("YYYY/M/D") }, void 0),
-                            _jsx(Icon, { className: "absolute pointer-events-none", color: "purple", name: "FiCalendar", size: "md", style: {
-                                    right: size === "md" ? "1rem" : "0.5rem",
+                    _jsxs("div", __assign({ className: "relative" }, { children: [_jsxs("div", __assign({ className: "relative", onClick: function () { return setIsShowCalendar(true); } }, { children: [_jsx("input", { disabled: true, className: inputBaseClass + " " + inputClass, id: id, name: name, placeholder: placeholder, value: (value === null || value === void 0 ? void 0 : value.format("YYYY/M/D")) || "" }, void 0),
+                                    _jsx(Icon, { className: "absolute pointer-events-none", color: "purple", name: "FiCalendar", size: "md", style: {
+                                            right: size === "md" ? "1rem" : "0.5rem",
+                                            top: "50%",
+                                            transform: "translateY(-50%)",
+                                        } }, void 0)] }), void 0),
+                            onClear && value && (_jsx(IconButtonGray, { radius: true, color: "mediumGray01", iconName: "FiX", onClick: onClear, shadow: false, size: "xs", style: {
+                                    position: "absolute",
+                                    right: size === "md" ? "3rem" : "2.5rem",
                                     top: "50%",
                                     transform: "translateY(-50%)",
-                                } }, void 0)] }), void 0),
+                                }, visualType: "outline" }, void 0))] }), void 0),
                     error && (_jsx(TextRed, __assign({ className: "mt-2", size: "sm" }, { children: error }), void 0))] }, void 0),
             _jsx(CSSTransition, __assign({ unmountOnExit: true, classNames: {
                     enter: styles.CalendarEnter,
