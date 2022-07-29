@@ -8,11 +8,11 @@ import DatePicker, { registerLocale } from "react-datepicker";
 import { CSSTransition } from "react-transition-group";
 
 import { Icon } from "../atoms/Icon/Default";
-import { Size } from "../atoms/InputText/Presenter";
 import { TextDarkGray02 } from "../atoms/Text/DarkGray02";
 import { TextMediumGray02 } from "../atoms/Text/MediumGray02";
 import { Weight } from "../atoms/Text/Presenter";
 import { TextRed } from "../atoms/Text/Red";
+import { IconButtonGray } from "../molecules";
 import { IconButtonTransparent } from "../molecules/IconButton/Transparent";
 import styles from "./InputDatePicker.module.scss";
 
@@ -28,10 +28,11 @@ export type Props = {
   monthLabel?: string;
   name?: string;
   onChange?: (date: Dayjs) => void;
+  onClear?: () => void;
   placeholder?: string;
   selectableFrom?: Date;
   selectableTo?: Date;
-  size?: Size;
+  size?: "sm" | "md";
   style?: CSSProperties;
   value?: Dayjs;
   weight?: Weight;
@@ -48,6 +49,7 @@ export const Presenter: VFC<Props> = ({
   monthLabel = "月",
   name,
   onChange,
+  onClear,
   placeholder,
   selectableFrom,
   selectableTo,
@@ -121,26 +123,45 @@ export const Presenter: VFC<Props> = ({
             )}
           </label>
         )}
-        <div className={"relative"} onClick={() => setIsShowCalendar(true)}>
-          <input
-            disabled
-            className={`${inputBaseClass} ${inputClass}`}
-            id={id}
-            name={name}
-            placeholder={placeholder}
-            value={value?.format("YYYY/M/D")}
-          />
-          <Icon
-            className={"absolute pointer-events-none"}
-            color={"purple"}
-            name={"FiCalendar"}
-            size={"md"}
-            style={{
-              right: size === "md" ? "1rem" : "0.5rem",
-              top: "50%",
-              transform: "translateY(-50%)",
-            }}
-          />
+        <div className="relative">
+          <div className={"relative"} onClick={() => setIsShowCalendar(true)}>
+            <input
+              disabled
+              className={`${inputBaseClass} ${inputClass}`}
+              id={id}
+              name={name}
+              placeholder={placeholder}
+              value={value?.format("YYYY/M/D") || ""}
+            />
+            <Icon
+              className={"absolute pointer-events-none"}
+              color={"purple"}
+              name={"FiCalendar"}
+              size={"md"}
+              style={{
+                right: size === "md" ? "1rem" : "0.5rem",
+                top: "50%",
+                transform: "translateY(-50%)",
+              }}
+            />
+          </div>
+          {onClear && value && (
+            <IconButtonGray
+              radius
+              color={"mediumGray01"}
+              iconName="FiX"
+              onClick={onClear}
+              shadow={false}
+              size="xs"
+              style={{
+                position: "absolute",
+                right: size === "md" ? "3rem" : "2.5rem",
+                top: "50%",
+                transform: "translateY(-50%)",
+              }}
+              visualType="outline"
+            />
+          )}
         </div>
         {error && (
           <TextRed className={"mt-2"} size={"sm"}>

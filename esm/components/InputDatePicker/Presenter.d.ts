@@ -1,6 +1,5 @@
 import { Dayjs } from "dayjs";
 import { CSSProperties, VFC } from "react";
-import { Size } from "../atoms/InputText/Presenter";
 import { Weight } from "../atoms/Text/Presenter";
 export declare type Props = {
     any?: boolean;
@@ -12,10 +11,11 @@ export declare type Props = {
     monthLabel?: string;
     name?: string;
     onChange?: (date: Dayjs) => void;
+    onClear?: () => void;
     placeholder?: string;
     selectableFrom?: Date;
     selectableTo?: Date;
-    size?: Size;
+    size?: "sm" | "md";
     style?: CSSProperties;
     value?: Dayjs;
     weight?: Weight;

@@ -24,12 +24,22 @@ import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-run
 import { Icon } from "../../atoms/Icon/Default";
 import { Spinner } from "../../atoms/Spinner/Default";
 export var Presenter = function (_a) {
-    var _b = _a.border, border = _b === void 0 ? true : _b, className = _a.className, _c = _a.color, color = _c === void 0 ? "transparent" : _c, currentType = _a.currentType, disabled = _a.disabled, href = _a.href, iconColor = _a.iconColor, iconName = _a.iconName, loading = _a.loading, _d = _a.radius, radius = _d === void 0 ? false : _d, _e = _a.shadow, shadow = _e === void 0 ? true : _e, _f = _a.size, size = _f === void 0 ? "md" : _f, style = _a.style, _g = _a.tag, tag = _g === void 0 ? "button" : _g, target = _a.target, _h = _a.visualType, visualType = _h === void 0 ? "fill" : _h, props = __rest(_a, ["border", "className", "color", "currentType", "disabled", "href", "iconColor", "iconName", "loading", "radius", "shadow", "size", "style", "tag", "target", "visualType"]);
+    var _b = _a.border, border = _b === void 0 ? true : _b, className = _a.className, _c = _a.color, color = _c === void 0 ? "transparent" : _c, currentType = _a.currentType, disabled = _a.disabled, href = _a.href, iconColor = _a.iconColor, iconName = _a.iconName, loading = _a.loading, _d = _a.radius, radius = _d === void 0 ? false : _d, _e = _a.shadow, shadow = _e === void 0 ? true : _e, _f = _a.size, size = _f === void 0 ? "md" : _f, strokeWidth = _a.strokeWidth, style = _a.style, _g = _a.tag, tag = _g === void 0 ? "button" : _g, target = _a.target, _h = _a.visualType, visualType = _h === void 0 ? "fill" : _h, props = __rest(_a, ["border", "className", "color", "currentType", "disabled", "href", "iconColor", "iconName", "loading", "radius", "shadow", "size", "strokeWidth", "style", "tag", "target", "visualType"]);
     var baseClass = "relative rounded font-bold transition duration-200 ease-out inline-flex disabled:cursor-not-allowed justify-center items-center focus:outline-none";
     var sizeClass = "";
     var iconSize;
     var loadingSize;
+    var iconStyle = strokeWidth
+        ? {
+            strokeWidth: strokeWidth,
+        }
+        : undefined;
     switch (size) {
+        case "xs":
+            sizeClass = "w-4 h-4";
+            iconSize = "xs";
+            loadingSize = 10;
+            break;
         case "sm":
             sizeClass = "p-1";
             iconSize = "sm";
@@ -149,6 +159,9 @@ export var Presenter = function (_a) {
                 case "gray":
                     backgroundColorClass = "bg-white hover:bg-white";
                     break;
+                case "mediumGray01":
+                    backgroundColorClass = "bg-white hover:bg-white";
+                    break;
                 case "transparent":
                     backgroundColorClass = "bg-transparent hover:bg-gray-200";
                     break;
@@ -179,6 +192,9 @@ export var Presenter = function (_a) {
                     break;
                 case "gray":
                     backgroundColorClass = "bg-gray-500 hover:bg-gray-400 disabled:bg-gray-500 disabled:hover:bg-gray-500";
+                    break;
+                case "mediumGray01":
+                    backgroundColorClass = "bg-gray-400 hover:bg-gray-300 disabled:bg-gray-400 disabled:hover:bg-gray-400";
                     break;
                 case "transparent":
                     backgroundColorClass = "bg-transparent hover:bg-gray-200";
@@ -223,6 +239,10 @@ export var Presenter = function (_a) {
                     iconColorClass = "text-gray-500 hover:text-gray-400 disabled:text-gray-500 disabled:hover:text-gray-500";
                     loadingColor = "black";
                     break;
+                case "mediumGray01":
+                    iconColorClass = "text-gray-400 hover:text-gray-300 disabled:text-gray-400 disabled:hover:text-gray-400";
+                    loadingColor = "black";
+                    break;
                 case "transparent":
                     iconColorClass = "text-black";
                     loadingColor = "black";
@@ -263,6 +283,10 @@ export var Presenter = function (_a) {
                     iconColorClass = "text-white";
                     loadingColor = "black";
                     break;
+                case "mediumGray01":
+                    iconColorClass = "text-white";
+                    loadingColor = "black";
+                    break;
                 case "transparent":
                     iconColorClass = "text-black";
                     loadingColor = "black";
@@ -274,7 +298,7 @@ export var Presenter = function (_a) {
     if (shadow) {
         shadowClass = "shadow";
     }
-    var Inner = function () { return (_jsxs(_Fragment, { children: [_jsx(Icon, { className: "" + loadingIconColorClass, color: iconColor, currentType: currentType, name: iconName, size: iconSize }, void 0),
+    var Inner = function () { return (_jsxs(_Fragment, { children: [_jsx(Icon, { className: "" + loadingIconColorClass, color: iconColor, currentType: currentType, name: iconName, size: iconSize, style: iconStyle }, void 0),
             loading && (_jsx("span", __assign({ className: "absolute flex top-1/2 transform -translate-y-1/2" }, { children: _jsx(Spinner, { color: loadingColor, size: loadingSize }, void 0) }), void 0))] }, void 0)); };
     if (tag === "a") {
         return (_jsx("a", __assign({ className: baseClass + " " + sizeClass + " " + borderRadiusClass + " " + borderColorClass + " " + backgroundColorClass + " " + iconColorClass + " " + shadowClass + " " + className, href: href, style: style, target: target }, props, { children: _jsx(Inner, {}, void 0) }), void 0));
