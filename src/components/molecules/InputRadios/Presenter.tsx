@@ -11,6 +11,7 @@ export type Props = {
   className?: string;
   columns?: number;
   createRef?: (input: HTMLInputElement) => void;
+  error?: string;
   id?: string;
   items: Array<Item>;
   label?: string;
@@ -28,6 +29,7 @@ export const Presenter: VFC<Props> = ({
   className,
   columns = 2,
   createRef,
+  error,
   id,
   items,
   label,
@@ -68,6 +70,11 @@ export const Presenter: VFC<Props> = ({
           />
         ))}
       </div>
+      {error && (
+        <TextRed className={"mt-2"} size={"sm"}>
+          {error}
+        </TextRed>
+      )}
     </div>
   );
 };
