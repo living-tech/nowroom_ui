@@ -35,7 +35,7 @@ export type Props = {
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
   placeholder?: string;
   require?: boolean;
-  requireLabel?: boolean;
+  requireLabel?: string;
   size?: Size;
   style?: CSSProperties;
   value?: string | number;
@@ -61,8 +61,8 @@ export const Presenter: VFC<Props> = ({
   name,
   onChange,
   placeholder = "選択してください",
-  require = "必須",
-  requireLabel,
+  require,
+  requireLabel = "必須",
   size = "md",
   style,
   value,

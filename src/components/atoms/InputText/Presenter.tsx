@@ -32,7 +32,7 @@ export type Props = {
   placeholder?: string;
   renderDescription?: () => JSX.Element;
   require?: boolean;
-  requireLabel?: boolean;
+  requireLabel?: string;
   size?: Size;
   style?: CSSProperties;
   type?: string;
@@ -65,8 +65,8 @@ export const Presenter: VFC<Props> = ({
   onKeyPress,
   placeholder,
   renderDescription,
-  require = "必須",
-  requireLabel,
+  require,
+  requireLabel = "必須",
   size = "md",
   style,
   type = "text",

@@ -26,7 +26,7 @@ export declare type Props = {
     placeholder?: string;
     renderDescription?: () => JSX.Element;
     require?: boolean;
-    requireLabel?: boolean;
+    requireLabel?: string;
     size?: Size;
     style?: CSSProperties;
     type?: string;
