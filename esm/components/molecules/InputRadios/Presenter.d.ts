@@ -11,6 +11,8 @@ export declare type Props = {
     label?: string;
     name?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+    require?: boolean;
+    requireLabel?: string;
     size?: "sm" | "md";
     style?: CSSProperties;
 };

@@ -3,6 +3,7 @@ import { ChangeEvent, CSSProperties, VFC } from "react";
 import { InputRadio } from "../../atoms/InputRadio/Default";
 import { Item } from "../../atoms/InputRadio/Presenter";
 import { TextMediumGray02 } from "../../atoms/Text/MediumGray02";
+import { TextRed } from "../../atoms/Text/Red";
 
 export type Props = {
   any?: boolean;
@@ -15,6 +16,8 @@ export type Props = {
   label?: string;
   name?: string;
   onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
+  require?: boolean;
+  requireLabel?: string;
   size?: "sm" | "md";
   style?: CSSProperties;
 };
@@ -30,6 +33,8 @@ export const Presenter: VFC<Props> = ({
   label,
   name,
   onChange,
+  require,
+  requireLabel = "必須",
   size = "md",
   style,
   ...props
@@ -43,6 +48,11 @@ export const Presenter: VFC<Props> = ({
             <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">
               {anyLabel}
             </TextMediumGray02>
+          )}
+          {require && (
+            <TextRed className={"ml-3"} size={"sm"} tag="span">
+              {requireLabel}
+            </TextRed>
           )}
         </label>
       )}
