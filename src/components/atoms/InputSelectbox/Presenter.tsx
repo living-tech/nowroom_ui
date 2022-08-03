@@ -34,6 +34,8 @@ export type Props = {
   name?: string;
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
   placeholder?: string;
+  require?: boolean;
+  requireLabel?: boolean;
   size?: Size;
   style?: CSSProperties;
   value?: string | number;
@@ -59,6 +61,8 @@ export const Presenter: VFC<Props> = ({
   name,
   onChange,
   placeholder = "選択してください",
+  require = "必須",
+  requireLabel,
   size = "md",
   style,
   value,
@@ -128,6 +132,11 @@ export const Presenter: VFC<Props> = ({
             <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">
               {anyLabel}
             </TextMediumGray02>
+          )}
+          {require && (
+            <TextRed className={"ml-3"} size={"sm"} tag="span">
+              {requireLabel}
+            </TextRed>
           )}
         </label>
       )}
