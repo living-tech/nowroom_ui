@@ -122,7 +122,6 @@ export const Presenter: VFC<Props> = ({
         return { position: "absolute", right: `${String(calendarPositionSlide)}px`, top: "106%" };
     }
   }, [calendarPosition, calendarPositionSlide]);
-  console.log(calendarPositionStyle);
 
   return (
     <div className={`relative ${className}`} style={style}>
