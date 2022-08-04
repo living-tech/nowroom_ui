@@ -27,7 +27,7 @@ import { IconButtonTransparent } from "../molecules/IconButton/Transparent";
 import styles from "./InputDatePicker.module.scss";
 registerLocale("ja", ja);
 export var Presenter = function (_a) {
-    var any = _a.any, _b = _a.anyLabel, anyLabel = _b === void 0 ? "任意" : _b, _c = _a.calendarPosition, calendarPosition = _c === void 0 ? "absoluteLeft" : _c, className = _a.className, error = _a.error, id = _a.id, label = _a.label, _d = _a.monthLabel, monthLabel = _d === void 0 ? "月" : _d, name = _a.name, onChange = _a.onChange, onClear = _a.onClear, placeholder = _a.placeholder, selectableFrom = _a.selectableFrom, selectableTo = _a.selectableTo, _e = _a.size, size = _e === void 0 ? "md" : _e, style = _a.style, value = _a.value, _f = _a.weight, weight = _f === void 0 ? "bold" : _f, _g = _a.yearLabel, yearLabel = _g === void 0 ? "年" : _g;
+    var any = _a.any, _b = _a.anyLabel, anyLabel = _b === void 0 ? "任意" : _b, _c = _a.calendarPosition, calendarPosition = _c === void 0 ? "absoluteLeft" : _c, _d = _a.calendarPositionSlide, calendarPositionSlide = _d === void 0 ? 0 : _d, className = _a.className, error = _a.error, id = _a.id, label = _a.label, _e = _a.monthLabel, monthLabel = _e === void 0 ? "月" : _e, name = _a.name, onChange = _a.onChange, onClear = _a.onClear, placeholder = _a.placeholder, selectableFrom = _a.selectableFrom, selectableTo = _a.selectableTo, _f = _a.size, size = _f === void 0 ? "md" : _f, style = _a.style, value = _a.value, _g = _a.weight, weight = _g === void 0 ? "bold" : _g, _h = _a.yearLabel, yearLabel = _h === void 0 ? "年" : _h;
     var inputBaseClass = "inline-block bg-gray-100 border w-full rounded-md cursor-pointer";
     var inputClass = "";
     if (error) {
@@ -53,7 +53,7 @@ export var Presenter = function (_a) {
             inputClass += " font-medium";
             break;
     }
-    var _h = useState(false), isShowCalendar = _h[0], setIsShowCalendar = _h[1];
+    var _j = useState(false), isShowCalendar = _j[0], setIsShowCalendar = _j[1];
     var handleDateChange = function (date) {
         setIsShowCalendar(false);
         if (!date) {
@@ -73,13 +73,12 @@ export var Presenter = function (_a) {
     var calendarPositionStyle = useMemo(function () {
         switch (calendarPosition) {
             case "absoluteLeft":
-                return { left: 0, position: "absolute", top: "106%" };
+                return { left: String(calendarPositionSlide) + "px", position: "absolute", top: "106%" };
             case "absoluteRight":
-                return { position: "absolute", right: 0, top: "106%" };
-            case "fixedForSp":
-                return { left: 0, position: "fixed", top: "auto" };
+                return { position: "absolute", right: String(calendarPositionSlide) + "px", top: "106%" };
         }
-    }, [calendarPosition]);
+    }, [calendarPosition, calendarPositionSlide]);
+    console.log(calendarPositionStyle);
     return (_jsxs("div", __assign({ className: "relative " + className, style: style }, { children: [_jsxs("div", { children: [label && (_jsxs("label", __assign({ className: "block mb-3 text-sm font-bold text-gray-700 cursor-pointer", htmlFor: id }, { children: [label, any && (_jsx(TextMediumGray02, __assign({ className: "ml-3", size: "sm", tag: "span" }, { children: anyLabel }), void 0))] }), void 0)),
                     _jsxs("div", __assign({ className: "relative" }, { children: [_jsxs("div", __assign({ className: "relative", onClick: function () { return setIsShowCalendar(true); } }, { children: [_jsx("input", { disabled: true, className: inputBaseClass + " " + inputClass, id: id, name: name, placeholder: placeholder, value: (value === null || value === void 0 ? void 0 : value.format("YYYY/M/D")) || "" }, void 0),
                                     _jsx(Icon, { className: "absolute pointer-events-none", color: "purple", name: "FiCalendar", size: "md", style: {

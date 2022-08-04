@@ -4,7 +4,8 @@ import { Weight } from "../atoms/Text/Presenter";
 export declare type Props = {
     any?: boolean;
     anyLabel?: string;
-    calendarPosition?: "absoluteLeft" | "absoluteRight" | "fixedForSp";
+    calendarPosition?: "absoluteLeft" | "absoluteRight";
+    calendarPositionSlide?: number;
     className?: string;
     error?: string;
     id?: string;

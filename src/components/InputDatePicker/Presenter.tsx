@@ -21,7 +21,8 @@ registerLocale("ja", ja);
 export type Props = {
   any?: boolean;
   anyLabel?: string;
-  calendarPosition?: "absoluteLeft" | "absoluteRight" | "fixedForSp";
+  calendarPosition?: "absoluteLeft" | "absoluteRight";
+  calendarPositionSlide?: number;
   className?: string;
   error?: string;
   id?: string;
@@ -44,6 +45,7 @@ export const Presenter: VFC<Props> = ({
   any,
   anyLabel = "任意",
   calendarPosition = "absoluteLeft",
+  calendarPositionSlide = 0,
   className,
   error,
   id,
@@ -115,13 +117,12 @@ export const Presenter: VFC<Props> = ({
   const calendarPositionStyle = useMemo((): CSSProperties => {
     switch (calendarPosition) {
       case "absoluteLeft":
-        return { left: 0, position: "absolute", top: "106%" };
+        return { left: `${String(calendarPositionSlide)}px`, position: "absolute", top: "106%" };
       case "absoluteRight":
-        return { position: "absolute", right: 0, top: "106%" };
-      case "fixedForSp":
-        return { left: 0, position: "fixed", top: "auto" };
+        return { position: "absolute", right: `${String(calendarPositionSlide)}px`, top: "106%" };
     }
-  }, [calendarPosition]);
+  }, [calendarPosition, calendarPositionSlide]);
+  console.log(calendarPositionStyle);
 
   return (
     <div className={`relative ${className}`} style={style}>
