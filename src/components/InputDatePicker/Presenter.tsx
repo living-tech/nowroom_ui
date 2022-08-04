@@ -119,7 +119,7 @@ export const Presenter: VFC<Props> = ({
       case "absoluteRight":
         return { position: "absolute", right: 0, top: "106%" };
       case "fixedForSp":
-        return { left: 0, position: "fixed", top: "6%" };
+        return { left: 0, position: "fixed", top: "auto" };
     }
   }, [calendarPosition]);
 
