@@ -3,7 +3,8 @@ import getMonth from "date-fns/getMonth";
 import getYear from "date-fns/getYear";
 import ja from "date-fns/locale/ja";
 import dayjs, { Dayjs } from "dayjs";
-import { CSSProperties, useMemo, useState, VFC } from "react";
+import * as Popper from "popper.js";
+import { CSSProperties, useState, VFC } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import { CSSTransition } from "react-transition-group";
 
@@ -21,8 +22,8 @@ registerLocale("ja", ja);
 export type Props = {
   any?: boolean;
   anyLabel?: string;
-  calendarPosition?: "absoluteLeft" | "absoluteRight";
-  calendarPositionSlide?: number;
+  // calendarPosition?: "absoluteLeft" | "absoluteRight";
+  // calendarPositionSlide?: number;
   className?: string;
   error?: string;
   id?: string;
@@ -32,6 +33,7 @@ export type Props = {
   onChange?: (date: Dayjs) => void;
   onClear?: () => void;
   placeholder?: string;
+  popperModifiers?: Popper.Modifiers;
   selectableFrom?: Date;
   selectableTo?: Date;
   size?: "sm" | "md";
@@ -44,8 +46,8 @@ export type Props = {
 export const Presenter: VFC<Props> = ({
   any,
   anyLabel = "任意",
-  calendarPosition = "absoluteLeft",
-  calendarPositionSlide = 0,
+  // calendarPosition = "absoluteLeft",
+  // calendarPositionSlide = 0,
   className,
   error,
   id,
@@ -55,6 +57,12 @@ export const Presenter: VFC<Props> = ({
   onChange,
   onClear,
   placeholder,
+  popperModifiers = {
+    preventOverflow: {
+      boundariesElement: "viewport",
+      enabled: true,
+    },
+  },
   selectableFrom,
   selectableTo,
   size = "md",
@@ -114,14 +122,14 @@ export const Presenter: VFC<Props> = ({
     return true;
   };
 
-  const calendarPositionStyle = useMemo((): CSSProperties => {
-    switch (calendarPosition) {
-      case "absoluteLeft":
-        return { left: `${String(calendarPositionSlide)}px`, position: "absolute", top: "106%" };
-      case "absoluteRight":
-        return { position: "absolute", right: `${String(calendarPositionSlide)}px`, top: "106%" };
-    }
-  }, [calendarPosition, calendarPositionSlide]);
+  // const calendarPositionStyle = useMemo((): CSSProperties => {
+  //   switch (calendarPosition) {
+  //     case "absoluteLeft":
+  //       return { left: `${String(calendarPositionSlide)}px`, position: "absolute", top: "106%" };
+  //     case "absoluteRight":
+  //       return { position: "absolute", right: `${String(calendarPositionSlide)}px`, top: "106%" };
+  //   }
+  // }, [calendarPosition, calendarPositionSlide]);
 
   return (
     <div className={`relative ${className}`} style={style}>
@@ -194,12 +202,16 @@ export const Presenter: VFC<Props> = ({
         timeout={400}
       >
         <ClickAwayListener onClickAway={() => setIsShowCalendar(false)}>
-          <div className="z-10 inline-block" style={calendarPositionStyle}>
+          <div
+            className="z-10 inline-block"
+            //  style={calendarPositionStyle}
+          >
             <DatePicker
               inline
               filterDate={(day) => isDaySelectable(day)}
               locale="ja"
               onChange={handleDateChange}
+              popperModifiers={popperModifiers}
               renderCustomHeader={({
                 date,
                 decreaseMonth,
