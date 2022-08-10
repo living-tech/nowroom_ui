@@ -27,7 +27,15 @@ import { IconButtonTransparent } from "../molecules/IconButton/Transparent";
 import styles from "./InputDatePicker.module.scss";
 registerLocale("ja", ja);
 export var Presenter = function (_a) {
-    var any = _a.any, _b = _a.anyLabel, anyLabel = _b === void 0 ? "任意" : _b, className = _a.className, error = _a.error, id = _a.id, label = _a.label, _c = _a.monthLabel, monthLabel = _c === void 0 ? "月" : _c, name = _a.name, onChange = _a.onChange, onClear = _a.onClear, placeholder = _a.placeholder, selectableFrom = _a.selectableFrom, selectableTo = _a.selectableTo, _d = _a.size, size = _d === void 0 ? "md" : _d, style = _a.style, value = _a.value, _e = _a.weight, weight = _e === void 0 ? "bold" : _e, _f = _a.yearLabel, yearLabel = _f === void 0 ? "年" : _f;
+    var any = _a.any, _b = _a.anyLabel, anyLabel = _b === void 0 ? "任意" : _b, 
+    // calendarPosition = "absoluteLeft",
+    // calendarPositionSlide = 0,
+    className = _a.className, error = _a.error, id = _a.id, label = _a.label, _c = _a.monthLabel, monthLabel = _c === void 0 ? "月" : _c, name = _a.name, onChange = _a.onChange, onClear = _a.onClear, placeholder = _a.placeholder, _d = _a.popperModifiers, popperModifiers = _d === void 0 ? {
+        preventOverflow: {
+            boundariesElement: "viewport",
+            enabled: true,
+        },
+    } : _d, selectableFrom = _a.selectableFrom, selectableTo = _a.selectableTo, _e = _a.size, size = _e === void 0 ? "md" : _e, style = _a.style, value = _a.value, _f = _a.weight, weight = _f === void 0 ? "bold" : _f, _g = _a.yearLabel, yearLabel = _g === void 0 ? "年" : _g;
     var inputBaseClass = "inline-block bg-gray-100 border w-full rounded-md cursor-pointer";
     var inputClass = "";
     if (error) {
@@ -53,7 +61,7 @@ export var Presenter = function (_a) {
             inputClass += " font-medium";
             break;
     }
-    var _g = useState(false), isShowCalendar = _g[0], setIsShowCalendar = _g[1];
+    var _h = useState(false), isShowCalendar = _h[0], setIsShowCalendar = _h[1];
     var handleDateChange = function (date) {
         setIsShowCalendar(false);
         if (!date) {
@@ -70,6 +78,14 @@ export var Presenter = function (_a) {
         }
         return true;
     };
+    // const calendarPositionStyle = useMemo((): CSSProperties => {
+    //   switch (calendarPosition) {
+    //     case "absoluteLeft":
+    //       return { left: `${String(calendarPositionSlide)}px`, position: "absolute", top: "106%" };
+    //     case "absoluteRight":
+    //       return { position: "absolute", right: `${String(calendarPositionSlide)}px`, top: "106%" };
+    //   }
+    // }, [calendarPosition, calendarPositionSlide]);
     return (_jsxs("div", __assign({ className: "relative " + className, style: style }, { children: [_jsxs("div", { children: [label && (_jsxs("label", __assign({ className: "block mb-3 text-sm font-bold text-gray-700 cursor-pointer", htmlFor: id }, { children: [label, any && (_jsx(TextMediumGray02, __assign({ className: "ml-3", size: "sm", tag: "span" }, { children: anyLabel }), void 0))] }), void 0)),
                     _jsxs("div", __assign({ className: "relative" }, { children: [_jsxs("div", __assign({ className: "relative", onClick: function () { return setIsShowCalendar(true); } }, { children: [_jsx("input", { disabled: true, className: inputBaseClass + " " + inputClass, id: id, name: name, placeholder: placeholder, value: (value === null || value === void 0 ? void 0 : value.format("YYYY/M/D")) || "" }, void 0),
                                     _jsx(Icon, { className: "absolute pointer-events-none", color: "purple", name: "FiCalendar", size: "md", style: {
@@ -89,7 +105,7 @@ export var Presenter = function (_a) {
                     enterActive: styles.CalendarEnterActive,
                     exit: styles.CalendarExit,
                     exitActive: styles.CalendarExitActive,
-                }, in: isShowCalendar, timeout: 400 }, { children: _jsx(ClickAwayListener, __assign({ onClickAway: function () { return setIsShowCalendar(false); } }, { children: _jsx("div", __assign({ className: "absolute left-0 z-10 inline-block", style: { top: "106%" } }, { children: _jsx(DatePicker, { inline: true, filterDate: function (day) { return isDaySelectable(day); }, locale: "ja", onChange: handleDateChange, renderCustomHeader: function (_a) {
+                }, in: isShowCalendar, timeout: 400 }, { children: _jsx(ClickAwayListener, __assign({ onClickAway: function () { return setIsShowCalendar(false); } }, { children: _jsx("div", __assign({ className: "z-10 inline-block" }, { children: _jsx(DatePicker, { inline: true, filterDate: function (day) { return isDaySelectable(day); }, locale: "ja", onChange: handleDateChange, popperModifiers: popperModifiers, renderCustomHeader: function (_a) {
                                 var date = _a.date, decreaseMonth = _a.decreaseMonth, increaseMonth = _a.increaseMonth, nextMonthButtonDisabled = _a.nextMonthButtonDisabled, prevMonthButtonDisabled = _a.prevMonthButtonDisabled;
                                 return (_jsxs("div", __assign({ className: "flex items-center justify-between px-3" }, { children: [_jsx(IconButtonTransparent, { radius: true, disabled: prevMonthButtonDisabled, iconColor: "darkGray02", iconName: "FiChevronLeft", onClick: decreaseMonth }, void 0),
                                         _jsxs(TextDarkGray02, __assign({ className: "leading-none", weight: "bold" }, { children: [getYear(date), yearLabel, getMonth(date) + 1, monthLabel] }), void 0),

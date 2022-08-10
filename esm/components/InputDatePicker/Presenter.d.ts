@@ -1,4 +1,5 @@
 import { Dayjs } from "dayjs";
+import * as Popper from "popper.js";
 import { CSSProperties, VFC } from "react";
 import { Weight } from "../atoms/Text/Presenter";
 export declare type Props = {
@@ -13,6 +14,7 @@ export declare type Props = {
     onChange?: (date: Dayjs) => void;
     onClear?: () => void;
     placeholder?: string;
+    popperModifiers?: Popper.Modifiers;
     selectableFrom?: Date;
     selectableTo?: Date;
     size?: "sm" | "md";
