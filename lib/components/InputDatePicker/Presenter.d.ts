@@ -1,10 +1,11 @@
 import { Dayjs } from "dayjs";
-import * as Popper from "popper.js";
 import { CSSProperties, VFC } from "react";
 import { Weight } from "../atoms/Text/Presenter";
 export declare type Props = {
     any?: boolean;
     anyLabel?: string;
+    calendarPosition?: "absoluteLeft" | "absoluteRight";
+    calendarPositionSlide?: number;
     className?: string;
     error?: string;
     id?: string;
@@ -14,7 +15,6 @@ export declare type Props = {
     onChange?: (date: Dayjs) => void;
     onClear?: () => void;
     placeholder?: string;
-    popperModifiers?: Popper.Modifiers;
     selectableFrom?: Date;
     selectableTo?: Date;
     size?: "sm" | "md";
