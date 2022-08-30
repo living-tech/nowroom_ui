@@ -70,9 +70,10 @@ export const Presenter: VFC<Props> = ({
                 <Chip
                   key={item.value}
                   className={"mr-3 last:mr-0 mt-3"}
+                  color={"purple"}
+                  iconType={"unselected"}
                   item={item}
                   onClick={onAddClick}
-                  type={"unselected"}
                 />
               ))}
           </div>
@@ -91,9 +92,10 @@ export const Presenter: VFC<Props> = ({
               <Chip
                 key={item.value}
                 className={"mr-3 last:mr-0 mt-3"}
+                color={"white"}
+                iconType={"selected"}
                 item={item}
                 onClick={onRemoveClick}
-                type={"selected"}
               />
             ))}
           </div>
