@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { CSSProperties, forwardRef } from "react";
+import { CSSProperties, forwardRef, SyntheticEvent } from "react";
 
 export type Item = {
   danger?: boolean;
   href?: string;
   label: string;
-  onClick?: () => void;
+  onClick?: (event: SyntheticEvent) => void;
 };
 
 export type Props = {

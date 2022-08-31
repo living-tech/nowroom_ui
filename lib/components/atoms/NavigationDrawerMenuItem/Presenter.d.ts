@@ -1,9 +1,9 @@
-import { CSSProperties } from "react";
+import { CSSProperties, SyntheticEvent } from "react";
 export declare type Item = {
     danger?: boolean;
     href?: string;
     label: string;
-    onClick?: () => void;
+    onClick?: (event: SyntheticEvent) => void;
 };
 export declare type Props = {
     className?: string;
