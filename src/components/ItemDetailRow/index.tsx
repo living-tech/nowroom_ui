@@ -52,7 +52,9 @@ export const ItemDetailRowRoomType: VFC<ItemDetailRowRoomTypeProps> = ({
     );
   }
 
-  return <ItemDetailRow className={className ?? ""} left={title} right={`${createRoomPriceUnit(value)}`} />;
+  return (
+    <ItemDetailRow className={className ?? ""} left={title} right={`${createRoomPriceUnit(value, unitPattern)}`} />
+  );
 };
 
 export const createRoomPriceUnit = (
@@ -77,10 +79,10 @@ export const createRoomPriceUnit = (
       return `¥${value.toLocaleString("ja-JP")}`;
 
     case "percentAndCurrency":
-      if (value <= 998) {
-        return `${value}%`;
+      if (value >= 1002) {
+        return `¥${value.toLocaleString("ja-JP")}`;
       }
-      return `¥${value.toLocaleString("ja-JP")}`;
+      return `${value}%`;
 
     default:
       return `¥${value.toLocaleString("ja-JP")}`;

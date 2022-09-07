@@ -25,7 +25,7 @@ export var ItemDetailRowRoomType = function (_a) {
     if (value <= 0) {
         return (_jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: _jsx(TextRed, __assign({ size: "xs" }, { children: "" + createRoomPriceUnit(value, unitPattern) }), void 0) }, void 0));
     }
-    return _jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: "" + createRoomPriceUnit(value) }, void 0);
+    return (_jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: "" + createRoomPriceUnit(value, unitPattern) }, void 0));
 };
 export var createRoomPriceUnit = function (value, unitPattern) {
     if (value === undefined || value === null || value === 0) {
@@ -43,10 +43,10 @@ export var createRoomPriceUnit = function (value, unitPattern) {
             }
             return "\u00A5" + value.toLocaleString("ja-JP");
         case "percentAndCurrency":
-            if (value <= 998) {
-                return value + "%";
+            if (value >= 1002) {
+                return "\u00A5" + value.toLocaleString("ja-JP");
             }
-            return "\u00A5" + value.toLocaleString("ja-JP");
+            return value + "%";
         default:
             return "\u00A5" + value.toLocaleString("ja-JP");
     }
