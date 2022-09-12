@@ -1,8 +1,8 @@
-import { CSSProperties } from "react";
+import { CSSProperties, ReactNode } from "react";
 export declare type Item = {
     danger?: boolean;
     href?: string;
-    label: string;
+    label: ReactNode;
     onClick?: () => void;
 };
 export declare type Props = {

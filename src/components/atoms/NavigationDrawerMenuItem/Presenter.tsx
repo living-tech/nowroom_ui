@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { CSSProperties, forwardRef } from "react";
+import { CSSProperties, forwardRef, ReactNode } from "react";
 
 export type Item = {
   danger?: boolean;
   href?: string;
-  label: string;
+  label: ReactNode;
   onClick?: () => void;
 };
 
