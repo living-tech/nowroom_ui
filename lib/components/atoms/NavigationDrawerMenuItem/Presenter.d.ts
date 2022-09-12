@@ -1,5 +1,6 @@
 import { CSSProperties, ReactNode } from "react";
 export declare type Item = {
+    className?: string;
     danger?: boolean;
     href?: string;
     label: ReactNode;

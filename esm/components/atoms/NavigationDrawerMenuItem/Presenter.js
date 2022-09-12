@@ -20,10 +20,10 @@ export var Presenter = forwardRef(function (_a, _ref) {
         colorClass = "text-red";
     }
     if (item.onClick) {
-        return (_jsx("button", __assign({ className: colorClass + " " + baseClass + " " + className, onClick: item.onClick, style: style }, { children: item.label }), void 0));
+        return (_jsx("button", __assign({ className: colorClass + " " + baseClass + " " + className + " " + item.className, onClick: item.onClick, style: style }, { children: item.label }), void 0));
     }
     else if (item.href) {
-        return (_jsx(Link, __assign({ passHref: true, href: item.href }, { children: _jsx("a", __assign({ className: colorClass + " " + baseClass + " " + className, style: style }, { children: "" + item.label }), void 0) }), void 0));
+        return (_jsx(Link, __assign({ passHref: true, href: item.href }, { children: _jsx("a", __assign({ className: colorClass + " " + baseClass + " " + className + " " + item.className, style: style }, { children: "" + item.label }), void 0) }), void 0));
     }
     else {
         return _jsx(_Fragment, {}, void 0);

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CSSProperties, forwardRef, ReactNode } from "react";
 
 export type Item = {
+  className?: string;
   danger?: boolean;
   href?: string;
   label: ReactNode;
@@ -25,14 +26,18 @@ export const Presenter = forwardRef<HTMLDivElement, Props>(({ className, item, s
 
   if (item.onClick) {
     return (
-      <button className={`${colorClass} ${baseClass} ${className}`} onClick={item.onClick} style={style}>
+      <button
+        className={`${colorClass} ${baseClass} ${className} ${item.className}`}
+        onClick={item.onClick}
+        style={style}
+      >
         {item.label}
       </button>
     );
   } else if (item.href) {
     return (
       <Link passHref href={item.href}>
-        <a className={`${colorClass} ${baseClass} ${className}`} style={style}>
+        <a className={`${colorClass} ${baseClass} ${className} ${item.className}`} style={style}>
           {`${item.label}`}
         </a>
       </Link>
