@@ -11,6 +11,7 @@ export type Color =
   | "purple"
   | "green"
   | "yellow"
+  | "yellow600"
   | "mediumGray01"
   | "lightGray02"
   | "blackOpacity"
@@ -108,6 +109,13 @@ export const Presenter: VFC<Props> = ({
     case "yellow":
       backgroundColorClass = "bg-yellow";
       borderColorClass = "border-yellow";
+      backgroundColorHoverClass = isClickable ? "hover:bg-yellow-700" : "";
+      borderColorHoverClass = isClickable ? "hover:border-yellow-700" : "";
+      textColor = "text-white";
+      break;
+    case "yellow600":
+      backgroundColorClass = "bg-yellow-600";
+      borderColorClass = "border-yellow-600";
       backgroundColorHoverClass = isClickable ? "hover:bg-yellow-700" : "";
       borderColorHoverClass = isClickable ? "hover:border-yellow-700" : "";
       textColor = "text-white";
