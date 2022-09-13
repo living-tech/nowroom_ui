@@ -175,9 +175,7 @@ export const Presenter: VFC<Props> = ({
                 <Spinner />
               </span>
             ) : (
-              <>
-                <div>{children}</div>
-              </>
+              <>{children}</>
             )}
             {renderFixedBottom && !loading && (
               <div
