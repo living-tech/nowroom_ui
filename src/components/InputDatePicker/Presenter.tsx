@@ -32,6 +32,8 @@ export type Props = {
   onChange?: (date: Dayjs) => void;
   onClear?: () => void;
   placeholder?: string;
+  require?: boolean;
+  requireLabel?: string;
   selectableFrom?: Date;
   selectableTo?: Date;
   size?: "sm" | "md";
@@ -55,6 +57,8 @@ export const Presenter: VFC<Props> = ({
   onChange,
   onClear,
   placeholder,
+  require,
+  requireLabel = "必須",
   selectableFrom,
   selectableTo,
   size = "md",
@@ -133,6 +137,11 @@ export const Presenter: VFC<Props> = ({
               <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">
                 {anyLabel}
               </TextMediumGray02>
+            )}
+            {require && (
+              <TextRed className={"ml-3"} size={"sm"} tag="span">
+                {requireLabel}
+              </TextRed>
             )}
           </label>
         )}

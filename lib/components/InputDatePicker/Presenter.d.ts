@@ -15,6 +15,8 @@ export declare type Props = {
     onChange?: (date: Dayjs) => void;
     onClear?: () => void;
     placeholder?: string;
+    require?: boolean;
+    requireLabel?: string;
     selectableFrom?: Date;
     selectableTo?: Date;
     size?: "sm" | "md";
