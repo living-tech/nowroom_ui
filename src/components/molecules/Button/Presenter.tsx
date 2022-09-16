@@ -162,7 +162,7 @@ export const Presenter: VFC<Props> = ({
           backgroundColorClass = "bg-white hover:bg-purple disabled:bg-white disabled:hover:bg-white";
           break;
         case "red":
-          backgroundColorClass = "bg-red hover:bg-white disabled:bg-gray-500 disabled:hover:bg-gray-500";
+          backgroundColorClass = "bg-white hover:bg-red disabled:bg-white disabled:hover:bg-white";
           break;
       }
       break;
