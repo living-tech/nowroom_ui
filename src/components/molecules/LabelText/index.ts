@@ -12,3 +12,4 @@ export * from "./Purple";
 export * from "./Red";
 export * from "./White";
 export * from "./Yellow";
+export * from "./Yellow600";
