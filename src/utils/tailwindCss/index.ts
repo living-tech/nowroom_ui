@@ -45,6 +45,7 @@ import {
 } from "../../constnats";
 
 const checkedLabelPlugin = plugin(function ({ addVariant, e }) {
+  // @ts-ignore
   addVariant("checked-label", ({ modifySelectors, separator }) => {
     modifySelectors(({ className }) => {
       return `.${e(`radio-button${separator}${className}`)}:checked + label`;
@@ -53,9 +54,8 @@ const checkedLabelPlugin = plugin(function ({ addVariant, e }) {
 });
 
 export const tailwindCssConfig = {
-  darkMode: false,
+  content: ["./src/pages/**/*.tsx", "./src/components/**/*.tsx"],
   plugins: [checkedLabelPlugin],
-  purge: ["./src/pages/**/*.tsx", "./src/components/**/*.tsx"],
   theme: {
     extend: {
       borderRadius: {
@@ -170,19 +170,5 @@ export const tailwindCssConfig = {
       purple: theme("colors.purple"),
       white: theme("colors.white"),
     }),
-  },
-  variants: {
-    extend: {
-      backgroundColor: ["disabled", "checked", "checked-label"],
-      borderColor: ["disabled", "checked", "last"],
-      cursor: ["disabled"],
-      fill: ["hover"],
-      inset: ["checked"],
-      margin: ["first", "last"],
-      stroke: ["hover"],
-      textColor: ["disabled"],
-      transform: ["checked"],
-      zIndex: ["hover", "active"],
-    },
   },
 };

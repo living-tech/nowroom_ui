@@ -2,6 +2,7 @@ import plugin from "tailwindcss/plugin";
 import { black, blue500, blue600, blue700, cyan500, cyan600, cyan700, facebookColor, gray50, gray100, gray200, gray300, gray400, gray500, gray600, gray700, green500, innerWidth, lineColor, pink500, pink600, pink700, purple100, purple200, purple400, purple500, purple600, purple700, red100, red200, red300, red400, red500, twitterColor, yellow100, yellow200, yellow300, yellow400, yellow500, yellow600, yellow700, } from "../../constnats";
 var checkedLabelPlugin = plugin(function (_a) {
     var addVariant = _a.addVariant, e = _a.e;
+    // @ts-ignore
     addVariant("checked-label", function (_a) {
         var modifySelectors = _a.modifySelectors, separator = _a.separator;
         modifySelectors(function (_a) {
@@ -11,9 +12,8 @@ var checkedLabelPlugin = plugin(function (_a) {
     });
 });
 export var tailwindCssConfig = {
-    darkMode: false,
+    content: ["./src/pages/**/*.tsx", "./src/components/**/*.tsx"],
     plugins: [checkedLabelPlugin],
-    purge: ["./src/pages/**/*.tsx", "./src/components/**/*.tsx"],
     theme: {
         extend: {
             borderRadius: {
@@ -128,20 +128,6 @@ export var tailwindCssConfig = {
             purple: theme("colors.purple"),
             white: theme("colors.white"),
         }); },
-    },
-    variants: {
-        extend: {
-            backgroundColor: ["disabled", "checked", "checked-label"],
-            borderColor: ["disabled", "checked", "last"],
-            cursor: ["disabled"],
-            fill: ["hover"],
-            inset: ["checked"],
-            margin: ["first", "last"],
-            stroke: ["hover"],
-            textColor: ["disabled"],
-            transform: ["checked"],
-            zIndex: ["hover", "active"],
-        },
     },
 };
 //# sourceMappingURL=index.js.map
