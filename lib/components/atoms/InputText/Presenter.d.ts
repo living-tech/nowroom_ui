@@ -25,6 +25,8 @@ export declare type Props = {
     onKeyPress?: (event: KeyboardEvent<HTMLInputElement>) => void;
     placeholder?: string;
     renderDescription?: () => JSX.Element;
+    require?: boolean;
+    requireLabel?: string;
     size?: Size;
     style?: CSSProperties;
     type?: string;

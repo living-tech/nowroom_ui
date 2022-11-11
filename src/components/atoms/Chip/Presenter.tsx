@@ -10,18 +10,27 @@ export type Item = {
 
 export type Props = {
   className?: string;
+  color?: "purple" | "white";
+  iconType?: "selected" | "unselected";
   item: Item;
   onClick?: (item: Item) => void;
   style?: CSSProperties;
-  type: "selected" | "unselected";
 };
 
-export const Presenter: VFC<Props> = ({ className, item, onClick, style, type = "selected", ...props }) => {
+export const Presenter: VFC<Props> = ({
+  className,
+  color = "purple",
+  iconType = "selected",
+  item,
+  onClick,
+  style,
+  ...props
+}) => {
   const containerBaseClass =
     "transition-all ease-out duration-200 items-start inline-flex items-center justify-center py-1 pl-3 pr-1 font-medium border rounded-full cursor-pointer";
 
   let containerClass = "";
-  if (type === "selected") {
+  if (color === "purple") {
     containerClass =
       "bg-purple hover:bg-white border-purple hover:text-purple stroke-purple hover:stroke-white text-white";
   } else {
@@ -43,10 +52,12 @@ export const Presenter: VFC<Props> = ({ className, item, onClick, style, type = 
       >
         {item.label}
       </Text>
-      {type === "selected" ? (
-        <div
-          className={`transition-all ease-out duration-200 flex rounded-full w-5 h-5 bg-white items-center justify-center ml-2.5 ${styles.circleSelected}`}
-        >
+      <div
+        className={`transition-all ease-out duration-200 flex rounded-full w-5 h-5 ${
+          color === "purple" ? "bg-white" : "bg-purple"
+        } items-center justify-center ml-2.5 ${color === "purple" ? styles.circleSelected : styles.circleUnselected}`}
+      >
+        {iconType === "selected" ? (
           <svg
             className={"transition-all ease-out duration-200"}
             height="14px"
@@ -60,11 +71,7 @@ export const Presenter: VFC<Props> = ({ className, item, onClick, style, type = 
             <line x1="18" x2="6" y1="6" y2="18" />
             <line x1="6" x2="18" y1="6" y2="18" />
           </svg>
-        </div>
-      ) : (
-        <div
-          className={`transition-all ease-out duration-200 flex rounded-full w-5 h-5 bg-purple items-center justify-center ml-2.5 ${styles.circleUnselected}`}
-        >
+        ) : (
           <svg
             className={"transition-all ease-out duration-200"}
             height="14px"
@@ -78,8 +85,8 @@ export const Presenter: VFC<Props> = ({ className, item, onClick, style, type = 
             <line x1="12" x2="12" y1="6" y2="18" />
             <line x1="6" x2="18" y1="12" y2="12" />
           </svg>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

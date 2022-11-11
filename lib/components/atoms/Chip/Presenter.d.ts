@@ -5,10 +5,11 @@ export declare type Item = {
 };
 export declare type Props = {
     className?: string;
+    color?: "purple" | "white";
+    iconType?: "selected" | "unselected";
     item: Item;
     onClick?: (item: Item) => void;
     style?: CSSProperties;
-    type: "selected" | "unselected";
 };
 export declare const Presenter: VFC<Props>;
 //# sourceMappingURL=Presenter.d.ts.map

@@ -31,6 +31,8 @@ export type Props = {
   onKeyPress?: (event: KeyboardEvent<HTMLInputElement>) => void;
   placeholder?: string;
   renderDescription?: () => JSX.Element;
+  require?: boolean;
+  requireLabel?: string;
   size?: Size;
   style?: CSSProperties;
   type?: string;
@@ -63,6 +65,8 @@ export const Presenter: VFC<Props> = ({
   onKeyPress,
   placeholder,
   renderDescription,
+  require,
+  requireLabel = "必須",
   size = "md",
   style,
   type = "text",
@@ -203,6 +207,11 @@ export const Presenter: VFC<Props> = ({
             <TextMediumGray02 className={"ml-3"} size={"sm"} tag="span">
               {anyLabel}
             </TextMediumGray02>
+          )}
+          {require && (
+            <TextRed className={"ml-3"} size={"sm"} tag="span">
+              {requireLabel}
+            </TextRed>
           )}
         </label>
       )}
