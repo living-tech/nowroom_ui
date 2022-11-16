@@ -1,7 +1,9 @@
 export declare const tailwindCssConfig: {
-    darkMode: boolean;
-    plugins: any[];
-    purge: string[];
+    content: string[];
+    plugins: {
+        handler: import("tailwindcss/types/config").PluginCreator;
+        config?: Partial<import("tailwindcss/types/config").Config> | undefined;
+    }[];
     theme: {
         extend: {
             borderRadius: {
@@ -115,20 +117,6 @@ export declare const tailwindCssConfig: {
             current: string;
             purple: any;
             white: any;
-        };
-    };
-    variants: {
-        extend: {
-            backgroundColor: string[];
-            borderColor: string[];
-            cursor: string[];
-            fill: string[];
-            inset: string[];
-            margin: string[];
-            stroke: string[];
-            textColor: string[];
-            transform: string[];
-            zIndex: string[];
         };
     };
 };

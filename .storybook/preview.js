@@ -2,7 +2,7 @@ import "../src/styles/globals.css";
 
 import * as React from "react";
 import { addDecorator } from "@storybook/react";
-import { RouterContext } from  'next/dist/next-server/lib/router-context';
+import { RouterContext } from  'next/dist/shared/lib/router-context';
 import { customViewports, materialUiTheme } from "../src"
 import { ThemeProvider } from "@material-ui/core/styles";
 
