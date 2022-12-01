@@ -7,6 +7,7 @@ export declare type Props = {
     checked?: boolean;
     className?: string;
     createRef?: (input: HTMLInputElement) => void;
+    isNewLine?: boolean;
     item: Item;
     name?: string;
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;

@@ -13,6 +13,7 @@ export type Props = {
   createRef?: (input: HTMLInputElement) => void;
   error?: string;
   id?: string;
+  isNewLine?: boolean;
   items: Array<Item>;
   label?: string;
   name?: string;
@@ -31,6 +32,7 @@ export const Presenter: VFC<Props> = ({
   createRef,
   error,
   id,
+  isNewLine,
   items,
   label,
   name,
@@ -63,6 +65,7 @@ export const Presenter: VFC<Props> = ({
           <InputRadio
             key={`radio-${item.value}`}
             createRef={createRef}
+            isNewLine={isNewLine}
             item={item}
             name={name}
             onChange={onChange}

@@ -8,6 +8,7 @@ export declare type Props = {
     createRef?: (input: HTMLInputElement) => void;
     error?: string;
     id?: string;
+    isNewLine?: boolean;
     items: Array<Item>;
     label?: string;
     name?: string;
