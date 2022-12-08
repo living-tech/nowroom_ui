@@ -24,6 +24,7 @@ export declare type Props = {
     onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
     onKeyPress?: (event: KeyboardEvent<HTMLInputElement>) => void;
     placeholder?: string;
+    readOnly?: boolean;
     renderDescription?: () => JSX.Element;
     require?: boolean;
     requireLabel?: string;

@@ -30,6 +30,7 @@ export type Props = {
   onFocus?: (event: FocusEvent<HTMLInputElement>) => void;
   onKeyPress?: (event: KeyboardEvent<HTMLInputElement>) => void;
   placeholder?: string;
+  readOnly?: boolean;
   renderDescription?: () => JSX.Element;
   require?: boolean;
   requireLabel?: string;
@@ -64,6 +65,7 @@ export const Presenter: VFC<Props> = ({
   onFocus,
   onKeyPress,
   placeholder,
+  readOnly = false,
   renderDescription,
   require,
   requireLabel = "必須",
@@ -233,7 +235,7 @@ export const Presenter: VFC<Props> = ({
         <input
           ref={createRef}
           autoComplete={autocomplete}
-          className={`${inputBaseClass} ${inputClass} ${roundedClass} ${inputBackgroundColorClass} ${inputClassName} disabled:opacity-40 disabled:cursor-not-allowed`}
+          className={`${inputBaseClass} ${inputClass} ${roundedClass} ${inputBackgroundColorClass} ${inputClassName} disabled:opacity-40 disabled:cursor-not-allowed read-only:opacity-40`}
           defaultValue={defaultValue}
           disabled={disabled}
           id={id}
@@ -244,6 +246,7 @@ export const Presenter: VFC<Props> = ({
           onFocus={onFocus}
           onKeyPress={onKeyPress}
           placeholder={placeholder}
+          readOnly={readOnly}
           style={inputStyle}
           type={type}
           value={value}
