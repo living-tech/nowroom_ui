@@ -43,7 +43,7 @@ export const Presenter: VFC<Props> = ({
       />
       {size === "md" ? (
         <label
-          className="flex items-center w-full p-4 border border-gray-300 rounded cursor-pointer transition duration-200 ease-out"
+          className="flex items-center w-full p-4 overflow-hidden bg-white border border-gray-300 rounded cursor-pointer transition duration-200 ease-out"
           htmlFor={`${name}-${item.value}`}
         >
           <div className={`flex w-full ${isNewLine ? "items-center" : ""}`}>
