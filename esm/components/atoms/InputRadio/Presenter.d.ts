@@ -1,6 +1,6 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
 export declare type Item = {
-    label: string;
+    label: React.ReactNode;
     value: string | number;
 };
 export declare type Props = {

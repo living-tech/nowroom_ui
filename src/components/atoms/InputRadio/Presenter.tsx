@@ -1,7 +1,7 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
 
 export type Item = {
-  label: string;
+  label: React.ReactNode;
   value: string | number;
 };
 
