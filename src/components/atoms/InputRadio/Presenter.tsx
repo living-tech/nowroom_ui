@@ -1,7 +1,7 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
 
 export type Item = {
-  label: string;
+  label: React.ReactNode;
   value: string | number;
 };
 
@@ -44,8 +44,8 @@ export const Presenter: VFC<Props> = ({
           className="flex items-center w-full p-4 overflow-hidden bg-white border border-gray-300 rounded cursor-pointer transition duration-200 ease-out"
           htmlFor={`${name}-${item.value}`}
         >
-          <div className="flex w-full">
-            <span className="inline-block w-5 h-5 border rounded-full circle border-grey checked:border-blue-500 transition duration-200 ease-out" />
+          <div className="flex items-center w-full">
+            <span className="inline-block w-5 h-5 border rounded-full circle border-grey checked:border-blue-500 transition duration-200 shrink-0 ease-out" />
             <p className="flex-grow ml-2 text-sm font-bold text-center text-gray-600 text transition duration-200 ease-out">
               {item.label}
             </p>
@@ -53,11 +53,11 @@ export const Presenter: VFC<Props> = ({
         </label>
       ) : (
         <label
-          className="flex items-center w-full cursor-pointer transition duration-200 ease-out"
+          className="flex items-center w-full cursor-pointer transition  duration-200 ease-out"
           htmlFor={`${name}-${item.value}`}
         >
-          <div className="flex w-full">
-            <span className="inline-block w-5 h-5 border rounded-full circle border-grey checked:border-blue-500 transition duration-200 ease-out" />
+          <div className="flex items-center w-full">
+            <span className="inline-block w-5 h-5 border rounded-full circle border-grey checked:border-blue-500 transition duration-200 shrink-0 ease-out" />
             <p className="flex ml-2 text-sm text-black text transition duration-200 ease-out">{item.label}</p>
           </div>
         </label>
