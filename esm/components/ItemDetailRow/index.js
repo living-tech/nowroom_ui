@@ -20,23 +20,35 @@ export var ItemDetailRow = function (_a) {
             _jsx(TextDarkGray02, __assign({ size: "xs" }, { children: right }), void 0)] }), void 0));
 };
 export var ItemDetailRowRoomType = function (_a) {
-    var className = _a.className, title = _a.title, value = _a.value;
+    var className = _a.className, title = _a.title, _b = _a.unitPattern, unitPattern = _b === void 0 ? "currency" : _b, value = _a.value;
     // 0以下は赤にする。
     if (value <= 0) {
-        return (_jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: _jsx(TextRed, __assign({ size: "xs" }, { children: "" + createRoomPriceUnit(value) }), void 0) }, void 0));
+        return (_jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: _jsx(TextRed, __assign({ size: "xs" }, { children: "" + createRoomPriceUnit(value, unitPattern) }), void 0) }, void 0));
     }
-    return _jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: "" + createRoomPriceUnit(value) }, void 0);
+    return (_jsx(ItemDetailRow, { className: className !== null && className !== void 0 ? className : "", left: title, right: "" + createRoomPriceUnit(value, unitPattern) }, void 0));
 };
-export var isMonthUnit = function (value) {
-    if (value <= 100) {
-        return true;
-    }
-    return false;
-};
-export var createRoomPriceUnit = function (value) {
+export var createRoomPriceUnit = function (value, unitPattern) {
     if (value === undefined || value === null || value === 0) {
         return "\u00A50";
     }
-    return isMonthUnit(value) ? value + "\u30F6\u6708" : "\u00A5" + value.toLocaleString("ja-JP");
+    switch (unitPattern) {
+        case "monthAndCurrency":
+            return value <= 100 ? value + "\u30F6\u6708" : "\u00A5" + value.toLocaleString("ja-JP");
+        case "monthAndPercentAndCurrency":
+            if (value >= 1 && value <= 99) {
+                return value + "\u30F6\u6708";
+            }
+            if (value >= 101 && value <= 200) {
+                return value - 100 + "%";
+            }
+            return "\u00A5" + value.toLocaleString("ja-JP");
+        case "percentAndCurrency":
+            if (value >= 1002) {
+                return "\u00A5" + value.toLocaleString("ja-JP");
+            }
+            return value + "%";
+        default:
+            return "\u00A5" + value.toLocaleString("ja-JP");
+    }
 };
 //# sourceMappingURL=index.js.map

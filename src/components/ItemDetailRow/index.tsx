@@ -23,36 +23,68 @@ export const ItemDetailRow: VFC<ItemDetailRowProps> = ({ className, left, right 
 interface ItemDetailRowRoomTypeProps {
   className?: ItemDetailRowProps["className"];
   title: ItemDetailRowProps["left"];
+  /**
+   *
+   * currency: 円
+   * monthAndCurrency: 100以上:円、それ以外:ヶ月
+   * monthAndPercentAndCurrency: 1～99:ヶ月、101～200:100を引いて% 201以上:円
+   * percentAndCurrency: 998以下:%、1002以上:円
+   *
+   **/
+  unitPattern?: "currency" | "monthAndCurrency" | "monthAndPercentAndCurrency" | "percentAndCurrency";
   value: number;
 }
 
-export const ItemDetailRowRoomType: VFC<ItemDetailRowRoomTypeProps> = ({ className, title, value }) => {
+export const ItemDetailRowRoomType: VFC<ItemDetailRowRoomTypeProps> = ({
+  className,
+  title,
+  unitPattern = "currency",
+  value,
+}) => {
   // 0以下は赤にする。
   if (value <= 0) {
     return (
       <ItemDetailRow
         className={className ?? ""}
         left={title}
-        right={<TextRed size="xs">{`${createRoomPriceUnit(value)}`}</TextRed>}
+        right={<TextRed size="xs">{`${createRoomPriceUnit(value, unitPattern)}`}</TextRed>}
       />
     );
   }
 
-  return <ItemDetailRow className={className ?? ""} left={title} right={`${createRoomPriceUnit(value)}`} />;
+  return (
+    <ItemDetailRow className={className ?? ""} left={title} right={`${createRoomPriceUnit(value, unitPattern)}`} />
+  );
 };
 
-export const isMonthUnit = (value: number) => {
-  if (value <= 100) {
-    return true;
-  }
-
-  return false;
-};
-
-export const createRoomPriceUnit = (value?: number | null) => {
+export const createRoomPriceUnit = (
+  value?: number | null,
+  unitPattern?: "currency" | "monthAndCurrency" | "monthAndPercentAndCurrency" | "percentAndCurrency"
+) => {
   if (value === undefined || value === null || value === 0) {
     return `¥0`;
   }
 
-  return isMonthUnit(value) ? `${value}ヶ月` : `¥${value.toLocaleString("ja-JP")}`;
+  switch (unitPattern) {
+    case "monthAndCurrency":
+      return value <= 100 ? `${value}ヶ月` : `¥${value.toLocaleString("ja-JP")}`;
+
+    case "monthAndPercentAndCurrency":
+      if (value >= 1 && value <= 99) {
+        return `${value}ヶ月`;
+      }
+      if (value >= 101 && value <= 200) {
+        return `${value - 100}%`;
+      }
+      return `¥${value.toLocaleString("ja-JP")}`;
+
+    case "percentAndCurrency":
+      if (value >= 1002) {
+        return `¥${value.toLocaleString("ja-JP")}`;
+      }
+      return `${value}%`;
+
+    default:
+      return `¥${value.toLocaleString("ja-JP")}`;
+  }
 };
