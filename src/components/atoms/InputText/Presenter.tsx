@@ -21,6 +21,7 @@ export type Props = {
   iconName?: IconName;
   id?: string;
   inputClassName?: string;
+  inputMode?: "text" | "search" | "none" | "tel" | "url" | "email" | "numeric" | "decimal";
   inputStyle?: CSSProperties;
   label?: string;
   list?: string;
@@ -56,6 +57,7 @@ export const Presenter: VFC<Props> = ({
   iconName,
   id,
   inputClassName = "",
+  inputMode,
   inputStyle,
   label,
   list,
@@ -239,6 +241,7 @@ export const Presenter: VFC<Props> = ({
           defaultValue={defaultValue}
           disabled={disabled}
           id={id}
+          inputMode={inputMode}
           list={list}
           name={name}
           onBlur={onBlur}
