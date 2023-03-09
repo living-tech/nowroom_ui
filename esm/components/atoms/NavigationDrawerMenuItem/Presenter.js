@@ -13,14 +13,14 @@ import { jsx as _jsx, Fragment as _Fragment } from "react/jsx-runtime";
 import Link from "next/link";
 import { forwardRef } from "react";
 export var Presenter = forwardRef(function (_a, _ref) {
-    var className = _a.className, item = _a.item, style = _a.style;
+    var _b = _a.buttonType, buttonType = _b === void 0 ? "button" : _b, className = _a.className, item = _a.item, style = _a.style;
     var baseClass = "transition ease-out duration-200 block w-full text-left text-xs py-3 px-5 appearance-none cursor-pointer focus:outline-none hover:bg-purple-100";
     var colorClass = "text-black";
     if (item.danger) {
         colorClass = "text-red";
     }
     if (item.onClick) {
-        return (_jsx("button", __assign({ className: colorClass + " " + baseClass + " " + className + " " + item.className, onClick: item.onClick, style: style }, { children: item.label }), void 0));
+        return (_jsx("button", __assign({ className: colorClass + " " + baseClass + " " + className + " " + item.className, onClick: item.onClick, style: style, type: buttonType }, { children: item.label }), void 0));
     }
     else if (item.href) {
         return (_jsx(Link, __assign({ passHref: true, href: item.href }, { children: _jsx("a", __assign({ className: colorClass + " " + baseClass + " " + className + " " + item.className, style: style }, { children: "" + item.label }), void 0) }), void 0));

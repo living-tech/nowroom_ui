@@ -7,6 +7,7 @@ export declare type Item = {
     onClick?: () => void;
 };
 export declare type Props = {
+    buttonType?: "button" | "submit" | "reset";
     className?: string;
     item: Item;
     style?: CSSProperties;
