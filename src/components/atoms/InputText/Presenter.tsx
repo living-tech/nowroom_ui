@@ -80,7 +80,6 @@ export const Presenter: VFC<Props> = ({
   weight = "bold",
   ...props
 }) => {
-  console.log("___input_nu", inputMode);
   const inputBaseClass = "border block w-full placeholder-gray-400";
 
   let inputClass = "";
