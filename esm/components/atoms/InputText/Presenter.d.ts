@@ -15,6 +15,7 @@ export declare type Props = {
     iconName?: IconName;
     id?: string;
     inputClassName?: string;
+    inputMode?: "text" | "search" | "none" | "tel" | "url" | "email" | "numeric" | "decimal";
     inputStyle?: CSSProperties;
     label?: string;
     list?: string;
