@@ -82,8 +82,8 @@ export var Presenter = function (_a) {
             _jsxs("div", __assign({ className: "relative block " + widthClass }, { children: [iconName && (_jsx(Icon, { className: "top-1/2 absolute transform -translate-y-1/2 pointer-events-none " + iconPositionClass, color: iconColor, name: iconName, size: "sm" }, void 0)),
                     _jsxs("select", __assign({ ref: createRef, className: "text-base w-full cursor-pointer whitespace-nowrap block border font-bold border-gray-200 rounded-md appearance-none focus:outline-none focus:ring-primary-500 focus:border-primary-500 " + backgroundColorClass + " " + paddingLeftClass + " " + paddingRightClass + " " + paddingYClass + " " + widthClass + " " + inputClass, defaultValue: defaultValue, disabled: disabled, id: id, name: name, onChange: handleChange, value: value }, { children: [!disabledPlaceholder && _jsx("option", __assign({ value: "" }, { children: placeholder }), void 0),
                             items.map(function (item) {
-                                var _a;
-                                return (_jsx("option", __assign({ value: item.value }, { children: item.label }), "selectbox-" + ((_a = item.key) !== null && _a !== void 0 ? _a : item.value)));
+                                var _a, _b;
+                                return (_jsx("option", __assign({ disabled: (_a = item.disabled) !== null && _a !== void 0 ? _a : false, value: item.value }, { children: item.label }), "selectbox-" + ((_b = item.key) !== null && _b !== void 0 ? _b : item.value)));
                             })] }), void 0),
                     !disabledRightArrow && (_jsx(IconPurple, { className: "top-1/2 absolute transform -translate-y-1/2 pointer-events-none " + arrowIconPositionClass, name: "FiChevronDown", size: "sm" }, void 0))] }), void 0),
             error && (_jsx(TextRed, __assign({ className: "mt-2", size: "sm" }, { children: error }), void 0))] }), void 0));

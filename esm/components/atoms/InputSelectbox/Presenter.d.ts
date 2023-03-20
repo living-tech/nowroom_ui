@@ -1,6 +1,7 @@
 import { ChangeEvent, CSSProperties, VFC } from "react";
 import { Color as IconColor, IconName } from "../Icon/Presenter";
 export declare type Item = {
+    disabled?: boolean;
     key?: string | number;
     label: string;
     value: string | number;

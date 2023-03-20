@@ -7,6 +7,7 @@ import { TextMediumGray02 } from "../Text/MediumGray02";
 import { TextRed } from "../Text/Red";
 
 export type Item = {
+  disabled?: boolean;
   key?: string | number;
   label: string;
   value: string | number;
@@ -161,7 +162,7 @@ export const Presenter: VFC<Props> = ({
         >
           {!disabledPlaceholder && <option value="">{placeholder}</option>}
           {items.map((item) => (
-            <option key={`selectbox-${item.key ?? item.value}`} value={item.value}>
+            <option key={`selectbox-${item.key ?? item.value}`} disabled={item.disabled ?? false} value={item.value}>
               {item.label}
             </option>
           ))}
