@@ -26,6 +26,7 @@ export declare type Props = {
     name?: string;
     onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
     placeholder?: string;
+    readonly?: boolean;
     require?: boolean;
     requireLabel?: string;
     size?: Size;

@@ -34,6 +34,7 @@ export type Props = {
   name?: string;
   onChange?: (event: ChangeEvent<HTMLSelectElement>) => void;
   placeholder?: string;
+  readonly?: boolean;
   require?: boolean;
   requireLabel?: string;
   size?: Size;
@@ -61,6 +62,7 @@ export const Presenter: VFC<Props> = ({
   name,
   onChange,
   placeholder = "選択してください",
+  readonly,
   require,
   requireLabel = "必須",
   size = "md",
@@ -160,11 +162,25 @@ export const Presenter: VFC<Props> = ({
           value={value}
         >
           {!disabledPlaceholder && <option value="">{placeholder}</option>}
-          {items.map((item) => (
-            <option key={`selectbox-${item.key ?? item.value}`} value={item.value}>
-              {item.label}
-            </option>
-          ))}
+          {readonly ? (
+            <>
+              {items
+                .filter((item) => item.value === value)
+                .map((item) => (
+                  <option key={`selectbox-${item.key ?? item.value}`} value={item.value}>
+                    {item.label}
+                  </option>
+                ))}
+            </>
+          ) : (
+            <>
+              {items.map((item) => (
+                <option key={`selectbox-${item.key ?? item.value}`} value={item.value}>
+                  {item.label}
+                </option>
+              ))}
+            </>
+          )}
         </select>
         {!disabledRightArrow && (
           <IconPurple
