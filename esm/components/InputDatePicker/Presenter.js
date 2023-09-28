@@ -80,7 +80,7 @@ export var Presenter = function (_a) {
     }, [calendarPosition, calendarPositionSlide]);
     return (_jsxs("div", __assign({ className: "relative " + className, style: style }, { children: [_jsxs("div", { children: [label && (_jsxs("label", __assign({ className: "block mb-3 text-sm font-bold text-gray-700 cursor-pointer", htmlFor: id }, { children: [label, any && (_jsx(TextMediumGray02, __assign({ className: "ml-3", size: "sm", tag: "span" }, { children: anyLabel }), void 0)),
                             require && (_jsx(TextRed, __assign({ className: "ml-3", size: "sm", tag: "span" }, { children: requireLabel }), void 0))] }), void 0)),
-                    _jsxs("div", __assign({ className: "relative" }, { children: [_jsxs("div", __assign({ className: "relative", onClick: function () { return setIsShowCalendar(true); } }, { children: [_jsx("input", { disabled: true, className: inputBaseClass + " " + inputClass, id: id, name: name, placeholder: placeholder, value: (value === null || value === void 0 ? void 0 : value.format("YYYY/M/D")) || "" }, void 0),
+                    _jsxs("div", __assign({ className: "relative" }, { children: [_jsxs("div", __assign({ className: "relative", onClick: function () { return setIsShowCalendar(true); } }, { children: [_jsx("input", { className: inputBaseClass + " " + inputClass, id: id, name: name, placeholder: placeholder, value: (value === null || value === void 0 ? void 0 : value.format("YYYY/M/D")) || "" }, void 0),
                                     _jsx(Icon, { className: "absolute pointer-events-none", color: "purple", name: "FiCalendar", size: "md", style: {
                                             right: size === "md" ? "1rem" : "0.5rem",
                                             top: "50%",
