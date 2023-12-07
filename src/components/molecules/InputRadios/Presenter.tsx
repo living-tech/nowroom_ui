@@ -1,3 +1,5 @@
+import type { VariantProps } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 import { ChangeEvent, CSSProperties, VFC } from "react";
 
 import { InputRadio } from "../../atoms/InputRadio/Default";
@@ -5,12 +7,35 @@ import { Item } from "../../atoms/InputRadio/Presenter";
 import { TextMediumGray02 } from "../../atoms/Text/MediumGray02";
 import { TextRed } from "../../atoms/Text/Red";
 
+const variants = cva(["grid"], {
+  // compoundVariants: [{ grid_cols: 3, gap_size: 6, className: "p-8" }], // gird_cols:3, gap_size:6 のときclassNameに p-8 を追加できる
+  defaultVariants: {
+    gap_size: 6,
+    grid_cols: 2,
+  },
+  variants: {
+    gap_size: {
+      2: ["gap-2"],
+      4: ["gap-4"],
+      6: ["gap-6"],
+    },
+    grid_cols: {
+      1: ["grid-cols-1"],
+      2: ["grid-cols-1", "md:grid-cols-2"],
+      3: ["grid-cols-1", "md:grid-cols-3"],
+      4: ["grid-cols-1", "md:grid-cols-4"],
+      5: ["grid-cols-1", "md:grid-cols-5"],
+      6: ["grid-cols-1", "md:grid-cols-6"],
+    },
+  },
+});
+
 export type Props = {
   any?: boolean;
   anyLabel?: string;
   className?: string;
-  columns?: number;
   createRef?: (input: HTMLInputElement) => void;
+  cvaVariants?: VariantProps<typeof variants>;
   error?: string;
   id?: string;
   items: Array<Item>;
@@ -27,8 +52,8 @@ export const Presenter: VFC<Props> = ({
   any,
   anyLabel = "任意",
   className,
-  columns = 2,
   createRef,
+  cvaVariants,
   error,
   id,
   items,
@@ -58,7 +83,7 @@ export const Presenter: VFC<Props> = ({
           )}
         </label>
       )}
-      <div className={`grid grid-cols-${columns} gap-6`}>
+      <div className={variants({ gap_size: cvaVariants?.gap_size, grid_cols: cvaVariants?.grid_cols })}>
         {items.map((item) => (
           <InputRadio
             key={`radio-${item.value}`}
