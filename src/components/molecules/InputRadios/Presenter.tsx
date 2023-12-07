@@ -53,7 +53,7 @@ export const Presenter: VFC<Props> = ({
   anyLabel = "任意",
   className,
   createRef,
-  cvaVariants,
+  cvaVariants = {},
   error,
   id,
   items,
@@ -83,7 +83,7 @@ export const Presenter: VFC<Props> = ({
           )}
         </label>
       )}
-      <div className={variants({ gap_size: cvaVariants?.gap_size, grid_cols: cvaVariants?.grid_cols })}>
+      <div className={variants({ gap_size: cvaVariants.gap_size, grid_cols: cvaVariants.grid_cols })}>
         {items.map((item) => (
           <InputRadio
             key={`radio-${item.value}`}
