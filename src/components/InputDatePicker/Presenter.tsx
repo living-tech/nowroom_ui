@@ -148,7 +148,6 @@ export const Presenter: VFC<Props> = ({
         <div className="relative">
           <div className={"relative"} onClick={() => setIsShowCalendar(true)}>
             <input
-              disabled
               className={`${inputBaseClass} ${inputClass}`}
               id={id}
               name={name}
